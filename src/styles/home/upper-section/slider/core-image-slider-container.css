@@ -1,0 +1,11 @@
+.core-slider-elements-wrapper {
+  margin: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.core-slider-elements-wrapper-wrapper {
+  display: flex;
+}
