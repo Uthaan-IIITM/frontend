@@ -1,0 +1,19 @@
+.slider-elements-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: fit-content;
+}
+
+.slider-elements-wrapper-wrapper {
+  overflow-x: hidden;
+}
+
+.slider-elements-wrapper-wrapper-wrapper {
+  overflow-x: scroll;
+  /* overflow-x: hidden; */
+}
+
+/* .primary-slider-elements-container div div img{
+    width: 400px;
+} */
