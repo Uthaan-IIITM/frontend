@@ -4,12 +4,14 @@ import BridgingGapBetweenJuniorsAndSeniors from './illustration-components/Bridg
 import ToSeekToFindNotToYield from './illustration-components/ToSeekToFindNotToYield';
 import PushingBoundariesOnOurIdeasAndOurCraft from './illustration-components/PushingBoundariesOnOurIdeasAndOurCraft';
 
+const IllustionComponentsArray = [<BridgingGapBetweenJuniorsAndSeniors/>,
+    < ToSeekToFindNotToYield />,
+    < PushingBoundariesOnOurIdeasAndOurCraft />];
+
 function HomeUpperSection() {
     return (
-        <div>
-            <ElementsSlider sliderComponents={[{ BridgingGapBetweenJuniorsAndSeniors },
-            { ToSeekToFindNotToYield },
-            { PushingBoundariesOnOurIdeasAndOurCraft }]} />
+        <div >
+            <ElementsSlider sliderComponents={IllustionComponentsArray} />
         </div>
     )
 }
