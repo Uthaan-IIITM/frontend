@@ -1,0 +1,21 @@
+.imgStackContainer {
+  width: 3vw;
+  height: 3vw;
+  position: relative;
+  margin-left: 0.7vw;
+  margin-bottom: 0.7vw;
+}
+.commonImgHome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3vw;
+  cursor: pointer;
+  transition: opacity 0.4s ease-in-out;
+}
+.normalDisplay {
+  opacity: 1;
+}
+.hoverDisplay {
+  opacity: 0;
+}
