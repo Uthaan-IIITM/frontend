@@ -1,0 +1,117 @@
+.LandingPageFooter {
+  height: 39.2vw;
+  background-color: #f1f3ff;
+  width: 100%;
+}
+.footerUpperContainer {
+  display: flex;
+  position: relative;
+}
+.footerUpperContainer img {
+  object-fit: contain;
+  width: 10vw;
+  position: absolute;
+  top: 5.5vw;
+  right: 6.4vw;
+}
+.footerLinks {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5.5vw;
+}
+.footerLinks div {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.56vw;
+  line-height: 2.13vw;
+  color: #000031;
+}
+.footerLinks ul li {
+  list-style: none;
+}
+.footerLinks a {
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.3vw;
+  line-height: 1.77vw;
+  color: #000000;
+}
+.instiuteinformation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44vw;
+}
+.instiuteinformation p {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5vw;
+  line-height: 2vw;
+  color: #2e2e46;
+}
+.logoOutercontainer {
+  height: 8vw;
+  width: 8vw;
+  border: 6px solid rgba(184, 184, 186, 0.25);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2.5vw;
+}
+.logoInnerContainer {
+  height: 7vw;
+  width: 7vw;
+  border: 2px solid #b8b8ba;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logoInnerContainer img {
+  object-fit: contain;
+  width: 2.55vw;
+}
+.footerLowerContainer {
+  padding-top: 6vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  display: flex;
+}
+.footerRightIcons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 45vw;
+}
+.footerRightIcons p {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.5vw;
+  line-height: 2.13vw;
+}
+.footerRightIcons a {
+  text-decoration: none;
+  color: #2e2e46;
+}
+/* .footerIcons img {
+    width: 3vw;
+    margin-left: 0.7vw;
+    cursor: pointer;
+  } */
+.footerIcons {
+  display: flex;
+}
+.copyright {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.04vw;
+  line-height: 1.4vw;
+  color: rgba(18, 30, 53, 0.31);
+}
