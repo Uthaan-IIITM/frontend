@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 25.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 750 500" style="enable-background:new 0 0 750 500;" xml:space="preserve">
+<g id="drawer">
+	<g>
+		<rect x="554.444" y="302.831" style="fill:#786337;" width="45.906" height="113.93"/>
+		
+			<line style="fill:none;stroke:#4F4124;stroke-width:0.8351;stroke-miterlimit:10;" x1="600.35" y1="340.257" x2="554.444" y2="340.257"/>
+		
+			<line style="fill:none;stroke:#4F4124;stroke-width:0.8351;stroke-miterlimit:10;" x1="600.35" y1="378.735" x2="554.444" y2="378.735"/>
+		
+			<line style="fill:none;stroke:#4F4124;stroke-width:0.8351;stroke-miterlimit:10;" x1="600.35" y1="343.519" x2="554.444" y2="343.519"/>
+		
+			<line style="fill:none;stroke:#4F4124;stroke-width:0.8351;stroke-miterlimit:10;" x1="600.35" y1="306.093" x2="554.444" y2="306.093"/>
+		
+			<line style="fill:none;stroke:#4F4124;stroke-width:0.8351;stroke-miterlimit:10;" x1="600.35" y1="381.997" x2="554.444" y2="381.997"/>
+		<path style="fill:#FFFFFF;" d="M580.403,312.727c0,1.612-1.346,2.92-3.006,2.92c-1.66,0-3.006-1.307-3.006-2.92
+			c0-1.613,1.346-2.92,3.006-2.92C579.057,309.807,580.403,311.114,580.403,312.727z"/>
+		<path style="fill:#FFFFFF;" d="M580.403,350.863c0,1.612-1.346,2.92-3.006,2.92c-1.66,0-3.006-1.307-3.006-2.92
+			c0-1.613,1.346-2.92,3.006-2.92C579.057,347.943,580.403,349.25,580.403,350.863z"/>
+		<path style="fill:#FFFFFF;" d="M580.403,388.999c0,1.613-1.346,2.92-3.006,2.92c-1.66,0-3.006-1.307-3.006-2.92
+			c0-1.613,1.346-2.92,3.006-2.92C579.057,386.08,580.403,387.387,580.403,388.999z"/>
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="576.0327" y1="296.4617" x2="540.6236" y2="467.4294">
+			<stop  offset="0" style="stop-color:#000000"/>
+			<stop  offset="0.9315" style="stop-color:#000000;stop-opacity:0"/>
+		</linearGradient>
+		<polygon style="opacity:0.4;fill:url(#SVGID_1_);" points="554.444,321.357 554.444,416.761 567.55,416.761 		"/>
+	</g>
+</g>
+<g id="Layer_1">
+</g>
+</svg>
