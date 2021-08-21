@@ -11,17 +11,16 @@ import mailIconHover from "../../../assets/footer/h_ic_mail.svg";
 import "../../../styles/_general/PrimaryFooter.css";
 import ImageStackComponent from "./ImageStackComponent";
 
-const General = ["Login", "Sign-Up", "About", "Home", "Admin"];
+const General = ["Home", "Admin"];
 const Browse = [
-  "Projects",
-  "Jobs",
-  "Queries",
-  "Connection",
-  "Message",
-  "Notification",
-  "profile",
+  "Events & Shows",
+  "Articles",
+  "Interviews",
+  "Gallery",
+  "Team",
+  "Contact Us",
 ];
-const Support = ["help.connectx@gmail.com", "(+91) 9113742865"];
+const Support = ["contact@uthaan.org", "(+91) 8989738932", "(+91) 8317057596"];
 
 const GeneralList = General.map((General, index) => {
   return (
@@ -46,12 +45,10 @@ const SupportList = Support.map((Support, index) => {
 });
 
 function PrimaryFooter() {
-  // const [footerImage, setFooterImage] = useState(linkedInIcon);
-
   return (
-    <footer className="LandingPageFooter">
-      <div className="footerUpperContainer">
-        <div className="footerLinks">
+    <footer className="primary-footer-wrapper">
+      <div className="primary-footer-upper-container">
+        <div className="primary-footer-footer-links">
           <div style={{ marginLeft: "7.18vw" }}>
             General
             <ul>{GeneralList}</ul>
@@ -65,13 +62,13 @@ function PrimaryFooter() {
             <ul>{SupportList}</ul>
           </div>
         </div>
-        <img src={uthaanLogo} alt="ConnectxLogo" />
+        <img src={uthaanLogo} alt="uthaanLogo" />
       </div>
 
-      <div className="footerLowerContainer">
-        <div className="instiuteinformation">
-          <div className="logoOutercontainer">
-            <div className="logoInnerContainer">
+      <div className="primary-footer-lower-container">
+        <div className="primary-footer-instiute-information-wrapper">
+          <div className="primary-footer-instiute-information-outer-container">
+            <div className="primary-footer-instiute-information-inner-container">
               <img src={Instituelogo} alt="Institutelogo" />
             </div>
           </div>
@@ -80,7 +77,7 @@ function PrimaryFooter() {
             Management, Gwalior
           </p>
         </div>
-        <div className="footerRightIcons">
+        <div className="primary-footer-right-icons">
           <div
             style={{
               display: "flex",
@@ -104,7 +101,7 @@ function PrimaryFooter() {
             <span style={{ color: "#929292", padding: "0 0.5vw" }}>|</span>
             <Link to="/">Terms of Use</Link>
           </p>
-          <div className="copyright">Copyright (c) 2021</div>
+          <div className="primary-footer-copyright">Copyright (c) 2021</div>
         </div>
       </div>
     </footer>
