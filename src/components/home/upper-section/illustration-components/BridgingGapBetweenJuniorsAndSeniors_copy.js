@@ -2,6 +2,7 @@ import React from "react";
 import graphic from "../../../../assets/home/what_is_uthaan.png";
 // import * as GraphicAssets from "../../../../assets/home/what_is_uthaan/bridging_gap_between_juniors_and_seniors/graphic_parts/SVG";
 import "../../../../styles/home/upper-section/illustration-container/illustration-comp.css";
+import BGBJAS_Clock from "./bridging_gap_between_juniors_and_seniors_components/BGBJAS_Clock";
 
 function importAll(r) {
   let images = {};
@@ -72,6 +73,8 @@ function BridgingGapBetweenJuniorsAndSeniorsCopy({ containerWidth }) {
         id="BGBJAS-laptop"
       />
       <img src={images["stool.svg"].default} alt="graphic" id="BGBJAS-stool" />
+
+      <BGBJAS_Clock />
     </div>
   );
 }
