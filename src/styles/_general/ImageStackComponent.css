@@ -1,11 +1,11 @@
-.imgStackContainer {
+.primary-footer-img-stack-wrapper {
   width: 3vw;
   height: 3vw;
   position: relative;
   margin-left: 0.7vw;
   margin-bottom: 0.7vw;
 }
-.commonImgHome {
+.primary-footer-common-img-class {
   position: absolute;
   top: 0;
   left: 0;
@@ -13,9 +13,9 @@
   cursor: pointer;
   transition: opacity 0.4s ease-in-out;
 }
-.normalDisplay {
+.primary-footer-normal-display {
   opacity: 1;
 }
-.hoverDisplay {
+.primary-footer-hover-display {
   opacity: 0;
 }

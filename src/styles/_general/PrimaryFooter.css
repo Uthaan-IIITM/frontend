@@ -1,25 +1,25 @@
-.LandingPageFooter {
+.primary-footer-wrapper {
   height: 39.2vw;
-  background-color: #f1f3ff;
+  background-color: #eeeeee;
   width: 100%;
 }
-.footerUpperContainer {
+.primary-footer-upper-container {
   display: flex;
   position: relative;
 }
-.footerUpperContainer img {
+.primary-footer-upper-container img {
   object-fit: contain;
   width: 10vw;
   position: absolute;
   top: 5.5vw;
   right: 6.4vw;
 }
-.footerLinks {
+.primary-footer-footer-links {
   display: flex;
   justify-content: space-around;
   margin-top: 5.5vw;
 }
-.footerLinks div {
+.primary-footer-footer-links div {
   font-family: "Manrope", sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -27,10 +27,10 @@
   line-height: 2.13vw;
   color: #000031;
 }
-.footerLinks ul li {
+.primary-footer-footer-links ul li {
   list-style: none;
 }
-.footerLinks a {
+.primary-footer-footer-links a {
   text-decoration: none;
   font-family: "Manrope", sans-serif;
   font-style: normal;
@@ -39,13 +39,13 @@
   line-height: 1.77vw;
   color: #000000;
 }
-.instiuteinformation {
+.primary-footer-instiute-information-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 44vw;
 }
-.instiuteinformation p {
+.primary-footer-instiute-information-wrapper p {
   font-family: "Manrope", sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -53,7 +53,7 @@
   line-height: 2vw;
   color: #2e2e46;
 }
-.logoOutercontainer {
+.primary-footer-instiute-information-outer-container {
   height: 8vw;
   width: 8vw;
   border: 6px solid rgba(184, 184, 186, 0.25);
@@ -63,7 +63,7 @@
   align-items: center;
   margin-right: 2.5vw;
 }
-.logoInnerContainer {
+.primary-footer-instiute-information-inner-container {
   height: 7vw;
   width: 7vw;
   border: 2px solid #b8b8ba;
@@ -72,30 +72,30 @@
   justify-content: center;
   align-items: center;
 }
-.logoInnerContainer img {
+.primary-footer-instiute-information-inner-container img {
   object-fit: contain;
   width: 2.55vw;
 }
-.footerLowerContainer {
+.primary-footer-lower-container {
   padding-top: 6vw;
   padding-left: 5vw;
   padding-right: 5vw;
   display: flex;
 }
-.footerRightIcons {
+.primary-footer-right-icons {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   width: 45vw;
 }
-.footerRightIcons p {
+.primary-footer-right-icons p {
   font-family: "Manrope", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 1.5vw;
   line-height: 2.13vw;
 }
-.footerRightIcons a {
+.primary-footer-right-icons a {
   text-decoration: none;
   color: #2e2e46;
 }
@@ -107,7 +107,7 @@
 .footerIcons {
   display: flex;
 }
-.copyright {
+.primary-footer-copyright {
   font-family: "Manrope", sans-serif;
   font-style: normal;
   font-weight: 600;
