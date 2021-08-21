@@ -4,6 +4,7 @@ import "./styles/App.css";
 
 import PrimaryFooter from "./components/_general/footer/PrimaryFooter";
 import HomeUpperSection from "./components/home/upper-section/HomeUpperSection";
+import BridgingGapBetweenJuniorsAndSeniorsCopy from "./components/home/upper-section/illustration-components/BridgingGapBetweenJuniorsAndSeniors_copy";
 
 function App() {
   // This code is Just for Testing purposes
@@ -11,14 +12,14 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
+      {/* <Router>
         <Switch>
           <Route exact path="/" component={PrimaryFooter} />
         </Switch>
-      </Router>
+      </Router> */}
       {/* <PrimaryFooter /> */}
-
       {/* <HomeUpperSection/> */}
+      <BridgingGapBetweenJuniorsAndSeniorsCopy containerWidth="75vw" />
     </div>
   );
 }
