@@ -23,6 +23,7 @@ function ElementsSlider(
   const [sliderElementsOpacity, setSliderElementsOpacity] = useState([])
   const [sliderElementsScale, setSliderElementsScale] = useState([])
   const [beingDragged, setBeingDragged] = useState(false)
+  const [lastTimeBeingAnimated, setLastTimeBeingAnimated] = useState(Date.now())
 
 
 
@@ -35,6 +36,12 @@ function ElementsSlider(
   }
 
   function updateLayoutOnScroll(e) {
+
+    // if (lastTimeBeingAnimated + 100 > Date.now()) {
+    //   return
+    // }
+    // setLastTimeBeingAnimated(Date.now())
+
     // console.log(e.target.childNodes[0].childNodes[0].childNodes)
     let childElements = e.target.childNodes[0].childNodes[0].childNodes
     // for (let i = 0; i < childElements.length; i++) {
@@ -77,34 +84,61 @@ function ElementsSlider(
 
 
     let comparisonIndex = 0;
-    let comparisonRatio = 0;
+    let comparisonRatio = 0.00;
     if (currentPositionFloatIndex > currentPositionIndex) {
       comparisonIndex = 1;
       comparisonRatio = currentPositionFloatIndex - currentPositionIndex;
     } else if (currentPositionFloatIndex < currentPositionIndex) {
       comparisonIndex = - 1;
       comparisonRatio = currentPositionIndex - currentPositionFloatIndex;
+    } else {
+      comparisonIndex = 0;
+      comparisonRatio = 0;
     }
+
+    // console.log(comparisonRatio);
+    // console.log(comparisonIndex);
 
     for (let i = 0; i < childElements.length; i++) {
       // let tempWidth = `${Math.floor((Math.random() * 100) + 1)}%`;
 
-      let currentIndexElementOpacity = sliderElementsOpacity[Math.abs(i - currentPositionIndex)]
-      let currentIndexElementWidth = sliderElementsScale[Math.abs(i - currentPositionIndex)]
+      let currentElementIndex
+      if (i - currentPositionIndex > 0) {
+        currentElementIndex = i - currentPositionIndex
+      } else {
+        currentElementIndex = currentPositionIndex - i
+        comparisonIndex = -comparisonIndex
+      }
+
+
+      console.log(currentElementIndex)
+
+      let currentIndexElementOpacity = sliderElementsOpacity[currentElementIndex]
+      let currentIndexElementWidth = sliderElementsScale[currentElementIndex]
 
       let opacityToBeSet = currentIndexElementOpacity;
       let scaleToBeSet = currentIndexElementWidth;
 
+
+
       if (comparisonIndex != 0) {
 
-        let comparisonElementIndex  = 
+        let comparisonElementIndex = currentElementIndex + comparisonIndex;
 
-        opacityToBeSet = opacityFunction(i + comparisonIndex)
-        scaleToBeSet = scaleFunction(i + comparisonIndex)
+
+        let comparisonIndexElementOpacity = sliderElementsOpacity[comparisonElementIndex]
+        let comparisonIndexElementWidth = sliderElementsScale[comparisonElementIndex]
+
+        opacityToBeSet = (1.00 - comparisonRatio) * parseFloat(currentIndexElementOpacity) + parseFloat(comparisonRatio) * parseFloat(comparisonIndexElementOpacity)
+        scaleToBeSet = (1.00 - comparisonRatio) * parseFloat(currentIndexElementWidth) + parseFloat(comparisonRatio) * parseFloat(comparisonIndexElementWidth)
+
+        console.log(comparisonRatio);
+        // console.log(opacityToBeSet);
+        // console.log(scaleToBeSet);
       }
-      
-      childElements[i].childNodes[0].style.width = `${100 * parseFloat(currentIndexElementWidth)}%`;
-      childElements[i].childNodes[0].style.opacity = currentIndexElementOpacity;
+
+      childElements[i].childNodes[0].style.width = `${100 * parseFloat(scaleToBeSet)}%`;
+      childElements[i].childNodes[0].style.opacity = opacityToBeSet;
     }
 
   }
@@ -117,6 +151,8 @@ function ElementsSlider(
         width: carouselWidth,
         paddinTop: paddingGeneral,
         padduBottom: paddingGeneral,
+        height: "60vh",
+
       }}
     >
       <div className="slider-elements-wrapper-wrapper"

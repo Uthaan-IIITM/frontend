@@ -10,6 +10,9 @@ import homePageSliderScaleController from './helper-functions/home-page-slider-s
 
 const IllustionComponentsArray = [<BridgingGapBetweenJuniorsAndSeniors />,
 < ToSeekToFindNotToYield />,
+< ToSeekToFindNotToYield />,
+< ToSeekToFindNotToYield />,
+< ToSeekToFindNotToYield />,
 < PushingBoundariesOnOurIdeasAndOurCraft />];
 
 function HomeUpperSection() {
