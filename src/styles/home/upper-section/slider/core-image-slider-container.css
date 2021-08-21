@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.5s linear;
+  transition: all 0.1s linear;
 }
 
 .core-slider-elements-wrapper-wrapper {
