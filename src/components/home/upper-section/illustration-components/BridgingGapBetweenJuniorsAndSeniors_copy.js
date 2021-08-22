@@ -1,8 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 import graphic from "../../../../assets/home/what_is_uthaan.png";
 // import * as GraphicAssets from "../../../../assets/home/what_is_uthaan/bridging_gap_between_juniors_and_seniors/graphic_parts/SVG";
 import "../../../../styles/home/upper-section/illustration-container/illustration-comp.css";
-import BGBJAS_Clock from "./bridging_gap_between_juniors_and_seniors_components/BGBJAS_Clock";
+import BgbjasClock from "./bridging_gap_between_juniors_and_seniors_components/BgbjasClock";
+import BgbjasLeftLeaves from "./bridging_gap_between_juniors_and_seniors_components/BgbjasLeftLeaves";
+import BgbjasRightLeaves from "./bridging_gap_between_juniors_and_seniors_components/BgbjasRightLeaves";
+import BgbjasChai from "./bridging_gap_between_juniors_and_seniors_components/BgbjasChai";
 
 function importAll(r) {
   let images = {};
@@ -74,9 +78,16 @@ function BridgingGapBetweenJuniorsAndSeniorsCopy({ containerWidth }) {
       />
       <img src={images["stool.svg"].default} alt="graphic" id="BGBJAS-stool" />
 
-      <BGBJAS_Clock />
+      <BgbjasClock clockContainerWidth={containerWidth} />
+      <BgbjasLeftLeaves leftLeavesContainerWidth={containerWidth} />
+      <BgbjasRightLeaves rightLeavesContainerWidth={containerWidth} />
+      <BgbjasChai ChaiContainerWidth={containerWidth} />
     </div>
   );
 }
+
+BridgingGapBetweenJuniorsAndSeniorsCopy.propTypes = {
+  containerWidth: PropTypes.string.isRequired,
+};
 
 export default BridgingGapBetweenJuniorsAndSeniorsCopy;
