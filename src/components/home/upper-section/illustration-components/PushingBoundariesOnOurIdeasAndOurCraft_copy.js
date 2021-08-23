@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../../../../styles/home/upper-section/illustration-container/illustration-comp.css";
+import "../../../../styles/home/upper-section/illustration-container/illustration-comp_copy.css";
 
 function importAll(r) {
   let images = {};
