@@ -1,0 +1,21 @@
+#BGBJAS_RightLeaves {
+  @apply absolute;
+  left: 75.3%;
+  top: 55.97%;
+}
+#BGBJAS_RightLeavesPot {
+  height: 100%;
+  z-index: 1;
+}
+#BGBJAS_RightLeavesL {
+  width: 103%;
+  max-width: 103%;
+  top: -302%;
+  left: -35%;
+}
+#BGBJAS_RightLeavesR {
+  width: 113%;
+  max-width: 113%;
+  top: -233%;
+  left: 36%;
+}

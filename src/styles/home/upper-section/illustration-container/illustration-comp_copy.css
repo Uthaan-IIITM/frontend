@@ -1,0 +1,10 @@
+.home-page-illustration-image-wrapper {
+  @apply relative;
+}
+
+.home-page-illustration-image-wrapper img {
+  @apply object-contain absolute top-0 left-0;
+}
+#BGBJAS-table {
+  z-index: 1;
+}

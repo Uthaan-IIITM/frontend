@@ -1,0 +1,13 @@
+.core-slider-elements-wrapper {
+  margin: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.1s linear;
+  transition: opacity 0.1s linear;
+}
+
+.core-slider-elements-wrapper-wrapper {
+  display: flex;
+}

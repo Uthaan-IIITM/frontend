@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 25.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 750 500" style="enable-background:new 0 0 750 500;" xml:space="preserve">
+<g id="table">
+	<g>
+		<ellipse style="fill:#CEDBED;" cx="536.667" cy="429.97" rx="7.003" ry="2.378"/>
+		<ellipse style="fill:#CEDBED;" cx="243.556" cy="429.97" rx="7.003" ry="2.378"/>
+		<rect x="255.154" y="294.279" style="fill:#967C45;" width="269.464" height="22.197"/>
+		<g>
+			<polygon style="fill:#786337;" points="248.706,294.279 241.26,429.451 246.224,429.451 264.681,294.279 			"/>
+			<polygon style="fill:#786337;" points="531.067,294.279 538.512,429.451 533.548,429.451 515.091,294.279 			"/>
+		</g>
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="390.2449" y1="259.5294" x2="390.2449" y2="395.4498">
+			<stop  offset="0" style="stop-color:#000000"/>
+			<stop  offset="0.9315" style="stop-color:#000000;stop-opacity:0"/>
+		</linearGradient>
+		<polygon style="opacity:0.4;fill:url(#SVGID_1_);" points="248.419,299.472 532.07,312.505 531.067,294.279 248.706,294.279 		"/>
+		<rect x="236.587" y="286.72" style="fill:#967C45;" width="306.598" height="9.672"/>
+	</g>
+</g>
+<g id="Layer_1">
+</g>
+</svg>

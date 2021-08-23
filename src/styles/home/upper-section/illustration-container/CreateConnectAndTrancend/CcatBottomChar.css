@@ -1,0 +1,26 @@
+#CCAT-BottomChar {
+  @apply absolute;
+  top: 58.54%;
+  left: 53.03%;
+}
+#CCAR-Char3 {
+  width: 100%;
+}
+#CCAR-Char3HandZH {
+  width: 58.99%;
+  left: -16.21%;
+  top: 25.02%;
+  z-index: -1;
+}
+#CCAR-Char3HandZL {
+  width: 52.37%;
+  left: -16.21%;
+  top: 24.02%;
+  z-index: -3;
+}
+#CCAR-BulbBottomSeparatedPart {
+  width: 52.37%;
+  z-index: -2;
+  left: -31.21%;
+  top: 31.02%;
+}

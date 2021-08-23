@@ -1,0 +1,12 @@
+.director-image-wrapper-wrapper {
+  @apply rounded-full w-60 h-60 p-2;
+  border: 2.71074px solid rgba(34, 34, 34, 0.5);
+  backdrop-filter: blur(3.61432px);
+}
+.director-image-wrapper {
+  @apply rounded-full w-full h-full;
+  border: 11px solid #ffb800;
+}
+.director-image-wrapper img {
+  @apply rounded-full object-cover h-full w-full;
+}
