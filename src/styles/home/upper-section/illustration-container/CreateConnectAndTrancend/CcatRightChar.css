@@ -1,0 +1,25 @@
+#CCAT-RightChar {
+  @apply absolute;
+  left: 67.47%;
+  top: 23.296%;
+}
+#CCAR-Char4 {
+  width: 100%;
+  z-index: 2;
+}
+#CCAR-Char4HandZH {
+  width: 59.58%;
+  left: -16.7%;
+  top: -6.33%;
+  z-index: 2;
+}
+#CCAR-Char4HandZL {
+  width: 31.82%;
+  left: 7%;
+  top: -1.61%;
+}
+#CCAR-BulbSeparatedPart {
+  width: 89.1%;
+  top: -21%;
+  left: -66%;
+}
