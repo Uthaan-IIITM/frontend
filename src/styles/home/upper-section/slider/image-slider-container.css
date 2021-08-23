@@ -7,10 +7,15 @@
 
 .slider-elements-wrapper-wrapper {
   overflow-x: hidden;
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .slider-elements-wrapper-wrapper-wrapper {
   overflow-x: scroll;
+  cursor: pointer;
   /* overflow-x: hidden; */
 }
 

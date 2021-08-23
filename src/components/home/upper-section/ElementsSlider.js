@@ -17,6 +17,8 @@ function ElementsSlider({
   alignment,
   elementWidth,
   carouselWidth,
+  carouselInnerHeight,
+  carouselOuterHeight,
   opacityFunction,
   scaleFunction,
   onScrollChangeFunction,
@@ -84,11 +86,16 @@ function ElementsSlider({
   }, [opacityAndScaleDimensions]);
 
   /** function to drag carousel when user is dragging **/
-  function dragCarousel(event) {
-    if (beingDragged) {
-      const userMousePos = event.clientX;
-      console.log(userMousePos);
-    }
+  function setBeingDraggedTrue(e) {
+    setBeingDragged(true);
+    // const userMousePos = e.clientX;
+    // console.log(userMousePos);
+  }
+
+  function setBeingDraggedFalse(e) {
+    setBeingDragged(false);
+    // const userMousePos = e.clientX;
+    // console.log(userMousePos);
   }
 
   function updateLayoutOnScroll(e) {
@@ -120,27 +127,45 @@ function ElementsSlider({
     <div
       className="slider-elements-wrapper-wrapper-wrapper"
       onScroll={(e) => updateLayoutOnScroll(e)}
-      style={{
-        width: carouselWidth,
-        paddinTop: paddingGeneral,
-        padduBottom: paddingGeneral,
-        height: "60vh",
-      }}
+      onMouseDown={(e) => setBeingDraggedTrue(e)}
+      onMouseUp={(e) => setBeingDraggedFalse(e)}
+      // style={{
+      //   width: carouselWidth,
+      //   // paddinTop: paddingGeneral,
+      //   // padduBottom: paddingGeneral,
+      //   height: carouselOuterHeight,
+      // }}
+      style={
+        beingDragged
+          ? {
+              width: carouselWidth,
+              height: carouselOuterHeight,
+              cursor: "grabbing",
+            }
+          : {
+              width: carouselWidth,
+              height: carouselOuterHeight,
+              cursor: "grab",
+            }
+      }
     >
       <div
         className="slider-elements-wrapper-wrapper"
         // onMouseDown={() => setBeingDragged(true)}
         // onMouseUp={() => setBeingDragged(false)}
         // onMouseMove={dragCarousel(e)}
-        style={{
-          width: "fit-content",
-        }}
+        // style={
+        //   {
+        //     width: "fit-content",
+        //   }
+        // }
       >
         <div
           className="slider-elements-wrapper"
           style={{
             marginLeft: `calc( (${carouselWidth} /2 - ${elementWidth}/ 2) + ${spaceBetween} )`,
             marginRight: `calc( (${carouselWidth} /2 - ${elementWidth}/ 2) + ${spaceBetween} )`,
+            height: carouselInnerHeight,
           }}
         >
           {sliderComponents.map((component, index) => {
@@ -152,13 +177,14 @@ function ElementsSlider({
                   width: elementWidth,
                   marginLeft: `-${spaceBetween}`,
                   marginRight: `-${spaceBetween}`,
-                  alignItems: alignment,
+                  // alignItems: alignment,
                 }}
               >
                 <div
                   className="core-slider-elements-wrapper"
                   style={{
                     width: `100%`,
+                    alignItems: alignment,
                   }}
                 >
                   {component}
@@ -184,7 +210,9 @@ ElementsSlider.defaultProps = {
   paddingGeneral: "10vw",
   alignment: "flex-end",
   carouselWidth: "100vw",
-  elementWidth: "40rem",
+  carouselInnerHeight: "35vw",
+  carouselOuterHeight: "45vw",
+  elementWidth: "60vw",
   opacityFunction: { homePageSliderOpacityController },
   scaleFunction: { homePageSliderScaleController },
 };

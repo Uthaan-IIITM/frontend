@@ -1,9 +1,13 @@
-.home-page-illustration-image-wrapper {
+.home-page-illustration-image-wrapper-tmp {
   width: 100%;
+  -webkit-user-drag: none;
+  user-select: none;
 }
-.home-page-illustration-image {
+.home-page-illustration-image-tmp {
   /* margin-left: 100%;
     margin-right: 100%; */
   width: 100%;
   height: auto;
+  -webkit-user-drag: none;
+  user-select: none;
 }
