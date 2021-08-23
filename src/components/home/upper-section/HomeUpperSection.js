@@ -11,8 +11,6 @@ import homePageSliderScaleController from './helper-functions/home-page-slider-s
 const IllustionComponentsArray = [<BridgingGapBetweenJuniorsAndSeniors />,
 < CreateConnectAndTrancend />,
 < CreateConnectAndTrancend />,
-< CreateConnectAndTrancend />,
-< CreateConnectAndTrancend />,
 < PushingBoundariesOnOurIdeasAndOurCraft />];
 
 function HomeUpperSection() {
