@@ -1,6 +1,6 @@
 import React from 'react'
 import graphic from "../../../../assets/home/what_is_uthaan.png"
-import "../../../../styles/home/upper-section/illustration-container/illustration-comp.css"
+import "../../../../styles/home/upper-section/illustration-container/illustration-comp copy.css"
 
 function ToSeekToFindNotToYield() {
     return (

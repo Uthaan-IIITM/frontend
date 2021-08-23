@@ -18,8 +18,8 @@ function App() {
         </Switch>
       </Router> */}
       {/* <PrimaryFooter /> */}
-      {/* <HomeUpperSection/> */}
-      <BridgingGapBetweenJuniorsAndSeniorsCopy containerWidth="75vw" />
+      <HomeUpperSection/>
+      {/* <BridgingGapBetweenJuniorsAndSeniorsCopy containerWidth="75vw" /> */}
     </div>
   );
 }
