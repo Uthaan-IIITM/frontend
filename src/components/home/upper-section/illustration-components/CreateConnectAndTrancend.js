@@ -4,9 +4,9 @@ import "../../../../styles/home/upper-section/illustration-container/illustratio
 
 function ToSeekToFindNotToYield() {
     return (
-        <div className="home-page-illustration-image-wrapper">
+        <div className="home-page-illustration-image-wrapper-tmp">
             <img src={graphic} alt="graphic"
-                className="home-page-illustration-image" />
+                className="home-page-illustration-image-tmp" />
         </div>
     )
 }
