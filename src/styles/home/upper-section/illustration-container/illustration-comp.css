@@ -1,10 +1,9 @@
 .home-page-illustration-image-wrapper {
-  @apply relative;
+  width: 100%;
 }
-
-.home-page-illustration-image-wrapper img {
-  @apply object-contain absolute top-0 left-0;
-}
-#BGBJAS-table {
-  z-index: 1;
+.home-page-illustration-image {
+  /* margin-left: 100%;
+    margin-right: 100%; */
+  width: 100%;
+  height: auto;
 }
