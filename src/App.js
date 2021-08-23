@@ -19,9 +19,8 @@ function App() {
         </Switch>
       </Router> */}
       {/* <PrimaryFooter /> */}
-      {/* <HomeUpperSection/> */}
+      <HomeUpperSection />
       {/* <BridgingGapBetweenJuniorsAndSeniorsCopy containerWidth="75vw" /> */}
-      <PushingBoundariesOnOurIdeasAndOurCraftCopy containerWidth="75vw" />
     </div>
   );
 }
