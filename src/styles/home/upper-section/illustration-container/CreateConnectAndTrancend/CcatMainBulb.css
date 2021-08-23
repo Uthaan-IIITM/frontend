@@ -1,0 +1,35 @@
+#CCAT-MainBulb {
+  @apply absolute;
+  left: 38.43%;
+  top: 17.65%;
+}
+#CCAT-BulbBaseLayer {
+  width: 100%;
+  z-index: 1;
+}
+#CCAT-BulbSeparatorLines {
+  z-index: 2;
+  top: 0%;
+  left: 1.5%;
+}
+#CCAT-BulbTopLeftPart {
+  z-index: 2;
+  width: 51%;
+  left: 0;
+  top: -0.35%;
+}
+#CCAT-BulbBottomRightPart {
+  z-index: 2;
+  width: 49.5%;
+  bottom: 0px !important;
+  right: -0.45% !important;
+  top: auto;
+  left: auto;
+}
+#CCAT-BulbFilament {
+  z-index: 5;
+  width: 38.57%;
+  bottom: -1.5%;
+  top: auto;
+  left: 31%;
+}

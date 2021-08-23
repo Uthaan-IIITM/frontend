@@ -1,0 +1,26 @@
+#CCAT-PaintingPot {
+  @apply absolute;
+  left: 48.13%;
+  top: 80.294%;
+}
+#CCAT-Pot {
+  width: 100%;
+  z-index: 11;
+}
+#CCAT-Brush1 {
+  width: 72.95%;
+  top: -100%;
+  z-index: 4;
+}
+#CCAT-Brush2 {
+  width: 37.94%;
+  top: -100%;
+  left: 30%;
+  z-index: 4;
+}
+#CCAT-Brush3 {
+  width: 70.37%;
+  top: -84%;
+  left: 43%;
+  z-index: 4;
+}
