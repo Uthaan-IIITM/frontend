@@ -14,14 +14,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Router>
-        <Switch>
-          <Route exact path="/" component={PrimaryFooter} />
-        </Switch>
-      </Router> */}
-      {/* <PrimaryFooter /> */}
-      {/* <HomeUpperSection /> */}
-      {/* <BridgingGapBetweenJuniorsAndSeniorsCopy containerWidth="75vw" /> */}
       <CreateConnectAndTrancendCopy containerWidth="60vw" />
     </div>
   );
