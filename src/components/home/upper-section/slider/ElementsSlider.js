@@ -92,10 +92,7 @@ function ElementsSlider({
 
   useEffect(() => {
     if (onScrollChangeFunction !== undefined) {
-      onScrollChangeFunction(
-        currentScrollStateIndices.floatIndex,
-        currentScrollStateIndices.intIndex
-      );
+      onScrollChangeFunction(currentScrollStateIndices);
     }
 
     scaleAndOpacitySetter(
