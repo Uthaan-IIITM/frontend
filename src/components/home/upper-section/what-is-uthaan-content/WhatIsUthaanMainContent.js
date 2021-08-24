@@ -17,7 +17,7 @@ function WhatIsUthaan() {
   );
 }
 
-function WhatIsUthaanMainContent({ currentState }) {
+function WhatIsUthaanMainContent({ currentState = 0 }) {
   return (
     <div className="what-is-uthaan-main-wrapper">
       <WhatIsUthaan />
