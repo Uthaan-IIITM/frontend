@@ -1,0 +1,19 @@
+.navbar-main-wrapper {
+  @apply sticky top-0 left-0 h-32 w-full flex justify-between pt-8;
+  padding-left: 6.875vw;
+  padding-right: 6.875vw;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+.navbar-main-left-wrapper img {
+  @apply object-contain;
+  width: 6.875vw;
+}
+.navbar-main-right-link {
+  @apply font-semibold text-lg;
+  color: #222222;
+  margin-left: 2.08vw;
+  transition: color 150ms ease-in-out;
+}
+.navbar-active-class {
+  color: #ffb800;
+}
