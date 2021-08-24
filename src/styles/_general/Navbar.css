@@ -2,6 +2,7 @@
   @apply sticky top-0 left-0 h-32 w-full flex justify-between pt-8;
   padding-left: 6.875vw;
   padding-right: 6.875vw;
+  z-index: 20;
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
 }
 .navbar-main-left-wrapper img {
