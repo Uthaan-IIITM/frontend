@@ -1,0 +1,12 @@
+.dot-wrapper {
+  transition: transform linear;
+}
+
+.dot-outer-div {
+  border-style: solid;
+  transition: border-radius linear, border-color linear;
+}
+
+.dot-inner-div {
+  transition: transform linear, background-color linear;
+}
