@@ -3,7 +3,7 @@ import ReactTextTransition, { presets } from "react-text-transition";
 
 import "../../../../styles/home/upper-section/what-is-uthaan-content/WhatIsUthaanStyledText.css";
 
-function WhatIsUthaanStyledText() {
+function WhatIsUthaanStyledText({ currentState }) {
   const [styleTextContentIndex, setStyleTextContentIndex] = useState(0);
   const StyleTextContent = [
     "ALorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus, quis dolor sit amet, consectetur adipiscing elit nunc tempus",
@@ -25,7 +25,8 @@ function WhatIsUthaanStyledText() {
       <div className="what-is-uthaan-styled-text">
         <ReactTextTransition
           text={
-            StyleTextContent[styleTextContentIndex % StyleTextContent.length]
+            // StyleTextContent[styleTextContentIndex % StyleTextContent.length]
+            StyleTextContent[currentState]
           }
           noOverflow
           springConfig={presets.wobbly}
