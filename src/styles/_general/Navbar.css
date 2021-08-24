@@ -1,8 +1,8 @@
 .navbar-main-wrapper {
-  @apply sticky top-0 left-0 h-32 w-full flex justify-between pt-8;
+  @apply sticky top-0 left-0 w-full flex justify-between pt-8 z-20;
+  height: 7.56rem;
   padding-left: 6.875vw;
   padding-right: 6.875vw;
-  z-index: 20;
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
 }
 .navbar-main-left-wrapper img {
