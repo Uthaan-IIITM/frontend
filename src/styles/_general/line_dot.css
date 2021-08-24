@@ -5,6 +5,9 @@
 .dot-outer-div {
   border-style: solid;
   transition: border-radius linear, border-color linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dot-inner-div {
