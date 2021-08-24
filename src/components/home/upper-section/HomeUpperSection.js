@@ -1,5 +1,5 @@
 import React from 'react'
-import ElementsSlider from './ElementsSlider'
+import ElementsSlider from "./slider/ElementsSlider"
 import BridgingGapBetweenJuniorsAndSeniors from './illustration-components/BridgingGapBetweenJuniorsAndSeniors';
 import CreateConnectAndTrancend from './illustration-components/CreateConnectAndTrancend';
 import PushingBoundariesOnOurIdeasAndOurCraft from './illustration-components/PushingBoundariesOnOurIdeasAndOurCraft';

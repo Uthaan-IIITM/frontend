@@ -1,9 +1,9 @@
 import PropTypes, { element } from "prop-types";
 import { useState } from "react/cjs/react.development";
-import "../../../styles/home/upper-section/slider/image-slider-container.css";
-import "../../../styles/home/upper-section/slider/core-image-slider-container.css";
-import homePageSliderOpacityController from "./helper-functions/home-page-slider-opacity-controller";
-import homePageSliderScaleController from "./helper-functions/home-page-slider-scale-controller";
+import "../../../../styles/home/upper-section/slider/image-slider-container.css";
+import "../../../../styles/home/upper-section/slider/core-image-slider-container.css";
+import homePageSliderOpacityController from "../helper-functions/home-page-slider-opacity-controller";
+import homePageSliderScaleController from "../helper-functions/home-page-slider-scale-controller";
 import formatNumber from "./slider-helpers/nemerical-formatter";
 import scaleAndOpacityControllerByActualPosition from "./slider-helpers/scale_and_opacity_controller_by_actual_position";
 import scaleAndOpacityControllerByPositionFromCenter from "./slider-helpers/scale_and_opacity_controller_by_position_from_center";
