@@ -23,7 +23,6 @@ function HomeUpperSection() {
   useEffect(() => {}, [primaryCurrentState]);
 
   function handleSliderChange(newState) {
-    console.log(newState);
     setPrimaryCurrentState(newState);
   }
 
@@ -36,7 +35,7 @@ function HomeUpperSection() {
         scaleFunction={homePageSliderScaleController}
         onScrollChangeFunction={handleSliderChange}
       />
-      <ProgressLine />
+      <ProgressLine currentState={primaryCurrentState.floatIndex} />
     </div>
   );
 }
