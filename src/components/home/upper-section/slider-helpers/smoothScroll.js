@@ -71,3 +71,5 @@ function smoothScroll(scrollParams) {
     });
     
   }
+
+  export default smoothScroll;
