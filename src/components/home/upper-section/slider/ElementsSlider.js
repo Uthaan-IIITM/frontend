@@ -4,10 +4,10 @@ import "../../../../styles/home/upper-section/slider/image-slider-container.css"
 import "../../../../styles/home/upper-section/slider/core-image-slider-container.css";
 import homePageSliderOpacityController from "../helper-functions/home-page-slider-opacity-controller";
 import homePageSliderScaleController from "../helper-functions/home-page-slider-scale-controller";
-import formatNumber from "./slider-helpers/nemerical_formatter";
-import scaleAndOpacityControllerByActualPosition from "./slider-helpers/scale_and_opacity_controller_by_actual_position";
-import scaleAndOpacityControllerByPositionFromCenter from "./slider-helpers/scale_and_opacity_controller_by_position_from_center";
-import scaleAndOpacitySetter from "./slider-helpers/scale_and_opacity_setter";
+import formatNumber from "./slider_helpers/nemerical_formatter";
+import scaleAndOpacityControllerByActualPosition from "./slider_helpers/scale_and_opacity_controller_by_actual_position";
+import scaleAndOpacityControllerByPositionFromCenter from "./slider_helpers/scale_and_opacity_controller_by_position_from_center";
+import scaleAndOpacitySetter from "./slider_helpers/scale_and_opacity_setter";
 import { useEffect, useRef } from "react";
 
 function ElementsSlider({
