@@ -6,7 +6,7 @@
 .home-lower-section-director-section {
   max-width: 45rem;
   width: 80%;
-  @apply mx-auto flex items-center justify-center;
+  @apply mx-auto flex items-center justify-center mb-32;
 }
 .home-lower-section-director-section-content {
   color: #222222;
