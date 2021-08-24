@@ -5,9 +5,9 @@ import "../../../../styles/home/upper-section/what-is-uthaan-content/WhatIsUthaa
 
 function WhatIsUthaanStyledText({ currentState = 0 }) {
   const StyleTextContent = [
-    "ALorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus, quis dolor sit amet, consectetur adipiscing elit nunc tempus",
-    "BLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus, quis dolor sit amet, consectetur adipiscing elit nunc tempus",
-    "CLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus, quis dolor sit amet, consectetur adipiscing elit nunc tempus",
+    "Bridging The Gap Between Juniors And Seniors",
+    "Pushing Boundaries On Our Ideas And Our Craft",
+    "Create Connect And Trancend",
   ];
 
   return (
@@ -19,7 +19,6 @@ function WhatIsUthaanStyledText({ currentState = 0 }) {
             StyleTextContent[currentState]
           }
           noOverflow
-          springConfig={presets.wobbly}
         />
       </div>
     </div>
