@@ -14,10 +14,20 @@
 }
 
 .slider-elements-wrapper-wrapper-wrapper {
-  overflow-x: scroll;
+  overflow-x: hidden;
   cursor: pointer;
+  
   /* overflow-x: hidden; */
 }
+
+.draggable {
+  cursor: grab; 
+}
+
+.draggable:active {
+  cursor: grabbing;
+}
+
 
 /* .primary-slider-elements-container div div img{
     width: 400px;
