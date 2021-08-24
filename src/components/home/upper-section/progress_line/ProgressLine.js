@@ -26,8 +26,8 @@ function ProgressLine({ numberOfDots, currentState }) {
 }
 
 ProgressLine.propTypes = {
-  numberOfDots: PropTypes.number.isRequired,
-  currentState: PropTypes.number.isRequired,
+  numberOfDots: PropTypes.number,
+  currentState: PropTypes.number,
 };
 
 export default ProgressLine;
