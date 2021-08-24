@@ -285,9 +285,9 @@ ElementsSlider.defaultProps = {
   paddingGeneral: "10vw",
   alignment: "flex-end",
   carouselWidth: "100vw",
-  carouselInnerHeight: "35vw",
-  carouselOuterHeight: "45vw",
-  elementWidth: "60vw",
+  carouselInnerHeight: "30vw",
+  carouselOuterHeight: "35vw",
+  elementWidth: "45vw",
   opacityFunction: { homePageSliderOpacityController },
   scaleFunction: { homePageSliderScaleController },
 };
