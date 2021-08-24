@@ -16,7 +16,7 @@
 .slider-elements-wrapper-wrapper-wrapper {
   overflow-x: hidden;
   cursor: pointer;
-  
+  transition: opacity 0.2s ease-out;
   /* overflow-x: hidden; */
 }
 
