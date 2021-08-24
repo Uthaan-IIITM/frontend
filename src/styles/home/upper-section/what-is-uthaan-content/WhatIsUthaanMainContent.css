@@ -8,19 +8,19 @@
   @apply flex flex-col text-center;
 }
 .what-is-uthaan-left-wrapper span:first-child {
-  @apply font-semibold text-5xl;
+  @apply font-semibold text-4xl;
   color: #31a72f;
 }
 .what-is-uthaan-left-wrapper span:last-child {
-  @apply font-normal text-2xl ml-1.5;
+  @apply font-normal text-xl ml-1.5;
   color: #222222;
 }
 .what-is-uthaan-right-wrapper {
-  @apply font-extrabold text-7xl text-center;
+  @apply font-extrabold text-6xl text-center;
   color: #222222;
 }
 .what-is-uthaan-right-wrapper-wrapper {
-  font-size: 10rem;
+  font-size: 8rem;
   line-height: 72%;
   color: #222222;
 }
