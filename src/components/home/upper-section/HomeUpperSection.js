@@ -5,6 +5,7 @@ import CreateConnectAndTrancend from "./illustration-components/CreateConnectAnd
 import PushingBoundariesOnOurIdeasAndOurCraft from "./illustration-components/PushingBoundariesOnOurIdeasAndOurCraft";
 import homePageSliderOpacityController from "./helper-functions/home-page-slider-opacity-controller";
 import homePageSliderScaleController from "./helper-functions/home-page-slider-scale-controller";
+import WhatIsUthaanMainContent from "./what-is-uthaan-content/WhatIsUthaanMainContent";
 
 const IllustionComponentsArray = [
   <BridgingGapBetweenJuniorsAndSeniors />,
@@ -15,6 +16,7 @@ const IllustionComponentsArray = [
 function HomeUpperSection() {
   return (
     <div>
+      <WhatIsUthaanMainContent />
       <ElementsSlider
         sliderComponents={IllustionComponentsArray}
         opacityFunction={homePageSliderOpacityController}
