@@ -56,13 +56,6 @@ function ElementsSlider({
   }, []);
 
   useEffect(() => {
-    if (onScrollChangeFunction !== undefined) {
-      onScrollChangeFunction(
-        currentScrollStateIndices.floatIndex,
-        currentScrollStateIndices.intIndex
-      );
-    }
-
     let [
       localeArrayForOpacityCalculationByPositionFromCenter,
       localeArrayForScaleCalculationByPositionFromCenter,
@@ -98,6 +91,13 @@ function ElementsSlider({
   }, [currentScrollStateIndices]);
 
   useEffect(() => {
+    if (onScrollChangeFunction !== undefined) {
+      onScrollChangeFunction(
+        currentScrollStateIndices.floatIndex,
+        currentScrollStateIndices.intIndex
+      );
+    }
+
     scaleAndOpacitySetter(
       sliderChildElements.current,
       opacityAndScaleDimensions.scaleDimensionsByActualPosition,
