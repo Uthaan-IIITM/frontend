@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../../styles/_general/line_dot.css";
+import { useEffect } from "react/cjs/react.development";
 
 function LineDot({
   innerRadiusStates,
@@ -13,34 +14,41 @@ function LineDot({
   transitionDuration,
   // defaultState,
 }) {
+  useEffect(() => {
+    let outerDiv = document.getElementsByClassName("dot-outer-div")[0];
+    let innerDiv = document.getElementsByClassName("dot-inner-div")[0];
+
+    // let outerWidth = `calc(${Math.up}`
+  }, [Math.floor(currentState)]);
+
   return (
     <div
       className="dot-wrapper"
       // style={{
-      //   width: `calc( ${2 * outerRadiusStates[currentState]})`,
-      //   height: `calc( ${2 * outerRadiusStates[currentState]})`,
+      //   width: `calc( ${2 * outerRadiusStates[Math.floor(currentState)]})`,
+      //   height: `calc( ${2 * outerRadiusStates[Math.floor(currentState)]})`,
       // }}
     >
       <div
         className="dot-outer-div"
         style={{
-          width: `calc( ${outerRadiusStates[currentState]}*2)`,
-          height: `calc( ${outerRadiusStates[currentState]}*2)`,
-          borderRadius: `${outerRadiusStates[currentState]}`,
-          opacity: opacityStates[currentState],
-          borderWidth: `${strokeStates[currentState]}`,
-          borderColor: outerCircleColorStates[currentState],
+          width: `calc( ${outerRadiusStates[Math.floor(currentState)]}*2)`,
+          height: `calc( ${outerRadiusStates[Math.floor(currentState)]}*2)`,
+          borderRadius: `${outerRadiusStates[Math.floor(currentState)]}`,
+          opacity: opacityStates[Math.floor(currentState)],
+          borderWidth: `${strokeStates[Math.floor(currentState)]}`,
+          borderColor: outerCircleColorStates[Math.floor(currentState)],
           transitionDuration: `${transitionDuration}ms`,
         }}
       >
         <div
           className="dot-inner-div"
           style={{
-            width: `calc( ${innerRadiusStates[currentState]}*2)`,
-            height: `calc( ${innerRadiusStates[currentState]} * 2)`,
-            borderRadius: `${innerRadiusStates[currentState]}`,
-            opacity: opacityStates[currentState],
-            backgroundColor: innerCircleColorStates[currentState],
+            width: `calc( ${innerRadiusStates[Math.floor(currentState)]}*2)`,
+            height: `calc( ${innerRadiusStates[Math.floor(currentState)]} * 2)`,
+            borderRadius: `${innerRadiusStates[Math.floor(currentState)]}`,
+            opacity: opacityStates[Math.floor(currentState)],
+            backgroundColor: innerCircleColorStates[Math.floor(currentState)],
             transitionDuration: `${transitionDuration}ms`,
           }}
         ></div>
