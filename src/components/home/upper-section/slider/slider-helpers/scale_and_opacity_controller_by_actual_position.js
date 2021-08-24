@@ -1,4 +1,4 @@
-import formatNumber from "../slider-helpers/nemerical-formatter";
+import formatNumber from "../slider-helpers/nemerical_formatter";
 
 const scaleAndOpacityControllerByActualPosition = (
   currentPositionIndex,
