@@ -17,11 +17,11 @@ function WhatIsUthaan() {
   );
 }
 
-function WhatIsUthaanMainContent() {
+function WhatIsUthaanMainContent({ currentState }) {
   return (
     <div className="what-is-uthaan-main-wrapper">
       <WhatIsUthaan />
-      <WhatIsUthaanStyledText />
+      <WhatIsUthaanStyledText currentState={currentState} />
     </div>
   );
 }
