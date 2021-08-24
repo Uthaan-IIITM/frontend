@@ -35,9 +35,25 @@ function ElementsSlider({
   const [currentScrollStateIndices, setCurrentScrollStateIndices] = useState(
     {}
   );
+  const [sliderOpacity, setSliderOpacity] = useState(0);
   // const [lastTimeBeingAnimated, setLastTimeBeingAnimated] = useState(
   //   Date.now()
   // );
+
+  useEffect(() => {
+    let sliderElemnts = document.getElementsByClassName(
+      "slider-elements-wrapper-wrapper-wrapper"
+    );
+
+    for (let index = 0; index < sliderElemnts.length; index++) {
+      const element = sliderElemnts[index];
+      element.scrollLeft = 1;
+      element.scrollLeft = 0;
+    }
+    setTimeout(() => {
+      setSliderOpacity(1);
+    }, 400);
+  }, []);
 
   useEffect(() => {
     if (onScrollChangeFunction !== undefined) {
@@ -144,7 +160,7 @@ function ElementsSlider({
   function scrollToPosition(index, element) {
     let childElements = element.childNodes[0].childNodes[0].childNodes;
     let sliderfirstElement = childElements[0];
-    
+
     let elementWidth = getComputedStyle(sliderfirstElement).width;
     let sliderfirstElementComputedStyles = getComputedStyle(sliderfirstElement);
     // console.log( parseInt( elementWidth) * index)
@@ -206,6 +222,7 @@ function ElementsSlider({
       style={{
         width: carouselWidth,
         height: carouselOuterHeight,
+        opacity: sliderOpacity,
       }}
     >
       <div
