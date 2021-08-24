@@ -18,7 +18,7 @@ const images = importAll(
   )
 );
 
-function PushingBoundariesOnOurIdeasAndOurCraftCopy({ containerWidth }) {
+function PushingBoundariesOnOurIdeasAndOurCraftCopy({ containerWidth="75vw" }) {
   return (
     <div
       className="home-page-illustration-image-wrapper"
