@@ -26,7 +26,7 @@ const images = importAll(
   )
 );
 
-function CreateConnectAndTrancendCopy({ containerWidth }) {
+function CreateConnectAndTrancendCopy({ containerWidth = "75vw" }) {
   return (
     <div
       className="home-page-illustration-image-wrapper"

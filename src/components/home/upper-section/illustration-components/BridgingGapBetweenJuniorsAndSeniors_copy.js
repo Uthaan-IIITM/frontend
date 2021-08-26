@@ -24,7 +24,7 @@ const images = importAll(
   )
 );
 
-function BridgingGapBetweenJuniorsAndSeniorsCopy({ containerWidth }) {
+function BridgingGapBetweenJuniorsAndSeniorsCopy({ containerWidth ="75vw" }) {
   return (
     <div
       className="home-page-illustration-image-wrapper"
