@@ -10,14 +10,48 @@
   width: 59.58%;
   left: -16.7%;
   top: -6.33%;
+  transform-origin: 90% 90%;
+  animation: CCAR-Char4HandZH-anim 3s linear infinite alternate;
 }
 #CCAR-Char4HandZL {
   width: 31.82%;
   left: 7%;
   top: -1.61%;
+  transform-origin: 90% 80%;
+  animation: CCAR-Char4HandZL-anim 3s linear infinite alternate;
 }
 #CCAR-BulbSeparatedPart {
   width: 89.1%;
   top: -21%;
   left: -66%;
+  transform-origin: 130% 70%;
+  animation: CCAR-BulbSeparatedPart-anim 3s linear infinite alternate;
+
+}
+
+@keyframes CCAR-Char4HandZH-anim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes CCAR-Char4HandZL-anim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes CCAR-BulbSeparatedPart-anim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-10deg);
+  }
 }
