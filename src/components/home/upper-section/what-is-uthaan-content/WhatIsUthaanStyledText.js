@@ -1,14 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactTextTransition, { presets } from "react-text-transition";
 
 import "../../../../styles/home/upper-section/what-is-uthaan-content/WhatIsUthaanStyledText.css";
 
 function WhatIsUthaanStyledText({ currentState = 0 }) {
-  const StyleTextContent = [
+  const previousAnimState = useRef(currentState);
+  const [textAnimDirection, setTextAnimDirection] = useState("up");
+
+  useEffect(() => {
+    if (currentState > previousAnimState.current) {
+      setTextAnimDirection("up");
+    } else {
+      setTextAnimDirection("down");
+    }
+    previousAnimState.current = currentState;
+  }, [currentState]);
+
+  const StyleTextContent = useRef([
     "Bridging The Gap Between Juniors And Seniors",
     "Pushing Boundaries On Our Ideas And Our Craft",
     "Create Connect And Trancend",
-  ];
+  ]);
+
+  console.log(currentState);
 
   return (
     <div>
@@ -16,9 +30,9 @@ function WhatIsUthaanStyledText({ currentState = 0 }) {
         <ReactTextTransition
           text={
             // StyleTextContent[styleTextContentIndex % StyleTextContent.length]
-            StyleTextContent[currentState]
+            StyleTextContent.current[currentState]
           }
-          noOverflow
+          direction={textAnimDirection}
         />
       </div>
     </div>
