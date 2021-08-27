@@ -11,25 +11,25 @@
   left: -16.21%;
   top: 25.02%;
   transform-origin: 100% 10%;
-  animation: hands-anim-h 5s ease-in-out infinite alternate;
+  animation: CCAR-Char3HandZH-anim 5s ease-in-out infinite alternate;
 }
 #CCAR-Char3HandZL {
   width: 52.37%;
   left: -16.21%;
   top: 24.02%;
   transform-origin: 100% 20%;
-  animation: hands-anim-l 5s ease-in-out infinite alternate; 
+  animation: CCAR-Char3HandZL-anim 5s ease-in-out infinite alternate; 
 }
 #CCAR-BulbBottomSeparatedPart {
   width: 52.37%;
   left: -31.21%;
   top: 31.02%;
   transform-origin: 150% 20%;
-  animation: seperated-bulb-part-anim 5s ease-in-out infinite alternate; 
+  animation: CCAR-BulbBottomSeparatedPart-anim 5s ease-in-out infinite alternate; 
 
 }
 
-@keyframes hands-anim-h {
+@keyframes CCAR-Char3HandZH-anim {
   from {
     transform: rotate(0deg);
   }
@@ -37,7 +37,7 @@
     transform: rotate(-6deg);
   }
 }
-@keyframes hands-anim-l {
+@keyframes CCAR-Char3HandZL-anim {
   from {
     transform: rotate(0deg);
   }
@@ -45,7 +45,7 @@
     transform: rotate(-6deg);
   }
 }
-@keyframes seperated-bulb-part-anim {
+@keyframes CCAR-BulbBottomSeparatedPart-anim {
   from {
     transform: rotate(0deg);
   }
