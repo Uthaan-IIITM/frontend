@@ -14,14 +14,14 @@ function CcatBottomChar({ bottomCharContainerWidth }) {
       }}
       id="CCAT-BottomChar"
     >
-      <img src={char3} alt="ccat_graphic" id="CCAR-Char3" />
       <img src={char3HandZH} alt="ccat_graphic" id="CCAR-Char3HandZH" />
-      <img src={char3HandZL} alt="ccat_graphic" id="CCAR-Char3HandZL" />
+      <img src={char3} alt="ccat_graphic" id="CCAR-Char3" />
       <img
         src={bulbBottomSeparatedPart}
         alt="ccat_graphic"
         id="CCAR-BulbBottomSeparatedPart"
       />
+      <img src={char3HandZL} alt="ccat_graphic" id="CCAR-Char3HandZL" />
     </div>
   );
 }
