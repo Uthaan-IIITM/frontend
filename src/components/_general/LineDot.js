@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../../styles/_general/line_dot.css";
-import { useEffect } from "react/cjs/react.development";
+import { useEffect, useState } from "react/cjs/react.development";
+import calculateRelativeValue from "./helpers/relative_property_value_calculator";
+import formatNumber from "./helpers/nemerical_formatter";
 
 function LineDot({
   innerRadiusStates,
@@ -14,41 +16,80 @@ function LineDot({
   transitionDuration,
   // defaultState,
 }) {
-  useEffect(() => {
-    let outerDiv = document.getElementsByClassName("dot-outer-div")[0];
-    let innerDiv = document.getElementsByClassName("dot-inner-div")[0];
+  const [stateFraction, setStateFraction] = useState(0);
 
-    // let outerWidth = `calc(${Math.up}`
-  }, [Math.floor(currentState)]);
+  useEffect(() => {
+    setStateFraction(Math.ceil(currentState) - currentState);
+  }, [currentState]);
 
   return (
-    <div
-      className="dot-wrapper"
-      // style={{
-      //   width: `calc( ${2 * outerRadiusStates[Math.floor(currentState)]})`,
-      //   height: `calc( ${2 * outerRadiusStates[Math.floor(currentState)]})`,
-      // }}
-    >
+    <div className="dot-wrapper">
       <div
         className="dot-outer-div"
         style={{
-          width: `calc( ${outerRadiusStates[Math.floor(currentState)]}*2)`,
-          height: `calc( ${outerRadiusStates[Math.floor(currentState)]}*2)`,
-          borderRadius: `${outerRadiusStates[Math.floor(currentState)]}`,
-          opacity: opacityStates[Math.floor(currentState)],
-          borderWidth: `${strokeStates[Math.floor(currentState)]}`,
-          borderColor: outerCircleColorStates[Math.floor(currentState)],
+          width: calculateRelativeValue(
+            outerRadiusStates,
+            stateFraction,
+            currentState,
+            2
+          ),
+          height: calculateRelativeValue(
+            outerRadiusStates,
+            stateFraction,
+            currentState,
+            2
+          ),
+          borderRadius: calculateRelativeValue(
+            outerRadiusStates,
+            stateFraction,
+            currentState,
+            1
+          ),
+          opacity: calculateRelativeValue(
+            opacityStates,
+            stateFraction,
+            currentState,
+            1
+          ),
+          borderWidth: calculateRelativeValue(
+            strokeStates,
+            stateFraction,
+            currentState,
+            1
+          ),
+          borderColor: outerCircleColorStates[formatNumber(currentState, 0)],
           transitionDuration: `${transitionDuration}ms`,
         }}
       >
         <div
           className="dot-inner-div"
           style={{
-            width: `calc( ${innerRadiusStates[Math.floor(currentState)]}*2)`,
-            height: `calc( ${innerRadiusStates[Math.floor(currentState)]} * 2)`,
-            borderRadius: `${innerRadiusStates[Math.floor(currentState)]}`,
-            opacity: opacityStates[Math.floor(currentState)],
-            backgroundColor: innerCircleColorStates[Math.floor(currentState)],
+            width: calculateRelativeValue(
+              innerRadiusStates,
+              stateFraction,
+              currentState,
+              2
+            ),
+            height: calculateRelativeValue(
+              innerRadiusStates,
+              stateFraction,
+              currentState,
+              2
+            ),
+            borderRadius: calculateRelativeValue(
+              innerRadiusStates,
+              stateFraction,
+              currentState,
+              1
+            ),
+            opacity: calculateRelativeValue(
+              opacityStates,
+              stateFraction,
+              currentState,
+              1
+            ),
+            backgroundColor:
+              innerCircleColorStates[formatNumber(currentState, 0)],
             transitionDuration: `${transitionDuration}ms`,
           }}
         ></div>
@@ -70,14 +111,14 @@ LineDot.propTypes = {
 
 LineDot.defaultProps = {
   innerRadiusStates: ["0.5vw", "0.3vw", "0.1vw"],
-  outerRadiusStates: ["0.8vw", "0.6vw", "0.4vw"],
-  innerCircleColorStates: ["#FFBC10", "#FFE39A", "#FFF0C9"],
-  outerCircleColorStates: ["#222222", "#444444", "#888888"],
+  outerRadiusStates: ["0.9vw", "0.6vw", "0.4vw"],
+  innerCircleColorStates: ["#FFBC10", "#FFBC10", "#FFBC10"],
+  outerCircleColorStates: ["#222222", "#222222", "#222222"],
   strokeStates: ["3px", "1px", "1px"],
-  opacityStates: [1, 1, 1],
+  opacityStates: [1, 0.7, 0.5],
   // defaultState: 0,
   currentState: 0,
-  transitionDuration: 200,
+  transitionDuration: 100,
 };
 
 export default LineDot;
