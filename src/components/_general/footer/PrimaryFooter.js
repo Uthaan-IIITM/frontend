@@ -2,13 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import uthaanLogo from "../../../assets/uthaan_logo/uthaan_logo.svg";
 import Instituelogo from "../../../assets/footer/insitute_logo.svg";
-import linkedInIcon from "../../../assets/footer/ic_linkedin.svg";
-import linkedInIconHover from "../../../assets/footer/h_ic_linkedin.svg";
-import githubIcon from "../../../assets/footer/ic_github.svg";
-import githubIconHover from "../../../assets/footer/h_ic_github.svg";
-import mailIcon from "../../../assets/footer/ic_mail.svg";
-import mailIconHover from "../../../assets/footer/h_ic_mail.svg";
+
 import "../../../styles/_general/PrimaryFooter.css";
+import "../../../styles/_general/responsive/primary_footer_responsive.css";
 import ImageStackComponent from "./footer_helper/ImageStackComponent";
 
 function importAll(r) {
