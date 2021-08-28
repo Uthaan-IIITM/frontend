@@ -9,9 +9,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
 }
 
 .dot-inner-div {
   transition: transform linear, background-color linear, width linear,
     height linear;
+  border-radius: 50%;
 }
