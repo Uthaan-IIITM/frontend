@@ -11,6 +11,22 @@ import mailIconHover from "../../../assets/footer/h_ic_mail.svg";
 import "../../../styles/_general/PrimaryFooter.css";
 import ImageStackComponent from "./footer_helper/ImageStackComponent";
 
+function importAll(r) {
+  let images = {};
+  r.keys().map((item, index) => {
+    images[item.replace("./", "")] = r(item);
+  });
+  return images;
+}
+
+const images = importAll(
+  require.context(
+    "../../../assets/_general/social_media_icons",
+    false,
+    /\.(png|jpe?g|svg)$/
+  )
+);
+
 const General = ["Home", "Admin"];
 const Browse = [
   "Events & Shows",
@@ -21,6 +37,14 @@ const Browse = [
   "Contact Us",
 ];
 const Support = ["contact@uthaan.org", "(+91) 8989738932", "(+91) 8317057596"];
+const SocialMediaIcons = [
+  "facebook",
+  "mail",
+  "instagram",
+  "youtube",
+  "linkedin",
+  "github",
+];
 
 const GeneralList = General.map((General, index) => {
   return (
@@ -41,6 +65,14 @@ const SupportList = Support.map((Support, index) => {
     <li key={index}>
       <Link to="/">{Support}</Link>
     </li>
+  );
+});
+const SocialMediaIconsList = SocialMediaIcons.map((SocialMediaIcons, index) => {
+  return (
+    <ImageStackComponent
+      normalDisplay={images[`ic_${SocialMediaIcons}.svg`].default}
+      hoverDisplay={images[`h_ic_${SocialMediaIcons}.svg`].default}
+    />
   );
 });
 
@@ -83,18 +115,7 @@ function PrimaryFooter() {
               display: "flex",
             }}
           >
-            <ImageStackComponent
-              normalDisplay={linkedInIcon}
-              hoverDisplay={linkedInIconHover}
-            />
-            <ImageStackComponent
-              normalDisplay={githubIcon}
-              hoverDisplay={githubIconHover}
-            />
-            <ImageStackComponent
-              normalDisplay={mailIcon}
-              hoverDisplay={mailIconHover}
-            />
+            {SocialMediaIconsList}
           </div>
           <p>
             <Link to="/">Privacy Policy</Link>
