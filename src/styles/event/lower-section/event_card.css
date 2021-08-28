@@ -1,0 +1,18 @@
+.event-card-wrapper-wrapper {
+  width: 33.85vw;
+  height: 23.55vw;
+  background: #020001;
+}
+.event-card-image-wrapper {
+  height: 80.1%;
+  padding-top: 0.85vw;
+  padding-left: 0.88vw;
+  padding-right: 0.88vw;
+}
+.event-card-image-wrapper img {
+  @apply h-full w-full object-cover;
+}
+.event-card-title {
+  @apply text-white font-bold;
+  font-size: 2.13vw;
+}
