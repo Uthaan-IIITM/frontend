@@ -39,12 +39,6 @@ function LineDot({
             currentState,
             2
           ),
-          borderRadius: calculateRelativeValue(
-            outerRadiusStates,
-            stateFraction,
-            currentState,
-            1
-          ),
           opacity: calculateRelativeValue(
             opacityStates,
             stateFraction,
@@ -75,12 +69,6 @@ function LineDot({
               stateFraction,
               currentState,
               2
-            ),
-            borderRadius: calculateRelativeValue(
-              innerRadiusStates,
-              stateFraction,
-              currentState,
-              1
             ),
             opacity: calculateRelativeValue(
               opacityStates,
