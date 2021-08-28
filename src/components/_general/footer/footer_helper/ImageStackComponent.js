@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../../../styles/_general/ImageStackComponent.css";
+import "../../../../styles/_general/responsive/image_stack_component_responsive.css";
 
 function ImageStackComponent(props) {
   const [displayClass, setDisplayClass] = useState(
