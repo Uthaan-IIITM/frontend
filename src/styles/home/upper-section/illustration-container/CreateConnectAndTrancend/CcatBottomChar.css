@@ -1,7 +1,7 @@
 #CCAT-BottomChar {
   @apply absolute;
-  top: 58.54%;
-  left: 53.03%;
+  top: 59%;
+  left: 54%;
 }
 #CCAR-Char3 {
   width: 100%;
@@ -10,17 +10,46 @@
   width: 58.99%;
   left: -16.21%;
   top: 25.02%;
-  z-index: -1;
+  transform-origin: 100% 10%;
+  animation: CCAR-Char3HandZH-anim 5s ease-in-out infinite alternate;
 }
 #CCAR-Char3HandZL {
   width: 52.37%;
   left: -16.21%;
   top: 24.02%;
-  z-index: -3;
+  transform-origin: 100% 20%;
+  animation: CCAR-Char3HandZL-anim 5s ease-in-out infinite alternate; 
 }
 #CCAR-BulbBottomSeparatedPart {
   width: 52.37%;
-  z-index: -2;
   left: -31.21%;
   top: 31.02%;
+  transform-origin: 150% 20%;
+  animation: CCAR-BulbBottomSeparatedPart-anim 5s ease-in-out infinite alternate; 
+
+}
+
+@keyframes CCAR-Char3HandZH-anim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-6deg);
+  }
+}
+@keyframes CCAR-Char3HandZL-anim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-6deg);
+  }
+}
+@keyframes CCAR-BulbBottomSeparatedPart-anim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-5deg);
+  }
 }

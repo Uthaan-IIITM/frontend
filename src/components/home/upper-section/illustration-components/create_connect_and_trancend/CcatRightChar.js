@@ -17,14 +17,14 @@ function CcatRightChar({ rightCharContainerWidth }) {
       }}
       id="CCAT-RightChar"
     >
-      <img src={char4} alt="ccat_graphic" id="CCAR-Char4" />
-      <img src={char4HandZH} alt="ccat_graphic" id="CCAR-Char4HandZH" />
       <img src={char4HandZL} alt="ccat_graphic" id="CCAR-Char4HandZL" />
+      <img src={char4} alt="ccat_graphic" id="CCAR-Char4" />
       <img
         src={bulbSeparatedPart}
         alt="ccat_graphic"
         id="CCAR-BulbSeparatedPart"
       />
+      <img src={char4HandZH} alt="ccat_graphic" id="CCAR-Char4HandZH" />
     </div>
   );
 }
