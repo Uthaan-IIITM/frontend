@@ -1,13 +1,31 @@
 .event-card-wrapper-wrapper {
+  @apply relative;
   width: 33.85vw;
   height: 23.55vw;
   background: #020001;
+  padding-top: 0.85vw;
+}
+.event-card-wrapper-wrapper::after {
+  content: "";
+  position: absolute;
+  visibility: visible;
+  top: 0px;
+  /* right: -1.2vw; */
+  /* postion of the triangle */
+  border: 1.61vw solid transparent; /* width of the triangle */
+  border-top: 1.23vw solid #020001; /* height of the triangle */
+}
+.event-card-wrapper-wrapper-is-left::after {
+  right: -1.2vw;
+}
+.event-card-wrapper-wrapper-is-right::after {
+  left: -1.2vw;
 }
 .event-card-image-wrapper {
+  @apply relative;
   height: 80.1%;
-  padding-top: 0.85vw;
-  padding-left: 0.88vw;
-  padding-right: 0.88vw;
+  margin-left: 2.61%;
+  margin-right: 2.61%;
 }
 .event-card-image-wrapper img {
   @apply h-full w-full object-cover;
@@ -15,4 +33,19 @@
 .event-card-title {
   @apply text-white font-bold;
   font-size: 2.13vw;
+  margin-left: 6.6%;
+  margin-right: 6.6%;
+}
+.event-card-description {
+  @apply absolute left-0 bottom-0 flex items-end;
+  padding-left: 1.35vw;
+  padding-right: 1.35vw;
+  padding-bottom: 1.1vw;
+  height: 55%;
+  background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+}
+.event-card-description div {
+  @apply text-white font-semibold;
+  font-size: 1vw;
+  width: 90%;
 }
