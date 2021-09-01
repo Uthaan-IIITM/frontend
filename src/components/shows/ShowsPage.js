@@ -17,6 +17,8 @@ function ShowsPage() {
         ]}
         bgELementsRatios={[1, 0.9, 0.55, 0.45]}
         primaryHeight="50vh"
+        topicTitle="Shows"
+        topicDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus, quis dolor sit amet"
       />
       {/* <Graphic1 /> */}
     </div>
