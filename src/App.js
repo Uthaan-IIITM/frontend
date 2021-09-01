@@ -3,6 +3,7 @@ import "./styles/App.css";
 import Navbar from "./components/_general/Navbar";
 import HomePage from "./components/home/HomePage";
 import EventPage from "./components/event/EventPage";
+import ShowsPage from "./components/shows/ShowsPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/events" component={EventPage} />
+          <Route exact path="/shows" component={ShowsPage} />
         </Switch>
       </Router>
     </div>
