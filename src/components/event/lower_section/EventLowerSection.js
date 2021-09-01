@@ -1,15 +1,15 @@
 import React from "react";
-import LineDot from "../../_general/LineDot";
-import EventCard from "./EventCard";
+
+import "../../../styles/event/lower-section/event_lower_section.css";
+import EventTimeline from "./EventTimeline";
 
 function EventLowerSection() {
   return (
-    <div>
-      <LineDot
-        innerRadiusStates={["1vw"]}
-        outerRadiusStates={["1.5vw"]}
-        innerCircleColorStates={["#303030"]}
-      />
+    <div className="event-lower-section-wrapper">
+      <EventTimeline />
+      <EventTimeline isRight />
+      <EventTimeline />
+      <EventTimeline isRight />
     </div>
   );
 }

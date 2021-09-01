@@ -1,0 +1,14 @@
+.event-timeline-wrapper-wrapper {
+  width: 50%;
+  border-right: 3.5px dashed #000000;
+}
+.event-timeline-wrapper {
+  @apply ml-auto relative;
+  width: fit-content;
+  margin-right: 6.5%;
+}
+.event-line-dot-wrapper {
+  @apply absolute;
+  top: -4.5%;
+  right: -12.9%;
+}
