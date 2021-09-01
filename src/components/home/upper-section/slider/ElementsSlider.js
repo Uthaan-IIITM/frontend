@@ -28,7 +28,6 @@ function ElementsSlider({
   const previousScrollPosition = useRef(0);
   const startMousePosition = useRef(0);
 
-  // const [sliderChildElements, setSliderChildElements] = useState([]);
   const [opacityAndScaleDimensions, setOpacityAndScaleDimensions] = useState(
     {}
   );
@@ -36,9 +35,6 @@ function ElementsSlider({
     {}
   );
   const [sliderOpacity, setSliderOpacity] = useState(0);
-  // const [lastTimeBeingAnimated, setLastTimeBeingAnimated] = useState(
-  //   Date.now()
-  // );
 
   useEffect(() => {
     let sliderElemnts = document.getElementsByClassName(
@@ -102,40 +98,24 @@ function ElementsSlider({
     );
   }, [opacityAndScaleDimensions]);
 
-  /** function to drag carousel when user is dragging **/
   function startDragging(e) {
     beingDragged.current = true;
     startMousePosition.current = e.clientX;
-    // console.log(startMousePosition.current);
-    // const userMousePos = e.clientX;
-    // console.log(userMousePos);
-  }
+    }
 
   function stopDragging(e) {
     beingDragged.current = false;
     previousScrollPosition.current = e.target.scrollLeft;
-    // console.log(currentScrollStateIndices.intIndex);
     scrollToPosition(currentScrollStateIndices.intIndex, e.target);
-    // console.log(previousScrollPosition.current);
-    // const userMousePos = e.clientX;
-    // console.log(userMousePos);
   }
 
   /** Function to drag carousel when user is dragging **/
   function dragSlider(e) {
-    // e.preventDefault();
     if (beingDragged.current) {
-      // console.log(
-      //   -e.clientX + startMousePosition.current + previousScrollPosition.current
-      // );
 
       let element = e.target;
       element.focus();
 
-      // e.target.scrollLeft =
-      //   -e.clientX +
-      //   startMousePosition.current +
-      //   previousScrollPosition.current;
       e.target.scrollTo({
         top: 0,
         left:
@@ -143,14 +123,6 @@ function ElementsSlider({
           startMousePosition.current +
           previousScrollPosition.current,
       });
-      // e.target.scrollTo({
-      //   top: 0,
-      //   left:
-      //     -e.clientX +
-      //     startMousePosition.current +
-      //     previousScrollPosition.current,
-      //   behavior: "smooth",
-      // });
     }
   }
 
@@ -160,7 +132,6 @@ function ElementsSlider({
 
     let elementWidth = getComputedStyle(sliderfirstElement).width;
     let sliderfirstElementComputedStyles = getComputedStyle(sliderfirstElement);
-    // console.log( parseInt( elementWidth) * index)
     element.scrollTo({
       top: 0,
       left:
@@ -177,7 +148,6 @@ function ElementsSlider({
     }
 
     let childElements = e.target.childNodes[0].childNodes[0].childNodes;
-    // setSliderChildElements(childElements);
     sliderChildElements.current = childElements;
 
     let sliderfirstElement = childElements[0];
@@ -210,12 +180,6 @@ function ElementsSlider({
       onMouseLeave={(e) => stopDragging(e)}
       onDragStart={(e) => startDragging(e)}
       onMouseMove={(e) => dragSlider(e)}
-      // style={{
-      //   width: carouselWidth,
-      //   // paddinTop: paddingGeneral,
-      //   // padduBottom: paddingGeneral,
-      //   height: carouselOuterHeight,
-      // }}
       style={{
         width: carouselWidth,
         height: carouselOuterHeight,
@@ -224,11 +188,7 @@ function ElementsSlider({
     >
       <div
         className="slider-elements-wrapper-wrapper"
-        // onMouseDown={() => setBeingDragged(true)}
-        // onMouseUp={() => setBeingDragged(false)}
-        // onMouseMove={dragCarousel(e)}
         style={{
-          // width: "fit-content",
           pointerEvents: "none",
         }}
       >
@@ -251,7 +211,6 @@ function ElementsSlider({
                   marginLeft: `-${spaceBetween}`,
                   marginRight: `-${spaceBetween}`,
                   pointerEvents: "none",
-                  // alignItems: alignment,
                 }}
               >
                 <div
