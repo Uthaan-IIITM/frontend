@@ -15,10 +15,10 @@
   overflow: hidden;
 }
 
-.listing-pages-top-breif-sec-text-wrapper{
+.listing-pages-top-breif-sec-text-wrapper {
   position: absolute;
-  top: 15vh;
-  left: 10vw;
+  top: 0;
+  left: 0;
 }
 
 .listing-pages-floating-bg-img {
