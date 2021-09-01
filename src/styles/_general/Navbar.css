@@ -3,17 +3,24 @@
   height: 7.56rem;
   padding-left: 6.9vw;
   padding-right: 6.9vw;
+  pointer-events: none;
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
 }
 .navbar-main-left-wrapper img {
   @apply object-contain;
   width: 6.875vw;
+  pointer-events: all;
+  cursor: pointer;
 }
 .navbar-main-right-link {
   @apply font-semibold text-lg;
   color: #222222;
   margin-left: 2.08vw;
   transition: color 150ms ease-in-out;
+}
+
+.navbar-main-right-link {
+  pointer-events: all;
 }
 .navbar-active-class {
   color: #ffb800;
