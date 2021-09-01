@@ -1,7 +1,6 @@
 .listing-pages-top-breif-sec-primary-wrapper {
   width: 100%;
   height: 100vh;
-  overflow: hidden;
 }
 
 .listing-pages-top-breif-sec-graphic-wrapper {
@@ -13,6 +12,13 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
+  overflow: hidden;
+}
+
+.listing-pages-top-breif-sec-text-wrapper{
+  position: absolute;
+  top: 15vh;
+  left: 10vw;
 }
 
 .listing-pages-floating-bg-img {
