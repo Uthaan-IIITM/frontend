@@ -16,14 +16,12 @@
 }
 
 .listing-pages-floating-bg-img {
-  /* width: 120vw; */
-  /* height: 50vh; */
   position: absolute;
-  bottom: 0;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
   position: none;
+  transition: margin 0.1s ease-in-out;
 }
 
 .listing-pages-floating-bg-img svg {
@@ -31,6 +29,6 @@
   height: 100%;
   bottom: 0;
   left: 0;
-  poiner-events: none;
+  pointer-events: none;
   position: relative;
 }
