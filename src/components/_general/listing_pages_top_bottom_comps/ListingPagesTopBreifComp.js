@@ -9,6 +9,7 @@ function ListingPagesTopBreifComp({
   primaryHeight,
   topicTitle,
   topicDescription,
+  textDivStyling,
 }) {
   const extremeBgPositionValues = useRef({
     xInitialExtremes: ["11%", "10%", "-15%", "-17%"],
@@ -61,7 +62,7 @@ function ListingPagesTopBreifComp({
     fontFamily: "Manrope",
     fontSize: "1.5vw",
     fontWeight: "500",
-    letterSpacing: "0.3em",
+    width: "40vw",
   };
 
   return (
@@ -90,7 +91,10 @@ function ListingPagesTopBreifComp({
             );
           })}
       </div>
-      <div className="listing-pages-top-breif-sec-text-wrapper">
+      <div
+        className="listing-pages-top-breif-sec-text-wrapper"
+        style={textDivStyling}
+      >
         <TextComponent
           innerContent={topicTitle}
           textComponentStyle={textTitleStyle}
