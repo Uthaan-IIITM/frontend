@@ -1,0 +1,26 @@
+
+.lisitng-page-center-text-div-for-events-page {
+    position: absolute;
+    top: 10vw;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .listing-page-center-text-title-for-events-page {
+    font-size: 4vw;
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    text-align: center;
+  }
+  
+  .listing-page-center-text-description-for-events-page {
+    font-size: 1.5vw;
+    font-weight: 500;
+    width: 40vw;
+    text-align: center;
+  }
+  
