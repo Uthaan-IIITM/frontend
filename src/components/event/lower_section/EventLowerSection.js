@@ -11,31 +11,18 @@ function EventLowerSection() {
         "event-lower-section-wrapper"
       )[0].childNodes;
 
-      // console.log(childElements.length);
-      // childElements.splice(-1,1);
-      // console.log(childElements);
-
-      // let elemHeight = childElements[0].offsetHeight;
       let elemHeight = parseFloat(
         getComputedStyle(childElements[0]).getPropertyValue("height")
       );
-      // console.log(elemHeight);
 
       let firstChildElemPosition = childElements[0].getBoundingClientRect().top;
-      // let firstChildElemPosition = getComputedStyle(
-      //   childElements[0]
-      // ).getPropertyValue("position");
-      console.log(firstChildElemPosition);
 
       let positionDiffrenceBetweenFirstElemAndCenter =
         window.innerHeight / 2 - firstChildElemPosition;
-      console.log(positionDiffrenceBetweenFirstElemAndCenter);
 
       let activePositionIdexForLine = Math.ceil(
         positionDiffrenceBetweenFirstElemAndCenter / elemHeight
       );
-
-      console.log(activePositionIdexForLine);
 
       let lineDiv = document.getElementsByClassName(
         "events-timeline-filled-line"
@@ -47,12 +34,7 @@ function EventLowerSection() {
         lineDivHeight = lineDivHeight + (3 * window.innerWidth) / 100;
       }
 
-      console.log(lineDivHeight);
       lineDiv.style.height = lineDivHeight + "px";
-
-      // if () {
-      //   childElements[childElements.length - 1].classList.add("active");
-      // }
     });
   }, []);
 
