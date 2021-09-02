@@ -4,6 +4,8 @@ import "../../../styles/event/lower-section/event_lower_section.css";
 import EventTimeline from "./EventTimeline";
 import { useEffect } from "react/cjs/react.development";
 
+import SecondaryFooter from "../../_general/footer/SecondaryFooter";
+
 function EventLowerSection() {
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -43,13 +45,18 @@ function EventLowerSection() {
   }, []);
 
   return (
-    <div className="event-lower-section-wrapper">
-      <EventTimeline />
-      <EventTimeline isRight />
-      <EventTimeline />
-      <EventTimeline isRight />
-      <div className="events-timeline-filled-line"></div>
-    </div>
+    <>
+      <div className="event-lower-section-wrapper">
+        <EventTimeline />
+        <EventTimeline isRight />
+        <EventTimeline />
+        <EventTimeline isRight />
+        <div className="events-timeline-filled-line"></div>
+      </div>
+      <div>
+        <SecondaryFooter />
+      </div>
+    </>
   );
 }
 
