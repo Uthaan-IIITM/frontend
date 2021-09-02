@@ -29,16 +29,19 @@ function ImageStackComponent(props) {
           "primary-footer-normal-display primary-footer-common-img-class"
         );
       }}
+      style={props.StackImageStyle}
     >
       <img
         src={props.normalDisplay}
         alt="normal state"
         className={displayClass}
+        style={props.StackImageStyle}
       />
       <img
         src={props.hoverDisplay}
         alt="hover display"
         className={hoverClass}
+        style={props.StackImageStyle}
       />
     </div>
   );
