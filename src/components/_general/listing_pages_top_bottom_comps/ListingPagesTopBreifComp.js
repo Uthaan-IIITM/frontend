@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import "../../../styles/_general/listing_pages_top_bottom_comps/listing_pages_top_breif_comp.css";
+import "../../../styles/_general/listing_pages_top_bottom_comps/listing_pages_top_breif_comp_events_page.css";
 import formatNumber from "../helpers/nemerical_formatter";
 import TextComponent from "../TextComponent";
 
