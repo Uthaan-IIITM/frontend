@@ -37,7 +37,7 @@ function HomeUpperSection() {
   function handleSliderChange(newState, opacityAndScaleDimensions) {
     setPrimaryCurrentState(newState);
     if (opacityAndScaleDimensions.scaleDimensionsByActualPosition) {
-      console.log(opacityAndScaleDimensions.scaleDimensionsByActualPosition);
+      // console.log(opacityAndScaleDimensions.scaleDimensionsByActualPosition);
       setComponentsScaleFractionIndices([
         opacityAndScaleDimensions.scaleDimensionsByActualPosition[0],
         opacityAndScaleDimensions.scaleDimensionsByActualPosition[1],
