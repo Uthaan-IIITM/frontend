@@ -1,3 +1,18 @@
 .event-lower-section-wrapper {
   @apply w-full;
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+  position: relative;
+}
+
+.events-timeline-filled-line {
+  position: absolute;
+  width: 3.5px;
+  background: #000;
+  height: 3vw;
+  transition: height 1.5s cubic-bezier(0.8, 0, 0, 1);
+  left: calc(50% - 3.5px);
+  top: 7vw;
+  z-index: -1;
+  /* margin-bottom: 15%; */
 }
