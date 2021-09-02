@@ -1,0 +1,27 @@
+.secondary-footer-wrapper {
+  @apply flex items-center justify-between;
+  height: 4.55vw;
+  background: #eeeeee;
+  padding-left: 5.45vw;
+  padding-right: 4.1vw;
+}
+.secondary-footer-left-wrapper {
+  @apply flex items-center;
+}
+.secondary-footer-left-wrapper img {
+  @apply object-contain;
+  width: 6.85vw;
+  margin-right: 3.6vw;
+}
+.secondary-footer-left-copyright-wrapper {
+  color: #7e7e7e;
+  font-size: 1vw;
+}
+.secondary-footer-right-wrapper {
+  @apply flex items-center font-medium;
+  font-size: 1.1vw;
+}
+.secondary-footer-social-media-icons {
+  @apply flex order-1;
+  margin-left: 3.5vw;
+}
