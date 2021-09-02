@@ -1,7 +1,7 @@
 .event-lower-section-wrapper {
   @apply w-full;
   padding-top: 15vw;
-  padding-bottom: 10vw;
+  padding-bottom: 6vw;
   position: relative;
   background: white;
 }
