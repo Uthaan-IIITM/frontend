@@ -3,11 +3,6 @@ import { useEffect } from "react/cjs/react.development";
 import "../../../styles/_general/listing_pages_top_bottom_comps/listing_pages_smooth_scroll_container.css";
 
 function ListingPagesSmoothScrollContainer({ topContainer, bottomContainer }) {
-  const [
-    transitionDurationInBottomContainerForSmoothScroll,
-    setTransitionDurationInBottomContainerForSmoothScroll,
-  ] = useState(100);
-
   useEffect(() => {
     window.addEventListener("scroll", (e) => {
       let bottomComponentContainer = document.getElementsByClassName(
@@ -15,33 +10,31 @@ function ListingPagesSmoothScrollContainer({ topContainer, bottomContainer }) {
       )[0];
 
       if (bottomComponentContainer) {
-      
-      let windowScrllPosititon = window.scrollY;
-      // console.log(windowScrllPosititon);
-      let windowHeight = window.innerHeight;
-      if (windowScrllPosititon < window.innerHeight / 10) {
-        setTimeout(() => {
-          setTransitionDurationInBottomContainerForSmoothScroll(100);
-        }, 800);
+        let windowScrllPosititon = window.scrollY;
+        let windowHeight = window.innerHeight;
+        if (windowScrllPosititon < window.innerHeight / 10) {
+          setTimeout(() => {
+            bottomComponentContainer.style.transitionDuration = "100ms";
+          }, 800);
 
-        bottomComponentContainer.style.marginTop = `-${windowScrllPosititon}px`;
-      } else {
-        if (transitionDurationInBottomContainerForSmoothScroll === 100) {
-          e.preventDefault();
-          // console.log(transitionDurationInBottomContainerForSmoothScroll);
-          setTransitionDurationInBottomContainerForSmoothScroll(800);
+          bottomComponentContainer.style.marginTop = `-${windowScrllPosititon}px`;
+        } else {
+          if (bottomComponentContainer.style.transitionDuration === 100) {
+            e.preventDefault();
+            bottomComponentContainer.style.transitionDuration = "800ms";
 
-          bottomComponentContainer.style.marginTop = `-${
-            windowHeight - windowHeight / 10
-          }px`;
+            bottomComponentContainer.style.marginTop = `-${
+              windowHeight - windowHeight / 10
+            }px`;
+          }
         }
-      }}
+      }
     });
   }, []);
 
-  useEffect(() => {
-    console.log(transitionDurationInBottomContainerForSmoothScroll);
-  }, [transitionDurationInBottomContainerForSmoothScroll]);
+  // useEffect(() => {
+  //   console.log(transitionDurationInBottomContainerForSmoothScroll);
+  // }, [transitionDurationInBottomContainerForSmoothScroll]);
 
   return (
     <div className="listing-pages-smooth-scroll-primary-wrapper">
@@ -51,7 +44,7 @@ function ListingPagesSmoothScrollContainer({ topContainer, bottomContainer }) {
       <div
         className="listing-pages-smooth-scroll-bottom-container-wrapper"
         style={{
-          transitionDuration: `${transitionDurationInBottomContainerForSmoothScroll}ms`,
+          transitionDuration: `100ms`,
         }}
       >
         {bottomContainer}
