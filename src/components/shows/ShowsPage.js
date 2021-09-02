@@ -10,6 +10,20 @@ function ShowsPage() {
     top: "21vh",
     left: "10vw",
   };
+  let textTitleStyle = {
+    fontFamily: "Manrope",
+    fontSize: "4vw",
+    fontWeight: "800",
+    letterSpacing: "0.3em",
+  };
+
+  let textDescriptionStyle = {
+    fontFamily: "Manrope",
+    fontSize: "1.5vw",
+    fontWeight: "500",
+    width: "40vw",
+  };
+
   return (
     <div>
       <ListingPagesTopBreifComp
@@ -24,6 +38,8 @@ function ShowsPage() {
         topicTitle="SHOWS"
         topicDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus, quis dolor sit amet"
         textDivStyling={divStyling}
+        textTitleStyling={textTitleStyle}
+        textDescriptionStyling={textDescriptionStyle}
       />
       {/* <Graphic1 /> */}
     </div>
