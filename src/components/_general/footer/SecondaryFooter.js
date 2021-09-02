@@ -30,7 +30,7 @@ const SocialMediaIconsList = SocialMediaIcons.map((SocialMediaIcons, index) => {
     <ImageStackComponent
       normalDisplay={images[`ic_${SocialMediaIcons}.svg`].default}
       hoverDisplay={images[`h_ic_${SocialMediaIcons}.svg`].default}
-      StackImageStyle={{ width: "2.1vw", height: "2.1vw" }}
+      StackImageStyle={{ width: "2.1vw", height: "2.1vw", marginBottom: "0" }}
     />
   );
 });
