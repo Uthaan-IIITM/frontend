@@ -10,6 +10,8 @@ function ListingPagesTopBreifComp({
   topicTitle,
   topicDescription,
   textDivStyling,
+  textTitleStyling,
+  textDescriptionStyling,
 }) {
   const extremeBgPositionValues = useRef({
     xInitialExtremes: ["11%", "10%", "-15%", "-17%"],
@@ -51,19 +53,6 @@ function ListingPagesTopBreifComp({
     }
   };
 
-  let textTitleStyle = {
-    fontFamily: "Manrope",
-    fontSize: "4vw",
-    fontWeight: "800",
-    letterSpacing: "0.3em",
-  };
-
-  let textDescriptionStyle = {
-    fontFamily: "Manrope",
-    fontSize: "1.5vw",
-    fontWeight: "500",
-    width: "40vw",
-  };
 
   return (
     <div
@@ -97,11 +86,11 @@ function ListingPagesTopBreifComp({
       >
         <TextComponent
           innerContent={topicTitle}
-          textComponentStyle={textTitleStyle}
+          textComponentStyle={textTitleStyling}
         />
         <TextComponent
           innerContent={topicDescription}
-          textComponentStyle={textDescriptionStyle}
+          textComponentStyle={textDescriptionStyling}
         />
       </div>
     </div>
