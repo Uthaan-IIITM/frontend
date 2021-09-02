@@ -13,20 +13,18 @@ function ListingPagesSmoothScrollContainer({ topContainer, bottomContainer }) {
         let windowScrllPosititon = window.scrollY;
         let windowHeight = window.innerHeight;
         if (windowScrllPosititon < window.innerHeight / 10) {
-          setTimeout(() => {
-            bottomComponentContainer.style.transitionDuration = "100ms";
-          }, 800);
-
+          if (bottomComponentContainer.style.transitionDuration === 800) {
+            setTimeout(() => {
+              bottomComponentContainer.style.transitionDuration = "100ms";
+            }, 800);
+          }
           bottomComponentContainer.style.marginTop = `-${windowScrllPosititon}px`;
         } else {
-          if (bottomComponentContainer.style.transitionDuration === 100) {
-            e.preventDefault();
-            bottomComponentContainer.style.transitionDuration = "800ms";
+          bottomComponentContainer.style.transitionDuration = "800ms";
 
-            bottomComponentContainer.style.marginTop = `-${
-              windowHeight - windowHeight / 10
-            }px`;
-          }
+          bottomComponentContainer.style.marginTop = `-${
+            windowHeight - windowHeight / 10
+          }px`;
         }
       }
     });
