@@ -88,7 +88,7 @@ function ElementsSlider({
 
   useEffect(() => {
     if (onScrollChangeFunction !== undefined) {
-      onScrollChangeFunction(currentScrollStateIndices);
+      onScrollChangeFunction(currentScrollStateIndices , opacityAndScaleDimensions);
     }
 
     scaleAndOpacitySetter(
@@ -245,7 +245,7 @@ ElementsSlider.defaultProps = {
   alignment: "flex-end",
   carouselWidth: "100vw",
   carouselInnerHeight: "30vw",
-  carouselOuterHeight: "35vw",
+  carouselOuterHeight: "28vw",
   elementWidth: "45vw",
   opacityFunction: { homePageSliderOpacityController },
   scaleFunction: { homePageSliderScaleController },
