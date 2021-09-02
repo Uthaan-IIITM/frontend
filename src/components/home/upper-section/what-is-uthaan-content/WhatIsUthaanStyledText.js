@@ -22,14 +22,11 @@ function WhatIsUthaanStyledText({ currentState = 0 }) {
     "Create Connect And Trancend",
   ]);
 
-  console.log(currentState);
-
   return (
     <div>
       <div className="what-is-uthaan-styled-text">
         <ReactTextTransition
           text={
-            // StyleTextContent[styleTextContentIndex % StyleTextContent.length]
             StyleTextContent.current[currentState]
           }
           direction={textAnimDirection}
