@@ -30,7 +30,7 @@ function ListingPagesTopBreifComp({
   const handleMouseMovement = (e) => {
     if (Date.now() - lastTimeHeheh > 100) {
       setLastTimeHeheh(Date.now());
-      let tempBgDivPositions = bgElementsPositionValues;
+      let tempBgDivPositions = { ...bgElementsPositionValues };
       let xFractionIndex = formatNumber(
         e.clientX / document.body.clientWidth,
         2
