@@ -1,9 +1,8 @@
 .navbar-main-wrapper {
   @apply fixed top-0 left-0 w-full flex justify-between pt-8 z-20;
   height: 7.56rem;
-  padding-left: 6.9vw;
-  padding-right: 6.9vw;
   pointer-events: none;
+  transition: padding-left 250ms ease-in-out, padding-right 250ms ease-in-out;
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
 }
 .navbar-main-left-wrapper img {
@@ -11,15 +10,16 @@
   width: 6.875vw;
   pointer-events: all;
   cursor: pointer;
+  transition: transform 250ms ease-in-out;
+}
+.navbar-main-right-wrapper {
+  @apply flex;
 }
 .navbar-main-right-link {
-  @apply font-semibold text-lg;
+  @apply font-semibold text-lg block;
   color: #222222;
-  margin-left: 2.08vw;
-  transition: color 150ms ease-in-out;
-}
-
-.navbar-main-right-link {
+  /* margin-right: 2.08vw; */
+  transition: color 150ms ease-in-out, margin 250ms ease-in-out;
   pointer-events: all;
 }
 .navbar-active-class {
