@@ -9,10 +9,16 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        <Navbar slidingIndex={1} />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/events" component={EventPage} />
+          <Route
+            exact
+            path="/events"
+            component={() => {
+              return <EventPage />;
+            }}
+          />
           <Route exact path="/shows" component={ShowsPage} />
         </Switch>
       </Router>
