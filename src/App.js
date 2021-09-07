@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar slidingIndex={1} />
+        <Navbar slidingIndex={0} />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route
