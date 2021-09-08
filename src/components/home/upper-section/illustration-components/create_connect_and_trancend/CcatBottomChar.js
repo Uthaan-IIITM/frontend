@@ -5,15 +5,9 @@ import char3 from "../../../../../assets/home/what_is_uthaan/create_connect_and_
 import char3HandZH from "../../../../../assets/home/what_is_uthaan/create_connect_and_trancend/graphic_parts/SVG/char_3_hand_z_h.svg";
 import char3HandZL from "../../../../../assets/home/what_is_uthaan/create_connect_and_trancend/graphic_parts/SVG/char_3_hand_z_l.svg";
 import bulbBottomSeparatedPart from "../../../../../assets/home/what_is_uthaan/create_connect_and_trancend/graphic_parts/SVG/bulb_bottom_separated_part.svg";
-function CcatBottomChar({ bottomCharContainerWidth }) {
+function CcatBottomChar() {
   return (
-    <div
-      style={{
-        width: `calc(${bottomCharContainerWidth}*0.185)`,
-        height: `calc(${bottomCharContainerWidth}*0.175)`,
-      }}
-      id="CCAT-BottomChar"
-    >
+    <div id="CCAT-BottomChar">
       <img src={char3HandZL} alt="ccat_graphic" id="CCAR-Char3HandZL" />
       <img src={char3} alt="ccat_graphic" id="CCAR-Char3" />
       <img
