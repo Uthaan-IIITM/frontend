@@ -140,7 +140,9 @@ function ElementsSlider({
   }
 
   function scrollSliderToPosition(index) {
-    let sliderWrapper = reactDom.findDOMNode(sliderPrimaryWrapperReference.current);
+    let sliderWrapper = reactDom.findDOMNode(
+      sliderPrimaryWrapperReference.current
+    );
     let sliderfirstElement = sliderChildElementsNodes.current[0];
 
     let sliderfirstElementComputedStyles = getComputedStyle(sliderfirstElement);
