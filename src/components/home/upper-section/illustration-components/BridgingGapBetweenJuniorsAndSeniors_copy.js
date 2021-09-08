@@ -82,10 +82,14 @@ function BridgingGapBetweenJuniorsAndSeniorsCopy({ containerWidth = "75vw" }) {
         id="BGBJAS-laptop"
       />
       <img src={images["stool.svg"].default} alt="graphic" id="BGBJAS-stool" />
-      <img src={images["clock_shadow.svg"].default} alt="graphic" id="BGBJAS-clock-shdow" />
+      <img
+        src={images["clock_shadow.svg"].default}
+        alt="graphic"
+        id="BGBJAS-clock-shdow"
+      />
 
-      <BgbjasClock/>
-      <BgbjasRightLeaves rightLeavesContainerWidth={containerWidth} />
+      <BgbjasClock />
+      <BgbjasRightLeaves />
       <BgbjasChai ChaiContainerWidth={containerWidth} />
     </div>
   );
