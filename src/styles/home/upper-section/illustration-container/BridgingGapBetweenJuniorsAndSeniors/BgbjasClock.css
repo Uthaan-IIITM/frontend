@@ -1,7 +1,9 @@
 #BGBJAS-Clock-wrapper {
   position: absolute;
-  left: 69.85%;
-  top: 24.6%;
+  left: 68.3%;
+  top: 24%;
+  width: 6.5%;
+  height: 9.75%;
 }
 #BGBJAS-Clock {
   width: 100%;
@@ -21,6 +23,7 @@
   left: 48.5%;
   top: 30%;
   height: 20%;
+  border-radius: 50%;
   width: 3%;
   background-color: #6d9fe2;
   transform-origin: 50% 100%;
