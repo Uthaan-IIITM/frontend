@@ -9,6 +9,7 @@ import scaleAndOpacityControllerByActualPosition from "./slider-helpers/scale_an
 import scaleAndOpacityControllerByPositionFromCenter from "./slider-helpers/scale_and_opacity_controller_by_position_from_center";
 import scaleAndOpacitySetter from "./slider-helpers/scale_and_opacity_setter";
 import { useEffect, useRef } from "react";
+import reactDom from "react-dom";
 
 function ElementsSlider({
   sliderComponents,
@@ -23,7 +24,8 @@ function ElementsSlider({
   scaleFunction,
   onScrollChangeFunction,
 }) {
-  const sliderChildElements = useRef([]);
+  const sliderChildElementsNodes = useRef([]);
+  const sliderPrimaryWrapperNode = useRef(125);
   const beingDragged = useRef(false);
   const previousScrollPosition = useRef(0);
   const startMousePosition = useRef(0);
@@ -37,6 +39,13 @@ function ElementsSlider({
   const [sliderOpacity, setSliderOpacity] = useState(0);
 
   useEffect(() => {
+    let primaryWrapper = reactDom.findDOMNode(sliderPrimaryWrapperNode.current);
+    let sliderChildElementsArray =
+      primaryWrapper.childNodes[0].childNodes[0].childNodes;
+    sliderChildElementsNodes.current = sliderChildElementsArray;
+    // console.log(primaryWrapper);
+    console.log(sliderChildElementsNodes.current, "heheheheh");
+
     let sliderElemnts = document.getElementsByClassName(
       "slider-elements-wrapper-wrapper-wrapper"
     );
@@ -51,12 +60,14 @@ function ElementsSlider({
     }, 400);
   }, []);
 
+  useEffect(() => {}, []);
+
   useEffect(() => {
     let [
       localeArrayForOpacityCalculationByPositionFromCenter,
       localeArrayForScaleCalculationByPositionFromCenter,
     ] = scaleAndOpacityControllerByPositionFromCenter(
-      sliderChildElements.current.length,
+      sliderChildElementsNodes.current.length,
       currentScrollStateIndices.intIndex,
       opacityFunction,
       scaleFunction
@@ -68,7 +79,7 @@ function ElementsSlider({
     ] = scaleAndOpacityControllerByActualPosition(
       currentScrollStateIndices.intIndex,
       currentScrollStateIndices.floatIndex,
-      sliderChildElements.current.length,
+      sliderChildElementsNodes.current.length,
       localeArrayForOpacityCalculationByPositionFromCenter,
       localeArrayForScaleCalculationByPositionFromCenter
     );
@@ -83,25 +94,31 @@ function ElementsSlider({
     localeDimensionsObject.scaleDimensionsByActualPosition =
       localeArrayForScaleCalculationByActualPosition;
 
+    console.log(localeDimensionsObject);
     setOpacityAndScaleDimensions(localeDimensionsObject);
   }, [currentScrollStateIndices]);
 
   useEffect(() => {
     if (onScrollChangeFunction !== undefined) {
-      onScrollChangeFunction(currentScrollStateIndices , opacityAndScaleDimensions);
+      onScrollChangeFunction(
+        currentScrollStateIndices,
+        opacityAndScaleDimensions
+      );
     }
 
-    scaleAndOpacitySetter(
-      sliderChildElements.current,
-      opacityAndScaleDimensions.scaleDimensionsByActualPosition,
-      opacityAndScaleDimensions.opacityDimensionsByActualPosition
-    );
+    if (opacityAndScaleDimensions.scaleDimensionsByActualPosition) {
+      scaleAndOpacitySetter(
+        sliderChildElementsNodes.current,
+        opacityAndScaleDimensions.scaleDimensionsByActualPosition,
+        opacityAndScaleDimensions.opacityDimensionsByActualPosition
+      );
+    }
   }, [opacityAndScaleDimensions]);
 
   function startDragging(e) {
     beingDragged.current = true;
     startMousePosition.current = e.clientX;
-    }
+  }
 
   function stopDragging(e) {
     beingDragged.current = false;
@@ -112,7 +129,6 @@ function ElementsSlider({
   /** Function to drag carousel when user is dragging **/
   function dragSlider(e) {
     if (beingDragged.current) {
-
       let element = e.target;
       element.focus();
 
@@ -148,7 +164,8 @@ function ElementsSlider({
     }
 
     let childElements = e.target.childNodes[0].childNodes[0].childNodes;
-    sliderChildElements.current = childElements;
+    // console.log(childElements, "he");
+    // sliderChildElements.current = childElements;
 
     let sliderfirstElement = childElements[0];
     let sliderfirstElementComputedStyles = getComputedStyle(sliderfirstElement);
@@ -185,6 +202,7 @@ function ElementsSlider({
         height: carouselOuterHeight,
         opacity: sliderOpacity,
       }}
+      ref={sliderPrimaryWrapperNode}
     >
       <div
         className="slider-elements-wrapper-wrapper"
