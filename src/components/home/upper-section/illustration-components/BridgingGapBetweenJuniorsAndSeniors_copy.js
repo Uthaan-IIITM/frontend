@@ -90,7 +90,7 @@ function BridgingGapBetweenJuniorsAndSeniorsCopy({ containerWidth = "75vw" }) {
 
       <BgbjasClock />
       <BgbjasRightLeaves />
-      <BgbjasChai ChaiContainerWidth={containerWidth} />
+      <BgbjasChai />
     </div>
   );
 }
