@@ -7,7 +7,6 @@ import homePageSliderScaleController from "../helper-functions/home-page-slider-
 import formatNumber from "./slider-helpers/nemerical_formatter";
 import scaleAndOpacityControllerByActualPosition from "./slider-helpers/scale_and_opacity_controller_by_actual_position";
 import scaleAndOpacityControllerByPositionFromCenter from "./slider-helpers/scale_and_opacity_controller_by_position_from_center";
-import scaleAndOpacitySetter from "./slider-helpers/scale_and_opacity_setter";
 import { useEffect, useRef } from "react";
 import reactDom from "react-dom";
 
@@ -106,14 +105,6 @@ function ElementsSlider({
         opacityAndScaleDimensions
       );
     }
-
-    if (opacityAndScaleDimensions.scaleDimensionsByActualPosition) {
-      scaleAndOpacitySetter(
-        sliderChildElementsNodes.current,
-        opacityAndScaleDimensions.scaleDimensionsByActualPosition,
-        opacityAndScaleDimensions.opacityDimensionsByActualPosition
-      );
-    }
   }, [opacityAndScaleDimensions]);
 
   function startDragging(e) {
@@ -147,7 +138,6 @@ function ElementsSlider({
     let childElements = element.childNodes[0].childNodes[0].childNodes;
     let sliderfirstElement = childElements[0];
 
-    let elementWidth = getComputedStyle(sliderfirstElement).width;
     let sliderfirstElementComputedStyles = getComputedStyle(sliderfirstElement);
     element.scrollTo({
       top: 0,
@@ -231,9 +221,18 @@ function ElementsSlider({
                 <div
                   className="core-slider-elements-wrapper"
                   style={{
-                    width: `100%`,
+                    width: `${
+                      100 *
+                      parseFloat(
+                        opacityAndScaleDimensions
+                          .scaleDimensionsByActualPosition[index]
+                      )
+                    }%`,
                     alignItems: alignment,
                     pointerEvents: "none",
+                    opacity:
+                      opacityAndScaleDimensions
+                        .opacityDimensionsByActualPosition[index],
                   }}
                 >
                   {component}
