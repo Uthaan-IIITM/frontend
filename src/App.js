@@ -4,6 +4,7 @@ import Navbar from "./components/_general/Navbar";
 import HomePage from "./components/home/HomePage";
 import EventPage from "./components/event/EventPage";
 import ShowsPage from "./components/shows/ShowsPage";
+import BridgingGapBetweenJuniorsAndSeniorsCopy from "./components/home/upper-section/illustration-components/BridgingGapBetweenJuniorsAndSeniors_copy";
 
 function App() {
   return (
@@ -20,6 +21,11 @@ function App() {
             }}
           />
           <Route exact path="/shows" component={ShowsPage} />
+          <Route
+            exact
+            path="/123"
+            component={BridgingGapBetweenJuniorsAndSeniorsCopy}
+          />
         </Switch>
       </Router>
     </div>
