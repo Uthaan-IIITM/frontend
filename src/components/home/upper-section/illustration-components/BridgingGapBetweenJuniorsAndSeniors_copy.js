@@ -7,13 +7,7 @@ import BgbjasLeftLeaves from "./bridging_gap_between_juniors_and_seniors_compone
 import BgbjasRightLeaves from "./bridging_gap_between_juniors_and_seniors_components/BgbjasRightLeaves";
 import BgbjasChai from "./bridging_gap_between_juniors_and_seniors_components/BgbjasChai";
 
-function importAll(r) {
-  let images = {};
-  r.keys().map((item, index) => {
-    images[item.replace("./", "")] = r(item);
-  });
-  return images;
-}
+import importAll from "../../../_general/helpers/import_all";
 
 const images = importAll(
   require.context(
