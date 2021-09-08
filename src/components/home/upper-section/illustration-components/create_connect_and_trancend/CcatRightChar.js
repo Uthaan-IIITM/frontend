@@ -8,7 +8,7 @@ import char4HandZH from "../../../../../assets/home/what_is_uthaan/create_connec
 import char4HandZL from "../../../../../assets/home/what_is_uthaan/create_connect_and_trancend/graphic_parts/SVG/char_4_hand_z_l.svg";
 import bulbSeparatedPart from "../../../../../assets/home/what_is_uthaan/create_connect_and_trancend/graphic_parts/SVG/bulb_separated_part.svg";
 
-function CcatRightChar({ rightCharContainerWidth }) {
+function CcatRightChar() {
   return (
     <div id="CCAT-RightChar">
       <img src={char4HandZL} alt="ccat_graphic" id="CCAR-Char4HandZL" />
