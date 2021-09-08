@@ -10,13 +10,7 @@ import CcatBottomChar from "./create_connect_and_trancend/CcatBottomChar";
 import CcatPaintingPot from "./create_connect_and_trancend/CcatPaintingPot";
 import CcatGears from "./create_connect_and_trancend/CcatGears";
 
-function importAll(r) {
-  let images = {};
-  r.keys().map((item, index) => {
-    images[item.replace("./", "")] = r(item);
-  });
-  return images;
-}
+import importAll from "../../../_general/helpers/import_all";
 
 const images = importAll(
   require.context(
