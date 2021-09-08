@@ -27,10 +27,11 @@ const images = importAll(
 function BridgingGapBetweenJuniorsAndSeniorsCopy({ containerWidth = "75vw" }) {
   return (
     <div
-      className="home-page-illustration-image-wrapper"
-      style={{ width: containerWidth, height: `calc(${containerWidth}*2/3)` }}
+    className="home-page-illustration-image-wrapper"
+    style={{ width: containerWidth, height: `calc(${containerWidth}*2/3)` }}
     >
       <img src={images["bg.svg"].default} alt="graphic" id="BGBJAS-bg" />
+    <BgbjasLeftLeaves leftLeavesContainerWidth={containerWidth} />
       <img
         src={images["left_bush.svg"].default}
         alt="graphic"
@@ -84,7 +85,6 @@ function BridgingGapBetweenJuniorsAndSeniorsCopy({ containerWidth = "75vw" }) {
       <img src={images["stool.svg"].default} alt="graphic" id="BGBJAS-stool" />
 
       <BgbjasClock clockContainerWidth={containerWidth} />
-      <BgbjasLeftLeaves leftLeavesContainerWidth={containerWidth} />
       <BgbjasRightLeaves rightLeavesContainerWidth={containerWidth} />
       <BgbjasChai ChaiContainerWidth={containerWidth} />
     </div>
