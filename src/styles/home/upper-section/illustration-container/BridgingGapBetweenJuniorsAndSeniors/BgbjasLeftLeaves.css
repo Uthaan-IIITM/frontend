@@ -5,6 +5,8 @@
   top: 47.53%;
   transform-origin: 95% 100%;
   animation: BGBJAS_LeftLeaves 2s ease-in-out alternate infinite;
+  width: 8%;
+  height: 28.5%;
 }
 #BGBJAS_LeftLeaves1 {
   height: 100%;
