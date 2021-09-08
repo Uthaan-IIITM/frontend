@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 25.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 900 500" style="enable-background:new 0 0 900 500;" xml:space="preserve">
+	 viewBox="0 0 750 500" style="enable-background:new 0 0 750 500;" xml:space="preserve">
 <g id="path_x5F_with_x5F_pen_x5F_tool">
-	<circle style="fill:#2A1E17;" cx="288.648" cy="300.117" r="2.623"/>
+	<circle style="fill:#2A1E17;" cx="309.648" cy="300.117" r="2.623"/>
 	<g>
-		<path style="fill:none;stroke:#2A1E17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M243.508,140.756
+		<path style="fill:none;stroke:#2A1E17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M264.508,140.756
 			c-91.964-38.122-162.762,35.298,10.593,147.725c13.65,8.853,34.584,11.959,34.584,11.959"/>
-		<circle style="fill:#2A1E17;" cx="158.926" cy="143.32" r="2.623"/>
+		<circle style="fill:#2A1E17;" cx="179.926" cy="143.32" r="2.623"/>
 		<g>
 			<polygon style="fill:none;stroke:#2A1E17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="
-				142.238,128.927 145.108,126.172 151.706,129.947 155.022,140.179 144.895,135.941 			"/>
+				163.238,128.927 166.108,126.172 172.706,129.947 176.022,140.179 165.895,135.941 			"/>
 			<polygon style="fill:none;stroke:#2A1E17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="
-				145.108,126.172 142.238,128.927 140.631,126.976 143.386,124.335 			"/>
+				166.108,126.172 163.238,128.927 161.631,126.976 164.386,124.335 			"/>
 			
-				<line style="fill:none;stroke:#2A1E17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="155.022" y1="140.179" x2="148.436" y2="132.944"/>
+				<line style="fill:none;stroke:#2A1E17;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="176.022" y1="140.179" x2="169.436" y2="132.944"/>
 		</g>
 	</g>
 </g>
