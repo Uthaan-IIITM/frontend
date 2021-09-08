@@ -84,7 +84,7 @@ function BridgingGapBetweenJuniorsAndSeniorsCopy({ containerWidth = "75vw" }) {
       <img src={images["stool.svg"].default} alt="graphic" id="BGBJAS-stool" />
       <img src={images["clock_shadow.svg"].default} alt="graphic" id="BGBJAS-clock-shdow" />
 
-      <BgbjasClock clockContainerWidth={containerWidth} />
+      <BgbjasClock/>
       <BgbjasRightLeaves rightLeavesContainerWidth={containerWidth} />
       <BgbjasChai ChaiContainerWidth={containerWidth} />
     </div>
