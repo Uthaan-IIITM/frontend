@@ -13,6 +13,9 @@ function BGBJAS_Clock({ clockContainerWidth }) {
       id="BGBJAS-Clock-wrapper"
     >
       <img src={clock} alt="clock" id="BGBJAS-Clock" />
+      <div className="BGBJAS-Clock-arrow-one"></div>
+      <div className="BGBJAS-Clock-arrow-two"></div>
+      <div className="BGBJAS-Clock-center"></div>
     </div>
   );
 }
