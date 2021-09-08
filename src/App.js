@@ -5,6 +5,7 @@ import HomePage from "./components/home/HomePage";
 import EventPage from "./components/event/EventPage";
 import ShowsPage from "./components/shows/ShowsPage";
 import BridgingGapBetweenJuniorsAndSeniorsCopy from "./components/home/upper-section/illustration-components/BridgingGapBetweenJuniorsAndSeniors_copy";
+import PushingBoundariesOnOurIdeasAndOurCraftCopy from './components/home/upper-section/illustration-components/PushingBoundariesOnOurIdeasAndOurCraft_copy';
 
 function App() {
   return (
