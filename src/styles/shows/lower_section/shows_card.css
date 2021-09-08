@@ -1,0 +1,5 @@
+.shows-card-main-wrapper {
+  @apply w-full;
+  border: 1px solid #606060;
+  height: 11.4vw;
+}
