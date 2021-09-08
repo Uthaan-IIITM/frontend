@@ -4,6 +4,7 @@ import { ReactComponent as Graphic1 } from "../../assets/shows/bg/bg1.svg";
 import { ReactComponent as Graphic2 } from "../../assets/shows/bg/bg2.svg";
 import { ReactComponent as Graphic3 } from "../../assets/shows/bg/bg3.svg";
 import { ReactComponent as Graphic4 } from "../../assets/shows/bg/bg4.svg";
+import ShowsLowerSection from "./lower_section/ShowsLowerSection";
 
 function ShowsPage() {
   let divStyling = {
@@ -26,7 +27,7 @@ function ShowsPage() {
 
   return (
     <div>
-      <ListingPagesTopBreifComp
+      {/* <ListingPagesTopBreifComp
         floatingBgImagesList={[
           <Graphic1 preserveAspectRatio="none" />,
           <Graphic2 preserveAspectRatio="none" />,
@@ -40,8 +41,9 @@ function ShowsPage() {
         textDivStyling={divStyling}
         textTitleStyling={textTitleStyle}
         textDescriptionStyling={textDescriptionStyle}
-      />
+      /> */}
       {/* <Graphic1 /> */}
+      <ShowsLowerSection />
     </div>
   );
 }

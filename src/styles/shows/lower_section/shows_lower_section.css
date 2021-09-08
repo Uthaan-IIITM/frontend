@@ -1,0 +1,12 @@
+.shows-lower-section-wrapper {
+  @apply w-full grid;
+  grid-template-columns: 1fr 68vw;
+  column-gap: 1vw;
+  padding-right: 6.75vw;
+  padding-left: 4.5vw;
+}
+.shows-lower-section-cards-wrapper {
+  @apply grid;
+  grid-template-columns: 1fr;
+  row-gap: 0.8vw;
+}
