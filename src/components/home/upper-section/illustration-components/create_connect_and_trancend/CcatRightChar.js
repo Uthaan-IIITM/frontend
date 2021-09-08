@@ -10,13 +10,7 @@ import bulbSeparatedPart from "../../../../../assets/home/what_is_uthaan/create_
 
 function CcatRightChar({ rightCharContainerWidth }) {
   return (
-    <div
-      style={{
-        width: `calc(${rightCharContainerWidth}*0.180)`,
-        height: `calc(${rightCharContainerWidth}*0.352)`,
-      }}
-      id="CCAT-RightChar"
-    >
+    <div id="CCAT-RightChar">
       <img src={char4HandZL} alt="ccat_graphic" id="CCAR-Char4HandZL" />
       <img src={char4} alt="ccat_graphic" id="CCAR-Char4" />
       <img
