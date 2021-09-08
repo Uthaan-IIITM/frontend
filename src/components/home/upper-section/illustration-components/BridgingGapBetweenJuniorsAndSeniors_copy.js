@@ -24,13 +24,18 @@ const images = importAll(
   )
 );
 
-function BridgingGapBetweenJuniorsAndSeniorsCopy({ containerWidth ="75vw" }) {
+function BridgingGapBetweenJuniorsAndSeniorsCopy({ containerWidth = "75vw" }) {
   return (
     <div
       className="home-page-illustration-image-wrapper"
       style={{ width: containerWidth, height: `calc(${containerWidth}*2/3)` }}
     >
       <img src={images["bg.svg"].default} alt="graphic" id="BGBJAS-bg" />
+      <img
+        src={images["left_bush.svg"].default}
+        alt="graphic"
+        id="BGBJAS-left-bush"
+      />
       <img
         src={images["bg_rectangle.svg"].default}
         alt="graphic"
