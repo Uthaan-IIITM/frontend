@@ -22,6 +22,7 @@ function ElementsSlider({
   opacityFunction,
   scaleFunction,
   onScrollChangeFunction,
+  goToPosition,
 }) {
   /* References */
   const sliderPrimaryWrapperReference = useRef(125);
@@ -62,7 +63,11 @@ function ElementsSlider({
     }, 400);
   }, []);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (goToPosition) {
+      scrollSliderToPosition(goToPosition);
+    }
+  }, [goToPosition]);
 
   useEffect(() => {
     let [
@@ -115,7 +120,7 @@ function ElementsSlider({
   function stopDragging(e) {
     beingDragged.current = false;
     previousScrollPosition.current = e.target.scrollLeft;
-    scrollToPosition(currentScrollStateIndices.intIndex, e.target);
+    scrollSliderToPosition(currentScrollStateIndices.intIndex, e.target);
   }
 
   /** Function to drag carousel when user is dragging **/
@@ -134,12 +139,12 @@ function ElementsSlider({
     }
   }
 
-  function scrollToPosition(index, element) {
-    let childElements = element.childNodes[0].childNodes[0].childNodes;
-    let sliderfirstElement = childElements[0];
+  function scrollSliderToPosition(index) {
+    let sliderWrapper = reactDom.findDOMNode(sliderPrimaryWrapperReference.current);
+    let sliderfirstElement = sliderChildElementsNodes.current[0];
 
     let sliderfirstElementComputedStyles = getComputedStyle(sliderfirstElement);
-    element.scrollTo({
+    sliderWrapper.scrollTo({
       top: 0,
       left:
         (parseFloat(sliderfirstElementComputedStyles.width) +
@@ -150,6 +155,7 @@ function ElementsSlider({
   }
 
   function updateLayoutOnScroll(e) {
+    console.log("scrolled");
     if (!beingDragged.current) {
       previousScrollPosition.current = e.target.scrollLeft;
     }
@@ -259,10 +265,11 @@ ElementsSlider.defaultProps = {
   alignment: "flex-end",
   carouselWidth: "100vw",
   carouselInnerHeight: "30vw",
-  carouselOuterHeight: "28vw",
+  carouselOuterHeight: "30vw",
   elementWidth: "45vw",
   opacityFunction: { homePageSliderOpacityController },
   scaleFunction: { homePageSliderScaleController },
+  goToPosition: null,
 };
 
 export default ElementsSlider;
