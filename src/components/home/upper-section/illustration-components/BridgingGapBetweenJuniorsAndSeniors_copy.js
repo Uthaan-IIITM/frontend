@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import graphic from "../../../../assets/home/what_is_uthaan.png";
-// import * as GraphicAssets from "../../../../assets/home/what_is_uthaan/bridging_gap_between_juniors_and_seniors/graphic_parts/SVG";
 import "../../../../styles/home/upper-section/illustration-container/illustration-comp_copy.css";
 import BgbjasClock from "./bridging_gap_between_juniors_and_seniors_components/BgbjasClock";
 import BgbjasLeftLeaves from "./bridging_gap_between_juniors_and_seniors_components/BgbjasLeftLeaves";
