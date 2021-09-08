@@ -50,7 +50,7 @@ function CreateConnectAndTrancendCopy({ containerWidth = "75vw" }) {
       <img src={images["bulb_sparkles.svg"].default} alt="graphic" />
 
       <CcatRightChar />
-      <CcatMainBulb mainBulbContainerWidth={containerWidth} />
+      <CcatMainBulb />
       <CcatBottomChar bottomCharContainerWidth={containerWidth} />
       <CcatPaintingPot PaintingPotContainerWidth={containerWidth} />
       <CcatGears GearsContainerWidth={containerWidth} />
