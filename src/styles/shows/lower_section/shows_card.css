@@ -1,5 +1,13 @@
 .shows-card-main-wrapper {
   @apply w-full;
   border: 1px solid #606060;
-  height: 11.4vw;
+  height: 11.5vw;
+  padding: 0.75vw 1vw;
+}
+.shows-card-image-wrapper {
+  width: 30%;
+  height: 100%;
+}
+.shows-card-image-wrapper img {
+  @apply w-full h-full object-cover;
 }
