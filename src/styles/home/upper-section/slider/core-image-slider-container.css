@@ -4,8 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: width 0.1s linear , opacity 0.1s linear;
-  /* transition: opacity 0.1s linear; */
+  transition: width 0.1s linear;
+  transition: opacity 0.1s linear;
 }
 
 .core-slider-elements-wrapper-wrapper {

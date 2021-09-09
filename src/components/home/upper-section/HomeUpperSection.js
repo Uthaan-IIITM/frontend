@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ElementsSlider from "./slider/ElementsSlider";
-import ElementsSlider2 from "./slider/ElementsSlider copy";
 import BridgingGapBetweenJuniorsAndSeniors from "./illustration-components/BridgingGapBetweenJuniorsAndSeniors_copy";
 import CreateConnectAndTrancend from "./illustration-components/CreateConnectAndTrancend_copy";
 import PushingBoundariesOnOurIdeasAndOurCraft from "./illustration-components/PushingBoundariesOnOurIdeasAndOurCraft_copy";
-import BridgingGapBetweenJuniorsAndSeniors2 from "./illustration-components/BridgingGapBetweenJuniorsAndSeniors";
-import CreateConnectAndTrancend2 from "./illustration-components/CreateConnectAndTrancend";
-import PushingBoundariesOnOurIdeasAndOurCraft2 from "./illustration-components/PushingBoundariesOnOurIdeasAndOurCraft";
+// import BridgingGapBetweenJuniorsAndSeniors from "./illustration-components/BridgingGapBetweenJuniorsAndSeniors";
+// import CreateConnectAndTrancend from "./illustration-components/CreateConnectAndTrancend";
+// import PushingBoundariesOnOurIdeasAndOurCraft from "./illustration-components/PushingBoundariesOnOurIdeasAndOurCraft";
 import homePageSliderOpacityController from "./helper-functions/home-page-slider-opacity-controller";
 import homePageSliderScaleController from "./helper-functions/home-page-slider-scale-controller";
 import WhatIsUthaanMainContent from "./what-is-uthaan-content/WhatIsUthaanMainContent";
@@ -30,8 +29,6 @@ function HomeUpperSection() {
     floatIndex: 0.0,
   });
 
-  const [sliderGoToPosition, setSliderGoToState] = useState(0);
-
   const [componentsScaleFractionIndices, setComponentsScaleFractionIndices] =
     useState([1, 0.5, 0.5]);
 
@@ -49,41 +46,10 @@ function HomeUpperSection() {
     }
   }
 
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     // console.log((sliderGoToPosition + 1) % 3, sliderGoToPosition);
-  //     let tempPos = (sliderGoToPosition + 1) % 3;
-
-  //     setSliderGoToState(tempPos);
-  //   }, 3000);
-  // }, []);
-
   return (
     <div>
       <WhatIsUthaanMainContent currentState={primaryCurrentState.intIndex} />
       <ElementsSlider
-        // sliderComponents={[
-        //   { BridgingGapBetweenJuniorsAndSeniors },
-        //   { CreateConnectAndTrancend },
-        //   { PushingBoundariesOnOurIdeasAndOurCraft },
-        // ]}
-        sliderComponents={[
-          <BridgingGapBetweenJuniorsAndSeniors2
-            containerWidth={`calc(45vw * ${componentsScaleFractionIndices[0]})`}
-          />,
-          <CreateConnectAndTrancend2
-            containerWidth={`calc(45vw * ${componentsScaleFractionIndices[1]})`}
-          />,
-          <PushingBoundariesOnOurIdeasAndOurCraft2
-            containerWidth={`calc(45vw * ${componentsScaleFractionIndices[2]})`}
-          />,
-        ]}
-        opacityFunction={homePageSliderOpacityController}
-        scaleFunction={homePageSliderScaleController}
-        onScrollChangeFunction={handleSliderChange}
-        goToPosition={sliderGoToPosition}
-      />
-      <ElementsSlider2
         sliderComponents={[
           <BridgingGapBetweenJuniorsAndSeniors
             containerWidth={`calc(45vw * ${componentsScaleFractionIndices[0]})`}
@@ -97,6 +63,7 @@ function HomeUpperSection() {
         ]}
         opacityFunction={homePageSliderOpacityController}
         scaleFunction={homePageSliderScaleController}
+        onScrollChangeFunction={handleSliderChange}
       />
       <ProgressLine currentState={primaryCurrentState.floatIndex} />
     </div>
