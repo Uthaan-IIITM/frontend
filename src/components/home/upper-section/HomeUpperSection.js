@@ -71,17 +71,32 @@ function HomeUpperSection() {
           <BridgingGapBetweenJuniorsAndSeniors2
             containerWidth={`calc(45vw * ${componentsScaleFractionIndices[0]})`}
           />,
-          <CreateConnectAndTrancend2
+          <BridgingGapBetweenJuniorsAndSeniors2
             containerWidth={`calc(45vw * ${componentsScaleFractionIndices[1]})`}
           />,
-          <PushingBoundariesOnOurIdeasAndOurCraft2
+          <BridgingGapBetweenJuniorsAndSeniors2
             containerWidth={`calc(45vw * ${componentsScaleFractionIndices[2]})`}
           />,
         ]}
         opacityFunction={homePageSliderOpacityController}
         scaleFunction={homePageSliderScaleController}
         onScrollChangeFunction={handleSliderChange}
-        goToPosition={sliderGoToPosition}
+        goToPosition={0}
+      />
+      <ElementsSlider
+        sliderComponents={[
+          <CreateConnectAndTrancend2
+            containerWidth={`calc(45vw * ${componentsScaleFractionIndices[0]})`}
+          />,
+          <CreateConnectAndTrancend2
+            containerWidth={`calc(45vw * ${componentsScaleFractionIndices[1]})`}
+          />,
+          <CreateConnectAndTrancend2
+            containerWidth={`calc(45vw * ${componentsScaleFractionIndices[2]})`}
+          />,
+        ]}
+        opacityFunction={homePageSliderOpacityController}
+        scaleFunction={homePageSliderScaleController}
       />
       <ElementsSlider2
         sliderComponents={[
@@ -95,6 +110,7 @@ function HomeUpperSection() {
             containerWidth={`calc(45vw * ${componentsScaleFractionIndices[2]})`}
           />,
         ]}
+        goToPosition={1}
         opacityFunction={homePageSliderOpacityController}
         scaleFunction={homePageSliderScaleController}
       />

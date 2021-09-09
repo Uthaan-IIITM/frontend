@@ -262,13 +262,13 @@ ElementsSlider.propTypes = {
 };
 
 ElementsSlider.defaultProps = {
-  spaceBetween: "5vw",
+  spaceBetween: "10vw",
   paddingGeneral: "10vw",
   alignment: "flex-end",
   carouselWidth: "100vw",
-  carouselInnerHeight: "30vw",
-  carouselOuterHeight: "30vw",
-  elementWidth: "45vw",
+  carouselInnerHeight: "36vw",
+  carouselOuterHeight: "36vw",
+  elementWidth: "54vw",
   opacityFunction: { homePageSliderOpacityController },
   scaleFunction: { homePageSliderScaleController },
   goToPosition: null,
