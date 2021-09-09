@@ -9,6 +9,11 @@ function ShowsCard({ cardTitle, cardDate, cardDescription, cardImage }) {
       <div className="shows-card-image-wrapper">
         <img src={cardImage} alt="shows-card-image" />
       </div>
+      <div className="shows-card-content-wrapper">
+        <div className="shows-card-title-wrapper">{cardTitle}</div>
+        <div className="shows-card-date-wrapper">{cardDate}</div>
+        <div className="shows-card-description-wrapper">{cardDescription}</div>
+      </div>
     </div>
   );
 }
