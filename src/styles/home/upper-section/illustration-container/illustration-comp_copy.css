@@ -1,5 +1,6 @@
 .home-page-illustration-image-wrapper {
   @apply relative;
+  transition: width 0.1s linear, height 0.1s linear;
 }
 
 .home-page-illustration-image-wrapper img {
