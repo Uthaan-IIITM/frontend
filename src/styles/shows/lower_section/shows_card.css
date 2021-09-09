@@ -1,13 +1,32 @@
 .shows-card-main-wrapper {
-  @apply w-full;
+  @apply w-full rounded-sm flex items-center justify-between;
   border: 1px solid #606060;
   height: 11.5vw;
-  padding: 0.75vw 1vw;
+  padding: 0.75vw 0.9vw;
 }
 .shows-card-image-wrapper {
-  width: 30%;
+  width: 29%;
   height: 100%;
+  margin-right: 1.15vw;
 }
 .shows-card-image-wrapper img {
-  @apply w-full h-full object-cover;
+  @apply w-full h-full object-cover rounded-sm;
+}
+.shows-card-content-wrapper {
+  width: 70%;
+}
+.shows-card-title-wrapper {
+  @apply font-semibold;
+  font-size: 1.5vw;
+  color: #252525;
+}
+.shows-card-date-wrapper {
+  @apply font-medium;
+  font-size: 0.7vw;
+  color: #999999;
+}
+.shows-card-description-wrapper {
+  @apply font-medium w-full;
+  font-size: 0.9vw;
+  color: #222222;
 }
