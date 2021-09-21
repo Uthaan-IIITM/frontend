@@ -9,16 +9,17 @@ function ShowsLowerLeftSubSectionTitleComp({
 }) {
   return (
     <div className="shows-lower-left-sec-nav-title-primary-wrapper">
-      <div
-        clssName="shows-lower-left-sec-nav-title-text"
+      <span
+        className="shows-lower-left-sec-nav-title-text"
         style={{
           color: isActive ? "#FF9300" : "#3D3D3D",
+          // fontSize: `calc(1.35 * ${scaleIndex}vw`,
           transform: `scale(${scaleIndex})`,
           opacity: opacityIndex,
         }}
       >
         {title}
-      </div>
+      </span>
     </div>
   );
 }
