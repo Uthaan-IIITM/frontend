@@ -13,7 +13,6 @@ function ShowsLowerLeftSubSectionTitleComp({
         className="shows-lower-left-sec-nav-title-text"
         style={{
           color: isActive ? "#FF9300" : "#3D3D3D",
-          // fontSize: `calc(1.35 * ${scaleIndex}vw`,
           transform: `scale(${scaleIndex})`,
           opacity: opacityIndex,
         }}
