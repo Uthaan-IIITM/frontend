@@ -7,7 +7,7 @@
 
 .shows-lower-left-sec-nav-title-text {
   font-size: 1.35vw;
-  font-weight: 800;
+  font-weight: 700;
   transform-origin: 5% 50%;
   transition: transform 0.2s ease-out,opacity 0.2s ease-out;
   /* transition: opatransform 1s ease-out, opacity 1s ease-out;
