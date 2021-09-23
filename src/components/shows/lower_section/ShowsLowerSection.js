@@ -21,12 +21,7 @@ function ShowsLowerSection() {
     ]);
   }, []);
   return (
-    <div
-      className="shows-lower-section-wrapper"
-      style={{
-        marginTop: "200px",
-      }}
-    >
+    <div className="shows-lower-section-wrapper">
       <div>
         <ShowsLowerLeftSubSection showsTitlesList={titlesList} />
       </div>

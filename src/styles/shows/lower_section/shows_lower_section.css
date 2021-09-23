@@ -4,6 +4,9 @@
   column-gap: 1vw;
   padding-right: 6.75vw;
   padding-left: 4.5vw;
+  background-color: white;
+  padding-top: 200px;
+  position: relative;
 }
 .shows-lower-section-cards-wrapper {
   @apply grid;
