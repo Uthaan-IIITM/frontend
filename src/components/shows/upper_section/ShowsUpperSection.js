@@ -3,6 +3,7 @@ import { ReactComponent as Graphic1 } from "../../../assets/shows/bg/bg1.svg";
 import { ReactComponent as Graphic2 } from "../../../assets/shows/bg/bg2.svg";
 import { ReactComponent as Graphic3 } from "../../../assets/shows/bg/bg3.svg";
 import { ReactComponent as Graphic4 } from "../../../assets/shows/bg/bg4.svg";
+import { ReactComponent as PrimaryGraphic } from "../../../assets/shows/graphic.svg";
 import ListingPagesTopBreifComp from "./../../_general/listing_pages_top_bottom_comps/ListingPagesTopBreifComp";
 
 function ShowsUpperSection() {
@@ -19,9 +20,11 @@ function ShowsUpperSection() {
         primaryHeight="50vh"
         topicTitle="SHOWS"
         topicDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus, quis dolor sit amet"
-        textDivStylingClass="lisitng-page-center-text-div-for-events-page"
-        textTitleStylingClass="listing-page-center-text-title-for-events-page"
-        textDescriptionStylingClass="listing-page-center-text-description-for-events-page"
+        textDivStylingClass="lisitng-page-center-text-div-for-shows-page"
+        textTitleStylingClass="listing-page-center-text-title-for-shows-page"
+        textDescriptionStylingClass="listing-page-center-text-description-for-shows-page"
+        primaryGraphicCompStylingClass="listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-shows-page"
+        PrimaryGraphicComp={<PrimaryGraphic />}
       />
     </div>
   );
