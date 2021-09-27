@@ -12,7 +12,7 @@ function ListingPagesSmoothScrollContainer({ topContainer, bottomContainer }) {
       if (bottomComponentContainer) {
         let windowScrllPosititon = window.scrollY;
         let windowHeight = window.innerHeight;
-        if (windowScrllPosititon < window.innerHeight / 10) {
+        if (windowScrllPosititon < window.innerHeight / 6) {
           if (bottomComponentContainer.style.transitionDuration === 800) {
             setTimeout(() => {
               bottomComponentContainer.style.transitionDuration = "100ms";
@@ -23,7 +23,7 @@ function ListingPagesSmoothScrollContainer({ topContainer, bottomContainer }) {
           bottomComponentContainer.style.transitionDuration = "800ms";
 
           bottomComponentContainer.style.marginTop = `-${
-            windowHeight - windowHeight / 10
+            windowHeight - windowHeight / 6
           }px`;
         }
       }
