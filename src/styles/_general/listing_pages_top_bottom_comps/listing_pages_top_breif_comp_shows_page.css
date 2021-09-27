@@ -1,0 +1,37 @@
+.lisitng-page-center-text-div-for-shows-page {
+  position: absolute;
+  top: 24vh;
+  left: 7.5vw;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-page-center-text-title-for-shows-page {
+  font-size: 4vw;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  width: fit-content;
+}
+
+.listing-page-center-text-description-for-shows-page {
+  font-size: 1.5vw;
+  font-weight: 500;
+  width: 40vw;
+  margin-top: 1vw;
+}
+
+.listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-shows-page {
+  position: absolute;
+  top: 18vh;
+  left: 54vw;
+  width: auto;
+  height: auto;
+  transition: transform 0.1s linear;
+}
+
+.listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-shows-page
+  svg {
+  height: auto;
+  width: 36vw;
+}
