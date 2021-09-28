@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import reactDom from "react-dom";
 import { useEffect } from "react/cjs/react.development";
 import { useStateValue } from "../../../StateProvider";
 import "../../../styles/_general/listing_pages_top_bottom_comps/listing_pages_smooth_scroll_container.css";
@@ -6,44 +7,41 @@ import "../../../styles/_general/listing_pages_top_bottom_comps/listing_pages_sm
 function ListingPagesSmoothScrollContainer({ topContainer, bottomContainer }) {
   const [state, dispatch] = useStateValue();
 
+  const bottomContainerRef = useRef(121212);
+
   useEffect(() => {
     window.addEventListener("scroll", (e) => {
-      let bottomComponentContainer = document.getElementsByClassName(
-        "listing-pages-smooth-scroll-bottom-container-wrapper"
-      )[0];
+      let windowScrllPosititon = window.scrollY;
+      let windowHeight = window.innerHeight;
 
-      if (bottomComponentContainer) {
-        let windowScrllPosititon = window.scrollY;
-        let windowHeight = window.innerHeight;
-        if (windowScrllPosititon < window.innerHeight / 6) {
-          if (bottomComponentContainer.style.transitionDuration === 800) {
-            setTimeout(() => {
-              bottomComponentContainer.style.transitionDuration = "100ms";
-            }, 800);
-          }
-          bottomComponentContainer.style.marginTop = `-${windowScrllPosititon}px`;
-
+      if ((windowScrllPosititon / windowHeight) * 10 < 1) {
+        if (state.navbar_state != (windowScrllPosititon / windowHeight) * 10) {
           dispatch({
             type: "UPDATE_NAVBAR_STATE",
-            navbar_state:
-              (windowScrllPosititon / window.innerHeight) * 6 > 1
-                ? 1
-                : (windowScrllPosititon / window.innerHeight) * 6,
+            navbar_state: (windowScrllPosititon / windowHeight) * 10,
           });
-        } else {
-          bottomComponentContainer.style.transitionDuration = "800ms";
+        }
+      } else if (state.navbar_state != 1) {
+        dispatch({
+          type: "UPDATE_NAVBAR_STATE",
+          navbar_state: 1,
+        });
+      }
 
-          bottomComponentContainer.style.marginTop = `-${
-            windowHeight - windowHeight / 6
-          }px`;
+      let bottomComponentContainer = reactDom.findDOMNode(
+        bottomContainerRef.current
+      );
+
+      console.log("hehe");
+      if (bottomComponentContainer) {
+        if (windowScrllPosititon < 100) {
+          bottomComponentContainer.style.marginTop = `-${windowScrllPosititon}px`;
+        } else {
+          bottomComponentContainer.style.marginTop = `-${windowHeight - 100}px`;
         }
       }
     });
   }, []);
-
-  // useEffect(() => {
-  //   console.log(transitionDurationInBottomContainerForSmoothScroll);
-  // }, [transitionDurationInBottomContainerForSmoothScroll]);
 
   return (
     <div className="listing-pages-smooth-scroll-primary-wrapper">
@@ -53,8 +51,9 @@ function ListingPagesSmoothScrollContainer({ topContainer, bottomContainer }) {
       <div
         className="listing-pages-smooth-scroll-bottom-container-wrapper"
         style={{
-          transitionDuration: `100ms`,
+          transitionDuration: `1s`,
         }}
+        ref={bottomContainerRef}
       >
         {bottomContainer}
       </div>
