@@ -5,12 +5,23 @@ import HomePage from "./components/home/HomePage";
 import EventPage from "./components/event/EventPage";
 import ShowsPage from "./components/shows/ShowsPage";
 import BridgingGapBetweenJuniorsAndSeniorsCopy from "./components/home/upper-section/illustration-components/BridgingGapBetweenJuniorsAndSeniors_copy";
+import { useEffect } from "react/cjs/react.development";
+import { useStateValue } from "./StateProvider";
 
 function App() {
+  const [state, dispatch] = useStateValue();
+
+  useEffect(() => {
+    // dispatch({
+    //   type: "UPDATE_NAVBAR_STATE",
+    //   navbar_state: 1,
+    // });
+  }, []);
+
   return (
     <div className="App">
       <Router>
-        <Navbar slidingIndex={0} />
+        <Navbar slidingIndex={state.navbar_state} />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route

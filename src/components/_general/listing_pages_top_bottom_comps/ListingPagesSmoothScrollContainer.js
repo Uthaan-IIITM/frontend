@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { useEffect } from "react/cjs/react.development";
+import { useStateValue } from "../../../StateProvider";
 import "../../../styles/_general/listing_pages_top_bottom_comps/listing_pages_smooth_scroll_container.css";
 
 function ListingPagesSmoothScrollContainer({ topContainer, bottomContainer }) {
+  const [state, dispatch] = useStateValue();
+
   useEffect(() => {
     window.addEventListener("scroll", (e) => {
       let bottomComponentContainer = document.getElementsByClassName(
@@ -19,6 +22,14 @@ function ListingPagesSmoothScrollContainer({ topContainer, bottomContainer }) {
             }, 800);
           }
           bottomComponentContainer.style.marginTop = `-${windowScrllPosititon}px`;
+
+          dispatch({
+            type: "UPDATE_NAVBAR_STATE",
+            navbar_state:
+              (windowScrllPosititon / window.innerHeight) * 6 > 1
+                ? 1
+                : (windowScrllPosititon / window.innerHeight) * 6,
+          });
         } else {
           bottomComponentContainer.style.transitionDuration = "800ms";
 
