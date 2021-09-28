@@ -11,26 +11,13 @@ import { useStateValue } from "./StateProvider";
 function App() {
   const [state, dispatch] = useStateValue();
 
-  useEffect(() => {
-    // dispatch({
-    //   type: "UPDATE_NAVBAR_STATE",
-    //   navbar_state: 1,
-    // });
-  }, []);
-
   return (
     <div className="App">
       <Router>
         <Navbar slidingIndex={state.navbar_state} />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route
-            exact
-            path="/events"
-            component={() => {
-              return <EventPage />;
-            }}
-          />
+          <Route exact path="/events" component={EventPage} />
           <Route exact path="/shows" component={ShowsPage} />
           <Route
             exact
