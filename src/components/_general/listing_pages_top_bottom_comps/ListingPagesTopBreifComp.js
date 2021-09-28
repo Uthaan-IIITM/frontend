@@ -108,26 +108,19 @@ function ListingPagesTopBreifComp({
             );
           })}
       </div>
-      <div
-        className={primaryGraphicCompStylingClass}
-        style={{
-          transform: `translate(${primaryGarphicPosValues.horizontal} , ${primaryGarphicPosValues.vertical})`,
-        }}
-      >
-        {PrimaryGraphicComp}
-      </div>
-
+      {PrimaryGraphicComp ? (
+        <div
+          className={primaryGraphicCompStylingClass}
+          style={{
+            transform: `translate(${primaryGarphicPosValues.horizontal} , ${primaryGarphicPosValues.vertical})`,
+          }}
+        >
+          {PrimaryGraphicComp}
+        </div>
+      ) : null}
       <div className={textDivStylingClass}>
-        {/* <TextComponent
-          innerContent={topicTitle}
-          textComponentStyle={textTitleStylingClass}
-        /> */}
         <div className={textTitleStylingClass}>{topicTitle}</div>
         <div className={textDescriptionStylingClass}>{topicDescription}</div>
-        {/* <TextComponent
-          innerContent={topicDescription}
-          textComponentStyle={}
-        /> */}
       </div>
     </div>
   );
