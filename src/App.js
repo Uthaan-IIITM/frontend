@@ -7,6 +7,7 @@ import ShowsPage from "./components/shows/ShowsPage";
 import BridgingGapBetweenJuniorsAndSeniorsCopy from "./components/home/upper-section/illustration-components/BridgingGapBetweenJuniorsAndSeniors_copy";
 import { useEffect } from "react/cjs/react.development";
 import { useStateValue } from "./StateProvider";
+import ScrollToTop from "./components/_general/ScrollToTop";
 
 function App() {
   const [state, dispatch] = useStateValue();
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <Navbar slidingIndex={state.navbar_state} />
         <Switch>
           <Route exact path="/" component={HomePage} />
