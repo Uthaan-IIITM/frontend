@@ -5,7 +5,7 @@
 }
 
 .listing-pages-smooth-scroll-bottom-container-wrapper {
-  height: 200vh;
+  height: auto;
   width: 100%;
   transition: margin-top cubic-bezier(0.8, 0, 0, 1);
   margin-top: 0px;
