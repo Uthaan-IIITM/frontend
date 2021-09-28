@@ -7,9 +7,13 @@
   background-color: white;
   padding-top: 200px;
   position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 .shows-lower-section-cards-wrapper {
   @apply grid;
   grid-template-columns: 1fr;
   row-gap: 0.8vw;
+  height: 80vh;
+  overflow-y: scroll; 
 }
