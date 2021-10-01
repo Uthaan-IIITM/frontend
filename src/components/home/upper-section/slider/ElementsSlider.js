@@ -1,20 +1,23 @@
+import reactDom from "react-dom";
 import PropTypes from "prop-types";
 import { useState } from "react/cjs/react.development";
+import { useEffect, useRef } from "react";
+
 import "../../../../styles/home/upper-section/slider/image-slider-container.css";
 import "../../../../styles/home/upper-section/slider/core-image-slider-container.css";
+
 import homePageSliderOpacityController from "../helper-functions/home-page-slider-opacity-controller";
 import homePageSliderScaleController from "../helper-functions/home-page-slider-scale-controller";
 import formatNumber from "./slider-helpers/nemerical_formatter";
 import scaleAndOpacityControllerByActualPosition from "./slider-helpers/scale_and_opacity_controller_by_actual_position";
 import scaleAndOpacityControllerByPositionFromCenter from "./slider-helpers/scale_and_opacity_controller_by_position_from_center";
-import { useEffect, useRef } from "react";
-import reactDom from "react-dom";
+
+import easyScroll from "easy-scroll";
 
 function ElementsSlider({
   sliderComponents,
   spaceBetween,
-  paddingGeneral,
-  alignment,
+  transformOriginValue,
   elementWidth,
   carouselWidth,
   carouselInnerHeight,
@@ -23,19 +26,22 @@ function ElementsSlider({
   scaleFunction,
   onScrollChangeFunction,
   goToPosition,
+  autoSlide,
+  autoSlideInterval,
+  autoSlideTransitionDuration,
 }) {
   /* References */
   const sliderPrimaryWrapperReference = useRef(125);
   const sliderChildElementsNodes = useRef([]);
+  const autoSlideIntervalRef = useRef(null);
 
   /* Carousel and mouse states */
   const beingDragged = useRef(false);
   const previousScrollPosition = useRef(0);
   const startMousePosition = useRef(0);
 
-  const [sliderOpacity, setSliderOpacity] = useState(0);
-
   /* Slider states */
+  const [sliderOpacity, setSliderOpacity] = useState(0);
   const [opacityAndScaleDimensions, setOpacityAndScaleDimensions] = useState({
     opacityDimensionsByPositionFromCenter: [],
     opacityDimensionsByActualPosition: [],
@@ -55,7 +61,7 @@ function ElementsSlider({
       primaryWrapper.childNodes[0].childNodes[0].childNodes;
     sliderChildElementsNodes.current = sliderChildElementsArray;
 
-    primaryWrapper.scrollLeft = 1;
+    // primaryWrapper.scrollLeft = 1;
     primaryWrapper.scrollLeft = 0;
 
     setTimeout(() => {
@@ -64,8 +70,8 @@ function ElementsSlider({
   }, []);
 
   useEffect(() => {
-    if (goToPosition) {
-      scrollSliderToPosition(goToPosition);
+    if (goToPosition >= 0) {
+      scrollSliderToPosition(goToPosition, 2000, "easeInOutQuad");
     }
   }, [goToPosition]);
 
@@ -112,6 +118,22 @@ function ElementsSlider({
     }
   }, [opacityAndScaleDimensions]);
 
+  useEffect(() => {
+    if (autoSlideIntervalRef.current !== null) {
+      autoSlideIntervalRef.current = clearTimeout(autoSlideIntervalRef.current);
+    }
+
+    if (autoSlide) {
+      autoSlideIntervalRef.current = setTimeout(() => {
+        scrollSliderToPosition(
+          (currentScrollStateIndices.intIndex + 1) % sliderComponents.length,
+          2000,
+          "easeInOutQuad"
+        );
+      }, autoSlideInterval);
+    }
+  }, [autoSlide, currentScrollStateIndices.intIndex]);
+
   function startDragging(e) {
     beingDragged.current = true;
     startMousePosition.current = e.clientX;
@@ -120,7 +142,11 @@ function ElementsSlider({
   function stopDragging(e) {
     beingDragged.current = false;
     previousScrollPosition.current = e.target.scrollLeft;
-    scrollSliderToPosition(currentScrollStateIndices.intIndex, e.target);
+    scrollSliderToPosition(
+      currentScrollStateIndices.intIndex,
+      500,
+      "easeOutQuad"
+    );
   }
 
   /** Function to drag carousel when user is dragging **/
@@ -139,21 +165,61 @@ function ElementsSlider({
     }
   }
 
-  function scrollSliderToPosition(index) {
+  function scrollSliderToPosition(index, animDuration, animEasing) {
     let sliderWrapper = reactDom.findDOMNode(
       sliderPrimaryWrapperReference.current
     );
     let sliderfirstElement = sliderChildElementsNodes.current[0];
 
+    if (
+      !(sliderfirstElement && sliderfirstElement.nodeType === Node.ELEMENT_NODE)
+    ) {
+      return;
+    }
     let sliderfirstElementComputedStyles = getComputedStyle(sliderfirstElement);
-    sliderWrapper.scrollTo({
-      top: 0,
-      left:
+    console.log(
+      parseFloat(sliderfirstElementComputedStyles.width) +
+        2 * parseFloat(sliderfirstElementComputedStyles.marginLeft) * index -
+        sliderWrapper.scrollLeft
+    );
+    easyScroll({
+      scrollableDomEle: sliderWrapper,
+      direction: "right",
+      duration: animDuration ? animDuration : 500,
+      easingPreset: animEasing ? animEasing : "easeOutQuad",
+      // cubicBezierPoints: {
+      //   'x1': 0.8,
+      //   'y1': 0,
+      //   'x2': 0,
+      //   'y2': 1,
+      // }
+      // cubicBezierPoints: {
+      //   x1: 0.8,
+      //   y1: 0,
+      //   x2: 0,
+      //   y2: 1,
+      // },
+      scrollAmount:
         (parseFloat(sliderfirstElementComputedStyles.width) +
           2 * parseFloat(sliderfirstElementComputedStyles.marginLeft)) *
-        index,
-      behavior: "smooth",
+          index -
+        sliderWrapper.scrollLeft,
     });
+
+    // let sliderWrapper = reactDom.findDOMNode(
+    //   sliderPrimaryWrapperReference.current
+    // );
+    // let sliderfirstElement = sliderChildElementsNodes.current[0];
+
+    // let sliderfirstElementComputedStyles = getComputedStyle(sliderfirstElement);
+    // sliderWrapper.scrollTo({
+    //   top: 0,
+    //   left:
+    //     (parseFloat(sliderfirstElementComputedStyles.width) +
+    //       2 * parseFloat(sliderfirstElementComputedStyles.marginLeft)) *
+    //     index,
+    //   behavior: "smooth",
+    // });
   }
 
   function updateLayoutOnScroll(e) {
@@ -229,14 +295,20 @@ function ElementsSlider({
                 <div
                   className="core-slider-elements-wrapper"
                   style={{
-                    width: `${
-                      100 *
-                      parseFloat(
-                        opacityAndScaleDimensions
-                          .scaleDimensionsByActualPosition[index]
-                      )
-                    }%`,
-                    alignItems: alignment,
+                    transform: `scale(${parseFloat(
+                      opacityAndScaleDimensions.scaleDimensionsByActualPosition[
+                        index
+                      ]
+                    )})`,
+                    transformOrigin: transformOriginValue,
+                    // width: `${
+                    //   100 *
+                    //   parseFloat(
+                    //     opacityAndScaleDimensions
+                    //       .scaleDimensionsByActualPosition[index]
+                    //   )
+                    // }%`,
+                    // alignItems: alignment,
                     pointerEvents: "none",
                     opacity:
                       opacityAndScaleDimensions
@@ -257,14 +329,13 @@ function ElementsSlider({
 ElementsSlider.propTypes = {
   sliderComponents: PropTypes.array.isRequired,
   spaceBetween: PropTypes.string,
-  paddingGeneral: PropTypes.string,
   alignment: PropTypes.string,
 };
 
 ElementsSlider.defaultProps = {
   spaceBetween: "10vw",
-  paddingGeneral: "10vw",
-  alignment: "flex-end",
+  // alignment: "flex-end",
+  transformOriginValue: "50% 100%",
   carouselWidth: "100vw",
   carouselInnerHeight: "36vw",
   carouselOuterHeight: "36vw",
