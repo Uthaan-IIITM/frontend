@@ -1,5 +1,6 @@
 .dot-wrapper {
   transition: transform linear;
+  cursor: pointer;
 }
 
 .dot-outer-div {
