@@ -42,7 +42,7 @@ function HomeUpperSection() {
         onScrollChangeFunction={handleSliderChange}
         autoSlide={true}
         autoSlideInterval={5000}
-        autoSlideTransitionDuration={500}
+        autoSlideTransitionDuration={900}
         // goToPosition={sliderGoToPosition}
       />
 
