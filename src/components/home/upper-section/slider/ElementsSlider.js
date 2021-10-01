@@ -71,7 +71,11 @@ function ElementsSlider({
 
   useEffect(() => {
     if (goToPosition >= 0) {
-      scrollSliderToPosition(goToPosition, 2000, "easeInOutQuad");
+      scrollSliderToPosition(
+        goToPosition,
+        autoSlideTransitionDuration,
+        "easeInOutQuad"
+      );
     }
   }, [goToPosition]);
 
@@ -127,7 +131,7 @@ function ElementsSlider({
       autoSlideIntervalRef.current = setTimeout(() => {
         scrollSliderToPosition(
           (currentScrollStateIndices.intIndex + 1) % sliderComponents.length,
-          2000,
+          autoSlideTransitionDuration,
           "easeInOutQuad"
         );
       }, autoSlideInterval);
@@ -177,11 +181,7 @@ function ElementsSlider({
       return;
     }
     let sliderfirstElementComputedStyles = getComputedStyle(sliderfirstElement);
-    console.log(
-      parseFloat(sliderfirstElementComputedStyles.width) +
-        2 * parseFloat(sliderfirstElementComputedStyles.marginLeft) * index -
-        sliderWrapper.scrollLeft
-    );
+
     easyScroll({
       scrollableDomEle: sliderWrapper,
       direction: "right",
@@ -223,7 +223,6 @@ function ElementsSlider({
   }
 
   function updateLayoutOnScroll(e) {
-    console.log("scrolled");
     if (!beingDragged.current) {
       previousScrollPosition.current = e.target.scrollLeft;
     }
