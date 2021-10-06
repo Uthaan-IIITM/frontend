@@ -3,7 +3,6 @@ import "../../../styles/_general/listing_pages_top_bottom_comps/listing_pages_to
 import "../../../styles/_general/listing_pages_top_bottom_comps/listing_pages_top_breif_comp_events_page.css";
 import "../../../styles/_general/listing_pages_top_bottom_comps/listing_pages_top_breif_comp_shows_page.css";
 import formatNumber from "../helpers/nemerical_formatter";
-import TextComponent from "../TextComponent";
 
 function ListingPagesTopBreifComp({
   floatingBgImagesList,
