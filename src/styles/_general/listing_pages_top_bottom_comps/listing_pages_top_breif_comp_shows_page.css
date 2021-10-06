@@ -21,10 +21,14 @@
   margin-top: 1vw;
 }
 
+.listing-pages-top-breif-sec-primary-wrapper {
+  position: relative;
+}
+
 .listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-shows-page {
   position: absolute;
-  top: 18vh;
-  left: 54vw;
+  bottom: 24vh;
+  left: 52vw;
   width: auto;
   height: auto;
   transition: transform 0.1s linear;
