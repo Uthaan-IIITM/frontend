@@ -8,6 +8,7 @@ import BridgingGapBetweenJuniorsAndSeniorsCopy from "./components/home/upper-sec
 import { useEffect } from "react/cjs/react.development";
 import { useStateValue } from "./StateProvider";
 import ScrollToTop from "./components/_general/ScrollToTop";
+import ArticlesPage from './components/articles/ArticlesPage';
 
 function App() {
   const [state, dispatch] = useStateValue();
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/events" component={EventPage} />
           <Route exact path="/shows" component={ShowsPage} />
+          <Route exact path="/articles" component={ArticlesPage} />
           <Route
             exact
             path="/123"
