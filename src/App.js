@@ -9,6 +9,7 @@ import { useEffect } from "react/cjs/react.development";
 import { useStateValue } from "./StateProvider";
 import ScrollToTop from "./components/_general/ScrollToTop";
 import ArticlesPage from './components/articles/ArticlesPage';
+import InterviewsPage from './components/interviews/InterviewsPage';
 
 function App() {
   const [state, dispatch] = useStateValue();
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/events" component={EventPage} />
           <Route exact path="/shows" component={ShowsPage} />
           <Route exact path="/articles" component={ArticlesPage} />
+          <Route exact path="/interviews" component={InterviewsPage} />
           <Route
             exact
             path="/123"
