@@ -33,16 +33,19 @@ function HomeUpperSection() {
 
       <ElementsSlider
         sliderComponents={[
-          <BridgingGapBetweenJuniorsAndSeniors containerWidth="50vw" />,
-          <CreateConnectAndTrancend containerWidth="50vw" />,
-          <PushingBoundariesOnOurIdeasAndOurCraft containerWidth="50vw" />,
+          <BridgingGapBetweenJuniorsAndSeniors containerWidth="45vw" />,
+          <CreateConnectAndTrancend containerWidth="45vw" />,
+          <PushingBoundariesOnOurIdeasAndOurCraft containerWidth="45vw" />,
         ]}
+        elementWidth="45vw"
+        carouselInnerHeight="auto"
+        carouselOuterHeight="auto"
         opacityFunction={homePageSliderOpacityController}
         scaleFunction={homePageSliderScaleController}
         onScrollChangeFunction={handleSliderChange}
         autoSlide={true}
-        autoSlideInterval={5000}
-        autoSlideTransitionDuration={900}
+        autoSlideInterval={3000}
+        autoSlideTransitionDuration={2000}
         // goToPosition={sliderGoToPosition}
       />
 
