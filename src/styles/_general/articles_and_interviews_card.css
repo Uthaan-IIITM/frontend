@@ -1,0 +1,50 @@
+.articles-and-interviews-card-primary-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: #222222;
+  align-items: center;
+  padding: 0.4vw;
+}
+.articles-and-interviews-card-secondary-wrapper {
+  width: 25vw;
+  height: 18.75vw;
+  overflow: hidden;
+  position: relative;
+}
+.articles-and-interviews-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: blur(20px);
+  transition: opacity 0.5s ease-out, filter 0.5s ease-out;
+  opacity: 0;
+  /* display: none; */
+}
+.articles-and-interviews-card-scrim {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+}
+.articles-and-interviews-card-text-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.articles-and-interviews-card-title {
+  color: white;
+  position: absolute;
+  bottom: 50%;
+  left: 4%;
+  font-size: 1.5vw;
+  font-family: "Manrope";
+  font-weight: 700;
+  max-width: 67%;
+}
