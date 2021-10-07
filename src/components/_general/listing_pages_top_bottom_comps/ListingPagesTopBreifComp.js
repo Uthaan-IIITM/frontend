@@ -16,20 +16,22 @@ function ListingPagesTopBreifComp({
   textDescriptionStylingClass,
   primaryGraphicCompStylingClass,
   PrimaryGraphicComp,
+  extremeBgPositionValues,
+  primaryGraphicExtremePositions,
 }) {
-  const extremeBgPositionValues = useRef({
-    xInitialExtremes: ["11%", "10%", "-15%", "-17%"],
-    xEndExtremes: ["-1%", "-5%", "10%", "12%"],
-    yEndExtremes: ["0%", "-1%", "-1%", "-2%"],
-    yInitialExtremes: ["-1.5%", "-1.3%", "0%", "0%"],
-  });
+  // const extremeBgPositionValues = useRef({
+  //   xInitialExtremes: ["11%", "10%", "-15%", "-17%"],
+  //   xEndExtremes: ["-1%", "-5%", "10%", "12%"],
+  //   yEndExtremes: ["0%", "-1%", "-1%", "-2%"],
+  //   yInitialExtremes: ["-1.5%", "-1.3%", "0%", "0%"],
+  // });
 
-  const primaryGraphicExtremePositions = useRef({
-    xInitialExtreme: "1%",
-    xEndExtreme: "-0.5%",
-    yEndExtreme: "-1%",
-    yInitialExtreme: "1%",
-  });
+  // const primaryGraphicExtremePositions = useRef({
+  //   xInitialExtreme: "1%",
+  //   xEndExtreme: "-0.5%",
+  //   yEndExtreme: "-1%",
+  //   yInitialExtreme: "1%",
+  // });
 
   const [bgElementsPositionValues, setBgElementsPositionValues] = useState({
     xPos: ["0px", "0px", "0px", "0px"],
@@ -54,30 +56,30 @@ function ListingPagesTopBreifComp({
       let yFractionIndex = formatNumber(e.clientY / window.innerHeight, 2);
       for (let i = 0; i < 4; i++) {
         let tempElemXPos = `calc( (${xFractionIndex} * ${
-          extremeBgPositionValues.current.xEndExtremes[i]
+          extremeBgPositionValues.xEndExtremes[i]
         }) +
         (${1 - xFractionIndex} *
-          ${extremeBgPositionValues.current.xInitialExtremes[i]}))`;
+          ${extremeBgPositionValues.xInitialExtremes[i]}))`;
         let tempElemYPos = `calc( (${yFractionIndex} * ${
-          extremeBgPositionValues.current.yEndExtremes[i]
+          extremeBgPositionValues.yEndExtremes[i]
         }) +
         (${1 - yFractionIndex} *
-          ${extremeBgPositionValues.current.yInitialExtremes[i]}))`;
+          ${extremeBgPositionValues.yInitialExtremes[i]}))`;
         tempBgDivPositions.yPos[i] = tempElemYPos;
         tempBgDivPositions.xPos[i] = tempElemXPos;
       }
       setBgElementsPositionValues(tempBgDivPositions);
       setPrimaryGarphicPosValues({
         horizontal: `calc( (${xFractionIndex} * ${
-          primaryGraphicExtremePositions.current.xEndExtreme
+          primaryGraphicExtremePositions.xEndExtreme
         }) +
         (${1 - xFractionIndex} *
-          ${primaryGraphicExtremePositions.current.xInitialExtreme}))`,
+          ${primaryGraphicExtremePositions.xInitialExtreme}))`,
         vertical: `calc( (${yFractionIndex} * ${
-          primaryGraphicExtremePositions.current.yEndExtreme
+          primaryGraphicExtremePositions.yEndExtreme
         }) +
         (${1 - yFractionIndex} *
-          ${primaryGraphicExtremePositions.current.yInitialExtreme}))`,
+          ${primaryGraphicExtremePositions.yInitialExtreme}))`,
       });
     }
   };
@@ -125,5 +127,20 @@ function ListingPagesTopBreifComp({
     </div>
   );
 }
+
+ListingPagesTopBreifComp.defaultProps = {
+  extremeBgPositionValues: {
+    xInitialExtremes: ["11%", "10%", "-15%", "-17%"],
+    xEndExtremes: ["-1%", "-5%", "10%", "12%"],
+    yEndExtremes: ["0%", "-1%", "-1%", "-2%"],
+    yInitialExtremes: ["-1.5%", "-1.3%", "0%", "0%"],
+  },
+  primaryGraphicExtremePositions: {
+    xInitialExtreme: "1%",
+    xEndExtreme: "-0.5%",
+    yEndExtreme: "-1%",
+    yInitialExtreme: "1%",
+  },
+};
 
 export default ListingPagesTopBreifComp;
