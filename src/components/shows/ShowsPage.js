@@ -6,12 +6,10 @@ import ListingPagesSmoothScrollContainer from "./../_general/listing_pages_top_b
 function ShowsPage() {
   return (
     <div>
-      <div>
         <ListingPagesSmoothScrollContainer
           topContainer={[<ShowsUpperSection />]}
           bottomContainer={<ShowsLowerSection />}
         />
-      </div>
     </div>
   );
 }
