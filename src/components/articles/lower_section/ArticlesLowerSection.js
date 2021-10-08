@@ -4,18 +4,20 @@ import { useEffect } from "react/cjs/react.development";
 
 import ArticlesAndInterviewsDataObj from "../../_general/helpers/articles_and_interviews_data_constructor";
 
+import "../../../styles/articles/articles_lower_sec.css"
+
 function ArticlesLowerSection() {
   const [articlesData, setArticlesData] = useState([]);
 
   useEffect(() => {
     let tempData = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 30; i++) {
       tempData.push(
         new ArticlesAndInterviewsDataObj(
           "0*ndy6ybdngG_h48BA",
           "An Interview with the International Dance Team of Sri Lanka",
           "Jan 13, 2020",
-          "https://medium.com/@KonradDaWo/how-to-display-medium-posts-on-a-website-with-plain-vanilla-js-basic-api-usage-example-865507848c2"
+          "https://www.google.com/"
         )
       );
     }
