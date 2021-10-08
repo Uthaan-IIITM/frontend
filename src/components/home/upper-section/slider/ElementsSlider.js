@@ -173,6 +173,9 @@ function ElementsSlider({
     let sliderWrapper = reactDom.findDOMNode(
       sliderPrimaryWrapperReference.current
     );
+    if (!sliderWrapper) {
+      return;
+    }
     let sliderfirstElement = sliderChildElementsNodes.current[0];
 
     if (
