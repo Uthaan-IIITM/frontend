@@ -19,6 +19,7 @@
   color: #222222;
   transition:  margin 0.5s ease-in-out;
   pointer-events: all;
+  height: fit-content;
 }
 .navbar-active-class {
   color: #ffb800;
