@@ -15,7 +15,6 @@ function ArticlesAndInterviewsGrid({ inputData = [], sortBy = "DATE" }) {
   return (
     <div className="articles-and-interviews-grid-primary-wrapper">
       {articlesAndInterviewsData.map((article, index) => {
-        console.log(article.title);
         return (
           <div
             className="articles-and-interviews-grid-children-wrapper"
