@@ -12,7 +12,6 @@ import ArticlesPage from "./components/articles/ArticlesPage";
 import InterviewsPage from "./components/interviews/InterviewsPage";
 import ArticlesAndInterviewsCard from "./components/_general/ArticlesAndInterviewsCard";
 import ArticlesLowerSection from "./components/articles/lower_section/ArticlesLowerSection";
-import TeamPage from './components/team/TeamPage';
 
 function App() {
   const [state, dispatch] = useStateValue();
@@ -28,7 +27,7 @@ function App() {
           <Route exact path="/shows" component={ShowsPage} />
           <Route exact path="/articles" component={ArticlesPage} />
           <Route exact path="/interviews" component={InterviewsPage} />
-          <Route exact path="/team" component={TeamPage} />
+          <Route exact path="/123" component={ArticlesLowerSection} />
         </Switch>
       </Router>
     </div>
