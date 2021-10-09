@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ArticlesAndInterviewsGrid from "./../../_general/ArticlesAndInterviewsGrid";
 import { useEffect } from "react/cjs/react.development";
 
-import "../../../styles/articles/articles_lower_sec.css"
+import "../../../styles/articles/articles_lower_sec.css";
 
 import ArticlesAndInterviewsDataObj from "../../_general/helpers/articles_and_interviews_data_constructor";
 import SortingComp from "../../_general/SortingComp";
@@ -25,8 +25,13 @@ function ArticlesLowerSection() {
     setArticlesData(tempData);
   }, []);
 
+  function handlSortChange(newSortState) {
+    console.log(newSortState);
+  }
+
   return (
     <div className="articles-lower-section-primary-wrapper">
+      <SortingComp />
       <ArticlesAndInterviewsGrid inputData={articlesData} />
     </div>
   );
