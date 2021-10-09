@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
 .articles-and-interviews-card-primary-wrapper {
+  pointer-events: none;
   display: flex;
   justify-content: center;
   background-color: #222222;
@@ -37,8 +40,10 @@
   opacity: 0.5;
   transition: opacity 0.2s ease-out, transform 0.2s ease-out;
 }
-.articles-and-interviews-card-primary-wrapper:hover div :nth-child(2),
-.articles-and-interviews-card-primary-wrapper:hover div :nth-child(3) {
+.articles-and-interviews-card-primary-href-wrapper:hover div div :nth-child(2),
+.articles-and-interviews-card-primary-href-wrapper:hover div div :nth-child(3),
+.articles-and-interviews-card-primary-href-wrapper:focus div div :nth-child(2),
+.articles-and-interviews-card-primary-href-wrapper:focus div div :nth-child(3) {
   opacity: 1;
   transform: translateY(0);
 }
@@ -65,15 +70,21 @@
   pointer-events: none;
   color: white;
   font-size: 1.5vw;
-  font-family: "Manrope";
   font-weight: 700;
+  font-family: "Manrope", "Poppins";
   max-width: 67%;
   transform: translateY(30%);
   opacity: 0;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-.articles-and-interviews-card-primary-wrapper:hover
+.articles-and-interviews-card-primary-href-wrapper:hover
+  div
+  div
+  :nth-child(3)
+  :nth-child(1),
+.articles-and-interviews-card-primary-href-wrapper:focus
+  div
   div
   :nth-child(3)
   :nth-child(1) {
