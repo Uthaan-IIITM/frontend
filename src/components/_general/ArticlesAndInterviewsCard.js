@@ -8,7 +8,6 @@ function ArticlesAndInterviewsCard({
   date = "",
   link = "",
 }) {
-  console.log(imageUrl);
   return (
     <a href={`${link}`} target="_blank" rel="noopener noreferrer" className="articles-and-interviews-card-primary-href-wrapper">
       <div className="articles-and-interviews-card-primary-wrapper">
