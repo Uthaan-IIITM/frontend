@@ -21,7 +21,7 @@ function TeamPage() {
           {
             facebookLink: "https://www.facebook.com/",
             linkedinLink: "https://www.linkedin.com/",
-            mailID: "abc@xyz.com",
+            mailID: "mailto:abc@xyz.com",
             githubLink: "https://github.com/",
             instagramLink: "https://www.instagram.com/",
           },
@@ -32,14 +32,13 @@ function TeamPage() {
     });
   }, []);
 
-  useEffect(() => {
-    console.log(teamData);
-  }, [teamData]);
-
   return (
     <div className="team-page-primary-wrapper">
       <div className="team-page-founders-wrapper">
-        <TeamTimeline tim 
+        <TeamTimeline
+          timelineData={teamData.Foundes}
+          colorThemeIndex={Math.floor(Math.random() * 5)}
+        />
       </div>
     </div>
   );

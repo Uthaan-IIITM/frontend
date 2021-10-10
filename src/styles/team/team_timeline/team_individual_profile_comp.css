@@ -1,0 +1,81 @@
+:root {
+  --team-individual-profile-container-width: 13.7vw;
+}
+
+/* .team-individual-primary-wrapper {
+  padding: calc(var(--team-individual-profile-container-width) *0.3) ;
+} */
+
+.team-individual-top-wrapper {
+  /* margin: calc(var(--team-individual-profile-container-width) * 0.3); */
+  width: calc(var(--team-individual-profile-container-width) * 1.5);
+  padding: calc(var(--team-individual-profile-container-width) * 0.25);
+  display: flex;
+  flex-direction: column;
+}
+
+.team-individual-base-wrapper {
+  position: relative;
+  margin-top: calc(var(--team-individual-profile-container-width) * 0.45);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.team-individual-base-card {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+.team-individual-shadow-base {
+  width: 85%;
+  height: auto;
+  margin-top: calc(var(--team-individual-profile-container-width) * 0.3);
+  filter: blur(calc(0.1 * var(--team-individual-profile-container-width)));
+}
+
+.team-individual-profile-wrapper {
+  width: var(--team-individual-profile-container-width);
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.team-individual-profile-image-wrapper {
+  width: calc(0.75 * var(--team-individual-profile-container-width));
+  height: calc(0.75 * var(--team-individual-profile-container-width));
+  border-radius: 50%;
+  outline: calc(0.032 * var(--team-individual-profile-container-width)) solid;
+  padding: 0;
+}
+
+.team-individual-profile-image {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  filter: blur(10px);
+  transition: opacity 0.4s ease-out, filter 0.4s ease-out;
+}
+
+.team-individual-profile-links-wrapper {
+  position: absolute;
+  width: calc(0.17 * var(--team-individual-profile-container-width));
+  height: calc(0.17 * var(--team-individual-profile-container-width));
+}
+
+.team-individual-profile-links {
+  position: absolute;
+  width: calc(0.17 * var(--team-individual-profile-container-width));
+  height: calc(0.17 * var(--team-individual-profile-container-width));
+  transition: transform 4s ease-out;
+  transform: rotate(var(--angle)) translateY(200px)
+    rotate(calc(-1 * var(--angle)));
+}
