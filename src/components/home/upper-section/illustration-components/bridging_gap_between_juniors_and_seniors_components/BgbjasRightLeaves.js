@@ -6,15 +6,9 @@ import rightLeavesPot from "../../../../../assets/home/what_is_uthaan/bridging_g
 import rightLeavesL from "../../../../../assets/home/what_is_uthaan/bridging_gap_between_juniors_and_seniors/graphic_parts/SVG/right_leaf_l.svg";
 import rightLeavesR from "../../../../../assets/home/what_is_uthaan/bridging_gap_between_juniors_and_seniors/graphic_parts/SVG/right_leaf_r.svg";
 
-function BgbjasRightLeaves({ rightLeavesContainerWidth }) {
+function BgbjasRightLeaves() {
   return (
-    <div
-      id="BGBJAS_RightLeaves"
-      style={{
-        width: `calc(${rightLeavesContainerWidth}*0.034)`,
-        height: `calc(${rightLeavesContainerWidth}*0.0305)`,
-      }}
-    >
+    <div id="BGBJAS_RightLeaves">
       <img src={rightLeavesPot} alt="rightLeave" id="BGBJAS_RightLeavesPot" />
       <img src={rightLeavesL} alt="rightLeave" id="BGBJAS_RightLeavesL" />
       <img src={rightLeavesR} alt="rightLeave" id="BGBJAS_RightLeavesR" />

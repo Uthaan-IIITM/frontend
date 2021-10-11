@@ -7,15 +7,9 @@ import leftLeaves3 from "../../../../../assets/home/what_is_uthaan/bridging_gap_
 import leftLeaves4 from "../../../../../assets/home/what_is_uthaan/bridging_gap_between_juniors_and_seniors/graphic_parts/SVG/left_leaves_4.svg";
 import leftLeaves5 from "../../../../../assets/home/what_is_uthaan/bridging_gap_between_juniors_and_seniors/graphic_parts/SVG/left_leaves_5.svg";
 
-function BGBJAS_LeftLeaves({ leftLeavesContainerWidth }) {
+function BGBJAS_LeftLeaves() {
   return (
-    <div
-      id="BGBJAS_LeftLeaves"
-      style={{
-        width: `calc(${leftLeavesContainerWidth}*0.080)`,
-        height: `calc(${leftLeavesContainerWidth}*0.19)`,
-      }}
-    >
+    <div id="BGBJAS_LeftLeaves">
       <img src={leftLeaves1} alt="leave" id="BGBJAS_LeftLeaves1" />
       <img src={leftLeaves2} alt="leave" id="BGBJAS_LeftLeaves2" />
       <img src={leftLeaves3} alt="leave" id="BGBJAS_LeftLeaves3" />

@@ -1,20 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import graphic from "../../../../assets/home/what_is_uthaan.png";
-// import * as GraphicAssets from "../../../../assets/home/what_is_uthaan/bridging_gap_between_juniors_and_seniors/graphic_parts/SVG";
 import "../../../../styles/home/upper-section/illustration-container/illustration-comp_copy.css";
 import BgbjasClock from "./bridging_gap_between_juniors_and_seniors_components/BgbjasClock";
 import BgbjasLeftLeaves from "./bridging_gap_between_juniors_and_seniors_components/BgbjasLeftLeaves";
 import BgbjasRightLeaves from "./bridging_gap_between_juniors_and_seniors_components/BgbjasRightLeaves";
 import BgbjasChai from "./bridging_gap_between_juniors_and_seniors_components/BgbjasChai";
 
-function importAll(r) {
-  let images = {};
-  r.keys().map((item, index) => {
-    images[item.replace("./", "")] = r(item);
-  });
-  return images;
-}
+import importAll from "../../../_general/helpers/import_all";
 
 const images = importAll(
   require.context(
@@ -24,13 +16,19 @@ const images = importAll(
   )
 );
 
-function BridgingGapBetweenJuniorsAndSeniorsCopy({ containerWidth ="75vw" }) {
+function BridgingGapBetweenJuniorsAndSeniorsCopy({ containerWidth = "75vw" }) {
   return (
     <div
       className="home-page-illustration-image-wrapper"
       style={{ width: containerWidth, height: `calc(${containerWidth}*2/3)` }}
     >
       <img src={images["bg.svg"].default} alt="graphic" id="BGBJAS-bg" />
+      <BgbjasLeftLeaves />
+      <img
+        src={images["left_bush.svg"].default}
+        alt="graphic"
+        id="BGBJAS-left-bush"
+      />
       <img
         src={images["bg_rectangle.svg"].default}
         alt="graphic"
@@ -77,11 +75,15 @@ function BridgingGapBetweenJuniorsAndSeniorsCopy({ containerWidth ="75vw" }) {
         id="BGBJAS-laptop"
       />
       <img src={images["stool.svg"].default} alt="graphic" id="BGBJAS-stool" />
+      <img
+        src={images["clock_shadow.svg"].default}
+        alt="graphic"
+        id="BGBJAS-clock-shdow"
+      />
 
-      <BgbjasClock clockContainerWidth={containerWidth} />
-      <BgbjasLeftLeaves leftLeavesContainerWidth={containerWidth} />
-      <BgbjasRightLeaves rightLeavesContainerWidth={containerWidth} />
-      <BgbjasChai ChaiContainerWidth={containerWidth} />
+      <BgbjasClock />
+      <BgbjasRightLeaves />
+      <BgbjasChai />
     </div>
   );
 }

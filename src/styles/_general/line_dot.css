@@ -1,15 +1,20 @@
 .dot-wrapper {
   transition: transform linear;
+  cursor: pointer;
 }
 
 .dot-outer-div {
   border-style: solid;
-  transition: border-radius linear, border-color linear;
+  transition: border-radius linear, border-color linear, border-width linear,
+    width linear, height linear;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
 }
 
 .dot-inner-div {
-  transition: transform linear, background-color linear;
+  transition: transform linear, background-color linear, width linear,
+    height linear;
+  border-radius: 50%;
 }

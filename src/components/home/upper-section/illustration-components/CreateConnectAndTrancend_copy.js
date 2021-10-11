@@ -10,13 +10,7 @@ import CcatBottomChar from "./create_connect_and_trancend/CcatBottomChar";
 import CcatPaintingPot from "./create_connect_and_trancend/CcatPaintingPot";
 import CcatGears from "./create_connect_and_trancend/CcatGears";
 
-function importAll(r) {
-  let images = {};
-  r.keys().map((item, index) => {
-    images[item.replace("./", "")] = r(item);
-  });
-  return images;
-}
+import importAll from "../../../_general/helpers/import_all";
 
 const images = importAll(
   require.context(
@@ -49,10 +43,10 @@ function CreateConnectAndTrancendCopy({ containerWidth = "75vw" }) {
       <img src={images["shadow_small.svg"].default} alt="graphic" />
       <img src={images["bulb_sparkles.svg"].default} alt="graphic" />
 
-      <CcatRightChar rightCharContainerWidth={containerWidth} />
-      <CcatMainBulb mainBulbContainerWidth={containerWidth} />
-      <CcatBottomChar bottomCharContainerWidth={containerWidth} />
-      <CcatPaintingPot PaintingPotContainerWidth={containerWidth} />
+      <CcatRightChar />
+      <CcatMainBulb />
+      <CcatBottomChar />
+      <CcatPaintingPot />
       <CcatGears GearsContainerWidth={containerWidth} />
     </div>
   );

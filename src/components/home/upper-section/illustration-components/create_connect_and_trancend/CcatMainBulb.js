@@ -9,15 +9,9 @@ import bulbTopLeftPart from "../../../../../assets/home/what_is_uthaan/create_co
 import bulbBottomRightPart from "../../../../../assets/home/what_is_uthaan/create_connect_and_trancend/graphic_parts/SVG/bulb_bottom_right_part.svg";
 import bulbFilament from "../../../../../assets/home/what_is_uthaan/create_connect_and_trancend/graphic_parts/SVG/bulb_filament.svg";
 
-function CcatMainBulb({ mainBulbContainerWidth }) {
+function CcatMainBulb() {
   return (
-    <div
-      style={{
-        width: `calc(${mainBulbContainerWidth}*0.228)`,
-        height: `calc(${mainBulbContainerWidth}*0.276)`,
-      }}
-      id="CCAT-MainBulb"
-    >
+    <div id="CCAT-MainBulb">
       <img src={bulbBaseLayer} alt="Ccat_graphic" id="CCAT-BulbBaseLayer" />
       <img
         src={bulbSeparatorLines}

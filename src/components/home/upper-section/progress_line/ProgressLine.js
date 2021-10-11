@@ -8,7 +8,7 @@ import progressLibePositionController from "./helpers/position_conroller";
 
 function ProgressLine({ numberOfDots, currentState }) {
   const positionSideDefiner = useRef([1, 1, 1]);
-  const [currentStateForDot, setStateForCurrentDot] = useState([0, 1, 2]);
+  const [currentStateForDot, setCurrentStateForDot] = useState([0, 1, 2]);
 
   useEffect(() => {
     let tempStateObj = [];
@@ -21,7 +21,7 @@ function ProgressLine({ numberOfDots, currentState }) {
     }
     // console.log(tempStateObj);
     // console.log(sideDefiner);
-    setStateForCurrentDot(tempStateObj);
+    setCurrentStateForDot(tempStateObj);
     positionSideDefiner.current = sideDefiner;
   }, [currentState]);
 
@@ -51,7 +51,7 @@ function ProgressLine({ numberOfDots, currentState }) {
         // console.log(position);
       } else {
         position = progressLibePositionController(elementState)/2;
-        console.log(position);
+        // console.log(position);
       }
       // console.log(
       //   parseFloat(position) *

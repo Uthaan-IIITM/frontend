@@ -1,8 +1,51 @@
 #BGBJAS-Clock-wrapper {
   position: absolute;
-  left: 69.85%;
-  top: 24.6%;
+  left: 68.3%;
+  top: 24%;
+  width: 6.5%;
+  height: 9.75%;
 }
 #BGBJAS-Clock {
   width: 100%;
+}
+.BGBJAS-Clock-arrow-one {
+  position: absolute;
+  left: 49%;
+  top: 24%;
+  height: 26%;
+  width: 2%;
+  background-color: #6d9fe2;
+  transform-origin: 50% 100%;
+  animation: BGBJAS-Clock-arrow-animation 20s linear infinite;
+}
+.BGBJAS-Clock-arrow-two {
+  position: absolute;
+  left: 48.5%;
+  top: 30%;
+  height: 20%;
+  border-radius: 50%;
+  width: 3%;
+  background-color: #6d9fe2;
+  transform-origin: 50% 100%;
+  animation: BGBJAS-Clock-arrow-animation 240s linear infinite;
+}
+
+.BGBJAS-Clock-center {
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  height: 10%;
+  width: 10%;
+  background-color: white;
+  border: 1px solid #6d9fe2;
+  border-radius: 50%;
+}
+
+@keyframes BGBJAS-Clock-arrow-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

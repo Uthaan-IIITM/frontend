@@ -2,24 +2,58 @@
   @apply absolute;
   left: 67.47%;
   top: 23.296%;
+  width: 18%;
+  height: 52.8%;
 }
 #CCAR-Char4 {
   width: 100%;
-  z-index: 2;
 }
 #CCAR-Char4HandZH {
   width: 59.58%;
   left: -16.7%;
   top: -6.33%;
-  z-index: 2;
+  transform-origin: 90% 90%;
+  animation: CCAR-Char4HandZH-anim 2.5s linear infinite alternate-reverse;
 }
 #CCAR-Char4HandZL {
   width: 31.82%;
   left: 7%;
   top: -1.61%;
+  transform-origin: 90% 80%;
+  animation: CCAR-Char4HandZL-anim 2.5s linear infinite alternate-reverse;
 }
 #CCAR-BulbSeparatedPart {
   width: 89.1%;
   top: -21%;
   left: -66%;
+  transform-origin: 130% 70%;
+  animation: CCAR-BulbSeparatedPart-anim 2.5s linear infinite alternate-reverse;
+
+}
+
+@keyframes CCAR-Char4HandZH-anim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes CCAR-Char4HandZL-anim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes CCAR-BulbSeparatedPart-anim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-10deg);
+  }
 }

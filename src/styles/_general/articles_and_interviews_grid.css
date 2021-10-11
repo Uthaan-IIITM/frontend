@@ -1,0 +1,6 @@
+.articles-and-interviews-grid-primary-wrapper {
+  display: grid;
+  grid-gap: 0.8vw;
+  grid-template-columns: auto auto auto;
+  width: fit-content;
+}

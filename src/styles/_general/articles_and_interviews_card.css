@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+.articles-and-interviews-card-primary-wrapper {
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  background-color: #222222;
+  align-items: center;
+  padding: 0.4vw;
+}
+.articles-and-interviews-card-secondary-wrapper {
+  pointer-events: none;
+  width: 25vw;
+  height: 18.75vw;
+  overflow: hidden;
+  position: relative;
+}
+.articles-and-interviews-card-image {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: blur(20px);
+  transition: opacity 0.5s ease-out, filter 0.5s ease-out;
+  opacity: 0;
+  /* display: none; */
+}
+.articles-and-interviews-card-scrim {
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  transform: translateY(30%);
+  opacity: 0.5;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+.articles-and-interviews-card-primary-href-wrapper:hover div div :nth-child(2),
+.articles-and-interviews-card-primary-href-wrapper:hover div div :nth-child(3),
+.articles-and-interviews-card-primary-href-wrapper:focus div div :nth-child(2),
+.articles-and-interviews-card-primary-href-wrapper:focus div div :nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+}
+.articles-and-interviews-card-text-wrapper {
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-bottom: 2.5%;
+  transform: translateY(30%);
+  opacity: 0;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.articles-and-interviews-card-title {
+  pointer-events: none;
+  color: white;
+  font-size: 1.5vw;
+  font-weight: 700;
+  font-family: "Manrope", "Poppins";
+  max-width: 67%;
+  transform: translateY(30%);
+  opacity: 0;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.articles-and-interviews-card-primary-href-wrapper:hover
+  div
+  div
+  :nth-child(3)
+  :nth-child(1),
+.articles-and-interviews-card-primary-href-wrapper:focus
+  div
+  div
+  :nth-child(3)
+  :nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.articles-and-interviews-card-date {
+  pointer-events: none;
+  color: white;
+  font-size: 0.9vw;
+  font-family: "Manrope";
+  font-weight: 600;
+}

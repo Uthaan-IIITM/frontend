@@ -2,6 +2,8 @@
   @apply absolute;
   left: 48.13%;
   top: 80.294%;
+  width: 3.4%;
+  height: 7.5%;
 }
 #CCAT-Pot {
   width: 100%;
@@ -11,16 +13,49 @@
   width: 72.95%;
   top: -100%;
   z-index: 4;
+  transform-origin: bottom center;
+  animation: anim-CCAT-Brush1 5s ease-in-out infinite alternate;
 }
 #CCAT-Brush2 {
   width: 37.94%;
   top: -100%;
   left: 30%;
   z-index: 4;
+  /* transform-origin: bottom center;;  */
+  animation: anim-CCAT-Brush2 5s ease-in-out infinite alternate;
 }
 #CCAT-Brush3 {
   width: 70.37%;
   top: -84%;
   left: 43%;
   z-index: 4;
+  /* transform-origin: bottom center;;  */
+  animation: anim-CCAT-Brush3 5s ease-in-out infinite alternate;
+}
+
+@keyframes anim-CCAT-Brush1 {
+  from {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  to {
+    transform: rotate(-4deg) translate(5%, 2%);
+  }
+}
+
+@keyframes anim-CCAT-Brush2 {
+  from {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  to {
+    transform: rotate(3deg) translate(5%, -2%);
+  }
+}
+
+@keyframes anim-CCAT-Brush3 {
+  from {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  to {
+    transform: rotate(4deg) translate(10%, -2%);
+  }
 }

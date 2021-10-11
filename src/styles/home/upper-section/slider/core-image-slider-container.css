@@ -4,8 +4,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: width 0.1s linear;
-  transition: opacity 0.1s linear;
+  transition: transform 0.2s linear, opacity 0.2s linear;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .core-slider-elements-wrapper-wrapper {
