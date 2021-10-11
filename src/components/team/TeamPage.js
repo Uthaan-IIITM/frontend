@@ -13,9 +13,9 @@ function TeamPage() {
   });
 
   useEffect(() => {
-    setTeamData({
-      ...teamData,
-      Foundes: [
+    let tempFounderData = [];
+    for (let i = 0; i < 10; i++) {
+      tempFounderData.push(
         new TeamIndividualDataObj(
           "Amandeep Singh",
           {
@@ -27,17 +27,20 @@ function TeamPage() {
           },
           "https://s3-alpha-sig.figma.com/img/d8c5/de85/df5a0c73886a5c2ca2e5a44d9f7f9efb?Expires=1634515200&Signature=AMH8RVoQ~-OmZaXrx2N83--eAnip2yTwZsEp4510T~ZVN1CU1wRO2rNLszGZL0i9AS0yq0dOlW06GaIxnw8sHyT6m4ncupaXpAg-7VK335mCS21RC7ONObqoKt0I0VNer~Gca5flLkwLLaVzqbNZhbDNXC9nuI1ZFetr~QXv36FKqc9YImOmEYr4hjv-CKjkWvNPf1IyzZxQmjdeb0KwtZzjtEKYFZpPOB5yEPtEeUEvWFBt3Rev3UM5I25SPscKqtuiNsjW0nq1aLJpISy7QrMJCkKlOxRyGjRGdbTTbQJBasmRXHiNLwP2Q1eIbNCO0DS8uCXQGyidP4Fzf5EWCg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
           "The main aim of Uthann is not just to conduct events but to eliminate the distance between junior & senior."
-        ),
-      ],
-    });
-  }, []);
+        )
+      );
+    }
+
+    setTeamData({ ...teamData, Foundes: tempFounderData });
+
+    }, []);
 
   return (
     <div className="team-page-primary-wrapper">
       <div className="team-page-founders-wrapper">
         <TeamTimeline
           timelineData={teamData.Foundes}
-          colorThemeIndex={Math.floor(Math.random() * 5)}
+          colorThemeIndex={Array(10).fill(Math.floor(Math.random() * 5))}
         />
       </div>
     </div>
