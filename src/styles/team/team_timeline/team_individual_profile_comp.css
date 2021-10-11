@@ -90,6 +90,6 @@
 
 .team-individual-top-wrapper:hover .team-individual-profile-links {
   transform: rotate(var(--angle))
-    translateY(calc(-1 * 0.58 * var(--team-individual-profile-container-width)))
+    translateY(calc(-1 * 0.62 * var(--team-individual-profile-container-width)))
     rotate(calc(-1 * var(--angle)))scale(1);
 }
