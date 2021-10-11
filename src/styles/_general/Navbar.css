@@ -1,0 +1,26 @@
+.navbar-main-wrapper {
+  @apply fixed top-0 left-0 w-full flex justify-between pt-8 z-20;
+  height: 7.56rem;
+  pointer-events: none;
+  transition: padding-left 0.5s ease-in-out, padding-right 0.5s ease-in-out;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+.navbar-main-left-wrapper img {
+  @apply object-contain;
+  width: 6.875vw;
+  pointer-events: all;
+  cursor: pointer;
+}
+.navbar-main-right-wrapper {
+  @apply flex;
+}
+.navbar-main-right-link {
+  @apply font-semibold text-lg block;
+  color: #222222;
+  transition:  margin 0.5s ease-in-out;
+  pointer-events: all;
+  height: fit-content;
+}
+.navbar-active-class {
+  color: #ffb800;
+}

@@ -1,0 +1,17 @@
+#BGBJAS_Chai {
+  @apply absolute;
+  left: 57.5%;
+  top: 36.28%;
+  width: 2.5%;
+  height: 2.55%;
+}
+#BGBJAS_ChaiCup {
+  width: 100%;
+  z-index: 1;
+}
+#BGBJAS_ChaiVapours {
+  width: 370.5%;
+  max-width: 370.5%;
+  top: -482%;
+  left: -239%;
+}

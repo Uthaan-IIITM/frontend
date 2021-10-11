@@ -1,0 +1,21 @@
+.primary-footer-img-stack-wrapper {
+  width: 3vw;
+  height: 3vw;
+  position: relative;
+  margin-left: 0.7vw;
+  margin-bottom: 0.7vw;
+}
+.primary-footer-common-img-class {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3vw;
+  cursor: pointer;
+  transition: opacity 0.4s ease-in-out;
+}
+.primary-footer-normal-display {
+  opacity: 1;
+}
+.primary-footer-hover-display {
+  opacity: 0;
+}

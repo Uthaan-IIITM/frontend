@@ -1,0 +1,34 @@
+#CCAT-Gear {
+  @apply absolute;
+  left: 33.52%;
+  top: 23.48%;
+  width: 7.2%;
+  height: 10.65%;
+}
+#CCAT-Gear3 {
+  width: 100%;
+  animation: rotate-gear 10s linear 2s  reverse infinite ;
+}
+#CCAT-Gear2 {
+  width: 59.84%;
+  top: -49%;
+  left: 76%;
+  animation: rotate-gear 5s linear 2s infinite ;
+
+}
+#CCAT-Gear1 {
+  width: 59.84%;
+  top: -45%;
+  left: -43%;
+  animation: rotate-gear 6s linear 2s  infinite ;
+}
+
+@keyframes rotate-gear {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+

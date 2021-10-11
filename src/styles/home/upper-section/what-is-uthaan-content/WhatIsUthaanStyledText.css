@@ -1,0 +1,4 @@
+.what-is-uthaan-styled-text {
+  @apply flex justify-center items-center mt-3 font-medium text-xl mx-auto text-center;
+  width: 75%;
+}

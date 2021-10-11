@@ -1,0 +1,41 @@
+.lisitng-page-center-text-div-for-interviews-page {
+  position: absolute;
+  top: 18vh;
+  left: 6.5vw;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-page-center-text-title-for-interviews-page {
+  font-size: 4vw;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  width: fit-content;
+}
+
+.listing-page-center-text-description-for-interviews-page {
+  font-size: 1.5vw;
+  font-weight: 500;
+  width: 40vw;
+  margin-top: 0.5vw;
+}
+
+.listing-pages-top-breif-sec-primary-wrapper {
+  position: relative;
+}
+
+.listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-interviews-page {
+  position: absolute;
+  bottom: 20vh;
+  left: 53vw;
+  width: auto;
+  height: auto;
+  transition: transform 0.1s linear;
+}
+
+.listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-interviews-page
+  svg {
+  height: auto;
+  width: 36vw;
+}

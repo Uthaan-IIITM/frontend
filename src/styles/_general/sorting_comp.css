@@ -1,0 +1,43 @@
+.sorting-comp-primary-wrapper {
+  border-bottom: 1px solid #444444;
+  display: flex;
+  justify-content: flex-end;
+  width: 81vw;
+  margin-bottom: 0.8vw;
+  padding-right: 5%;
+  padding-bottom: 1vw;
+  padding-top: 7.5vw;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1vw;
+  z-index: 1;
+  background-color: white;
+}
+
+.sorting-comp-secondary-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.sorting-comp-title {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  font-size: 1vw;
+  color: #444444;
+  font-weight: 500;
+  width: auto;
+}
+
+.sorting-comp-sorting-state {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  font-size: 1vw;
+  height: fit-content;
+  font-weight: 600;
+  padding-left: 0.4vw;
+}
