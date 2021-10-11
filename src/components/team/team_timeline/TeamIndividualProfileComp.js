@@ -136,6 +136,33 @@ function TeamIndividualProfileComp({ individualData, colorThemeIndex }) {
           </div>
         </div>
       </div>
+      <div className="team-individual-bottom-wrapper">
+        <div className="team-individual-name-wrapper">
+          <h3
+            className="team-individual-name"
+            style={{
+              color: teamPageColorThemes[colorThemeIndex].primaryColor,
+            }}
+          >
+            {individualData.name}
+          </h3>
+        </div>
+        <div className="team-individual-line-wrapper">
+          <div
+            className="team-individual-line"
+            style={{
+              background: teamPageColorThemes[colorThemeIndex].primaryColor,
+              width: `${30 * Math.random() + 40}%`,
+              marginLeft: `${70 * Math.random() - 20}%`,
+            }}
+          />
+        </div>
+        <div className="team-individual-statement-wrapper">
+          <p className="team-individual-statement">
+            {individualData.uthaanStatement}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

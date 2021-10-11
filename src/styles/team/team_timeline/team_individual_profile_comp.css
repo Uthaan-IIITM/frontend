@@ -91,5 +91,51 @@
 .team-individual-top-wrapper:hover .team-individual-profile-links {
   transform: rotate(var(--angle))
     translateY(calc(-1 * 0.62 * var(--team-individual-profile-container-width)))
-    rotate(calc(-1 * var(--angle)))scale(1);
+    rotate(calc(-1 * var(--angle))) scale(1);
+}
+.team-individual-profile-links-wrapper:focus-within
+  .team-individual-profile-links {
+  transform: rotate(var(--angle))
+    translateY(calc(-1 * 0.62 * var(--team-individual-profile-container-width)))
+    rotate(calc(-1 * var(--angle))) scale(1);
+}
+
+.team-individual-bottom-wrapper {
+  width: calc(1.2 * var(--team-individual-profile-container-width));
+  margin-top: calc(var(--team-individual-profile-container-width) * 0.05);
+}
+
+.team-individual-name-wrapper {
+  width: 100%;
+}
+.team-individual-name {
+  text-align: center;
+  font-weight: 700;
+  font-size: calc(0.14 * var(--team-individual-profile-container-width));
+  width: 100%;
+}
+
+.team-individual-line-wrapper {
+  width: 100%;
+  height: calc(0.027 * var(--team-individual-profile-container-width));
+  margin-top: calc(0.075 * var(--team-individual-profile-container-width));
+  margin-bottom: calc(0.1 * var(--team-individual-profile-container-width));
+}
+
+.team-individual-line {
+  height: 100%;
+  transition: width 0.2s ease-out, margin-left 0.2s ease-out;
+}
+
+.team-individual-statement-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.team-individual-statement {
+  width: 90%;
+  text-align: center;
+  font-weight: 500;
+  color: #444444;
+  font-size: calc(0.075 * var(--team-individual-profile-container-width));
 }
