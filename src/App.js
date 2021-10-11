@@ -13,6 +13,7 @@ import InterviewsPage from "./components/interviews/InterviewsPage";
 import ArticlesAndInterviewsCard from "./components/_general/ArticlesAndInterviewsCard";
 import ArticlesLowerSection from "./components/articles/lower_section/ArticlesLowerSection";
 import TeamPage from './components/team/TeamPage';
+import GalleryPage from './components/gallery/GalleryPage';
 
 function App() {
   const [state, dispatch] = useStateValue();
@@ -29,7 +30,7 @@ function App() {
           <Route exact path="/articles" component={ArticlesPage} />
           <Route exact path="/interviews" component={InterviewsPage} />
           <Route exact path="/team" component={TeamPage} />
-          <Route exact path="/123" component={ArticlesLowerSection} />
+          <Route exact path="/gallery" component={GalleryPage} />
         </Switch>
       </Router>
     </div>
