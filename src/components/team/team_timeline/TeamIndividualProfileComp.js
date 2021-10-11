@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
 import "../../../styles/team/team_timeline/team_individual_profile_comp.css";
@@ -20,7 +20,25 @@ function TeamIndividualProfileComp({ individualData, colorThemeIndex }) {
   const baseCardRef = useRef(11);
   const userProfileLinksWrapperRef = useRef(111);
 
+  const [rotationAnglesForLinkIcons, setRotationAnglesForLinkIcons] = useState(
+    []
+  );
+
   useEffect(() => {
+    const noOfProfileLinks = Object.keys(individualData.links).length;
+    let tmpRotationAnglesArr = [];
+    const basicAngleDifferenceForLinks = 25;
+    const baseAngleForLinks =
+      (-1 / 2) * (noOfProfileLinks - 1) * basicAngleDifferenceForLinks;
+
+    for (let index = 0; index < noOfProfileLinks; index++) {
+      console.log(baseAngleForLinks + index * basicAngleDifferenceForLinks);
+      tmpRotationAnglesArr.push(
+        baseAngleForLinks + index * basicAngleDifferenceForLinks
+      );
+    }
+    setRotationAnglesForLinkIcons(tmpRotationAnglesArr);
+
     const colorTheme = teamPageColorThemes[colorThemeIndex];
 
     const baseCardPaths = ReactDOM.findDOMNode(baseCardRef.current).childNodes;
@@ -45,7 +63,7 @@ function TeamIndividualProfileComp({ individualData, colorThemeIndex }) {
       ],
       [colorTheme.primaryColor, colorTheme.baseColor, colorTheme.shadowColor]
     );
-  }, []);
+  }, [individualData, colorThemeIndex]);
 
   function socialMediaIconsCompByKey(key) {
     switch (key) {
@@ -79,23 +97,6 @@ function TeamIndividualProfileComp({ individualData, colorThemeIndex }) {
         </div>
         <div className="team-individual-profile-wrapper">
           <div
-            className="team-individual-profile-image-wrapper"
-            style={{
-              backgroundColor: teamPageColorThemes[colorThemeIndex].baseColor,
-              outlineColor: teamPageColorThemes[colorThemeIndex].primaryColor,
-            }}
-          >
-            <img
-              className="team-individual-profile-image"
-              src={individualData.profilePicURL}
-              alt="team member"
-              onLoad={(e) => {
-                e.target.style.opacity = 1;
-                e.target.style.filter = "blur(0)";
-              }}
-            />
-          </div>
-          <div
             className="team-individual-profile-links-wrapper"
             ref={userProfileLinksWrapperRef}
           >
@@ -108,13 +109,30 @@ function TeamIndividualProfileComp({ individualData, colorThemeIndex }) {
                   rel="noopener noreferrer"
                   className="team-individual-profile-links"
                   style={{
-                    "--angle": `${Math.random() * 300}deg`,
+                    "--angle": `${rotationAnglesForLinkIcons[index]}deg`,
                   }}
                 >
                   {socialMediaIconsCompByKey(link)}
                 </a>
               );
             })}
+          </div>
+          <div
+            className="team-individual-profile-image-wrapper"
+            style={{
+              background: teamPageColorThemes[colorThemeIndex].baseColor,
+              outlineColor: teamPageColorThemes[colorThemeIndex].primaryColor,
+            }}
+          >
+            <img
+              className="team-individual-profile-image"
+              src={individualData.profilePicURL}
+              alt="team member"
+              onLoad={(e) => {
+                e.target.style.opacity = 1;
+                e.target.style.filter = "blur(0)";
+              }}
+            />
           </div>
         </div>
       </div>
