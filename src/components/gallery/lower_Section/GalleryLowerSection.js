@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Gallery from "react-grid-gallery";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 
