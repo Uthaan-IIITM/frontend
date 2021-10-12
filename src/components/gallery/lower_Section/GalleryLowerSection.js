@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Gallery from "react-grid-gallery";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
 
 import "../../../styles/gallery/gallery_lower_sec.css";
-import GalleryImagesDataSetObject from "./helpers/gallery_images_data_set_constructor";
+import SecondaryFooter from "../../_general/footer/SecondaryFooter";
 
 function GalleryLowerSection() {
   const [imagesDataSet, setImagesDataSet] = useState([]);
@@ -15,10 +17,7 @@ function GalleryLowerSection() {
     let tmpArr = [];
     for (let i = 0; i < 40; i++) {
       tmpArr.push(
-        new GalleryImagesDataSetObject(
-          "https://picsum.photos/400/300",
-          `https://picsum.photos/${400 + rand()}/${300 + rand()}?random=1`
-        )
+        `https://picsum.photos/${400 + rand()}/${300 + rand()}?random=1`
       );
     }
 
@@ -26,11 +25,20 @@ function GalleryLowerSection() {
   }, []);
 
   return (
-    <div className="gallery-lower-sec-primary-wrapper">
-      <div className="gallery-lower-sec-secondary-wrapper">
-        <Gallery images={imagesDataSet} enableImageSelection={false} />
+    <>
+      <div className="gallery-lower-sec-primary-wrapper">
+        <div className="gallery-lower-sec-secondary-wrapper">
+          <ImageList variant="masonry" cols={3} gap={8}>
+            {imagesDataSet.map((item, index) => (
+              <ImageListItem key={index}>
+                <img src={item} loading="lazy" />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </div>
       </div>
-    </div>
+      <SecondaryFooter />
+    </>
   );
 }
 
