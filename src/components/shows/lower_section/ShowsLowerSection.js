@@ -6,6 +6,7 @@ import ShowsCard from "./ShowsCard";
 import roughPhoto from "../../../assets/_rough/shows_thumbnail.svg";
 import ShowsLowerLeftSubSection from "./left_sub_sec/ShowsLowerLeftSubSection";
 import { useState, useEffect } from "react/cjs/react.development";
+import SecondaryFooter from "../../_general/footer/SecondaryFooter";
 
 function ShowsLowerSection() {
   const [titlesList, setTitlesList] = useState([]);
@@ -21,6 +22,7 @@ function ShowsLowerSection() {
     ]);
   }, []);
   return (
+    <>
     <div className="shows-lower-section-wrapper">
       <div>
         <ShowsLowerLeftSubSection showsTitlesList={titlesList} />
@@ -55,6 +57,8 @@ function ShowsLowerSection() {
         />
       </div>
     </div>
+    <SecondaryFooter/>
+    </>
   );
 }
 
