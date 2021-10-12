@@ -9,3 +9,17 @@ export const teamPageColorThemes = [
   new TeamIndividualColorThemeObj("#FF44A0", "#FFF5F9", "#EA80C1"),
   new TeamIndividualColorThemeObj("#FF445B", "#FFF5F5", "#EA809B"),
 ];
+
+export const collegeNameAndAddress =
+  "Atal Bihari Vajpayee Indian Institute of Information Technology and Management, Gwalior, Morena Link Rd, IIITM Campus, Gwalior, Madhya Pradesh 474015";
+
+export const contactLinks = {
+  facebook: "https://www.facebook.com/",
+  linkedin: "https://www.linkedin.com/",
+  mail: "mailto:abc@xyz.com",
+  github: "https://www.github.com",
+  instagram: "https://www.instagram.com",
+  youtube: "https://www.youtube.com",
+};
+
+export const contactPhoneNumbers = ["8989738932", "8317057596"];

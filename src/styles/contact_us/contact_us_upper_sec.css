@@ -1,0 +1,54 @@
+.contact-us-upper-sec-primary-wrapper {
+  height: 100%;
+  display: flex;
+}
+
+.contact-us-upper-sec-left-sec-wrapper {
+  height: 100%;
+  display: flex;
+  width: 45vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 7vw;
+}
+
+.contact-us-upper-sec-left-sec-title {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 4vw;
+  margin-top: 1vw;
+  color: #222222;
+}
+
+.contact-us-upper-sec-left-sec-college-name-and-address {
+  font-size: 1.25vw;
+  font-weight: 500;
+  color: #3d3d3d;
+  margin-top: 2%;
+  width: 29.5vw;
+}
+
+.contact-us-upper-sec-left-sec-links-wrapper {
+  display: flex;
+  margin-top: 4vw;
+}
+
+.contact-us-upper-sec-left-sec-numbers-wrapper {
+  display: flex;
+  margin-top: 1vw;
+}
+
+.contact-us-upper-sec-right-sec-wrapper {
+  height: 100%;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-us-primary-graphic {
+  height: auto;
+  width: 30vw;
+  margin-top: 10%;
+}
