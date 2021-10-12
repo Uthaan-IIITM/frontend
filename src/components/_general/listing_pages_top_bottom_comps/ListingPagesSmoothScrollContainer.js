@@ -31,7 +31,6 @@ function ListingPagesSmoothScrollContainer({ topContainer, bottomContainer }) {
       bottomContainerRef.current
     );
 
-    console.log("hehe");
     if (bottomComponentContainer) {
       if (windowScrllPosititon < 100) {
         bottomComponentContainer.style.marginTop = `-${windowScrllPosititon}px`;
