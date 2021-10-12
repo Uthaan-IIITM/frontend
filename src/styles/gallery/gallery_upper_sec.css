@@ -17,7 +17,7 @@
 }
 
 .gallery-upper-section-bg-graphic {
-  /* margin-top: -10%; */
+  margin-top: -15%;
   max-width: 350px;
 }
 
@@ -33,6 +33,13 @@
 }
 
 .gallery-upper-section-primary-graphic {
-  top: 50%;
+  top: 48%;
   position: absolute;
+}
+
+.gallery-upper-section-pot-graphic {
+  position: absolute;
+  right: 8%;
+  bottom: 2%;
+  max-width: 575px;
 }
