@@ -1,0 +1,14 @@
+.gallery-lower-sec-primary-wrapper {
+  min-height: 100vh;
+  height: auto;
+  background-color: white;
+  position: relative;
+  padding-top: 170px;
+}
+
+.gallery-lower-sec-secondary-wrapper {
+  width: 90vw;
+  height: fit-content;
+  max-width: 1000px;
+  margin: auto;
+}

@@ -1,14 +1,14 @@
 import React from "react";
 import ListingPagesSmoothScrollContainer from "./../_general/listing_pages_top_bottom_comps/ListingPagesSmoothScrollContainer";
 import GalleryUpperSec from "./upper_section/GalleryUpperSec";
-import InterviewsLowerSection from './../interviews/lower_section/InterviewsLowerSection';
+import GalleryLowerSection from "./lower_Section/GalleryLowerSection";
 
 function GalleryPage() {
   return (
     <>
       <ListingPagesSmoothScrollContainer
         topContainer={[<GalleryUpperSec />]}
-        bottomContainer={<InterviewsLowerSection />}
+        bottomContainer={<GalleryLowerSection />}
       />
     </>
   );
