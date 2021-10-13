@@ -1,0 +1,83 @@
+.contact-us-lower-sec-primary-wrapper {
+  min-height: 100vh;
+  position: relative;
+  background: #fcfcfc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-us-lower-sec-left-wrapper {
+  width: 35vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-us-lower-sec-right-wrapper {
+  width: 35vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+.contact-us-lower-sec-form-wrapper {
+  width: 23vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 35px;
+  border: 2px solid #222222;
+  border-radius: 5px;
+  margin-top: 2vw;
+}
+
+.contact-us-lower-sec-form-inputs {
+  width: 100%;
+  padding: 8px;
+  padding-left: 15px;
+  margin-top: 12px;
+  background-color: transparent;
+  border: 2px solid #222222;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+.contact-us-lower-sec-form-inputs-text-area {
+  resize: none;
+}
+
+.contact-us-lower-sec-form-heading {
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-us-lower-sec-form-submit-btn {
+  padding: 7px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 30px;
+  background-color: #00162d;
+  color: #fcfcfc;
+  font-weight: 600;
+  font-size: 17px;
+  border-radius: 3px;
+}
+
+.contact-us-lower-sec-map-embed-wrapper {
+  margin-top: 2vw;
+}
+
+.contact-us-lower-sec-map-embed {
+  width: 500px;
+  height: 400px;
+  border: 5px solid #888888;
+}
