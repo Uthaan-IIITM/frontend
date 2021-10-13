@@ -9,38 +9,43 @@ function ListingPagesSmoothScrollContainer({ topContainer, bottomContainer }) {
 
   const bottomContainerRef = useRef(121212);
 
-  useEffect(() => {
-    window.addEventListener("scroll", (e) => {
-      let windowScrllPosititon = window.scrollY;
-      let windowHeight = window.innerHeight;
+  const setUpSmoothScrollContainer = () => {
+    let windowScrllPosititon = window.scrollY;
+    let windowHeight = window.innerHeight;
 
-      if ((windowScrllPosititon / windowHeight) * 10 < 1) {
-        if (state.navbar_state != (windowScrllPosititon / windowHeight) * 10) {
-          dispatch({
-            type: "UPDATE_NAVBAR_STATE",
-            navbar_state: (windowScrllPosititon / windowHeight) * 10,
-          });
-        }
-      } else if (state.navbar_state != 1) {
+    if ((windowScrllPosititon / windowHeight) * 10 < 1) {
+      if (state.navbar_state != (windowScrllPosititon / windowHeight) * 10) {
         dispatch({
           type: "UPDATE_NAVBAR_STATE",
-          navbar_state: 1,
+          navbar_state: (windowScrllPosititon / windowHeight) * 10,
         });
       }
+    } else if (state.navbar_state != 1) {
+      dispatch({
+        type: "UPDATE_NAVBAR_STATE",
+        navbar_state: 1,
+      });
+    }
 
-      let bottomComponentContainer = reactDom.findDOMNode(
-        bottomContainerRef.current
-      );
+    let bottomComponentContainer = reactDom.findDOMNode(
+      bottomContainerRef.current
+    );
 
-      console.log("hehe");
-      if (bottomComponentContainer) {
-        if (windowScrllPosititon < 100) {
-          bottomComponentContainer.style.marginTop = `-${windowScrllPosititon}px`;
-        } else {
-          bottomComponentContainer.style.marginTop = `-${windowHeight - 100}px`;
-        }
+    if (bottomComponentContainer) {
+      if (windowScrllPosititon < 100) {
+        bottomComponentContainer.style.marginTop = `-${windowScrllPosititon}px`;
+      } else {
+        bottomComponentContainer.style.marginTop = `-${windowHeight - 100}px`;
       }
-    });
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", setUpSmoothScrollContainer);
+
+    return () => {
+      window.removeEventListener("scroll", setUpSmoothScrollContainer);
+    };
   }, []);
 
   return (
