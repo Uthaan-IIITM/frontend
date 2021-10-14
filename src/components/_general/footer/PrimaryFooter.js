@@ -6,6 +6,7 @@ import Instituelogo from "../../../assets/footer/insitute_logo.svg";
 import "../../../styles/_general/PrimaryFooter.css";
 import "../../../styles/_general/responsive/primary_footer_responsive.css";
 import ImageStackComponent from "./footer_helper/ImageStackComponent";
+import { contactLinks } from "../../../utils/GeneralConstants";
 
 function importAll(r) {
   let images = {};
@@ -63,14 +64,17 @@ const SupportList = Support.map((Support, index) => {
     </li>
   );
 });
-const SocialMediaIconsList = SocialMediaIcons.map((SocialMediaIcons, index) => {
-  return (
-    <ImageStackComponent
-      normalDisplay={images[`ic_${SocialMediaIcons}.svg`].default}
-      hoverDisplay={images[`h_ic_${SocialMediaIcons}.svg`].default}
-    />
-  );
-});
+const SocialMediaIconsList = SocialMediaIcons.map(
+  (SocialMediaIconName, index) => {
+    return (
+      <ImageStackComponent
+        link={contactLinks[SocialMediaIconName]}
+        normalDisplay={images[`ic_${SocialMediaIconName}.svg`].default}
+        hoverDisplay={images[`h_ic_${SocialMediaIconName}.svg`].default}
+      />
+    );
+  }
+);
 
 function PrimaryFooter() {
   return (
