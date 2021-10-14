@@ -1,4 +1,4 @@
-import TeamIndividualColorThemeObj from "./components/team/team_timeline/helpers/team_individual_profile_color_theme_obj_constructor";
+import TeamIndividualColorThemeObj from "../components/team/team_timeline/helpers/team_individual_profile_color_theme_obj_constructor";
 
 export const mediumPostImageURL = "https://miro.medium.com/max/500/";
 
