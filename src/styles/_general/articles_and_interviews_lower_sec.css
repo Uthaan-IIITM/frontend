@@ -7,4 +7,5 @@
   background: white;
   position: relative;
   padding-bottom: 7vw;
+  min-height: 100vh;
 }

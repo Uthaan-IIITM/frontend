@@ -13,7 +13,7 @@ function ArticlesAndInterviewsCard({
       <div className="articles-and-interviews-card-primary-wrapper">
         <div className="articles-and-interviews-card-secondary-wrapper">
           <img
-            src={mediumPostImageURL + imageUrl}
+            src={imageUrl}
             alt={`${title}`}
             className="articles-and-interviews-card-image"
             onLoad={(e) => {
