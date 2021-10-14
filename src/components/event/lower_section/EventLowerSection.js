@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 
 import "../../../styles/event/lower-section/event_lower_section.css";
 
 import EventTimeline from "./EventTimeline";
 import SecondaryFooter from "../../_general/footer/SecondaryFooter";
-import { EVENTS_DATA_URL } from "../../../utils/APIs";
 import EventsCardDataObj from "./helpers/events_card_obj_constructor";
+import { events } from "../../../services/events.service";
 
 function EventLowerSection() {
   const [eventsData, setEventsData] = useState([]);
@@ -55,7 +54,7 @@ function EventLowerSection() {
 
   async function loadEventsData() {
     try {
-      const rawEventsData = (await axios.get(EVENTS_DATA_URL)).data;
+      const rawEventsData = await events();
       console.log(rawEventsData);
       let tempDataObj = [];
       for (let index = 0; index < rawEventsData.length; index++) {
