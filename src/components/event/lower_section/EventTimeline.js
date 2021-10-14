@@ -6,7 +6,7 @@ import EventCard from "./EventCard";
 
 import "../../../styles/event/lower-section/event_timeline.css";
 
-function EventTimeline({ isDotted, isRight }) {
+function EventTimeline({ isDotted, isRight, eventData }) {
   return (
     <div
       className="event-timeline-wrapper-wrapper"
@@ -25,7 +25,12 @@ function EventTimeline({ isDotted, isRight }) {
         className="event-timeline-wrapper"
         style={isRight ? { marginLeft: "6.5%", marginRight: "0" } : null}
       >
-        <EventCard isRight={isRight} />
+        <EventCard
+          isRight={isRight}
+          description={eventData?.description}
+          title={eventData?.title}
+          imageURL={eventData?.imageURL}
+        />
         <div
           className="event-line-dot-wrapper"
           style={isRight ? { right: "0", left: "-12.9%" } : null}
