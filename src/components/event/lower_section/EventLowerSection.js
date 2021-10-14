@@ -55,7 +55,6 @@ function EventLowerSection() {
   async function loadEventsData() {
     try {
       const rawEventsData = await events();
-      console.log(rawEventsData);
       let tempDataObj = [];
       for (let index = 0; index < rawEventsData.length; index++) {
         tempDataObj.push(
@@ -71,10 +70,6 @@ function EventLowerSection() {
       console.error(error);
     }
   }
-
-  useEffect(() => {
-    console.log(eventsData);
-  }, [eventsData]);
 
   return (
     <>
