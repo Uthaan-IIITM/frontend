@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ARTICLES_DATA_URL } from "./../utils/APIs";
+import { ARTICLES_DATA_URL } from "../utils/APIs";
 
 export const articles = async () => {
   try {
