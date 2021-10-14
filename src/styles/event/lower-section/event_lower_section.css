@@ -4,6 +4,7 @@
   padding-bottom: 6vw;
   position: relative;
   background: white;
+  min-height: 100vh;
 }
 
 .events-timeline-filled-line {
