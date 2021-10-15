@@ -1,13 +1,49 @@
 import React from "react";
+import EmailValidator from "email-validator";
 
 import "../../../styles/contact_us/contact_us_lower_sec.css";
+
 import { googleMapsEmbedURL } from "../../../utils/GeneralConstants";
+import { message } from "./../../../services/contact.service";
 
 function ContactUsLowerSection() {
+  async function handleFormSubmit(elements) {
+    if (elements.name.value.length < 2 || elements.message.value.length < 10) {
+      alert("Please fill all the fields properly");
+      return;
+    }
+
+    if (!EmailValidator.validate(elements.email.value)) {
+      alert("Please enter a valid email address");
+      return;
+    }
+    let response = await message(
+      elements.name.value,
+      elements.email.value,
+      elements.phone.value,
+      elements.message.value
+    );
+
+    if (response.status === 200) {
+      for (let index = 0; index < elements.length; index++) {
+        elements[index].value = "";
+      }
+      alert("Message sent successfully");
+    } else {
+      alert("Message sending failed");
+    }
+  }
+
   return (
     <div className="contact-us-lower-sec-primary-wrapper">
       <div className="contact-us-lower-sec-left-wrapper">
-        <form className="contact-us-lower-sec-form-wrapper">
+        <form
+          className="contact-us-lower-sec-form-wrapper"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleFormSubmit(e.target.elements);
+          }}
+        >
           <h3 className="contact-us-lower-sec-form-heading">
             Drop Us A Message
           </h3>
@@ -15,36 +51,32 @@ function ContactUsLowerSection() {
             type="text"
             name="name"
             placeholder="Name"
+            minlength="2"
             className="contact-us-lower-sec-form-inputs"
           />
           <input
-            type="mail"
+            type="email"
             name="email"
             placeholder="Mail"
             className="contact-us-lower-sec-form-inputs"
           />
           <input
-            type="tel"
             name="phone"
+            type="text"
+            pattern="[789]\d{9,9}"
+            title="Please enter valid phone number"
             placeholder="Phone"
             className="contact-us-lower-sec-form-inputs"
           />
           <textarea
             placeholder="Message"
             name="message"
+            minlength="10"
             className="contact-us-lower-sec-form-inputs contact-us-lower-sec-form-inputs-text-area"
           />
           <button
             className="contact-us-lower-sec-form-submit-btn"
             type="submit"
-            onClick={(e) => {
-              e.preventDefault();
-              console.log(
-                document.getElementsByClassName(
-                  "contact-us-lower-sec-form-wrapper"
-                )[0].elements
-              );
-            }}
           >
             Submit
           </button>
