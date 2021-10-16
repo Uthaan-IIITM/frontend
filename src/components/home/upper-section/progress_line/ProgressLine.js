@@ -90,36 +90,3 @@ ProgressLine.propTypes = {
 };
 
 export default ProgressLine;
-//   function hehedd() {
-//     var indents = [];
-//     for (var i = 0; i < numberOfDots; i++) {
-//       indents.push(
-//         <div className="indent" key={i}>
-//           <LineDot />
-//         </div>
-//       );
-//     }
-//     return indents;
-//   }
-
-//   const dotsList = () => {
-//     let dots = [];
-
-//     for (let index = 0; index < numberOfDots; index++) {
-//       dots.push(<LineDot />);
-//     }
-
-//     return dots;
-//   };
-
-//   let hehe = [];
-//   for (var i = 0; i < numberOfDots; i++) {
-//     hehe.push(
-//       <div className="indent" key={i}>
-//         <LineDot />
-//       </div>
-//     );
-//   }
-//   const hehelist = hehe.map((item, index) => {
-//     return item;
-//   });
