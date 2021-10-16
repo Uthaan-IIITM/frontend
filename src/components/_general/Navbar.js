@@ -1,13 +1,9 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  useRouteMatch,
-  NavLink,
-} from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import "../../styles/_general/Navbar.css";
+
 import UthaanLogo from "../../assets/uthaan_logo/uthaan_logo.svg";
 
 const NavbarRoutersName = [
