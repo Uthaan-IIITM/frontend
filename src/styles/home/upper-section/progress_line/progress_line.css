@@ -21,4 +21,5 @@
 }
 .line-dot-wrapper {
   position: absolute;
+  transition: transform 0.1s linear;
 }
