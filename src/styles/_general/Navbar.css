@@ -5,6 +5,9 @@
   transition: padding-left 0.5s ease-in-out, padding-right 0.5s ease-in-out;
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
 }
+.navbar-main-left-wrapper {
+  height: fit-content;
+}
 .navbar-main-left-wrapper img {
   @apply object-contain;
   width: 6.875vw;
@@ -17,7 +20,7 @@
 .navbar-main-right-link {
   @apply font-semibold text-lg block;
   color: #222222;
-  transition:  margin 0.5s ease-in-out;
+  transition: margin 0.5s ease-in-out;
   pointer-events: all;
   height: fit-content;
 }
