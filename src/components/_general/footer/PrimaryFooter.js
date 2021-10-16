@@ -25,15 +25,31 @@ const images = importAll(
 );
 
 const General = ["Home", "Admin"];
+const GeneralRoutes = ["", "admin"];
 const Browse = [
-  "Events & Shows",
+  "Events",
+  "Shows",
   "Articles",
   "Interviews",
   "Gallery",
   "Team",
   "Contact Us",
 ];
+const BrowseRoutes = [
+  "events",
+  "shows",
+  "articles",
+  "interviews",
+  "gallery",
+  "team",
+  "contactus",
+];
 const Support = ["contact@uthaan.org", "(+91) 8989738932", "(+91) 8317057596"];
+const SupportHrefs = [
+  "mailto:@uthaan.org",
+  "tel:+918989738932",
+  "tel:+918317057596",
+];
 const SocialMediaIcons = [
   "facebook",
   "mail",
@@ -46,21 +62,21 @@ const SocialMediaIcons = [
 const GeneralList = General.map((General, index) => {
   return (
     <li key={index}>
-      <Link to={`${General}`}>{General}</Link>
+      <Link to={`${GeneralRoutes[index]}`}>{General}</Link>
     </li>
   );
 });
 const BrowseList = Browse.map((Browse, index) => {
   return (
     <li key={index}>
-      <Link to="/">{Browse}</Link>
+      <Link to={`${BrowseRoutes[index]}`}>{Browse}</Link>
     </li>
   );
 });
 const SupportList = Support.map((Support, index) => {
   return (
     <li key={index}>
-      <Link to="/">{Support}</Link>
+      <a href={`${SupportHrefs[index]}`}>{Support}</a>
     </li>
   );
 });
@@ -94,7 +110,9 @@ function PrimaryFooter() {
             <ul>{SupportList}</ul>
           </div>
         </div>
-        <img src={uthaanLogo} alt="uthaanLogo" />
+        <a href="/">
+          <img src={uthaanLogo} alt="uthaanLogo" />
+        </a>
       </div>
 
       <div className="primary-footer-lower-container">
