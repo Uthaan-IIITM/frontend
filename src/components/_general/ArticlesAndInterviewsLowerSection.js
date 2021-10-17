@@ -7,7 +7,7 @@ import "../../styles/_general/articles_and_interviews_lower_sec.css";
 import ArticlesAndInterviewsDataObj from "./helpers/articles_and_interviews_data_constructor";
 import SortingComp from "./SortingComp";
 
-import convertTsToDate from "./helpers/dateConverter";
+import parseDate from "./helpers/dateConverter";
 import sortDataBy from "./helpers/articles_and_interviews_sorter";
 
 function ArticlesAndInterviewsLowerSection({ dataSrcFun }) {
@@ -24,7 +24,7 @@ function ArticlesAndInterviewsLowerSection({ dataSrcFun }) {
           rawData[index].thumbnail,
           rawData[index].title,
           new Date(rawData[index].date).getTime(),
-          convertTsToDate(new Date(rawData[index].date).getTime()),
+          parseDate(rawData[index].date),
           rawData[index].url
         )
       );
