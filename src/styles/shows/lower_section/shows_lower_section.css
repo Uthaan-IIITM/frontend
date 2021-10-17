@@ -2,18 +2,23 @@
   @apply w-full grid;
   grid-template-columns: 1fr 68vw;
   column-gap: 1vw;
-  padding-right: 6.75vw;
-  padding-left: 4.5vw;
+  padding-right: 7vw;
+  padding-left: 5vw;
   background-color: white;
-  padding-top: 200px;
+  padding-top: 175px;
+  padding-bottom: 100px;
   position: relative;
-  height: 100vh;
-  overflow: hidden;
 }
+
+/* .shows-lower-section-left-wrapper {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 180px;
+  top: 400px;
+} */
+
 .shows-lower-section-cards-wrapper {
   @apply grid;
   grid-template-columns: 1fr;
   row-gap: 0.8vw;
-  height: 80vh;
-  overflow-y: scroll; 
 }

@@ -1,5 +1,5 @@
 .shows-card-main-wrapper {
-  @apply w-full rounded-sm flex items-center justify-between;
+  @apply w-full rounded-sm flex justify-between;
   border: 1px solid #606060;
   height: 11.5vw;
   padding: 0.75vw 0.9vw;
@@ -29,4 +29,6 @@
   @apply font-medium w-full;
   font-size: 0.9vw;
   color: #222222;
+  height: 7ch;
+  overflow: hidden;
 }
