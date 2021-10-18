@@ -1,0 +1,91 @@
+/* .team-page-primary-wrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  overflow-y: scroll;
+  overflow-x: scroll;
+
+  height: 100vh;
+  width: 100vw;
+} */
+
+/* .team-page-primary-wrapper::-webkit-scrollbar {
+  display: none;
+} */
+
+.team-page-founders-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 150px;
+  padding-bottom: 80px;
+  justify-content: center;
+}
+
+.team-page-founders-list-wrapper {
+  margin-top: -150px;
+}
+
+.team-page-heading {
+  font-size: 35px;
+  color: #222222;
+  font-weight: 800;
+  text-align: center;
+  position: sticky;
+  left: 0vw;
+  /* width: 160px; */
+}
+
+.team-page-alumni-wrapper {
+  padding-top: 100px;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background-color: #fbf4ff;
+}
+
+.team-page-alumni-list-wrapper {
+  width: fit-content;
+  height: fit-content;
+  min-width: 100%;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 35px;
+  justify-content: center;
+}
+
+.team-page-alumni-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.team-page-executives-wrapper {
+  padding-top: 100px;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.team-page-executives-list-wrapper {
+  width: fit-content;
+  height: fit-content;
+  min-width: 100%;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 35px;
+  justify-content: center;
+}
+
+.team-page-executives-wrapper::-webkit-scrollbar {
+  display: none;
+}
