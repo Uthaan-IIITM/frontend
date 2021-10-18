@@ -30,9 +30,9 @@ function TeamPage() {
       let alumniTempData = parseTeamData(receivedImagesData.data.executive);
       let executivesTempData = parseTeamData(receivedImagesData.data.executive);
 
-      // for (let i = 0; i < 2; i++) {
-      //   foundersTempData.push(foundersTempData[0]);
-      // }
+      for (let i = 0; i < 2; i++) {
+        foundersTempData.push(foundersTempData[0]);
+      }
 
       alumniTempData[0].uthaanStatement = null;
       executivesTempData[0].uthaanStatement = null;
