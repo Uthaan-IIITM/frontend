@@ -1,10 +1,11 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import "../../styles/_general/Navbar.css";
 
 import UthaanLogo from "../../assets/uthaan_logo/uthaan_logo.svg";
+import { allRoutes } from "./../../utils/GeneralConstants";
 
 const NavbarRoutersName = [
   "Home",
@@ -36,6 +37,14 @@ function Navbar({
   marginLeftDefaultValue,
   marginLeftDifferenceValue,
 }) {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    console.log(pathname);
+    console.log(pathname.split("/")[1]);
+    console.log(allRoutes.includes(pathname.split("/")[1]));
+  }, [pathname]);
+
   const NavbarRoutersNameList = NavbarRoutersName.map((router, index) => {
     return (
       <NavLink
@@ -54,18 +63,24 @@ function Navbar({
   });
 
   return (
-    <nav
-      className="navbar-main-wrapper"
-      style={{
-        paddingLeft: `calc(${paddingLeftDifferenceValue}*${slidingIndex} + ${paddingLeftDefaultValue})`,
-        paddingRight: `calc(${paddingRightDifferenceValue}*${slidingIndex} + ${paddingRightDefaultValue})`,
-      }}
-    >
-      <a href="/" className="navbar-main-left-wrapper">
-        <img src={UthaanLogo} alt="UthaanLogo" />
-      </a>
-      <div className="navbar-main-right-wrapper">{NavbarRoutersNameList}</div>
-    </nav>
+    <>
+      {allRoutes.includes(pathname.split("/")[1]) ? (
+        <nav
+          className="navbar-main-wrapper"
+          style={{
+            paddingLeft: `calc(${paddingLeftDifferenceValue}*${slidingIndex} + ${paddingLeftDefaultValue})`,
+            paddingRight: `calc(${paddingRightDifferenceValue}*${slidingIndex} + ${paddingRightDefaultValue})`,
+          }}
+        >
+          <a href="/" className="navbar-main-left-wrapper">
+            <img src={UthaanLogo} alt="UthaanLogo" />
+          </a>
+          <div className="navbar-main-right-wrapper">
+            {NavbarRoutersNameList}
+          </div>
+        </nav>
+      ) : null}
+    </>
   );
 }
 
