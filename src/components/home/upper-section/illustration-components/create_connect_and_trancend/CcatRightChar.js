@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import "../../../../../styles/home/upper-section/illustration-container/CreateConnectAndTrancend/CcatRightChar.css";
 
@@ -22,9 +21,5 @@ function CcatRightChar() {
     </div>
   );
 }
-
-CcatRightChar.propTypes = {
-  containerWidth: PropTypes.string.isRequired,
-};
 
 export default CcatRightChar;
