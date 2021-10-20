@@ -15,7 +15,7 @@ function ImageStackComponent(props) {
       href={props.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="primary-footer-img-stack-wrapper"
+      className={"primary-footer-img-stack-wrapper" + " " + props.iconsClass}
       onMouseOver={() => {
         setDisplayClass(
           "primary-footer-hover-display primary-footer-common-img-class"
@@ -37,13 +37,13 @@ function ImageStackComponent(props) {
       <img
         src={props.normalDisplay}
         alt="normal state"
-        className={displayClass}
+        className={displayClass + " " + props.iconsClass}
         style={props.StackImageStyle}
       />
       <img
         src={props.hoverDisplay}
         alt="hover display"
-        className={hoverClass}
+        className={hoverClass + " " + props.iconsClass}
         style={props.StackImageStyle}
       />
     </a>
