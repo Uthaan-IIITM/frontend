@@ -1,17 +1,17 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import "./styles/App.css";
+
+import { useStateValue } from "./StateProvider";
+
 import Navbar from "./components/_general/Navbar";
+import ScrollToTop from "./components/_general/ScrollToTop";
+
 import HomePage from "./components/home/HomePage";
 import EventPage from "./components/event/EventPage";
 import ShowsPage from "./components/shows/ShowsPage";
-import BridgingGapBetweenJuniorsAndSeniorsCopy from "./components/home/upper-section/illustration-components/BridgingGapBetweenJuniorsAndSeniors_copy";
-import { useEffect } from "react/cjs/react.development";
-import { useStateValue } from "./StateProvider";
-import ScrollToTop from "./components/_general/ScrollToTop";
 import ArticlesPage from "./components/articles/ArticlesPage";
 import InterviewsPage from "./components/interviews/InterviewsPage";
-import ArticlesAndInterviewsCard from "./components/_general/ArticlesAndInterviewsCard";
-import ArticlesLowerSection from "./components/articles/lower_section/ArticlesLowerSection";
 import TeamPage from './components/team/TeamPage';
 import GalleryPage from './components/gallery/GalleryPage';
 import ContactUsPage from './components/contact_us/ContactUsPage';

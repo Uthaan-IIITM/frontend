@@ -1,9 +1,9 @@
-function convertTsToDate(timeInMillies) {
-  return new Date(timeInMillies).toLocaleString("en-us", {
+function parseDate(date) {
+  return new Date(date).toLocaleString("en-us", {
     day: "numeric",
     month: "short",
     year: "numeric",
   });
 }
 
-export default convertTsToDate;
+export default parseDate;

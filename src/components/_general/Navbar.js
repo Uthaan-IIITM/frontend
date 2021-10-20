@@ -1,13 +1,9 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  useRouteMatch,
-  NavLink,
-} from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import "../../styles/_general/Navbar.css";
+
 import UthaanLogo from "../../assets/uthaan_logo/uthaan_logo.svg";
 
 const NavbarRoutersName = [
@@ -65,9 +61,9 @@ function Navbar({
         paddingRight: `calc(${paddingRightDifferenceValue}*${slidingIndex} + ${paddingRightDefaultValue})`,
       }}
     >
-      <div className="navbar-main-left-wrapper">
+      <a href="/" className="navbar-main-left-wrapper">
         <img src={UthaanLogo} alt="UthaanLogo" />
-      </div>
+      </a>
       <div className="navbar-main-right-wrapper">{NavbarRoutersNameList}</div>
     </nav>
   );
@@ -86,7 +82,7 @@ Navbar.propTypes = {
 Navbar.defaultProps = {
   slidingIndex: 0,
   paddingLeftDefaultValue: "6.9vw",
-  paddingLeftDifferenceValue: "-1.5vw",
+  paddingLeftDifferenceValue: "-2vw",
   paddingRightDefaultValue: "6.9vw",
   paddingRightDifferenceValue: "-2vw",
   marginLeftDefaultValue: "2.1vw",

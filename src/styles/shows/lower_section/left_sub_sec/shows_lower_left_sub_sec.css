@@ -1,0 +1,6 @@
+.shows-lower-left-sec-primary-wrapper {
+  height: fit-content;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 150px;
+}

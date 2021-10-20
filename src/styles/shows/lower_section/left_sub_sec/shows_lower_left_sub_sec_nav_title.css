@@ -3,13 +3,16 @@
   width: 100%;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .shows-lower-left-sec-nav-title-text {
+  pointer-events: all;
   font-size: 1.35vw;
   font-weight: 700;
   transform-origin: 5% 50%;
-  transition: transform 0.2s ease-out,opacity 0.2s ease-out;
+  transition: transform 0.2s ease-out, color 0.05s ease-out,
+    opacity 0.2s ease-out;
   /* transition: opatransform 1s ease-out, opacity 1s ease-out;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -19,4 +22,9 @@
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
   letter-spacing: calc(-0.0305797101em + 0.4463768116px);
+}
+
+.shows-lower-left-sec-nav-title-primary-wrapper:hover
+  .shows-lower-left-sec-nav-title-text {
+  color: #ff9300 !important;
 }
