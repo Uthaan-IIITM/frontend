@@ -1,5 +1,6 @@
 :root {
-  --team-individual-profile-container-width: 13.7vw;
+  --team-individual-profile-container-width: 200px;
+  /* --team-individual-profile-container-width: 13.7vw; */
 }
 
 /* .team-individual-primary-wrapper {

@@ -5,43 +5,118 @@ import "../../styles/team/team_page.css";
 
 import TeamIndividualDataObj from "./team_timeline/helpers/team_individual_data_obj_constructor";
 import TeamTimeline from "./team_timeline/TeamTimeline";
+import { team } from "./../../services/team.service";
+// import { func } from "prop-types";
 
 function TeamPage() {
   const [teamData, setTeamData] = React.useState({
     Foundes: null,
     Alumni: null,
+    Executives: null,
   });
 
   useEffect(() => {
-    let tempFounderData = [];
-    for (let i = 0; i < 10; i++) {
-      tempFounderData.push(
+    fetchTeamData();
+  }, []);
+
+  async function fetchTeamData() {
+    try {
+      const receivedImagesData = await team();
+
+      console.log(receivedImagesData);
+      setTeamData(receivedImagesData);
+
+      let foundersTempData = parseTeamData(receivedImagesData.data.executive);
+      let alumniTempData = parseTeamData(receivedImagesData.data.executive);
+      let executivesTempData = parseTeamData(receivedImagesData.data.executive);
+
+      for (let i = 0; i < 2; i++) {
+        foundersTempData.push(foundersTempData[0]);
+      }
+
+      alumniTempData[0].uthaanStatement = null;
+      executivesTempData[0].uthaanStatement = null;
+
+      setTeamData({
+        Foundes: foundersTempData,
+        Alumni: alumniTempData,
+        Executives: executivesTempData,
+      });
+
+      console.log({
+        Foundes: parseTeamData(receivedImagesData.data.executive),
+        Alumni: receivedImagesData.data.executive,
+        Executives: executivesTempData,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  function parseTeamData(data) {
+    const withHttp = (url) => {
+      if (!url) {
+        return null;
+      }
+      return !/^https?:\/\//i.test(url) ? `http://${url}` : url;
+    };
+
+    let dataToReturn = [];
+    console.log(data.length);
+    for (let i = 0; i < data.length; i++) {
+      console.log(i);
+      let child = data[i];
+      dataToReturn.push(
         new TeamIndividualDataObj(
-          "Amandeep Singh",
+          child.name,
           {
-            facebookLink: "https://www.facebook.com/",
-            linkedinLink: "https://www.linkedin.com/",
-            mailID: "mailto:abc@xyz.com",
-            githubLink: "https://github.com/",
-            instagramLink: "https://www.instagram.com/",
+            facebookLink: withHttp(child.links.facebook),
+            linkedinLink: withHttp(child.links.linkedin),
+            mailID: child.links.email ? "mailto:" + child.links.email : null,
+            githubLink: withHttp(child.links.github),
+            instagramLink: withHttp(child.links.instagram),
           },
-          "https://s3-alpha-sig.figma.com/img/d8c5/de85/df5a0c73886a5c2ca2e5a44d9f7f9efb?Expires=1634515200&Signature=AMH8RVoQ~-OmZaXrx2N83--eAnip2yTwZsEp4510T~ZVN1CU1wRO2rNLszGZL0i9AS0yq0dOlW06GaIxnw8sHyT6m4ncupaXpAg-7VK335mCS21RC7ONObqoKt0I0VNer~Gca5flLkwLLaVzqbNZhbDNXC9nuI1ZFetr~QXv36FKqc9YImOmEYr4hjv-CKjkWvNPf1IyzZxQmjdeb0KwtZzjtEKYFZpPOB5yEPtEeUEvWFBt3Rev3UM5I25SPscKqtuiNsjW0nq1aLJpISy7QrMJCkKlOxRyGjRGdbTTbQJBasmRXHiNLwP2Q1eIbNCO0DS8uCXQGyidP4Fzf5EWCg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
-          "The main aim of Uthann is not just to conduct events but to eliminate the distance between junior & senior."
+          child.image,
+          child.statement
         )
       );
     }
-
-    setTeamData({ ...teamData, Foundes: tempFounderData });
-
-    }, []);
+    console.log(dataToReturn);
+    return dataToReturn;
+  }
 
   return (
     <div className="team-page-primary-wrapper">
       <div className="team-page-founders-wrapper">
-        <TeamTimeline
-          timelineData={teamData.Foundes}
-          colorThemeIndex={Array(10).fill(Math.floor(Math.random() * 5))}
-        />
+        <h3 className="team-page-heading">
+          Founder’s
+          <br />
+          word
+        </h3>
+        <div className="team-page-founders-list-wrapper">
+          <TeamTimeline
+            timelineData={teamData.Foundes}
+            colorThemeIndex={Array(teamData.Foundes?.length).fill(
+              Math.floor(Math.random() * 5)
+            )}
+            lineColor="#F5F5F5"
+          />
+        </div>
+      </div>
+      <div className="team-page-alumni-wrapper">
+        <h3 className="team-page-heading">Alumni</h3>
+        <div className="team-page-alumni-list-wrapper">
+          <TeamTimeline timelineData={teamData.Alumni} lineColor="#FBC9FC" />
+        </div>
+      </div>
+      <div className="team-page-executives-wrapper">
+        <h3 className="team-page-heading">Executives</h3>
+        <div className="team-page-executives-list-wrapper">
+          <TeamTimeline
+            timelineData={teamData.Executives}
+            lineColor="#FBC9FC"
+          />
+        </div>
       </div>
     </div>
   );

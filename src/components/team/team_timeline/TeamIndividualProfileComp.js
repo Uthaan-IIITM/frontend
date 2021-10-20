@@ -157,11 +157,13 @@ function TeamIndividualProfileComp({ individualData, colorThemeIndex }) {
             }}
           />
         </div>
-        <div className="team-individual-statement-wrapper">
-          <p className="team-individual-statement">
-            {individualData.uthaanStatement}
-          </p>
-        </div>
+        {individualData.uthaanStatement ? (
+          <div className="team-individual-statement-wrapper">
+            <p className="team-individual-statement">
+              {individualData.uthaanStatement}
+            </p>
+          </div>
+        ) : null}
       </div>
     </div>
   );
