@@ -14,7 +14,7 @@ function ErrorPage() {
       <Link to="/" className="error-page-uthaan-logo-wrapper">
         <UthaanLogo className="error-page-uthaan-logo" />
       </Link>
-      <dv className="error-page-content-wrapper">
+      <div className="error-page-content-wrapper">
         <div className="error-page-content-top-wrapper">
           <p className="error-page-content-top-left-text error-page-text-basic">
             {errorPageContent.topLeft}
@@ -26,7 +26,7 @@ function ErrorPage() {
         <p className="error-page-content-bottom-text error-page-text-basic">
           {errorPageContent.bottomContent}
         </p>
-      </dv>
+      </div>
       <div className="error-page-graphic-wrapper">
         <img
           src={errorPagePrimaryGraphic}

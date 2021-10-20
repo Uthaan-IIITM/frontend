@@ -42,5 +42,5 @@ export const errorPageContent = {
   topLeft: " Awww...Don't be Sad It's just a",
   errorCode: "404 Error!",
   bottomContent:
-    "What you're looking for may have been misplaced in Long Term Memory.",
+    "What you're looking for may have been misplaced in Long Term Memory",
 };
