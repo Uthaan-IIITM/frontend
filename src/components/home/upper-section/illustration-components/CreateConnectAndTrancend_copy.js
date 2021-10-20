@@ -47,7 +47,7 @@ function CreateConnectAndTrancendCopy({ containerWidth = "75vw" }) {
       <CcatMainBulb />
       <CcatBottomChar />
       <CcatPaintingPot />
-      <CcatGears GearsContainerWidth={containerWidth} />
+      <CcatGears />
     </div>
   );
 }

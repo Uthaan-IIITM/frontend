@@ -23,7 +23,6 @@ function TeamPage() {
     try {
       const receivedImagesData = await team();
 
-      console.log(receivedImagesData);
       setTeamData(receivedImagesData);
 
       let foundersTempData = parseTeamData(receivedImagesData.data.executive);
@@ -37,17 +36,17 @@ function TeamPage() {
       alumniTempData[0].uthaanStatement = null;
       executivesTempData[0].uthaanStatement = null;
 
+      for (let i = 0; i < 10; i++) {
+        alumniTempData.push(alumniTempData[0]);
+        executivesTempData.push(executivesTempData[0]);
+      }
+
       setTeamData({
         Foundes: foundersTempData,
         Alumni: alumniTempData,
         Executives: executivesTempData,
       });
 
-      console.log({
-        Foundes: parseTeamData(receivedImagesData.data.executive),
-        Alumni: receivedImagesData.data.executive,
-        Executives: executivesTempData,
-      });
     } catch (error) {
       console.error(error);
     }
@@ -62,9 +61,7 @@ function TeamPage() {
     };
 
     let dataToReturn = [];
-    console.log(data.length);
     for (let i = 0; i < data.length; i++) {
-      console.log(i);
       let child = data[i];
       dataToReturn.push(
         new TeamIndividualDataObj(
@@ -81,7 +78,6 @@ function TeamPage() {
         )
       );
     }
-    console.log(dataToReturn);
     return dataToReturn;
   }
 

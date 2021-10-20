@@ -84,6 +84,7 @@ const SocialMediaIconsList = SocialMediaIcons.map(
   (SocialMediaIconName, index) => {
     return (
       <ImageStackComponent
+        key={index}
         link={contactLinks[SocialMediaIconName]}
         normalDisplay={images[`ic_${SocialMediaIconName}.svg`].default}
         hoverDisplay={images[`h_ic_${SocialMediaIconName}.svg`].default}

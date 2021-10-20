@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "../../../../../styles/home/upper-section/illustration-container/BridgingGapBetweenJuniorsAndSeniors/BgbjasLeftLeaves.css";
 import leftLeaves1 from "../../../../../assets/home/what_is_uthaan/bridging_gap_between_juniors_and_seniors/graphic_parts/SVG/left_leaves_1.svg";
 import leftLeaves2 from "../../../../../assets/home/what_is_uthaan/bridging_gap_between_juniors_and_seniors/graphic_parts/SVG/left_leaves_2.svg";
@@ -18,9 +17,5 @@ function BGBJAS_LeftLeaves() {
     </div>
   );
 }
-
-BGBJAS_LeftLeaves.propTypes = {
-  leftLeavesContainerWidth: PropTypes.string.isRequired,
-};
 
 export default BGBJAS_LeftLeaves;

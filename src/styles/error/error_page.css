@@ -1,0 +1,179 @@
+:root {
+  --error-page-base-font-size: 25px;
+}
+
+.error-page-primary-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    78.19% 167% at 66.87% 52.64%,
+    #3d8bda 17.88%,
+    #375094 48.86%,
+    #0f1a47 100%
+  );
+  position: relative;
+}
+
+.error-page-uthaan-logo-wrapper {
+  position: absolute;
+  top: 65px;
+}
+
+.error-page-uthaan-logo path {
+  fill: #ddf4ff;
+}
+
+.error-page-content-wrapper {
+  margin-right: 100px;
+  margin-top: 50px;
+}
+
+.error-page-content-top-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.error-page-text-basic {
+  font-size: var(--error-page-base-font-size);
+  text-align: end;
+  color: #9bd7f3;
+  font-weight: 300;
+}
+.error-page-content-top-left-text {
+  width: calc(var(--error-page-base-font-size) * 10);
+}
+
+.error-page-content-top-right-text {
+  font-size: calc(var(--error-page-base-font-size) * 7 / 4);
+  color: #ddf4ff;
+  font-weight: 700;
+  margin-bottom: calc(-1 * var(--error-page-base-font-size) * 0.3);
+  margin-left: calc(var(--error-page-base-font-size) * 0.5);
+}
+
+.error-page-content-bottom-text {
+  width: calc(var(--error-page-base-font-size) * 13.7);
+}
+
+.error-page-graphic-wrapper {
+  width: 300px;
+  margin-top: 100px;
+}
+
+.error-page-primary-grpahic {
+  width: 100%;
+  height: 100%;
+}
+
+.error-page-home-redirect-link-wrapper {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+}
+
+.error-page-home-redirect-link-text {
+  font-size: calc(var(--error-page-base-font-size) * 3 / 4);
+  color: #9bd7f3;
+  font-weight: 300;
+}
+
+.error-page-home-redirect-link-lable-text {
+  margin-right: 0.6ch;
+}
+
+.error-page-home-redirect-link-highlighted-text {
+  color: #ddf4ff;
+  font-weight: 700;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 1024px) {
+  :root {
+    --error-page-base-font-size: 18px;
+  }
+  .error-page-primary-wrapper {
+    background: radial-gradient(
+      78.19% 167% at 70.87% 54.64%,
+      #3d8bda 17.88%,
+      #375094 48.86%,
+      #0f1a47 100%
+    );
+  }
+  .error-page-graphic-wrapper {
+    width: 220px;
+    margin-top: 80px;
+  }
+  .error-page-uthaan-logo-wrapper {
+    top: 55px;
+  }
+  .error-page-uthaan-logo {
+    width: 100px;
+  }
+  .error-page-content-wrapper {
+    margin-right: 50px;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    --error-page-base-font-size: 15px;
+  }
+  .error-page-primary-wrapper {
+    flex-direction: column-reverse;
+    background: radial-gradient(
+      82.19% 68% at 57.87% 32.64%,
+      #3d8bda 17.88%,
+      #375094 48.86%,
+      #0f1a47 100%
+    );
+  }
+  .error-page-graphic-wrapper {
+    width: 150px;
+    margin-top: 0px;
+  }
+  .error-page-uthaan-logo-wrapper {
+    top: 40px;
+  }
+  .error-page-uthaan-logo {
+    width: 80px;
+  }
+  .error-page-content-wrapper {
+    margin-right: 0px;
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  :root {
+    --error-page-base-font-size: 4.5vw;
+  }
+  .error-page-primary-wrapper {
+    flex-direction: column-reverse;
+    background: radial-gradient(
+      82.19% 68% at 57.87% 32.64%,
+      #3d8bda 17.88%,
+      #375094 48.86%,
+      #0f1a47 100%
+    );
+  }
+  .error-page-graphic-wrapper {
+    width: 45vw;
+    margin-top: 0px;
+  }
+  .error-page-uthaan-logo-wrapper {
+    top: 8vw;
+  }
+  .error-page-uthaan-logo {
+    width: 20vw;
+  }
+  .error-page-content-wrapper {
+    margin-right: 0px;
+    margin-top: 40px;
+  }
+}

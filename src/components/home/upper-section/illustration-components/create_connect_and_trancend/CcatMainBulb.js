@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import "../../../../../styles/home/upper-section/illustration-container/CreateConnectAndTrancend/CcatMainBulb.css";
 
@@ -29,8 +28,5 @@ function CcatMainBulb() {
   );
 }
 
-CcatMainBulb.propTypes = {
-  mainBulbContainerWidth: PropTypes.string.isRequired,
-};
 
 export default CcatMainBulb;
