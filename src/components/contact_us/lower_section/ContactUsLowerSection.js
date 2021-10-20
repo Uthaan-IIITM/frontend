@@ -51,7 +51,7 @@ function ContactUsLowerSection() {
             type="text"
             name="name"
             placeholder="Name"
-            minlength="2"
+            minLength="2"
             className="contact-us-lower-sec-form-inputs"
           />
           <input
@@ -71,7 +71,7 @@ function ContactUsLowerSection() {
           <textarea
             placeholder="Message"
             name="message"
-            minlength="10"
+            minLength="10"
             className="contact-us-lower-sec-form-inputs contact-us-lower-sec-form-inputs-text-area"
           />
           <button
