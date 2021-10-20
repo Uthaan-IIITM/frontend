@@ -19,8 +19,9 @@
 
 .error-page-uthaan-logo-wrapper {
   position: absolute;
-  top: 75px;
+  top: 65px;
 }
+
 .error-page-uthaan-logo path {
   fill: #ddf4ff;
 }
