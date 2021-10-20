@@ -10,8 +10,6 @@
   position: absolute;
   visibility: visible;
   top: 0px;
-  /* right: -1.2vw; */
-  /* postion of the triangle */
   border: 1.61vw solid transparent; /* width of the triangle */
   border-top: 1.23vw solid #020001; /* height of the triangle */
 }
@@ -32,7 +30,9 @@
 }
 .event-card-title {
   @apply text-white font-bold;
-  font-size: 2.13vw;
+  max-height: 2ch;
+  overflow: hidden;
+  font-size: 2vw;
   margin-left: 6.6%;
   margin-right: 6.6%;
 }
@@ -42,10 +42,12 @@
   padding-right: 1.35vw;
   padding-bottom: 1.1vw;
   height: 55%;
+  width: 100%;
   background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 }
 .event-card-description div {
-  @apply text-white font-semibold;
+  @apply font-semibold;
+  color: #eeeeee;
   font-size: 1vw;
   width: 90%;
 }

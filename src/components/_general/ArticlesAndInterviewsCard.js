@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/_general/articles_and_interviews_card.css";
-import { mediumPostImageURL } from "./../../utils";
+import { mediumPostImageURL } from "../../utils/GeneralConstants";
 
 function ArticlesAndInterviewsCard({
   imageUrl = "",

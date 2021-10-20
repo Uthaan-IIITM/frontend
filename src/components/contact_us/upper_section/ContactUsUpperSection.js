@@ -2,14 +2,14 @@ import React from "react";
 
 import "../../../styles/contact_us/contact_us_upper_sec.css";
 
-import { collegeNameAndAddress } from "./../../../utils";
+import { collegeNameAndAddress } from "../../../utils/GeneralConstants";
 import ImageStackComponent from "../../_general/footer/footer_helper/ImageStackComponent";
 
 import { ReactComponent as ContactusPrimaryGraphic } from "../../../assets/contact_us/graphic.svg";
 
 import importAll from "../../_general/helpers/import_all";
 
-import { contactLinks, contactPhoneNumbers } from "../../../utils";
+import { contactLinks, contactPhoneNumbers } from "../../../utils/GeneralConstants";
 
 const socialMediaImages = importAll(
   require.context(

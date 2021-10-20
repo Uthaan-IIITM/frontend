@@ -12,7 +12,7 @@ import { ReactComponent as InstagramIcon } from "../../../assets/_general/social
 import { ReactComponent as LinkedinIcon } from "../../../assets/_general/social_media_icons/ic_linkedin.svg";
 import { ReactComponent as MailIcon } from "../../../assets/_general/social_media_icons/ic_mail.svg";
 
-import { teamPageColorThemes } from "../../../utils";
+import { teamPageColorThemes } from "../../../utils/GeneralConstants";
 import { setMultipleSVGPathFill } from "./helpers/svg_path_color_setter";
 
 function TeamIndividualProfileComp({ individualData, colorThemeIndex }) {

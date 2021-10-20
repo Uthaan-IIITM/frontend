@@ -1,7 +1,7 @@
 import React from "react";
 
 import "../../../styles/contact_us/contact_us_lower_sec.css";
-import { googleMapsEmbedURL } from "../../../utils";
+import { googleMapsEmbedURL } from "../../../utils/GeneralConstants";
 
 function ContactUsLowerSection() {
   return (

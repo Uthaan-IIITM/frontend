@@ -7,6 +7,7 @@ import "../../../styles/_general/secondary_footer.css";
 
 import importAll from "../helpers/import_all";
 import uthaanLogo from "../../../assets/uthaan_logo/uthaan_logo.svg";
+import { contactLinks } from "../../../utils/GeneralConstants";
 
 const images = importAll(
   require.context(
@@ -25,15 +26,18 @@ const SocialMediaIcons = [
   "github",
 ];
 
-const SocialMediaIconsList = SocialMediaIcons.map((SocialMediaIcons, index) => {
-  return (
-    <ImageStackComponent
-      normalDisplay={images[`ic_${SocialMediaIcons}.svg`].default}
-      hoverDisplay={images[`h_ic_${SocialMediaIcons}.svg`].default}
-      StackImageStyle={{ width: "2.1vw", height: "2.1vw", marginBottom: "0" }}
-    />
-  );
-});
+const SocialMediaIconsList = SocialMediaIcons.map(
+  (SocialMediaIconName, index) => {
+    return (
+      <ImageStackComponent
+        link={contactLinks[SocialMediaIconName]}
+        normalDisplay={images[`ic_${SocialMediaIconName}.svg`].default}
+        hoverDisplay={images[`h_ic_${SocialMediaIconName}.svg`].default}
+        StackImageStyle={{ width: "2.1vw", height: "2.1vw", marginBottom: "0" }}
+      />
+    );
+  }
+);
 
 function SecondaryFooter() {
   return (
