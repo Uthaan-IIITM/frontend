@@ -8,14 +8,8 @@
   padding-top: 175px;
   padding-bottom: 100px;
   position: relative;
+  min-height: 100vh
 }
-
-/* .shows-lower-section-left-wrapper {
-  position: -webkit-sticky;
-  position: sticky;
-  margin-top: 180px;
-  top: 400px;
-} */
 
 .shows-lower-section-cards-wrapper {
   @apply grid;
