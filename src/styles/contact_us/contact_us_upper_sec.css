@@ -1,54 +1,168 @@
 .contact-us-upper-sec-primary-wrapper {
   height: 100%;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-us-upper-sec-left-sec-wrapper {
-  height: 100%;
+  height: fit-content;
   display: flex;
-  width: 45vw;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-left: 7vw;
+  margin-right: 100px;
+  margin-top: 20px;
 }
 
 .contact-us-upper-sec-left-sec-title {
+  font-size: 60px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 800;
-  font-size: 4vw;
-  margin-top: 1vw;
   color: #222222;
 }
 
 .contact-us-upper-sec-left-sec-college-name-and-address {
-  font-size: 1.25vw;
+  font-size: 19px;
   font-weight: 500;
   color: #3d3d3d;
   margin-top: 2%;
-  width: 29.5vw;
+  width: 450px;
 }
 
 .contact-us-upper-sec-left-sec-links-wrapper {
   display: flex;
-  margin-top: 4vw;
+  margin-top: 64px;
 }
 
 .contact-us-upper-sec-left-sec-numbers-wrapper {
   display: flex;
-  margin-top: 1vw;
+  margin-top: 16px;
 }
 
 .contact-us-upper-sec-right-sec-wrapper {
-  height: 100%;
-  width: 50vw;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .contact-us-primary-graphic {
-  height: auto;
-  width: 30vw;
-  margin-top: 10%;
+  height: fit-content;
+  width: 450px;
+}
+
+.contact-us-upper-sec-links-icons {
+  width: 33px;
+  height: 33px;
+  margin-right: 12px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .contact-us-upper-sec-left-sec-wrapper {
+    margin-right: 40px;
+  }
+  .contact-us-upper-sec-left-sec-title {
+    font-size: 42px;
+  }
+  .contact-us-upper-sec-left-sec-college-name-and-address {
+    font-size: 15px;
+    width: 350px;
+  }
+  .contact-us-upper-sec-left-sec-links-wrapper {
+    margin-top: 35px;
+  }
+  .contact-us-upper-sec-links-icons {
+    width: 28px;
+    height: 28px;
+    margin-right: 12px;
+  }
+  .contact-us-upper-sec-left-sec-numbers-wrapper {
+    margin-top: 12px;
+  }
+  .contact-us-upper-sec-left-sec-numbers {
+    font-size: 15px;
+  }
+  .contact-us-primary-graphic {
+    height: fit-content;
+    width: 360px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .contact-us-upper-sec-primary-wrapper {
+    flex-direction: column-reverse;
+    margin-top: 20px;
+  }
+  .contact-us-upper-sec-left-sec-wrapper {
+    margin-right: 0px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .contact-us-upper-sec-left-sec-title {
+    font-size: 35px;
+  }
+  .contact-us-upper-sec-left-sec-college-name-and-address {
+    font-size: 12px;
+    width: 260px;
+    text-align: center;
+  }
+  .contact-us-upper-sec-left-sec-links-wrapper {
+    margin-top: 35px;
+  }
+  .contact-us-upper-sec-links-icons {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+  .contact-us-upper-sec-links-icons:last-of-type {
+    margin-right: 0px;
+  }
+  .contact-us-upper-sec-left-sec-numbers-wrapper {
+    margin-top: 12px;
+  }
+  .contact-us-upper-sec-left-sec-numbers {
+    font-size: 12px;
+  }
+  .contact-us-primary-graphic {
+    height: fit-content;
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .contact-us-upper-sec-primary-wrapper {
+    margin-top: 4vw;
+  }
+  .contact-us-upper-sec-left-sec-wrapper {
+    margin-top: 12vw;
+  }
+  .contact-us-upper-sec-left-sec-title {
+    font-size: 9vw;
+  }
+  .contact-us-upper-sec-left-sec-college-name-and-address {
+    font-size: 3.2vw;
+    width: 65vw;
+  }
+  .contact-us-upper-sec-left-sec-links-wrapper {
+    margin-top: 10vw;
+  }
+  .contact-us-upper-sec-links-icons {
+    width: 6.5vw;
+    height: 6.5vw;
+    margin-right: 3vw;
+  }
+  .contact-us-upper-sec-left-sec-numbers-wrapper {
+    margin-top: 3vw;
+  }
+  .contact-us-upper-sec-left-sec-numbers {
+    font-size: 3.2vw;
+  }
+  .contact-us-primary-graphic {
+    height: fit-content;
+    width: 80vw;
+  }
 }
