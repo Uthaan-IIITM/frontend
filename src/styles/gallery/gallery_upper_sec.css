@@ -18,7 +18,7 @@
 
 .gallery-upper-section-bg-graphic {
   margin-top: -15%;
-  max-width: 350px;
+  width: 350px;
 }
 
 .gallery-upper-section-title {
@@ -39,7 +39,62 @@
 
 .gallery-upper-section-pot-graphic {
   position: absolute;
-  right: 8%;
-  bottom: 2%;
-  max-width: 525px;
+  right: 7%;
+  bottom: 4%;
+  width: 525px;
+  height: fit-content;
+}
+
+@media only screen and (max-width: 900px) {
+  .gallery-upper-section-bg-graphic {
+    width: 250px;
+  }
+  .gallery-upper-section-title {
+    font-size: 45px;
+    margin-top: -20%;
+  }
+  .gallery-upper-section-primary-graphic {
+    top: 43%;
+    width: 275px;
+  }
+  .gallery-upper-section-pot-graphic {
+    right: 5%;
+    bottom: 3%;
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .gallery-upper-section-bg-graphic {
+    margin-top: -20%;
+    width: 200px;
+  }
+  .gallery-upper-section-title {
+    font-size: 35px;
+    margin-top: -25%;
+  }
+  .gallery-upper-section-primary-graphic {
+    top: 42%;
+    width: 225px;
+  }
+  .gallery-upper-section-pot-graphic {
+    right: 6%;
+    bottom: 3%;
+    width: 280px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .gallery-upper-section-bg-graphic {
+    width: 62.5vw;
+  }
+  .gallery-upper-section-title {
+    font-size: 11vw;
+  }
+  .gallery-upper-section-primary-graphic {
+    width: 70vw;
+  }
+  .gallery-upper-section-pot-graphic {
+    width: 85vw;
+  }
 }
