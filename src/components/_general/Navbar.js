@@ -1,32 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import reactDom from "react-dom";
 import PropTypes from "prop-types";
+import { Divide as Hamburger } from "hamburger-react";
 
 import "../../styles/_general/Navbar.css";
 
+import { allRoutes } from "./../../utils/GeneralConstants";
+
 import UthaanLogo from "../../assets/uthaan_logo/uthaan_logo.svg";
 
-import { allRoutes } from "./../../utils/GeneralConstants";
-import { useLayoutEffect } from "react";
-import { useState } from "react";
-
-import { Divide as Hamburger } from "hamburger-react";
-import reactDom from "react-dom";
-
-function useMediaQuery() {
-  const [screenSize, setScreenSize] = useState([0, 0]);
-
-  useLayoutEffect(() => {
-    function updateScreenSize() {
-      setScreenSize([window.innerWidth, window.innerHeight]);
-    }
-    window.addEventListener("resize", updateScreenSize);
-    updateScreenSize();
-    return () => window.removeEventListener("resize", updateScreenSize);
-  }, []);
-
-  return screenSize;
-}
+import useMediaQuery from "./helpers/useMediaQuery";
 
 const NavbarRoutersName = [
   "Home",
@@ -63,7 +47,7 @@ function Navbar({
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
-  const [width] = useMediaQuery();
+  const [windowWidthValue] = useMediaQuery();
 
   const { pathname } = useLocation();
 
@@ -115,7 +99,7 @@ function Navbar({
           }}
         >
           <div className="navbar-secondary-wrapper">
-            {width > 900 ? (
+            {windowWidthValue > 900 ? (
               <>
                 <a href="/" className="navbar-main-left-wrapper">
                   <img src={UthaanLogo} alt="UthaanLogo" />
