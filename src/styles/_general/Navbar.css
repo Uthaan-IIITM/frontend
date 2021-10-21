@@ -1,29 +1,105 @@
 .navbar-main-wrapper {
-  @apply fixed top-0 left-0 w-full flex justify-between pt-8 z-20;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 20;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 2rem;
   height: 7.56rem;
   pointer-events: none;
-  transition: padding-left 0.5s ease-in-out, padding-right 0.5s ease-in-out;
+  transition: padding-left 1s ease-in-out, padding-right 1s ease-in-out;
   background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
 }
+
+.navbar-secondary-wrapper {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .navbar-main-left-wrapper {
   height: fit-content;
 }
 .navbar-main-left-wrapper img {
-  @apply object-contain;
-  width: 6.875vw;
+  object-fit: contain;
+  height: 30px;
+  width: fit-content;
   pointer-events: all;
   cursor: pointer;
 }
 .navbar-main-right-wrapper {
-  @apply flex;
+  display: flex;
 }
 .navbar-main-right-link {
-  @apply font-semibold text-lg block;
+  display: block;
+  font-weight: 600;
+  font-size: 18px;
   color: #222222;
-  transition: margin 0.5s ease-in-out;
+  transition: margin 1s ease-in-out;
   pointer-events: all;
   height: fit-content;
 }
 .navbar-active-class {
-  color: #ffb800;
+  color: #ffb800 !important;
+}
+
+@media only screen and (max-width: 1200px) {
+  .navbar-main-right-link {
+    font-size: 16px;
+  }
+  .navbar-main-left-wrapper img {
+    height: 25px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .navbar-secondary-wrapper {
+    flex-direction: row-reverse;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.navbar-hamburger-wrapper {
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+  height: fit-content;
+  position: absolute;
+  left: 0;
+  /* transition: transform 1s ease-in-out; */
+}
+
+.navbar-hamburger-links-list-wrapper {
+  overflow: hidden;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  background-color: white;
+  box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.1);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 30px;
+}
+
+.navbar-hamburger-item {
+  padding: 5px;
+  padding-left: 22px;
+  padding-right: 22px;
+  min-width: 150px;
+  font-weight: 600;
+  color: #222222;
 }
