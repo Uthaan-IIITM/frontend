@@ -8,8 +8,25 @@
 }
 
 .gallery-lower-sec-secondary-wrapper {
-  width: 90vw;
   height: fit-content;
-  max-width: 1000px;
+  width: 916px;
   margin: auto;
+}
+
+@media only screen and (max-width: 1016px) {
+  .gallery-lower-sec-secondary-wrapper {
+    width: 608px;
+  }
+}
+
+@media only screen and (max-width: 659px) {
+  .gallery-lower-sec-secondary-wrapper {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 337px) {
+  .gallery-lower-sec-secondary-wrapper {
+    width: 90vw;
+  }
 }
