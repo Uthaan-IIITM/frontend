@@ -23,6 +23,10 @@
   .gallery-lower-sec-secondary-wrapper {
     width: 300px;
   }
+  .gallery-lower-sec-primary-wrapper {
+    padding-top: 150px;
+    padding-bottom: 50px;
+  }
 }
 
 @media only screen and (max-width: 337px) {

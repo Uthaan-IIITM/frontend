@@ -23,7 +23,6 @@ function GalleryLowerSection() {
     loadGalleryImages();
   }, []);
   useEffect(() => {
-    console.log(windowWidthValue);
     switch (true) {
       case windowWidthValue <= 1016 && windowWidthValue > 658:
         setGalleryGridDimens({
