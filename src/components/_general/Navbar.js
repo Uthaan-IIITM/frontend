@@ -46,6 +46,7 @@ function Navbar({
 
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const [currentNavbarState, setCurrentNavbarState] = useState(true);
 
   const [windowWidthValue] = useMediaQuery();
 
@@ -55,7 +56,11 @@ function Navbar({
     if (allRoutes.includes(pathname.split("/")[1]) != isNavbarVisible) {
       setIsNavbarVisible(allRoutes.includes(pathname.split("/")[1]));
     }
-  }, [isHamburgerOpen]);
+  }, [pathname]);
+
+  useEffect(() => {
+    setCurrentNavbarState(windowWidthValue > 900);
+  }, [windowWidthValue]);
   const NavbarRoutersNameList = NavbarRoutersName.map((router, index) => {
     return (
       <NavLink
@@ -99,7 +104,7 @@ function Navbar({
           }}
         >
           <div className="navbar-secondary-wrapper">
-            {windowWidthValue > 900 ? (
+            {currentNavbarState ? (
               <>
                 <a href="/" className="navbar-main-left-wrapper">
                   <img src={UthaanLogo} alt="UthaanLogo" />
