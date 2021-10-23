@@ -23,36 +23,26 @@ function TeamPage() {
     try {
       const receivedImagesData = await team();
 
-      setTeamData(receivedImagesData);
-
-      let foundersTempData = parseTeamData(receivedImagesData.data.executive);
-      let alumniTempData = parseTeamData(receivedImagesData.data.executive);
+      let foundersTempData = parseTeamData(receivedImagesData.data.founders);
+      let alumniTempData = parseTeamData(receivedImagesData.data.alumni);
       let executivesTempData = parseTeamData(receivedImagesData.data.executive);
-
-      for (let i = 0; i < 2; i++) {
-        foundersTempData.push(foundersTempData[0]);
-      }
-
-      alumniTempData[0].uthaanStatement = null;
-      executivesTempData[0].uthaanStatement = null;
-
-      for (let i = 0; i < 10; i++) {
-        alumniTempData.push(alumniTempData[0]);
-        executivesTempData.push(executivesTempData[0]);
-      }
+      console.log(receivedImagesData.data);
+      console.log(receivedImagesData.data.alumni);
 
       setTeamData({
         Foundes: foundersTempData,
         Alumni: alumniTempData,
         Executives: executivesTempData,
       });
-
     } catch (error) {
       console.error(error);
     }
   }
 
   function parseTeamData(data) {
+    if (!data || data?.length === 0 || data === null) {
+      return [];
+    }
     const withHttp = (url) => {
       if (!url) {
         return null;
@@ -92,9 +82,6 @@ function TeamPage() {
         <div className="team-page-founders-list-wrapper">
           <TeamTimeline
             timelineData={teamData.Foundes}
-            colorThemeIndex={Array(teamData.Foundes?.length).fill(
-              Math.floor(Math.random() * 5)
-            )}
             lineColor="#F5F5F5"
           />
         </div>
