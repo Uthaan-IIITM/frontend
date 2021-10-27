@@ -6,7 +6,6 @@ import uthaanLogo from "../../../assets/uthaan_logo/uthaan_logo.svg";
 import Instituelogo from "../../../assets/footer/insitute_logo.svg";
 
 import "../../../styles/_general/PrimaryFooter.css";
-import "../../../styles/_general/responsive/primary_footer_responsive.css";
 
 import arrorwImg from "../../../assets/_general/arrow.svg";
 
