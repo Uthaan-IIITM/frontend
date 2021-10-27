@@ -22,5 +22,25 @@
 .what-is-uthaan-right-wrapper-wrapper {
   font-size: 8rem;
   line-height: 72%;
+  margin-left: -1.2rem;
   color: #222222;
+}
+.what-is-uthaan-title-content-wrapper {
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .what-is-uthaan-left-wrapper span:first-child {
+    font-size: 1.75rem;
+  }
+  .what-is-uthaan-left-wrapper span:last-child {
+    font-size: 1rem;
+  }
+  .what-is-uthaan-right-wrapper {
+    font-size: 3rem;
+  }
+  .what-is-uthaan-right-wrapper-wrapper {
+    font-size: 7rem;
+    margin-left: -1rem;
+  }
 }

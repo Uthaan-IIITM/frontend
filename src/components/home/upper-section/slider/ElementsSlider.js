@@ -13,6 +13,7 @@ import scaleAndOpacityControllerByActualPosition from "./slider-helpers/scale_an
 import scaleAndOpacityControllerByPositionFromCenter from "./slider-helpers/scale_and_opacity_controller_by_position_from_center";
 
 import easyScroll from "easy-scroll";
+import useMediaQuery from './../../../_general/helpers/useMediaQuery';
 
 function ElementsSlider({
   sliderComponents,
@@ -53,6 +54,9 @@ function ElementsSlider({
     floatIndex: 0,
   });
 
+
+  const windowWidth = useMediaQuery()
+
   useEffect(() => {
     let primaryWrapper = reactDom.findDOMNode(
       sliderPrimaryWrapperReference.current
@@ -67,7 +71,7 @@ function ElementsSlider({
     setTimeout(() => {
       setSliderOpacity(1);
     }, 400);
-  }, []);
+  }, [windowWidth]);
 
   useEffect(() => {
     if (goToPosition >= 0) {

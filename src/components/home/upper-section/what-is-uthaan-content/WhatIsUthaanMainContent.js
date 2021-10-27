@@ -21,7 +21,9 @@ function WhatIsUthaanMainContent({ currentState = 0 }) {
   return (
     <div className="what-is-uthaan-main-wrapper">
       <WhatIsUthaan />
+      <div className="what-is-uthaan-title-content-wrapper">
       <WhatIsUthaanStyledText currentState={currentState} />
+      </div>
     </div>
   );
 }
