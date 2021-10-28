@@ -20,7 +20,7 @@ import { ReactComponent as HomeUpperSectionIllustration3 } from "../../../assets
 import useMediaQuery from "./../../_general/helpers/useMediaQuery";
 
 function HomeUpperSection() {
-  const windowWidth = useMediaQuery();
+  const [windowWidth] = useMediaQuery();
 
   const [primaryCurrentState, setPrimaryCurrentState] = useState({
     intIndex: 0,

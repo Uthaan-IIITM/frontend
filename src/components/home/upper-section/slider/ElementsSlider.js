@@ -55,7 +55,7 @@ function ElementsSlider({
   });
 
 
-  const windowWidth = useMediaQuery()
+  const [windowWidth] = useMediaQuery()
 
   useEffect(() => {
     let primaryWrapper = reactDom.findDOMNode(
