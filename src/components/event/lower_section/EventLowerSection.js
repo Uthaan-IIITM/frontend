@@ -6,6 +6,7 @@ import EventTimeline from "./EventTimeline";
 import SecondaryFooter from "../../_general/footer/SecondaryFooter";
 import EventsCardDataObj from "./helpers/events_card_obj_constructor";
 import { events } from "../../../services/events.service";
+import useMediaQuery from "./../../_general/helpers/useMediaQuery";
 
 function EventLowerSection() {
   const [eventsData, setEventsData] = useState([]);
@@ -36,12 +37,14 @@ function EventLowerSection() {
         (3 * window.innerWidth) / 100 + activePositionIdexForLine * elemHeight;
 
       if (activePositionIdexForLine == childElements.length - 1) {
-        lineDivHeight = lineDivHeight + (3 * window.innerWidth) / 100;
+        lineDivHeight = lineDivHeight;
       }
 
       lineDiv.style.height = lineDivHeight + "px";
     }
   };
+
+  const [windowWidth] = useMediaQuery();
 
   useEffect(() => {
     loadEventsData();
@@ -75,7 +78,9 @@ function EventLowerSection() {
     <>
       <div className="event-lower-section-wrapper">
         {eventsData.map((event, index) => {
-          return (
+          return parseInt(windowWidth) <= 800 ? (
+            <EventTimeline key={index} eventData={event} isRight={true} />
+          ) : (
             <EventTimeline
               key={index}
               eventData={event}

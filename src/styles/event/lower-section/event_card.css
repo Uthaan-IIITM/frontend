@@ -1,53 +1,124 @@
 .event-card-wrapper-wrapper {
   @apply relative;
-  width: 33.85vw;
-  height: 23.55vw;
+  width: 500px;
+  height: 360px;
   background: #020001;
-  padding-top: 0.85vw;
+  padding-top: 12px;
 }
 .event-card-wrapper-wrapper::after {
   content: "";
   position: absolute;
   visibility: visible;
   top: 0px;
-  border: 1.61vw solid transparent; /* width of the triangle */
-  border-top: 1.23vw solid #020001; /* height of the triangle */
+  border: 23px solid transparent; /* width of the triangle */
+  border-top: 18px solid #020001; /* height of the triangle */
 }
 .event-card-wrapper-wrapper-is-left::after {
-  right: -1.2vw;
+  right: -18px;
 }
 .event-card-wrapper-wrapper-is-right::after {
-  left: -1.2vw;
+  left: -18px;
 }
 .event-card-image-wrapper {
-  @apply relative;
+  position: relative;
   height: 80.1%;
   margin-left: 2.61%;
   margin-right: 2.61%;
 }
 .event-card-image-wrapper img {
-  @apply h-full w-full object-cover;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .event-card-title {
-  @apply text-white font-bold;
+  font-weight: 700;
+  color: white;
   max-height: 2ch;
   overflow: hidden;
-  font-size: 2vw;
+  font-size: 30px;
   margin-left: 6.6%;
   margin-right: 6.6%;
 }
 .event-card-description {
-  @apply absolute left-0 bottom-0 flex items-end;
-  padding-left: 1.35vw;
-  padding-right: 1.35vw;
-  padding-bottom: 1.1vw;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 12px;
   height: 55%;
   width: 100%;
   background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 }
 .event-card-description div {
-  @apply font-semibold;
+  font-weight: 500;
   color: #eeeeee;
-  font-size: 1vw;
+  font-size: 15px;
   width: 90%;
+}
+
+@media only screen and (max-width: 1250px) {
+  .event-card-wrapper-wrapper {
+    width: 300px;
+    height: 230px;
+    padding-top: 8px;
+  }
+  .event-card-wrapper-wrapper::after {
+    border: 10px solid transparent; /* width of the triangle */
+    border-top: 9px solid #020001; /* height of the triangle */
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .event-card-title {
+    font-size: 16px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+  }
+  .event-card-description div {
+    font-size: 12px;
+    width: 90%;
+  }
+  .event-card-description {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .event-card-wrapper-wrapper {
+    width: 70vw;
+    height: 54vw;
+    padding-top: 1.9vw;
+  }
+  .event-card-wrapper-wrapper::after {
+    border: 2.3vw solid transparent;
+    border-top: 2.2vw solid #020001;
+    margin-left: 2.3vw;
+    margin-right: 2.3vw;
+  }
+  .event-card-title {
+    font-size: 4vw;
+    margin-left: 4.7vw;
+    margin-right: 4.7vw;
+    margin-top: 1.17vw;
+  }
+  .event-card-description div {
+    font-size: 3vw;
+    width: 90%;
+  }
+  .event-card-description {
+    padding-left: 3.75vw;
+    padding-right: 3.75vw;
+    padding-bottom: 1.17vw;
+  }
+  .event-card-wrapper-wrapper-is-left::after {
+    right: -4.25vw;
+  }
+  .event-card-wrapper-wrapper-is-right::after {
+    left: -4.25vw;
+  }
 }
