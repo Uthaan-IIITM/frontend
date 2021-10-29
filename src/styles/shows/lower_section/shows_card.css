@@ -1,5 +1,8 @@
 .shows-card-main-wrapper {
-  @apply w-full rounded-sm flex justify-between;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.125 rem;
   border: 1px solid #606060;
   height: 11.5vw;
   padding: 0.75vw 0.9vw;
@@ -10,25 +13,90 @@
   margin-right: 1.15vw;
 }
 .shows-card-image-wrapper img {
-  @apply w-full h-full object-cover rounded-sm;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.125rem;
+  object-fit: cover;
 }
 .shows-card-content-wrapper {
   width: 70%;
 }
 .shows-card-title-wrapper {
-  @apply font-semibold;
+  font-weight: 600;
   font-size: 1.5vw;
   color: #252525;
 }
 .shows-card-date-wrapper {
-  @apply font-medium;
+  font-weight: 500;
   font-size: 0.7vw;
   color: #999999;
 }
 .shows-card-description-wrapper {
-  @apply font-medium w-full;
-  font-size: 0.9vw;
+  width: 100%;
+  font-weight: 500;
+  font-size: 1vw;
   color: #222222;
-  height: 7ch;
   overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+@media only screen and (min-width: 1500px) {
+  .shows-card-main-wrapper {
+    height: 176px;
+    width: fit-content;
+    padding: 13px 13px;
+  }
+  .shows-card-image-wrapper {
+    height: 150px;
+    width: 266px;
+    margin-right: 18px;
+  }
+  .shows-card-image-wrapper img {
+    height: 100%;
+    width: 100%;
+  }
+  .shows-card-content-wrapper {
+    width: 760px;
+  }
+  .shows-card-title-wrapper {
+    font-size: 22px;
+  }
+  .shows-card-date-wrapper {
+    font-size: 11px;
+  }
+  .shows-card-description-wrapper {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .shows-card-main-wrapper {
+    height: 140px;
+    width: fit-content;
+    padding: 10px 10px;
+  }
+  .shows-card-image-wrapper {
+    height: 120px;
+    width: 212px;
+    margin-right: 15px;
+  }
+  .shows-card-image-wrapper img {
+    height: 100%;
+    width: 100%;
+  }
+  .shows-card-content-wrapper {
+    width: 600px;
+  }
+  .shows-card-title-wrapper {
+    font-size: 18px;
+  }
+  .shows-card-date-wrapper {
+    font-size: 9px;
+  }
+  .shows-card-description-wrapper {
+    font-size: 12px;
+  }
 }
