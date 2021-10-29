@@ -24,10 +24,7 @@ function ShowsCard({ show }) {
 }
 
 ShowsCard.propTypes = {
-  cardTitle: PropTypes.string.isRequired,
-  cardDate: PropTypes.string.isRequired,
-  cardDescription: PropTypes.string.isRequired,
-  cardImage: PropTypes.string.isRequired,
+  show: PropTypes.object.isRequired,
 };
 
 export default ShowsCard;

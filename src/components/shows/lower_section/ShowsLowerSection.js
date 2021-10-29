@@ -43,6 +43,9 @@ function ShowsLowerSection() {
   }
 
   async function fetchActiveShowData(playlistID) {
+    if (!playlistID) {
+      return;
+    }
     let teamArr = [];
     try {
       for (let index = 0; index < playlistID.length; index++) {
@@ -55,7 +58,6 @@ function ShowsLowerSection() {
     } catch (error) {
       console.error(error);
     }
-    console.log(teamArr);
     setActiveShowData(teamArr);
   }
 
@@ -64,10 +66,8 @@ function ShowsLowerSection() {
       <div className="shows-lower-section-wrapper">
         <ShowsLowerLeftSubSection showsTitlesList={showsData} />
         <div className="shows-lower-section-cards-wrapper">
-          {activeShowData.map((show, index) => {
-            return (
-              <ShowsCard key={index} show={show} roughPhoto={roughPhoto} />
-            );
+          {activeShowData?.map((show, index) => {
+            return <ShowsCard key={index} show={show} />;
           })}
         </div>
       </div>
