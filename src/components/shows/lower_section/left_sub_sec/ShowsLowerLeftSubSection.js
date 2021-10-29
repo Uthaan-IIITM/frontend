@@ -7,6 +7,7 @@ import ShowsLowerLeftSubSectionTitleComp from "./ShowsLowerLeftSubSectionTitleCo
 import calculateIndicesAccToActiveIndexForNav from "./helpers/indicesCalculatorAccToActiveIndex";
 
 import { useStateValue } from "./../../../../StateProvider";
+import useMediaQuery from "./../../../_general/helpers/useMediaQuery";
 
 function ShowsLowerLeftSubSection({ showsTitlesList: showsList = [] }) {
   const titlesListWrapperRef = useRef(123);
@@ -15,8 +16,8 @@ function ShowsLowerLeftSubSection({ showsTitlesList: showsList = [] }) {
 
   const [titlesStateIndices, setTitlesStateIndices] = useState([]);
   const [isInDynamicState, setIsInDynamicState] = useState(false);
-  const [currentActiveDisplayListPosIndex, setCurrentActiveListPosIndex] =
-    useState(0);
+
+  const [windowWidthInPx] = useMediaQuery();
 
   useEffect(() => {
     focusToActiveShow();
@@ -73,7 +74,7 @@ function ShowsLowerLeftSubSection({ showsTitlesList: showsList = [] }) {
     >
       {showsList.map((show, index) => {
         return (
-          <span
+          <div
             className="shows-lower-left-title-comp-wrapper"
             key={index}
             onClick={(e) => {
@@ -82,12 +83,18 @@ function ShowsLowerLeftSubSection({ showsTitlesList: showsList = [] }) {
           >
             <ShowsLowerLeftSubSectionTitleComp
               title={show.name}
-              opacityIndex={titlesStateIndices[index]}
-              scaleIndex={titlesStateIndices[index] * 0.7 + 0.3}
+              opacityIndex={
+                windowWidthInPx <= 1200 ? 1 : titlesStateIndices[index]
+              }
+              scaleIndex={
+                parseInt(windowWidthInPx) <= 1200
+                  ? 1
+                  : titlesStateIndices[index] * 0.7 + 0.3
+              }
               isActive={active_show === show}
               isInDynamicState={isInDynamicState}
             />
-          </span>
+          </div>
         );
       })}
     </div>
