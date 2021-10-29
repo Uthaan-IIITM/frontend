@@ -38,7 +38,7 @@
 
 @media only screen and (max-width: 500px) {
   .shows-lower-left-sec-primary-wrapper {
-    padding-top: calc(60px + 7vw);
+    padding-top: 90px;
     padding-bottom: 4vw;
     padding-left: 2.4vw;
     padding-right: 2.4vw;

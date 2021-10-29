@@ -147,12 +147,10 @@ function Navbar({
                             height: reactDom.findDOMNode(
                               hamburgerMenuListRef.current
                             ).scrollHeight,
-                            pointerEvents: "all",
                           }
                         : {
                             opacity: 0,
                             height: 0,
-                            pointerEvents: "none",
                           }
                     }
                   >
