@@ -6,6 +6,7 @@ import "../../styles/team/team_page.css";
 import TeamIndividualDataObj from "./team_timeline/helpers/team_individual_data_obj_constructor";
 import TeamTimeline from "./team_timeline/TeamTimeline";
 import { team } from "./../../services/team.service";
+import { foundersData } from "../../utils/GeneralConstants";
 // import { func } from "prop-types";
 
 function TeamPage() {
@@ -23,7 +24,7 @@ function TeamPage() {
     try {
       const receivedImagesData = await team();
 
-      let foundersTempData = parseTeamData(receivedImagesData.data.founders);
+      let foundersTempData = foundersData;
       let alumniTempData = parseTeamData(receivedImagesData.data.alumni);
       let executivesTempData = parseTeamData(receivedImagesData.data.executive);
       console.log(receivedImagesData.data);
@@ -74,16 +75,11 @@ function TeamPage() {
   return (
     <div className="team-page-primary-wrapper">
       <div className="team-page-founders-wrapper">
-        <h3 className="team-page-heading">
-          Founder’s
-          <br />
-          word
+        <h3 className="team-page-heading founders-heading">
+          Founder’s word
         </h3>
         <div className="team-page-founders-list-wrapper">
-          <TeamTimeline
-            timelineData={teamData.Foundes}
-            lineColor="#F5F5F5"
-          />
+          <TeamTimeline timelineData={teamData.Foundes} lineColor="#F5F5F5" />
         </div>
       </div>
       <div className="team-page-alumni-wrapper">
