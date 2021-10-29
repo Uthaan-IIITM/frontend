@@ -7,7 +7,7 @@ function InterviewsPage() {
   return (
     <div>
       <ListingPagesSmoothScrollContainer
-        topContainer={[<InterviewsUpperSection />]}
+        topContainer={<InterviewsUpperSection />}
         bottomContainer={<InterviewsLowerSection />}
       />
     </div>

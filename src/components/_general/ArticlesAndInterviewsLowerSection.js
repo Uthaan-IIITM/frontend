@@ -17,7 +17,6 @@ function ArticlesAndInterviewsLowerSection({ dataSrcFun }) {
     let tempData = [];
 
     let rawData = (await dataSrcFun()).data;
-    console.log(rawData);
     for (let index = 0; index < rawData.length; index++) {
       tempData.push(
         new ArticlesAndInterviewsDataObj(
