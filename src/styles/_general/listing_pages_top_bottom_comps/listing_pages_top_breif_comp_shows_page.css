@@ -1,24 +1,25 @@
 .lisitng-page-center-text-div-for-shows-page {
   position: absolute;
   top: 24vh;
-  left: 7.5vw;
+  left: 110px;
   width: auto;
   display: flex;
   flex-direction: column;
 }
 
 .listing-page-center-text-title-for-shows-page {
-  font-size: 4vw;
+  font-size: 60px;
   font-weight: 800;
   letter-spacing: 0.3em;
   width: fit-content;
 }
 
 .listing-page-center-text-description-for-shows-page {
-  font-size: 1.5vw;
+  font-size: 22px;
   font-weight: 500;
   width: 40vw;
-  margin-top: 1vw;
+  max-width: 600px;
+  margin-top: 15px;
 }
 
 .listing-pages-top-breif-sec-primary-wrapper {
@@ -28,7 +29,7 @@
 .listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-shows-page {
   position: absolute;
   bottom: 24vh;
-  left: 52vw;
+  right: 10vw;
   width: auto;
   height: auto;
   transition: transform 0.1s linear;
@@ -37,5 +38,68 @@
 .listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-shows-page
   svg {
   height: auto;
-  width: 36vw;
+  width: 500px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .lisitng-page-center-text-div-for-shows-page {
+    left: 0px;
+    top: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .listing-page-center-text-title-for-shows-page {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .listing-page-center-text-description-for-shows-page {
+    font-size: 15px;
+    text-align: center;
+    width: 360px;
+  }
+
+  .listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-shows-page {
+    position: absolute;
+    bottom: 8vh;
+    left: calc(50vw - 150px);
+    width: auto;
+    height: auto;
+    transition: transform 0.1s linear;
+  }
+
+  .listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-shows-page
+    svg {
+    height: auto;
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .listing-page-center-text-description-for-shows-page {
+    width: 90vw;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .listing-page-center-text-title-for-shows-page {
+    font-size: 9vw;
+  }
+
+  .listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-shows-page {
+    left: 12.5vw;
+  }
+
+  .listing-page-center-text-description-for-shows-page {
+    font-size: 4vw;
+    width: 80vw;
+  }
+
+  .listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-shows-page
+    svg {
+    height: auto;
+    width: 75vw;
+  }
 }
