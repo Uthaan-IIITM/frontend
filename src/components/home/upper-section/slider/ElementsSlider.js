@@ -13,7 +13,7 @@ import scaleAndOpacityControllerByActualPosition from "./slider-helpers/scale_an
 import scaleAndOpacityControllerByPositionFromCenter from "./slider-helpers/scale_and_opacity_controller_by_position_from_center";
 
 import easyScroll from "easy-scroll";
-import useMediaQuery from './../../../_general/helpers/useMediaQuery';
+import useMediaQuery from "./../../../_general/helpers/useMediaQuery";
 
 function ElementsSlider({
   sliderComponents,
@@ -54,8 +54,7 @@ function ElementsSlider({
     floatIndex: 0,
   });
 
-
-  const [windowWidth] = useMediaQuery()
+  const [windowWidth] = useMediaQuery();
 
   useEffect(() => {
     let primaryWrapper = reactDom.findDOMNode(
@@ -131,7 +130,7 @@ function ElementsSlider({
       autoSlideIntervalRef.current = clearTimeout(autoSlideIntervalRef.current);
     }
 
-    if (autoSlide) {
+    if (autoSlide && beingDragged.current === false) {
       autoSlideIntervalRef.current = setTimeout(() => {
         scrollSliderToPosition(
           (currentScrollStateIndices.intIndex + 1) % sliderComponents.length,
@@ -143,6 +142,10 @@ function ElementsSlider({
   }, [autoSlide, currentScrollStateIndices.intIndex]);
 
   function startDragging(e) {
+    if (autoSlideIntervalRef.current !== null) {
+      autoSlideIntervalRef.current = clearTimeout(autoSlideIntervalRef.current);
+    }
+
     beingDragged.current = true;
     startMousePosition.current = e.clientX;
   }
@@ -155,6 +158,16 @@ function ElementsSlider({
       500,
       "easeOutQuad"
     );
+
+    if (autoSlide) {
+      autoSlideIntervalRef.current = setTimeout(() => {
+        scrollSliderToPosition(
+          (currentScrollStateIndices.intIndex + 1) % sliderComponents.length,
+          autoSlideTransitionDuration,
+          "easeInOutQuad"
+        );
+      }, autoSlideInterval);
+    }
   }
 
   /** Function to drag carousel when user is dragging **/
