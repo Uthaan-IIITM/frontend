@@ -127,7 +127,6 @@ function ProgressLine({ numberOfDots, currentState }) {
 
 ProgressLine.propTypes = {
   numberOfDots: PropTypes.number,
-  currentState: PropTypes.string,
 };
 
 export default ProgressLine;

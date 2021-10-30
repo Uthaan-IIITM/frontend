@@ -1,6 +1,7 @@
 export const initialState = {
   navbar_state: 0,
   active_show: null,
+  admin_token: null,
 };
 
 const reducer = (state, action) => {
@@ -14,6 +15,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         active_show: action.show,
+      };
+    case "UPDATE_ADMIN_TOKEN":
+      return {
+        ...state,
+        admin_token: action.token,
       };
     default:
       return state;
