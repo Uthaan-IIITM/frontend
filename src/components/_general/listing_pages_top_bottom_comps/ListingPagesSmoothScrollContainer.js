@@ -1,6 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import reactDom from "react-dom";
-import { useEffect } from "react/cjs/react.development";
 import { useStateValue } from "../../../StateProvider";
 import "../../../styles/_general/listing_pages_top_bottom_comps/listing_pages_smooth_scroll_container.css";
 

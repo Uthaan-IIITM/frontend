@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react/cjs/react.development";
+import React, { useEffect } from "react";
 
 import "../../styles/team/team_page.css";
 
@@ -75,9 +74,7 @@ function TeamPage() {
   return (
     <div className="team-page-primary-wrapper">
       <div className="team-page-founders-wrapper">
-        <h3 className="team-page-heading founders-heading">
-          Founder’s word
-        </h3>
+        <h3 className="team-page-heading founders-heading">Founder’s word</h3>
         <div className="team-page-founders-list-wrapper">
           <TeamTimeline timelineData={teamData.Foundes} lineColor="#F5F5F5" />
         </div>
