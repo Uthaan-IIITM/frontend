@@ -13,9 +13,8 @@
 }
 
 .shows-lower-section-cards-wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 0.8vw;
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -35,8 +34,8 @@
 
   .shows-lower-section-cards-wrapper {
     display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 10px;
+    /* grid-template-columns: 1fr;
+    row-gap: 10px; */
     margin-top: 15px;
   }
 }
