@@ -76,3 +76,17 @@ export const foundersData = [
     "In Uthaan you learn skills that you can't learn through books like swimming"
   ),
 ];
+
+export const pageDescriptions = {
+  ARTICLE_PAGE:
+    "Uthaan has a variety of articles written by various members of our institute since it's Inception. From articles on social issues to gripping fiction there's something for every student to relate to.",
+
+  SHOWS_PAGE:
+    " Whether it's the insights and tips for placements, amusing and pleasant experiences of freshers or an exhibition of poetry and speech craft, Uthaan offers it all through it's various shows. ",
+
+  INTERVIEWS_PAGE:
+    " Uthaan's interviews are very insightful. The firsthand experience of knowledgeable and eminent individuals contributes to everyone's knowledge of the industry.",
+
+  EVENTS_PAGE:
+    "Uthaan has it all, from entertaining and intriguing events liked by all to interactive and competing ones for those who love a challenge.",
+};
