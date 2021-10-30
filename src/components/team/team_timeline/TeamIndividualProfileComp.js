@@ -12,7 +12,7 @@ import { ReactComponent as InstagramIcon } from "../../../assets/_general/social
 import { ReactComponent as LinkedinIcon } from "../../../assets/_general/social_media_icons/ic_linkedin.svg";
 import { ReactComponent as MailIcon } from "../../../assets/_general/social_media_icons/ic_mail.svg";
 
-import { teamPageColorThemes } from "../../../utils";
+import { teamPageColorThemes } from "../../../utils/GeneralConstants";
 import { setMultipleSVGPathFill } from "./helpers/svg_path_color_setter";
 
 function TeamIndividualProfileComp({ individualData, colorThemeIndex }) {
@@ -32,7 +32,6 @@ function TeamIndividualProfileComp({ individualData, colorThemeIndex }) {
       (-1 / 2) * (noOfProfileLinks - 1) * basicAngleDifferenceForLinks;
 
     for (let index = 0; index < noOfProfileLinks; index++) {
-      console.log(baseAngleForLinks + index * basicAngleDifferenceForLinks);
       tmpRotationAnglesArr.push(
         baseAngleForLinks + index * basicAngleDifferenceForLinks
       );
@@ -157,11 +156,13 @@ function TeamIndividualProfileComp({ individualData, colorThemeIndex }) {
             }}
           />
         </div>
-        <div className="team-individual-statement-wrapper">
-          <p className="team-individual-statement">
-            {individualData.uthaanStatement}
-          </p>
-        </div>
+        {individualData.uthaanStatement ? (
+          <div className="team-individual-statement-wrapper">
+            <p className="team-individual-statement">
+              {individualData.uthaanStatement}
+            </p>
+          </div>
+        ) : null}
       </div>
     </div>
   );

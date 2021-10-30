@@ -1,63 +1,77 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import "../../../styles/shows/lower_section/shows_lower_section.css";
-import ShowsCard from "./ShowsCard";
 
+import { useStateValue } from "./../../../StateProvider";
+
+import { showData, shows } from "./../../../services/shows.service";
+
+import ShowsCard from "./ShowsCard";
 import roughPhoto from "../../../assets/_rough/shows_thumbnail.svg";
 import ShowsLowerLeftSubSection from "./left_sub_sec/ShowsLowerLeftSubSection";
-import { useState, useEffect } from "react/cjs/react.development";
 import SecondaryFooter from "../../_general/footer/SecondaryFooter";
+import parseShowData from "./helpers/show_data_obj_constructor";
 
 function ShowsLowerSection() {
-  const [titlesList, setTitlesList] = useState([]);
+  const [{ active_show }, dispatch] = useStateValue();
+
+  const [showsData, setShowsData] = useState([]);
+  const [activeShowData, setActiveShowData] = useState([]);
+
   useEffect(() => {
-    setTitlesList([
-      "Be My guest",
-      "Alfaaz",
-      "Big Debate",
-      "HYP",
-      "Round table discussion",
-      "Fresher’s interview",
-      "Others",
-    ]);
+    fetchShowsData();
   }, []);
+
+  useEffect(() => {
+    fetchActiveShowData(active_show?.playlistIDs);
+  }, [active_show]);
+
+  useEffect(() => {
+    dispatch({
+      type: "UPDATE_ACTIVE_SHOW",
+      show: showsData[0],
+    });
+  }, [showsData]);
+
+  async function fetchShowsData() {
+    try {
+      const loadedData = await shows();
+      setShowsData(loadedData.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async function fetchActiveShowData(playlistID) {
+    if (!playlistID) {
+      return;
+    }
+    let teamArr = [];
+    try {
+      for (let index = 0; index < playlistID.length; index++) {
+        const loadedData = await showData(
+          playlistID[playlistID.length - index - 1]
+        );
+        const parsedData = parseShowData(loadedData).reverse();
+        teamArr = teamArr.concat(parsedData);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+    setActiveShowData(teamArr);
+  }
+
   return (
     <>
-    <div className="shows-lower-section-wrapper">
-      <div>
-        <ShowsLowerLeftSubSection showsTitlesList={titlesList} />
+      <div className="shows-lower-section-wrapper">
+        <ShowsLowerLeftSubSection showsTitlesList={showsData} />
+        <div className="shows-lower-section-cards-wrapper">
+          {activeShowData?.map((show, index) => {
+            return <ShowsCard key={index} show={show} />;
+          })}
+        </div>
       </div>
-      <div className="shows-lower-section-cards-wrapper">
-        <ShowsCard
-          cardTitle="Alfaaz - Season 2 | Ft. Nitish Upadhyay - 'Ek Jigyasu Chitrakar' | Episode 3 | Uthaan | IIIT Gwalior"
-          cardDate="1 Aug 2021"
-          cardDescription={`We present to you "Ek Jigyasu Chitrakar" Mr. Nitish Upadhyay, portraying his art's elegance and soul captivating beauty through his words which are not enough to describe the ravishing and tantalizing art that he created. `}
-          cardImage={roughPhoto}
-        />
-        <ShowsCard
-          cardTitle="Alfaaz - Season 2 | Ft. Nitish Upadhyay - 'Ek Jigyasu Chitrakar' | Episode 3 | Uthaan | IIIT Gwalior"
-          cardDate="1 Aug 2021"
-          cardDescription={`We present to you "Ek Jigyasu Chitrakar" Mr. Nitish Upadhyay, portraying his art's elegance and soul captivating beauty through his words which are not enough to describe the ravishing and tantalizing art that he created.
-           `}
-          cardImage={roughPhoto}
-        />
-        <ShowsCard
-          cardTitle="Alfaaz - Season 2 | Ft. Nitish Upadhyay - 'Ek Jigyasu Chitrakar' | Episode 3 | Uthaan | IIIT Gwalior"
-          cardDate="1 Aug 2021"
-          cardDescription={`We present to you "Ek Jigyasu Chitrakar" Mr. Nitish Upadhyay, portraying his art's elegance and soul captivating beauty through his words which are not enough to describe the ravishing and tantalizing art that he created.
-           `}
-          cardImage={roughPhoto}
-        />
-        <ShowsCard
-          cardTitle="Alfaaz - Season 2 | Ft. Nitish Upadhyay - 'Ek Jigyasu Chitrakar' | Episode 3 | Uthaan | IIIT Gwalior"
-          cardDate="1 Aug 2021"
-          cardDescription={`We present to you "Ek Jigyasu Chitrakar" Mr. Nitish Upadhyay, portraying his art's elegance and soul captivating beauty through his words which are not enough to describe the ravishing and tantalizing art that he created.
-           `}
-          cardImage={roughPhoto}
-        />
-      </div>
-    </div>
-    <SecondaryFooter/>
+      <SecondaryFooter />
     </>
   );
 }

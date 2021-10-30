@@ -98,8 +98,8 @@ LineDot.propTypes = {
 };
 
 LineDot.defaultProps = {
-  innerRadiusStates: ["0.5vw", "0.3vw", "0.1vw"],
-  outerRadiusStates: ["0.9vw", "0.6vw", "0.4vw"],
+  innerRadiusStates: ["7px", "4px", "2px"],
+  outerRadiusStates: ["12px", "9px", "6px"],
   innerCircleColorStates: ["#FFBC10", "#FFBC10", "#FFBC10"],
   outerCircleColorStates: ["#222222", "#222222", "#222222"],
   strokeStates: ["3px", "1px", "1px"],

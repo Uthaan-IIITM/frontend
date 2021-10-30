@@ -7,6 +7,7 @@ import "../../../styles/_general/secondary_footer.css";
 
 import importAll from "../helpers/import_all";
 import uthaanLogo from "../../../assets/uthaan_logo/uthaan_logo.svg";
+import { contactLinks } from "../../../utils/GeneralConstants";
 
 const images = importAll(
   require.context(
@@ -25,32 +26,38 @@ const SocialMediaIcons = [
   "github",
 ];
 
-const SocialMediaIconsList = SocialMediaIcons.map((SocialMediaIcons, index) => {
-  return (
-    <ImageStackComponent
-      normalDisplay={images[`ic_${SocialMediaIcons}.svg`].default}
-      hoverDisplay={images[`h_ic_${SocialMediaIcons}.svg`].default}
-      StackImageStyle={{ width: "2.1vw", height: "2.1vw", marginBottom: "0" }}
-    />
-  );
-});
+const SocialMediaIconsList = SocialMediaIcons.map(
+  (SocialMediaIconName, index) => {
+    return (
+      <ImageStackComponent
+        key={index}
+        link={contactLinks[SocialMediaIconName]}
+        normalDisplay={images[`ic_${SocialMediaIconName}.svg`].default}
+        hoverDisplay={images[`h_ic_${SocialMediaIconName}.svg`].default}
+        iconsClass="secondary-footer-social-media-icons"
+      />
+    );
+  }
+);
 
 function SecondaryFooter() {
   return (
     <div className="secondary-footer-wrapper">
       <div className="secondary-footer-left-wrapper">
-        <img src={uthaanLogo} alt="uthaanlogo" />
+        <Link to="/">
+          <img src={uthaanLogo} alt="uthaanlogo" />
+        </Link>
         <div className="secondary-footer-left-copyright-wrapper">
           Copyright (c) 2021
         </div>
       </div>
       <div className="secondary-footer-right-wrapper">
-        <div className="secondary-footer-social-media-icons">
+        <div className="secondary-footer-social-media-icons-wrapper">
           {SocialMediaIconsList}
         </div>
         <p>
           <Link to="/">Privacy Policy</Link>
-          <span style={{ color: "#929292", padding: "0 0.5vw" }}>|</span>
+          <span>|</span>
           <Link to="/">Terms of Use</Link>
         </p>
       </div>

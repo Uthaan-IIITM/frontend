@@ -1,15 +1,15 @@
 .sorting-comp-primary-wrapper {
-  border-bottom: 1px solid #444444;
+  border-bottom: 2px solid #444444;
   display: flex;
   justify-content: flex-end;
-  width: 81vw;
-  margin-bottom: 0.8vw;
+  width: 90vw;
+  margin-bottom: 12px;
   padding-right: 5%;
-  padding-bottom: 1vw;
-  padding-top: 7.5vw;
+  padding-bottom: 15px;
+  padding-top: 110px;
   position: -webkit-sticky;
   position: sticky;
-  top: -1vw;
+  top: -15px;
   z-index: 1;
   background-color: white;
 }
@@ -26,7 +26,7 @@
   pointer-events: none;
   user-select: none;
   -webkit-user-drag: none;
-  font-size: 1vw;
+  font-size: 15px;
   color: #444444;
   font-weight: 500;
   width: auto;
@@ -36,7 +36,7 @@
   pointer-events: none;
   user-select: none;
   -webkit-user-drag: none;
-  font-size: 1vw;
+  font-size: 15px;
   height: fit-content;
   font-weight: 600;
   padding-left: 0.4vw;

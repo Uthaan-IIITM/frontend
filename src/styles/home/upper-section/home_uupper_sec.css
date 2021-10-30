@@ -1,0 +1,20 @@
+.home-upper-section-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  min-height: calc(100vh - 100px);
+  justify-content: space-between;
+  padding-bottom: 20px;
+  padding-top: 3vh;
+}
+
+.home-upper-sec-slider-wrapper {
+  margin-top: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .home-upper-section-progress_line_wrapper {
+    margin-top: 1rem;
+  }
+}

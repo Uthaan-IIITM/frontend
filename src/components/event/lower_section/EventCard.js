@@ -11,7 +11,7 @@ const descriptionRightAlignStyles = {
   textAlign: "right",
   justifyContent: "flex-end",
 };
-function EventCard({ isRight }) {
+function EventCard({ isRight, description, title, imageURL }) {
   return (
     <div
       className={`event-card-wrapper-wrapper ${
@@ -21,22 +21,19 @@ function EventCard({ isRight }) {
       }`}
     >
       <div className="event-card-image-wrapper">
-        <img src={roughBg} alt="event-bg" />
+        <img src={imageURL} alt="event-bg" />
         <div
           className="event-card-description"
           style={isRight ? descriptionRightAlignStyles : null}
         >
-          <div>
-            Lorem ipsum dolor sit amet consectetur, adipi elit. Eius in veniam
-            voluptate Lorem ipsum dolor sit amet.
-          </div>
+          <div>{description}</div>
         </div>
       </div>
       <div
         className="event-card-title"
         style={isRight ? titleRightAlignStyles : null}
       >
-        Picturesque
+        {title}
       </div>
     </div>
   );

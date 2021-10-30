@@ -1,14 +1,75 @@
 .event-timeline-wrapper-wrapper {
   width: 50%;
-  border-right: 3.5px dashed #000000;
+  border-right: 3px dashed #000000;
+}
+.event-timeline-wrapper-wrapper-is-right {
+  width: 50%;
+  border-right: none;
+  border-left: 3px dashed #000000;
+  margin-left: auto;
+  width: calc(50% + 3px);
 }
 .event-timeline-wrapper {
-  @apply ml-auto relative;
+  position: relative;
+  margin-left: auto;
   width: fit-content;
-  margin-right: 6.5%;
+  margin-right: 50px;
+}
+.event-timeline-wrapper-is-right {
+  margin-right: 0;
+  margin-left: 50px;
 }
 .event-line-dot-wrapper {
-  @apply absolute;
+  position: absolute;
   top: -4.5%;
-  right: -12.9%;
+  right: -66.5px;
+}
+.event-line-dot-wrapper-is-right {
+  right: 0;
+  left: -66.5px;
+}
+
+@media only screen and (max-width: 1250px) {
+  .event-line-dot-wrapper {
+    right: -61.2px;
+  }
+  .event-line-dot-wrapper-is-right {
+    left: -61.2px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .event-timeline-wrapper-wrapper-is-right {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-bottom: 50px;
+  }
+  .event-timeline-wrapper-wrapper {
+    width: fit-content;
+  }
+  .event-timeline-wrapper-is-right {
+    margin-left: 30px;
+  }
+  .event-line-dot-wrapper {
+    right: -43px;
+  }
+  .event-line-dot-wrapper-is-right {
+    left: -43px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .event-timeline-wrapper-wrapper-is-right {
+    padding-bottom: 11vw;
+  }
+
+  .event-timeline-wrapper-is-right {
+    margin-left: 7vw;
+  }
+  .event-line-dot-wrapper {
+    right: -10vw;
+  }
+  .event-line-dot-wrapper-is-right {
+    left: -10vw;
+  }
 }

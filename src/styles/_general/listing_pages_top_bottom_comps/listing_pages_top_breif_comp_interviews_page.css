@@ -1,5 +1,111 @@
 .lisitng-page-center-text-div-for-interviews-page {
   position: absolute;
+  top: 19vh;
+  left: 6.5vw;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-page-center-text-title-for-interviews-page {
+  font-size: 60px;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  width: fit-content;
+}
+
+.listing-page-center-text-description-for-interviews-page {
+  font-size: 22px;
+  font-weight: 500;
+  width: 40vw;
+  max-width: 600px;
+  margin-top: 15px;
+}
+
+.listing-pages-top-breif-sec-primary-wrapper {
+  position: relative;
+}
+
+.listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-interviews-page {
+  position: absolute;
+  bottom: 18vh;
+  right: 10vw;
+  width: auto;
+  height: auto;
+  transition: transform 0.1s linear;
+}
+
+.listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-interviews-page
+  svg {
+  height: auto;
+  width: 480px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .lisitng-page-center-text-div-for-interviews-page {
+    left: 0px;
+    top: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .listing-page-center-text-title-for-interviews-page {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .listing-page-center-text-description-for-interviews-page {
+    font-size: 15px;
+    text-align: center;
+    width: 360px;
+  }
+
+  .listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-interviews-page {
+    position: absolute;
+    bottom: 8vh;
+    left: calc(50vw - 150px);
+    width: auto;
+    height: auto;
+    transition: transform 0.1s linear;
+  }
+
+  .listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-interviews-page
+    svg {
+    height: auto;
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .listing-page-center-text-description-for-interviews-page {
+    width: 90vw;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .listing-page-center-text-title-for-interviews-page {
+    font-size: 9vw;
+  }
+
+  .listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-interviews-page {
+    left: 12.5vw;
+  }
+
+  .listing-page-center-text-description-for-interviews-page {
+    font-size: 4vw;
+    width: 80vw;
+  }
+
+  .listing-pages-top-breif-sec-primary-graphic-component-wrapper-for-interviews-page
+    svg {
+    height: auto;
+    width: 75vw;
+  }
+}
+
+/* .lisitng-page-center-text-div-for-interviews-page {
+  position: absolute;
   top: 18vh;
   left: 6.5vw;
   width: auto;
@@ -38,4 +144,4 @@
   svg {
   height: auto;
   width: 36vw;
-}
+} */

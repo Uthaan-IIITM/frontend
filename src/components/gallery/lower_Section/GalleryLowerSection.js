@@ -3,34 +3,73 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 
 import "../../../styles/gallery/gallery_lower_sec.css";
+
+import { galleryImages } from "./../../../services/gallery.service";
+
+import useMediaQuery from "./../../_general/helpers/useMediaQuery";
+
 import SecondaryFooter from "../../_general/footer/SecondaryFooter";
 
 function GalleryLowerSection() {
   const [imagesDataSet, setImagesDataSet] = useState([]);
+  const [galleryGridDimens, setGalleryGridDimens] = useState({
+    cols: 3,
+    gap: 8,
+  });
 
-  useEffect(async () => {
-    function rand() {
-      return Math.floor(Math.random() * 100);
-    }
+  const [windowWidthValue] = useMediaQuery();
 
-    let tmpArr = [];
-    for (let i = 0; i < 40; i++) {
-      tmpArr.push(
-        `https://picsum.photos/${400 + rand()}/${300 + rand()}?random=1`
-      );
-    }
-
-    setImagesDataSet(tmpArr);
+  useEffect(() => {
+    loadGalleryImages();
   }, []);
+  useEffect(() => {
+    switch (true) {
+      case windowWidthValue <= 1016 && windowWidthValue > 658:
+        setGalleryGridDimens({
+          ...galleryGridDimens,
+          cols: 2,
+        });
+        break;
+
+      case windowWidthValue <= 658:
+        setGalleryGridDimens({
+          cols: 1,
+          gap: 10,
+        });
+        break;
+
+      default:
+        setGalleryGridDimens({
+          ...galleryGridDimens,
+          cols: 3,
+        });
+
+        break;
+    }
+  }, [windowWidthValue]);
+
+  async function loadGalleryImages() {
+    try {
+      const receivedImagesData = await galleryImages();
+      console.log(receivedImagesData);
+      setImagesDataSet(receivedImagesData.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <>
       <div className="gallery-lower-sec-primary-wrapper">
         <div className="gallery-lower-sec-secondary-wrapper">
-          <ImageList variant="masonry" cols={3} gap={8}>
-            {imagesDataSet.map((item, index) => (
+          <ImageList
+            variant="masonry"
+            cols={galleryGridDimens.cols}
+            gap={galleryGridDimens.gap}
+          >
+            {imagesDataSet?.map((item, index) => (
               <ImageListItem key={index}>
-                <img src={item} loading="lazy" />
+                <img src={item.url} loading="lazy" />
               </ImageListItem>
             ))}
           </ImageList>

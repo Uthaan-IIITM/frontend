@@ -1,26 +1,50 @@
-
 .lisitng-page-center-text-div-for-events-page {
-    position: absolute;
-    top: 22vh;
-    left: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  position: absolute;
+  top: 22vh;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.listing-page-center-text-title-for-events-page {
+  font-size: 60px;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  text-align: center;
+}
+
+.listing-page-center-text-description-for-events-page {
+  font-size: 22px;
+  font-weight: 500;
+  width: 90vw;
+  max-width: 600px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .lisitng-page-center-text-div-for-events-page {
+    top: 20vh;
   }
-  
+
   .listing-page-center-text-title-for-events-page {
-    font-size: 4vw;
-    font-weight: 800;
-    letter-spacing: 0.3em;
-    text-align: center;
+    font-size: 40px;
   }
-  
   .listing-page-center-text-description-for-events-page {
-    font-size: 1.5vw;
-    font-weight: 500;
-    width: 40vw;
-    text-align: center;
+    font-size: 18px;
+    margin-top: 15px;
   }
-  
+}
+
+@media only screen and (max-width: 320px) {
+  .listing-page-center-text-title-for-events-page {
+    font-size: 35px;
+    margin-right: -12px;
+  }
+  .listing-page-center-text-description-for-events-page {
+    font-size: 15px;
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,121 @@
+.team-page-primary-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.team-page-founders-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 150px;
+  padding-bottom: 80px;
+  justify-content: center;
+}
+
+.team-page-founders-wrapper::-webkit-scrollbar,
+.team-page-alumni-wrapper::-webkit-scrollbar,
+.team-page-executives-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.team-page-founders-wrapper::-webkit-scrollbar,
+.team-page-alumni-wrapper::-webkit-scrollbar,
+.team-page-executives-wrapper::-webkit-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.team-page-founders-list-wrapper {
+  margin-top: -150px;
+}
+
+.team-page-heading {
+  font-size: 35px;
+  color: #222222;
+  font-weight: 800;
+  text-align: center;
+  position: sticky;
+  left: 6.9vw;
+  width: fit-content;
+  margin: auto;
+}
+
+.founders-heading {
+  width: 8ch;
+}
+.team-page-alumni-wrapper {
+  background-color: #fbf4ff;
+}
+
+.team-page-executives-wrapper,
+.team-page-alumni-wrapper {
+  padding-top: 100px;
+  padding-bottom: 20px;
+  width: 100%;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.team-page-alumni-list-wrapper,
+.team-page-executives-list-wrapper {
+  width: fit-content;
+  height: fit-content;
+  min-width: 100%;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 35px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .team-page-heading {
+    font-size: 28px;
+  }
+  .team-page-founders-wrapper {
+    padding-top: 125px;
+  }
+  .team-page-founders-list-wrapper {
+    margin-top: -130px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .team-page-founders-wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    display: block;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .team-page-founders-list-wrapper {
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    height: fit-content;
+    min-width: 100%;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 35px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .founders-heading {
+    /* margin: 0; */
+    /* position: fixed; */
+    width: fit-content;
+    text-align: left;
+  }
+}

@@ -6,7 +6,7 @@ import ArticlesLowerSection from './lower_section/ArticlesLowerSection';
 function ArticlesPage() {
   return (
     <ListingPagesSmoothScrollContainer
-      topContainer={[<ArticlesUpperSection />]}
+      topContainer={<ArticlesUpperSection />}
       bottomContainer={<ArticlesLowerSection />}
     />
   );

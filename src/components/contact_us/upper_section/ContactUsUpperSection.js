@@ -2,14 +2,17 @@ import React from "react";
 
 import "../../../styles/contact_us/contact_us_upper_sec.css";
 
-import { collegeNameAndAddress } from "./../../../utils";
+import { collegeNameAndAddress } from "../../../utils/GeneralConstants";
 import ImageStackComponent from "../../_general/footer/footer_helper/ImageStackComponent";
 
 import { ReactComponent as ContactusPrimaryGraphic } from "../../../assets/contact_us/graphic.svg";
 
 import importAll from "../../_general/helpers/import_all";
 
-import { contactLinks, contactPhoneNumbers } from "../../../utils";
+import {
+  contactLinks,
+  contactPhoneNumbers,
+} from "../../../utils/GeneralConstants";
 
 const socialMediaImages = importAll(
   require.context(
@@ -40,6 +43,7 @@ function ContactUsUpperSection() {
           {SocialMediaIconNames.map((SocialMediaIconName, index) => {
             return (
               <ImageStackComponent
+                key={index}
                 link={contactLinks[SocialMediaIconName]}
                 normalDisplay={
                   socialMediaImages[`ic_${SocialMediaIconName}.svg`].default
@@ -47,13 +51,7 @@ function ContactUsUpperSection() {
                 hoverDisplay={
                   socialMediaImages[`h_ic_${SocialMediaIconName}.svg`].default
                 }
-                StackImageStyle={{
-                  width: "33px",
-                  height: "33px",
-                  marginBottom: "0",
-                  marginLeft: "0",
-                  marginRight: "12px",
-                }}
+                iconsClass = "contact-us-upper-sec-links-icons"
               />
             );
           })}
@@ -62,7 +60,7 @@ function ContactUsUpperSection() {
           {contactPhoneNumbers.map((phoneNumber, index) => {
             let numLink = `tel:91${phoneNumber}`;
             return (
-              <a href={numLink} key={index}>
+              <a href={numLink} key={index} className="contact-us-upper-sec-left-sec-numbers">
                 (+91) {phoneNumber}
               </a>
             );

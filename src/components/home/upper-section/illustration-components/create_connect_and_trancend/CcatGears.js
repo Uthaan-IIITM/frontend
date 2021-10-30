@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import "../../../../../styles/home/upper-section/illustration-container/CreateConnectAndTrancend/CcatGears.css";
 import gear3 from "../../../../../assets/home/what_is_uthaan/create_connect_and_trancend/graphic_parts/SVG/gear_3.svg";
@@ -15,9 +14,5 @@ function CcatGears() {
     </div>
   );
 }
-
-CcatGears.propTypes = {
-  GearsContainerWidth: PropTypes.string.isRequired,
-};
 
 export default CcatGears;

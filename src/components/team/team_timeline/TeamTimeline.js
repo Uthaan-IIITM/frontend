@@ -2,7 +2,7 @@ import React from "react";
 import "../../../styles/team/team_timeline/team_timeline.css";
 import TeamIndividualProfileComp from "./TeamIndividualProfileComp";
 
-function TeamTimeline({ timelineData, colorThemeIndex }) {
+function TeamTimeline({ timelineData, colorThemeIndex, lineColor }) {
   return (
     <div className="team-timeline-primary-wrapper">
       {timelineData?.map((individualData, index) => {
@@ -30,7 +30,11 @@ function TeamTimeline({ timelineData, colorThemeIndex }) {
             >
               <TeamIndividualProfileComp
                 individualData={individualData}
-                colorThemeIndex={colorThemeIndex[index]}
+                colorThemeIndex={
+                  colorThemeIndex?.[index]
+                    ? colorThemeIndex[index]
+                    : Math.floor(Math.random() * 5)
+                }
               />
             </div>
             {index < timelineData.length - 1 ? (
@@ -42,6 +46,7 @@ function TeamTimeline({ timelineData, colorThemeIndex }) {
                       index % 2 == 0
                         ? "polygon(0 0%, 5% 0, 100% 100%, 95% 100%)"
                         : "polygon(95% 0, 100% 0%, 5% 100%, 0% 100%)",
+                    backgroundColor: lineColor,
                   }}
                 />
               </div>

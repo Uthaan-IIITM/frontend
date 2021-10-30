@@ -7,43 +7,47 @@ import "../../styles/_general/articles_and_interviews_lower_sec.css";
 import ArticlesAndInterviewsDataObj from "./helpers/articles_and_interviews_data_constructor";
 import SortingComp from "./SortingComp";
 
-import convertTsToDate from "./helpers/dateConverter";
+import parseDate from "./helpers/dateConverter";
 import sortDataBy from "./helpers/articles_and_interviews_sorter";
 
-function ArticlesAndInterviewsLowerSection() {
+function ArticlesAndInterviewsLowerSection({ dataSrcFun }) {
   const [articlesData, setArticlesData] = useState([]);
 
-  useEffect(async () => {
+  useEffect(() => {
+    setUpArticlesData();
+  }, []);
+
+  const setUpArticlesData = async () => {
     let tempData = [];
-    for (let i = 0; i < 30; i++) {
+
+    let rawData = (await dataSrcFun()).data;
+    console.log(rawData);
+    if (!rawData) {
+      return;
+    }
+    for (let index = 0; index < rawData.length; index++) {
       tempData.push(
         new ArticlesAndInterviewsDataObj(
-          "0*ndy6ybdngG_h48BA",
-          `${
-            i + 1
-          } An Interview with the International Dance Team of Sri Lanka`,
-          Date.now(),
-          convertTsToDate(Date.now()),
-          "https://www.google.com/"
+          rawData[index].thumbnail,
+          rawData[index].title,
+          new Date(rawData[index].date).getTime(),
+          parseDate(rawData[index].date),
+          rawData[index].url
         )
       );
-      await sleep(10);
     }
+
     setArticlesData(tempData);
-  }, []);
+  };
 
   function handlSortChange(newSortState) {
     setArticlesData(
       sortDataBy(
         articlesData,
         "timeStamp",
-        newSortState === "NEWEST_FIRST" ? 1 : -1
+        newSortState === "NEWEST_FIRST" ? -1 : 1
       )
     );
-  }
-
-  function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   return (

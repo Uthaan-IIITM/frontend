@@ -4,6 +4,7 @@ import { ReactComponent as Graphic2 } from "../../../assets/interviews/bg/bg2.sv
 import { ReactComponent as Graphic3 } from "../../../assets/interviews/bg/bg3.svg";
 import { ReactComponent as Graphic4 } from "../../../assets/interviews/bg/bg4.svg";
 import { ReactComponent as PrimaryGraphic } from "../../../assets/interviews/graphic.svg";
+import { pageDescriptions } from "../../../utils/GeneralConstants";
 import ListingPagesTopBreifComp from "../../_general/listing_pages_top_bottom_comps/ListingPagesTopBreifComp";
 
 function InterviewsUpperSection() {
@@ -16,10 +17,10 @@ function InterviewsUpperSection() {
           <Graphic3 preserveAspectRatio="none" />,
           <Graphic4 preserveAspectRatio="none" />,
         ]}
-        bgELementsRatios={[1, 0.75 , 0.38, 0.16]}
+        bgELementsRatios={[1, 0.75, 0.38, 0.16]}
         primaryHeight="47.5vh"
         topicTitle="INTERVIEWS"
-        topicDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus, quis dolor sit amet"
+        topicDescription={pageDescriptions.INTERVIEWS_PAGE}
         textDivStylingClass="lisitng-page-center-text-div-for-interviews-page"
         textTitleStylingClass="listing-page-center-text-title-for-interviews-page"
         textDescriptionStylingClass="listing-page-center-text-description-for-interviews-page"

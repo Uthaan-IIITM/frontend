@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "../../../../../styles/home/upper-section/illustration-container/CreateConnectAndTrancend/CcatBottomChar.css";
 import char3 from "../../../../../assets/home/what_is_uthaan/create_connect_and_trancend/graphic_parts/SVG/char_3.svg";
 import char3HandZH from "../../../../../assets/home/what_is_uthaan/create_connect_and_trancend/graphic_parts/SVG/char_3_hand_z_h.svg";
@@ -20,8 +19,5 @@ function CcatBottomChar() {
   );
 }
 
-CcatBottomChar.propTypes = {
-  bottomCharContainerWidth: PropTypes.string.isRequired,
-};
 
 export default CcatBottomChar;

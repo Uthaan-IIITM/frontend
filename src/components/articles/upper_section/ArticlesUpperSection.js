@@ -4,6 +4,7 @@ import { ReactComponent as Graphic2 } from "../../../assets/articles/bg/bg2.svg"
 import { ReactComponent as Graphic3 } from "../../../assets/articles/bg/bg3.svg";
 import { ReactComponent as Graphic4 } from "../../../assets/articles/bg/bg4.svg";
 import { ReactComponent as PrimaryGraphic } from "../../../assets/articles/graphic.svg";
+import { pageDescriptions } from "../../../utils/GeneralConstants";
 import ListingPagesTopBreifComp from "../../_general/listing_pages_top_bottom_comps/ListingPagesTopBreifComp";
 
 function ArticlesUpperSection() {
@@ -16,10 +17,10 @@ function ArticlesUpperSection() {
           <Graphic3 preserveAspectRatio="none" />,
           <Graphic4 preserveAspectRatio="none" />,
         ]}
-        bgELementsRatios={[0.9, 1 , 0.65, 0.6]}
+        bgELementsRatios={[0.9, 1, 0.65, 0.6]}
         primaryHeight="58vh"
         topicTitle="ARTICLES"
-        topicDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus, quis dolor sit amet"
+        topicDescription={pageDescriptions.ARTICLE_PAGE}
         textDivStylingClass="lisitng-page-center-text-div-for-articles-page"
         textTitleStylingClass="listing-page-center-text-title-for-articles-page"
         textDescriptionStylingClass="listing-page-center-text-description-for-articles-page"

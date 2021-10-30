@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import clock from "../../../../../assets/home/what_is_uthaan/bridging_gap_between_juniors_and_seniors/graphic_parts/SVG/clock.svg";
 import "../../../../../styles/home/upper-section/illustration-container/BridgingGapBetweenJuniorsAndSeniors/BgbjasClock.css";
 
@@ -13,9 +12,5 @@ function BGBJAS_Clock() {
     </div>
   );
 }
-
-BGBJAS_Clock.propTypes = {
-  clockContainerWidth: PropTypes.string.isRequired,
-};
 
 export default BGBJAS_Clock;

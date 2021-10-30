@@ -6,19 +6,27 @@ function ShowsLowerLeftSubSectionTitleComp({
   scaleIndex,
   opacityIndex,
   isActive,
+  isInDynamicState,
 }) {
   return (
-    <div className="shows-lower-left-sec-nav-title-primary-wrapper">
-      <span
+    <div className="shows-lower-left-sec-nav-title-primary-wrapper"
+    
+    style={{
+      borderColor: isActive ? "#FF9300" : "#3D3D3D",
+    }}>
+      <div
         className="shows-lower-left-sec-nav-title-text"
         style={{
           color: isActive ? "#FF9300" : "#3D3D3D",
           transform: `scale(${scaleIndex})`,
           opacity: opacityIndex,
+          transition: isInDynamicState
+            ? "transform 0.2s ease-out, color 0.05s ease-out,opacity 0.2s ease-out"
+            : "transform 1s ease-out, color 0.1s ease-out,opacity 1s ease-out",
         }}
       >
         {title}
-      </span>
+      </div>
     </div>
   );
 }
