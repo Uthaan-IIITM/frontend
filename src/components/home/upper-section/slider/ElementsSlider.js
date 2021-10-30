@@ -1,7 +1,6 @@
+import { useState, useEffect, useRef } from "react";
 import reactDom from "react-dom";
 import PropTypes from "prop-types";
-import { useState } from "react/cjs/react.development";
-import { useEffect, useRef } from "react";
 
 import "../../../../styles/home/upper-section/slider/image-slider-container.css";
 import "../../../../styles/home/upper-section/slider/core-image-slider-container.css";

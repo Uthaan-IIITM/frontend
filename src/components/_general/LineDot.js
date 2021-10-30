@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "../../styles/_general/line_dot.css";
-import { useEffect, useState } from "react/cjs/react.development";
 import calculateRelativeValue from "./helpers/relative_property_value_calculator";
 import formatNumber from "./helpers/nemerical_formatter";
 
