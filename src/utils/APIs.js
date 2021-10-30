@@ -1,4 +1,5 @@
-export const BASE_URL = "http://localhost:4000/api/";
+export const BASE_URL = "https://uthaan.eastus.cloudapp.azure.com:8080/api/";
+// export const BASE_URL = "http://localhost:4000/api/";
 export const GOOGLE_API_KEY = "AIzaSyASThvZn06zDncboBQXsf7tEFpyBsC9-L8";
 
 export const EVENTS_DATA_URL = BASE_URL + "events";
