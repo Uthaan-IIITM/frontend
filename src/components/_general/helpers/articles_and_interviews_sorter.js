@@ -1,6 +1,5 @@
 function sortDataBy(data, sortWith, sortingIndex) {
   let tempData = data.slice();
-  console.log("slice", tempData);
   return tempData.sort((a, b) => {
     if (a[sortWith] < b[sortWith]) {
       return -1 * sortingIndex;

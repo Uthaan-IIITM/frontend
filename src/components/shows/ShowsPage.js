@@ -7,7 +7,7 @@ function ShowsPage() {
   return (
     <div>
       <ListingPagesSmoothScrollContainer
-        topContainer={[<ShowsUpperSection />]}
+        topContainer={<ShowsUpperSection />}
         bottomContainer={<ShowsLowerSection />}
       />
     </div>

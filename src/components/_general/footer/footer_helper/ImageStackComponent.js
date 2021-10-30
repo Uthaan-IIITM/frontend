@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../../../styles/_general/ImageStackComponent.css";
-import "../../../../styles/_general/responsive/image_stack_component_responsive.css";
+// import "../../../../styles/_general/responsive/image_stack_component_responsive.css";
 
 function ImageStackComponent(props) {
   const [displayClass, setDisplayClass] = useState(
@@ -15,7 +15,13 @@ function ImageStackComponent(props) {
       href={props.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="primary-footer-img-stack-wrapper"
+      className={
+        "primary-footer-img-stack-wrapper" +
+        " " +
+        props.iconsClass +
+        " " +
+        props.iconsWrapperClass
+      }
       onMouseOver={() => {
         setDisplayClass(
           "primary-footer-hover-display primary-footer-common-img-class"
@@ -37,13 +43,13 @@ function ImageStackComponent(props) {
       <img
         src={props.normalDisplay}
         alt="normal state"
-        className={displayClass}
+        className={displayClass + " " + props.iconsClass}
         style={props.StackImageStyle}
       />
       <img
         src={props.hoverDisplay}
         alt="hover display"
-        className={hoverClass}
+        className={hoverClass + " " + props.iconsClass}
         style={props.StackImageStyle}
       />
     </a>

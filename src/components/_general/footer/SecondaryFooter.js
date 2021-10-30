@@ -30,10 +30,11 @@ const SocialMediaIconsList = SocialMediaIcons.map(
   (SocialMediaIconName, index) => {
     return (
       <ImageStackComponent
+        key={index}
         link={contactLinks[SocialMediaIconName]}
         normalDisplay={images[`ic_${SocialMediaIconName}.svg`].default}
         hoverDisplay={images[`h_ic_${SocialMediaIconName}.svg`].default}
-        StackImageStyle={{ width: "2.1vw", height: "2.1vw", marginBottom: "0" }}
+        iconsClass="secondary-footer-social-media-icons"
       />
     );
   }
@@ -43,18 +44,20 @@ function SecondaryFooter() {
   return (
     <div className="secondary-footer-wrapper">
       <div className="secondary-footer-left-wrapper">
-        <img src={uthaanLogo} alt="uthaanlogo" />
+        <Link to="/">
+          <img src={uthaanLogo} alt="uthaanlogo" />
+        </Link>
         <div className="secondary-footer-left-copyright-wrapper">
           Copyright (c) 2021
         </div>
       </div>
       <div className="secondary-footer-right-wrapper">
-        <div className="secondary-footer-social-media-icons">
+        <div className="secondary-footer-social-media-icons-wrapper">
           {SocialMediaIconsList}
         </div>
         <p>
           <Link to="/">Privacy Policy</Link>
-          <span style={{ color: "#929292", padding: "0 0.5vw" }}>|</span>
+          <span>|</span>
           <Link to="/">Terms of Use</Link>
         </p>
       </div>

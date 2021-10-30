@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import reactDom from "react-dom";
 import PropTypes from "prop-types";
+import { Divide as Hamburger } from "hamburger-react";
 
 import "../../styles/_general/Navbar.css";
 
+import { allRoutes } from "./../../utils/GeneralConstants";
+
 import UthaanLogo from "../../assets/uthaan_logo/uthaan_logo.svg";
 
-import { allRoutes } from "./../../utils/GeneralConstants";
+import useMediaQuery from "./helpers/useMediaQuery";
 
 const NavbarRoutersName = [
   "Home",
@@ -38,8 +42,25 @@ function Navbar({
   marginLeftDefaultValue,
   marginLeftDifferenceValue,
 }) {
+  const hamburgerMenuListRef = useRef(256);
+
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const [currentNavbarState, setCurrentNavbarState] = useState(true);
+
+  const [windowWidthValue] = useMediaQuery();
+
   const { pathname } = useLocation();
 
+  useEffect(() => {
+    if (allRoutes.includes(pathname.split("/")[1]) != isNavbarVisible) {
+      setIsNavbarVisible(allRoutes.includes(pathname.split("/")[1]));
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    setCurrentNavbarState(windowWidthValue > 900);
+  }, [windowWidthValue]);
   const NavbarRoutersNameList = NavbarRoutersName.map((router, index) => {
     return (
       <NavLink
@@ -56,10 +77,25 @@ function Navbar({
       </NavLink>
     );
   });
+  const NavbarHamburgerRoutersNameList = NavbarRoutersName.map(
+    (router, index) => {
+      return (
+        <NavLink
+          exact
+          to={NavbarRouters[index]}
+          key={index}
+          activeClassName="navbar-active-class"
+          className="navbar-hamburger-item"
+        >
+          {router}
+        </NavLink>
+      );
+    }
+  );
 
   return (
     <>
-      {allRoutes.includes(pathname.split("/")[1]) ? (
+      {isNavbarVisible ? (
         <nav
           className="navbar-main-wrapper"
           style={{
@@ -67,11 +103,62 @@ function Navbar({
             paddingRight: `calc(${paddingRightDifferenceValue}*${slidingIndex} + ${paddingRightDefaultValue})`,
           }}
         >
-          <a href="/" className="navbar-main-left-wrapper">
-            <img src={UthaanLogo} alt="UthaanLogo" />
-          </a>
-          <div className="navbar-main-right-wrapper">
-            {NavbarRoutersNameList}
+          <div className="navbar-secondary-wrapper">
+            {currentNavbarState ? (
+              <>
+                <a href="/" className="navbar-main-left-wrapper">
+                  <img src={UthaanLogo} alt="UthaanLogo" />
+                </a>
+                <div className="navbar-main-right-wrapper">
+                  {NavbarRoutersNameList}
+                </div>
+              </>
+            ) : (
+              <>
+                <a href="/" className="navbar-main-left-wrapper">
+                  <img src={UthaanLogo} alt="UthaanLogo" />
+                </a>
+                <div
+                  className="navbar-hamburger-wrapper"
+                  tabIndex={0}
+                  onClick={(e) => setIsHamburgerOpen(true)}
+                  onBlur={(e) => {
+                    setIsHamburgerOpen(false);
+                  }}
+                >
+                  <div>
+                    <Hamburger
+                      toggled={isHamburgerOpen}
+                      toggle={isHamburgerOpen}
+                      size={20}
+                      color="#222222"
+                      label="Show menu"
+                      duration={0.5}
+                      hideOutline={false}
+                    />
+                  </div>
+                  <div
+                    className="navbar-hamburger-links-list-wrapper"
+                    ref={hamburgerMenuListRef}
+                    style={
+                      isHamburgerOpen
+                        ? {
+                            opacity: 1,
+                            height: reactDom.findDOMNode(
+                              hamburgerMenuListRef.current
+                            ).scrollHeight,
+                          }
+                        : {
+                            opacity: 0,
+                            height: 0,
+                          }
+                    }
+                  >
+                    {NavbarHamburgerRoutersNameList}
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </nav>
       ) : null}

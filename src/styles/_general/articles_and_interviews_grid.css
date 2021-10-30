@@ -1,6 +1,24 @@
 .articles-and-interviews-grid-primary-wrapper {
   display: grid;
-  grid-gap: 0.8vw;
+  grid-gap: 12px;
   grid-template-columns: auto auto auto;
   width: fit-content;
+}
+
+@media only screen and (max-width: 1350px) {
+  .articles-and-interviews-grid-primary-wrapper {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (max-width: 925px) {
+  .articles-and-interviews-grid-primary-wrapper {
+    grid-template-columns: auto;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .articles-and-interviews-grid-primary-wrapper {
+    grid-gap: 2.66vw;
+  }
 }

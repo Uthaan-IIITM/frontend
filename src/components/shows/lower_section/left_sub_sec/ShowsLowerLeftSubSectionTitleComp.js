@@ -9,8 +9,12 @@ function ShowsLowerLeftSubSectionTitleComp({
   isInDynamicState,
 }) {
   return (
-    <div className="shows-lower-left-sec-nav-title-primary-wrapper">
-      <span
+    <div className="shows-lower-left-sec-nav-title-primary-wrapper"
+    
+    style={{
+      borderColor: isActive ? "#FF9300" : "#3D3D3D",
+    }}>
+      <div
         className="shows-lower-left-sec-nav-title-text"
         style={{
           color: isActive ? "#FF9300" : "#3D3D3D",
@@ -22,7 +26,7 @@ function ShowsLowerLeftSubSectionTitleComp({
         }}
       >
         {title}
-      </span>
+      </div>
     </div>
   );
 }

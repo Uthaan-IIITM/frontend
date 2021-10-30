@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import reactDom from "react-dom";
+
 import uthaanLogo from "../../../assets/uthaan_logo/uthaan_logo.svg";
 import Instituelogo from "../../../assets/footer/insitute_logo.svg";
 
 import "../../../styles/_general/PrimaryFooter.css";
-import "../../../styles/_general/responsive/primary_footer_responsive.css";
+
+import arrorwImg from "../../../assets/_general/arrow.svg";
+
 import ImageStackComponent from "./footer_helper/ImageStackComponent";
 import { contactLinks } from "../../../utils/GeneralConstants";
 
@@ -88,26 +92,64 @@ const SocialMediaIconsList = SocialMediaIcons.map(
         link={contactLinks[SocialMediaIconName]}
         normalDisplay={images[`ic_${SocialMediaIconName}.svg`].default}
         hoverDisplay={images[`h_ic_${SocialMediaIconName}.svg`].default}
+        iconsClass={`primary-footer-social-media-icons`}
+        iconsWrapperClass={`primary-footer-social-media-icon-wrapper`}
       />
     );
   }
 );
 
 function PrimaryFooter() {
+  const footerGeneralLinksRef = useRef(12);
+  const footerBrowseLinksRef = useRef(123);
+  const footerSupportLinksRef = useRef(1234);
+
+  function handleFooterLinkTitleClick(ref) {
+    if (ref?.current) {
+      if (window.getComputedStyle(ref.current).height === "50px") {
+        ref.current.style.height = ref.current.scrollHeight + "px";
+        ref.current.childNodes[0].childNodes[1].style.transform =
+          "rotate(180deg)";
+      } else {
+        ref.current.style.height = "50px";
+        ref.current.childNodes[0].childNodes[1].style.transform =
+          "rotate(0deg)";
+      }
+    }
+  }
+
   return (
     <footer className="primary-footer-wrapper">
       <div className="primary-footer-upper-container">
         <div className="primary-footer-footer-links">
-          <div style={{ marginLeft: "7.18vw" }}>
-            General
+          <div ref={footerGeneralLinksRef}>
+            <span
+              onClick={(e) => {
+                handleFooterLinkTitleClick(footerGeneralLinksRef);
+              }}
+            >
+              General <img src={arrorwImg} className="primary-footer-arrow" />
+            </span>
             <ul>{GeneralList}</ul>
           </div>
-          <div style={{ marginLeft: "6.04vw" }}>
-            Browse
+          <div ref={footerBrowseLinksRef}>
+            <span
+              onClick={(e) => {
+                handleFooterLinkTitleClick(footerBrowseLinksRef);
+              }}
+            >
+              Browse <img src={arrorwImg} className="primary-footer-arrow" />
+            </span>
             <ul>{BrowseList}</ul>
           </div>
-          <div style={{ marginLeft: "6.04vw" }}>
-            Support
+          <div ref={footerSupportLinksRef}>
+            <span
+              onClick={(e) => {
+                handleFooterLinkTitleClick(footerSupportLinksRef);
+              }}
+            >
+              Support <img src={arrorwImg} className="primary-footer-arrow" />
+            </span>
             <ul>{SupportList}</ul>
           </div>
         </div>
@@ -138,7 +180,7 @@ function PrimaryFooter() {
           </div>
           <p>
             <Link to="/">Privacy Policy</Link>
-            <span style={{ color: "#929292", padding: "0 0.5vw" }}>|</span>
+            <span style={{ color: "#929292", padding: "0 10px" }}>|</span>
             <Link to="/">Terms of Use</Link>
           </p>
           <div className="primary-footer-copyright">Copyright (c) 2021</div>

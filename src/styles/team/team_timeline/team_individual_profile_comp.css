@@ -1,11 +1,6 @@
 :root {
   --team-individual-profile-container-width: 200px;
-  /* --team-individual-profile-container-width: 13.7vw; */
 }
-
-/* .team-individual-primary-wrapper {
-  padding: calc(var(--team-individual-profile-container-width) *0.3) ;
-} */
 
 .team-individual-top-wrapper {
   width: calc(var(--team-individual-profile-container-width) * 1.2);
@@ -139,4 +134,10 @@
   font-weight: 500;
   color: #444444;
   font-size: calc(0.075 * var(--team-individual-profile-container-width));
+}
+
+@media only screen and (max-width: 1200px) {
+  :root {
+    --team-individual-profile-container-width: 160px;
+  }
 }

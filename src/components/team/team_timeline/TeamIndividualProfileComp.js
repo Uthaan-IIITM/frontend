@@ -32,7 +32,6 @@ function TeamIndividualProfileComp({ individualData, colorThemeIndex }) {
       (-1 / 2) * (noOfProfileLinks - 1) * basicAngleDifferenceForLinks;
 
     for (let index = 0; index < noOfProfileLinks; index++) {
-      console.log(baseAngleForLinks + index * basicAngleDifferenceForLinks);
       tmpRotationAnglesArr.push(
         baseAngleForLinks + index * basicAngleDifferenceForLinks
       );

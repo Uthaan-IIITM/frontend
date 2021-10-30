@@ -6,12 +6,12 @@
   justify-content: center;
   background-color: #222222;
   align-items: center;
-  padding: 0.4vw;
+  padding: 6px;
 }
 .articles-and-interviews-card-secondary-wrapper {
   pointer-events: none;
-  width: 25vw;
-  height: 18.75vw;
+  width: 380px;
+  height: 285px;
   overflow: hidden;
   position: relative;
 }
@@ -69,7 +69,7 @@
 .articles-and-interviews-card-title {
   pointer-events: none;
   color: white;
-  font-size: 1.5vw;
+  font-size: 23px;
   font-weight: 700;
   font-family: "Manrope", "Poppins";
   max-width: 67%;
@@ -95,7 +95,43 @@
 .articles-and-interviews-card-date {
   pointer-events: none;
   color: white;
-  font-size: 0.9vw;
+  font-size: 14px;
   font-family: "Manrope";
   font-weight: 600;
+}
+
+@media only screen and (max-width: 450px) {
+  .articles-and-interviews-card-primary-wrapper {
+    padding: 1.33vw;
+  }
+  .articles-and-interviews-card-secondary-wrapper {
+    width: 85vw;
+    height: 64vw;
+  }
+  .articles-and-interviews-card-image {
+    pointer-events: none;
+    position: absolute;
+  }
+
+  .articles-and-interviews-card-title {
+    font-size: 5vw;
+  }
+
+  .articles-and-interviews-card-date {
+    font-size: 3vw;
+  }
+  .articles-and-interviews-card-primary-href-wrapper
+    div
+    div
+    :nth-child(3)
+    :nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .articles-and-interviews-card-primary-href-wrapper div div :nth-child(2),
+  .articles-and-interviews-card-primary-href-wrapper div div :nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

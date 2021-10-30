@@ -1,20 +1,52 @@
 import React, { useState, useEffect } from "react";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
 
 import "../../../styles/gallery/gallery_lower_sec.css";
 
 import { galleryImages } from "./../../../services/gallery.service";
 
-import SecondaryFooter from "../../_general/footer/SecondaryFooter";
+import useMediaQuery from "./../../_general/helpers/useMediaQuery";
 
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
+import SecondaryFooter from "../../_general/footer/SecondaryFooter";
 
 function GalleryLowerSection() {
   const [imagesDataSet, setImagesDataSet] = useState([]);
+  const [galleryGridDimens, setGalleryGridDimens] = useState({
+    cols: 3,
+    gap: 8,
+  });
+
+  const [windowWidthValue] = useMediaQuery();
 
   useEffect(() => {
     loadGalleryImages();
   }, []);
+  useEffect(() => {
+    switch (true) {
+      case windowWidthValue <= 1016 && windowWidthValue > 658:
+        setGalleryGridDimens({
+          ...galleryGridDimens,
+          cols: 2,
+        });
+        break;
+
+      case windowWidthValue <= 658:
+        setGalleryGridDimens({
+          cols: 1,
+          gap: 10,
+        });
+        break;
+
+      default:
+        setGalleryGridDimens({
+          ...galleryGridDimens,
+          cols: 3,
+        });
+
+        break;
+    }
+  }, [windowWidthValue]);
 
   async function loadGalleryImages() {
     try {
@@ -30,7 +62,11 @@ function GalleryLowerSection() {
     <>
       <div className="gallery-lower-sec-primary-wrapper">
         <div className="gallery-lower-sec-secondary-wrapper">
-          <ImageList variant="masonry" cols={3} gap={8}>
+          <ImageList
+            variant="masonry"
+            cols={galleryGridDimens.cols}
+            gap={galleryGridDimens.gap}
+          >
             {imagesDataSet?.map((item, index) => (
               <ImageListItem key={index}>
                 <img src={item.url} loading="lazy" />
