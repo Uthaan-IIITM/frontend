@@ -6,6 +6,7 @@
   border: 1px solid #606060;
   height: 11.5vw;
   padding: 0.75vw 0.9vw;
+  margin-top: 10px;
 }
 .shows-card-image-wrapper {
   width: 29%;
@@ -139,6 +140,7 @@
   .shows-card-main-wrapper {
     width: 95vw;
     padding: 2.3vw;
+    margin-top: 2.5vw;
   }
   .shows-card-image-wrapper {
     height: 50.7vw;

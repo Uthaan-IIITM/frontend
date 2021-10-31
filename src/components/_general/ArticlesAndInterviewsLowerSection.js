@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ArticlesAndInterviewsGrid from "./ArticlesAndInterviewsGrid";
-import { useEffect } from "react/cjs/react.development";
 
 import "../../styles/_general/articles_and_interviews_lower_sec.css";
 
@@ -13,10 +12,18 @@ import sortDataBy from "./helpers/articles_and_interviews_sorter";
 function ArticlesAndInterviewsLowerSection({ dataSrcFun }) {
   const [articlesData, setArticlesData] = useState([]);
 
-  useEffect(async () => {
+  useEffect(() => {
+    setUpArticlesData();
+  }, []);
+
+  const setUpArticlesData = async () => {
     let tempData = [];
 
     let rawData = (await dataSrcFun()).data;
+    console.log(rawData);
+    if (!rawData) {
+      return;
+    }
     for (let index = 0; index < rawData.length; index++) {
       tempData.push(
         new ArticlesAndInterviewsDataObj(
@@ -30,7 +37,7 @@ function ArticlesAndInterviewsLowerSection({ dataSrcFun }) {
     }
 
     setArticlesData(tempData);
-  }, []);
+  };
 
   function handlSortChange(newSortState) {
     setArticlesData(

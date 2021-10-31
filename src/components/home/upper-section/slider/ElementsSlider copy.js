@@ -1,5 +1,5 @@
+import { useState } from "react";
 import PropTypes from "prop-types";
-import { useState } from "react/cjs/react.development";
 import "../../../../styles/home/upper-section/slider/image-slider-container.css";
 import "../../../../styles/home/upper-section/slider/core-image-slider-container.css";
 import homePageSliderOpacityController from "../helper-functions/home-page-slider-opacity-controller";
