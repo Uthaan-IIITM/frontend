@@ -7,7 +7,7 @@ function GalleryPage() {
   return (
     <>
       <ListingPagesSmoothScrollContainer
-        topContainer={[<GalleryUpperSec />]}
+        topContainer={<GalleryUpperSec />}
         bottomContainer={<GalleryLowerSection />}
       />
     </>
