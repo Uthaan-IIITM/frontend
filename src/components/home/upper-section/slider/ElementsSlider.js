@@ -170,7 +170,7 @@ function ElementsSlider({
   }
 
   /** Function to drag carousel when user is dragging **/
-  function dragSlider(e) {
+  function dragSlider (e) {
     if (beingDragged.current) {
       let element = e.target;
       element.focus();

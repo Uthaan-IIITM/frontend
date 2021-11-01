@@ -1,0 +1,19 @@
+.popup-primary-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.25s ease-out;
+  background-color: rgba(1, 22, 45, 0.2);
+}
+
+.popup-primary-content-container {
+  width: fit-content;
+  height: fit-content;
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+  pointer-events: all;
+}

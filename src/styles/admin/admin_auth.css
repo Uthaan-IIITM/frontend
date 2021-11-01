@@ -1,0 +1,43 @@
+.admin-auth-popup-primary-wrapper {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 35px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 35px;
+  margin-top: 30px;
+  background-color: white;
+}
+
+.admin-auth-popup-form-inputs {
+  width: 100%;
+  padding: 8px;
+  padding-left: 15px;
+  margin-top: 12px;
+  background-color: transparent;
+  border: 2px solid #222222;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+.admin-auth-popup-form-heading {
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.admin-auth-popup-form-submit-btn {
+  padding: 7px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 30px;
+  background-color: #00162d;
+  color: #fcfcfc;
+  font-weight: 600;
+  font-size: 17px;
+  border-radius: 3px;
+}
