@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 import "../../styles/team/team_page.css";
 
@@ -19,6 +19,53 @@ function TeamPage() {
     fetchTeamData();
   }, []);
 
+  const teamPagePrimaryWrapperRef = useRef(123);
+
+  useEffect(() => {
+    let childnodes = teamPagePrimaryWrapperRef.current.childNodes;
+    for (let i = 0; i < childnodes?.length; i++) {
+      childnodes[i].addEventListener("mousewheel", (e) => {
+        if (i == 0 && window.innerWidth > 850) {
+          return;
+        }
+        e.preventDefault();
+
+        if (e.deltaY > 0) {
+          if (e.deltaY - childnodes[i].getBoundingClientRect().top > 0) {
+            if (
+              childnodes[i].scrollLeft <=
+              childnodes[i].scrollWidth - childnodes[i].clientWidth - 5
+            ) {
+              childnodes[i].scrollBy({
+                top: 0,
+                left: e.deltaY,
+              });
+            } else {
+              window.scrollBy(0, e.deltaY);
+            }
+          } else {
+            window.scrollBy(0, childnodes[i].getBoundingClientRect().top);
+          }
+        } else {
+          if (childnodes[i].getBoundingClientRect().bottom + e.deltaY > 0) {
+            if (childnodes[i].scrollLeft != 0) {
+              childnodes[i].scrollBy({
+                top: 0,
+                left: e.deltaY,
+              });
+            } else {
+              window.scrollBy(0, e.deltaY);
+            }
+          } else {
+            window.scrollBy(0, -childnodes[i].getBoundingClientRect().bottom);
+          }
+        }
+
+        // scrollContainer.scrollLeft += evt.deltaY;
+      });
+    }
+  }, []);
+
   async function fetchTeamData() {
     try {
       const receivedImagesData = await team();
@@ -26,8 +73,6 @@ function TeamPage() {
       let foundersTempData = foundersData;
       let alumniTempData = parseTeamData(receivedImagesData.data.alumni);
       let executivesTempData = parseTeamData(receivedImagesData.data.executive);
-      console.log(receivedImagesData.data);
-      console.log(receivedImagesData.data.alumni);
 
       setTeamData({
         Foundes: foundersTempData,
@@ -72,20 +117,29 @@ function TeamPage() {
   }
 
   return (
-    <div className="team-page-primary-wrapper">
-      <div className="team-page-founders-wrapper">
+    <div className="team-page-primary-wrapper" ref={teamPagePrimaryWrapperRef}>
+      <div
+        className="team-page-founders-wrapper team-list-wrapper-for-horizontal-scroll"
+        // onWheel={
+        //   ((e) => {
+        //     e.preventDefault();
+        //     console.log(e.deltaY);
+        //   },
+        //   { passive: false })
+        // }
+      >
         <h3 className="team-page-heading founders-heading">Founder’s word</h3>
         <div className="team-page-founders-list-wrapper">
           <TeamTimeline timelineData={teamData.Foundes} lineColor="#F5F5F5" />
         </div>
       </div>
-      <div className="team-page-alumni-wrapper">
+      <div className="team-page-alumni-wrapper team-list-wrapper-for-horizontal-scroll">
         <h3 className="team-page-heading">Alumni</h3>
         <div className="team-page-alumni-list-wrapper">
           <TeamTimeline timelineData={teamData.Alumni} lineColor="#FBC9FC" />
         </div>
       </div>
-      <div className="team-page-executives-wrapper">
+      <div className="team-page-executives-wrapper team-list-wrapper-for-horizontal-scroll">
         <h3 className="team-page-heading">Executives</h3>
         <div className="team-page-executives-list-wrapper">
           <TeamTimeline
