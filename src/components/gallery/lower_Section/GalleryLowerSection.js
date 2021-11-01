@@ -51,7 +51,6 @@ function GalleryLowerSection() {
   async function loadGalleryImages() {
     try {
       const receivedImagesData = await galleryImages();
-      console.log(receivedImagesData);
       setImagesDataSet(receivedImagesData.data);
     } catch (error) {
       console.error(error);

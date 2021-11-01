@@ -120,13 +120,6 @@ function TeamPage() {
     <div className="team-page-primary-wrapper" ref={teamPagePrimaryWrapperRef}>
       <div
         className="team-page-founders-wrapper team-list-wrapper-for-horizontal-scroll"
-        // onWheel={
-        //   ((e) => {
-        //     e.preventDefault();
-        //     console.log(e.deltaY);
-        //   },
-        //   { passive: false })
-        // }
       >
         <h3 className="team-page-heading founders-heading">Founder’s word</h3>
         <div className="team-page-founders-list-wrapper">

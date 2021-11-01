@@ -45,25 +45,19 @@ function ProgressLine({ numberOfDots, currentState }) {
       tempStateObj.push(Math.abs(tempState));
       sideDefiner.push(tempSide);
     }
-    // console.log(tempStateObj);
-    // console.log(sideDefiner);
     setCurrentStateForDot(tempStateObj);
     positionSideDefiner.current = sideDefiner;
   }, [currentState]);
 
   useEffect(() => {
-    // let windowWidth = document.documentElement.clientWidth;
-    // console.log(windowWidth);
     let windowWidth = window.innerWidth;
     let elements = document.getElementsByClassName("line-dot-wrapper");
-    // console.log(windowWidth);
     for (let index = 0; index < currentStateForDot.length; index++) {
       let position;
       let elementState = currentStateForDot[index];
       if (!Number.isInteger(elementState)) {
         let bottomState = Math.floor(elementState);
         let topState = Math.ceil(elementState);
-        // console.log(elementState, bottomState , topState);
         let positionIndexAccordingToBottomState =
           progressLibePositionController(bottomState);
         let positionIndexAccordingToTopState =
@@ -74,17 +68,9 @@ function ProgressLine({ numberOfDots, currentState }) {
             positionIndexAccordingToTopState * (elementState - bottomState)) /
           2;
 
-        // console.log(position);
       } else {
         position = progressLibePositionController(elementState) / 2;
-        // console.log(position);
       }
-      // console.log(
-      //   parseFloat(position) *
-      //     parseFloat(positionSideDefiner.current[index]) *
-      //     parseFloat(windowWidth) *
-      //     0.7
-      // );
       elements[index].style.transform = `translateX(${
         parseFloat(position) *
         parseFloat(positionSideDefiner.current[index]) *

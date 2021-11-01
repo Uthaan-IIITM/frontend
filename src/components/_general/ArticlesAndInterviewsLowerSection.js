@@ -20,7 +20,6 @@ function ArticlesAndInterviewsLowerSection({ dataSrcFun }) {
     let tempData = [];
 
     let rawData = (await dataSrcFun()).data;
-    console.log(rawData);
     if (!rawData) {
       return;
     }
