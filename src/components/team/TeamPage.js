@@ -38,51 +38,6 @@ function TeamPage() {
 
   const teamPagePrimaryWrapperRef = useRef(123);
 
-  useEffect(() => {
-    let childnodes = teamPagePrimaryWrapperRef.current.childNodes;
-    for (let i = 0; i < childnodes?.length; i++) {
-      childnodes[i].addEventListener("mousewheel", (e) => {
-        if ((i == 0 && window.innerWidth > 850) || e.deltaX != 0) {
-          return;
-        }
-        e.preventDefault();
-
-        if (e.deltaY > 0) {
-          if (e.deltaY - childnodes[i].getBoundingClientRect().top > 0) {
-            if (
-              childnodes[i].scrollLeft <=
-              childnodes[i].scrollWidth - childnodes[i].clientWidth - 5
-            ) {
-              childnodes[i].scrollBy({
-                top: 0,
-                left: e.deltaY,
-              });
-            } else {
-              window.scrollBy(0, e.deltaY);
-            }
-          } else {
-            window.scrollBy(0, childnodes[i].getBoundingClientRect().top);
-          }
-        } else {
-          if (childnodes[i].getBoundingClientRect().bottom + e.deltaY > 0) {
-            if (childnodes[i].scrollLeft != 0) {
-              childnodes[i].scrollBy({
-                top: 0,
-                left: e.deltaY,
-              });
-            } else {
-              window.scrollBy(0, e.deltaY);
-            }
-          } else {
-            window.scrollBy(0, -childnodes[i].getBoundingClientRect().bottom);
-          }
-        }
-
-        // scrollContainer.scrollLeft += evt.deltaY;
-      });
-    }
-  }, []);
-
   async function fetchTeamData() {
     try {
       const receivedImagesData = await team();
