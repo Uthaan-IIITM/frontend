@@ -7,6 +7,7 @@ import TeamIndividualDataObj from "./team_timeline/helpers/team_individual_data_
 import TeamTimeline from "./team_timeline/TeamTimeline";
 import { team } from "./../../services/team.service";
 import { foundersData } from "../../utils/GeneralConstants";
+import Preloader from "../preloader/Preloader";
 // import { func } from "prop-types";
 
 function TeamPage() {
@@ -20,7 +21,7 @@ function TeamPage() {
     fetchTeamData();
     let interval = setInterval(() => {
       let childNodes = teamPagePrimaryWrapperRef.current.childNodes;
-      for (let i = 0; i < childNodes.length; i++) {
+      for (let i = 0; i < childNodes?.length; i++) {
         easyScroll({
           scrollableDomEle: childNodes[i],
           direction: "right",
@@ -29,7 +30,7 @@ function TeamPage() {
           scrollAmount: 300,
         });
       }
-    }, 5000);
+    }, 3000);
 
     return () => {
       clearInterval(interval);
@@ -89,29 +90,46 @@ function TeamPage() {
   }
 
   return (
-    <div className="team-page-primary-wrapper" ref={teamPagePrimaryWrapperRef}>
-      <div className="team-page-founders-wrapper team-list-wrapper-for-horizontal-scroll">
-        <h3 className="team-page-heading founders-heading">Founder’s word</h3>
-        <div className="team-page-founders-list-wrapper">
-          <TeamTimeline timelineData={teamData.Foundes} lineColor="#F5F5F5" />
+    <>
+      {teamData.Alumni ? (
+        <div
+          className="team-page-primary-wrapper"
+          ref={teamPagePrimaryWrapperRef}
+        >
+          <div className="team-page-founders-wrapper team-list-wrapper-for-horizontal-scroll">
+            <h3 className="team-page-heading founders-heading">
+              Founder’s word
+            </h3>
+            <div className="team-page-founders-list-wrapper">
+              <TeamTimeline
+                timelineData={teamData.Foundes}
+                lineColor="#F5F5F5"
+              />
+            </div>
+          </div>
+          <div className="team-page-alumni-wrapper team-list-wrapper-for-horizontal-scroll">
+            <h3 className="team-page-heading">Alumni</h3>
+            <div className="team-page-alumni-list-wrapper">
+              <TeamTimeline
+                timelineData={teamData.Alumni}
+                lineColor="#FBC9FC"
+              />
+            </div>
+          </div>
+          <div className="team-page-executives-wrapper team-list-wrapper-for-horizontal-scroll">
+            <h3 className="team-page-heading">Executives</h3>
+            <div className="team-page-executives-list-wrapper">
+              <TeamTimeline
+                timelineData={teamData.Executives}
+                lineColor="#FBC9FC"
+              />
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="team-page-alumni-wrapper team-list-wrapper-for-horizontal-scroll">
-        <h3 className="team-page-heading">Alumni</h3>
-        <div className="team-page-alumni-list-wrapper">
-          <TeamTimeline timelineData={teamData.Alumni} lineColor="#FBC9FC" />
-        </div>
-      </div>
-      <div className="team-page-executives-wrapper team-list-wrapper-for-horizontal-scroll">
-        <h3 className="team-page-heading">Executives</h3>
-        <div className="team-page-executives-list-wrapper">
-          <TeamTimeline
-            timelineData={teamData.Executives}
-            lineColor="#FBC9FC"
-          />
-        </div>
-      </div>
-    </div>
+      ) : (
+        <Preloader />
+      )}
+    </>
   );
 }
 

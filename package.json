@@ -11,6 +11,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.23.0",
+    "dotenv": "^10.0.0",
     "easy-scroll": "^0.7.0",
     "email-validator": "^2.0.4",
     "hamburger-react": "^2.4.1",
