@@ -122,7 +122,7 @@ function Navbar({
                 <div
                   className="navbar-hamburger-wrapper"
                   tabIndex={0}
-                  onClick={(e) => setIsHamburgerOpen(true)}
+                  onClick={(e) => setIsHamburgerOpen(!isHamburgerOpen)}
                   onBlur={(e) => {
                     setIsHamburgerOpen(false);
                   }}
