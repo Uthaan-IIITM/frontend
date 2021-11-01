@@ -61,6 +61,7 @@ function EventTimeline({ isDotted, isRight, eventData }) {
           description={eventData?.description}
           title={eventData?.title}
           imageURL={eventData?.imageURL}
+          redirectURL={eventData?.redirectURL}
         />
         <div
           className={

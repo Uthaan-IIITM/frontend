@@ -64,7 +64,8 @@ function EventLowerSection() {
           new EventsCardDataObj(
             rawEventsData[index].image,
             rawEventsData[index].name,
-            rawEventsData[index].description
+            rawEventsData[index].description,
+            rawEventsData[index].url
           )
         );
       }
