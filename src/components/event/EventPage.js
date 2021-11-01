@@ -7,7 +7,7 @@ function EventPage() {
   return (
     <div>
       <ListingPagesSmoothScrollContainer
-        topContainer={[<EventsUpperSection />]}
+        topContainer={<EventsUpperSection />}
         bottomContainer={<EventLowerSection />}
       />
     </div>

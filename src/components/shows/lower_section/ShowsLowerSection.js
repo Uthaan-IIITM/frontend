@@ -11,6 +11,7 @@ import roughPhoto from "../../../assets/_rough/shows_thumbnail.svg";
 import ShowsLowerLeftSubSection from "./left_sub_sec/ShowsLowerLeftSubSection";
 import SecondaryFooter from "../../_general/footer/SecondaryFooter";
 import parseShowData from "./helpers/show_data_obj_constructor";
+import Preloader from "./../../preloader/Preloader";
 
 function ShowsLowerSection() {
   const [{ active_show }, dispatch] = useStateValue();
@@ -63,15 +64,21 @@ function ShowsLowerSection() {
 
   return (
     <>
-      <div className="shows-lower-section-wrapper">
-        <ShowsLowerLeftSubSection showsTitlesList={showsData} />
-        <div className="shows-lower-section-cards-wrapper">
-          {activeShowData?.map((show, index) => {
-            return <ShowsCard key={index} show={show} />;
-          })}
-        </div>
-      </div>
-      <SecondaryFooter />
+      {activeShowData[0] ? (
+        <>
+          <div className="shows-lower-section-wrapper">
+            <ShowsLowerLeftSubSection showsTitlesList={showsData} />
+            <div className="shows-lower-section-cards-wrapper">
+              {activeShowData?.map((show, index) => {
+                return <ShowsCard key={index} show={show} />;
+              })}
+            </div>
+          </div>
+          <SecondaryFooter />
+        </>
+      ) : (
+        <Preloader />
+      )}
     </>
   );
 }

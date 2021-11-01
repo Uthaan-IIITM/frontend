@@ -11,9 +11,12 @@ const descriptionRightAlignStyles = {
   textAlign: "right",
   justifyContent: "flex-end",
 };
-function EventCard({ isRight, description, title, imageURL }) {
+function EventCard({ isRight, description, title, imageURL, redirectURL }) {
   return (
-    <div
+    <a
+      href={`${redirectURL}`}
+      target="_blank"
+      rel="noopener noreferrer"
       className={`event-card-wrapper-wrapper ${
         isRight
           ? "event-card-wrapper-wrapper-is-right"
@@ -35,7 +38,7 @@ function EventCard({ isRight, description, title, imageURL }) {
       >
         {title}
       </div>
-    </div>
+    </a>
   );
 }
 

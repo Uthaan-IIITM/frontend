@@ -158,7 +158,6 @@ function ElementsSlider({
   }
 
   function updateLayoutOnScroll(e) {
-    console.log("scrolled");
     if (!beingDragged.current) {
       previousScrollPosition.current = e.target.scrollLeft;
     }

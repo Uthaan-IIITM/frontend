@@ -8,6 +8,7 @@ import SortingComp from "./SortingComp";
 
 import parseDate from "./helpers/dateConverter";
 import sortDataBy from "./helpers/articles_and_interviews_sorter";
+import Preloader from "./../preloader/Preloader";
 
 function ArticlesAndInterviewsLowerSection({ dataSrcFun }) {
   const [articlesData, setArticlesData] = useState([]);
@@ -20,7 +21,6 @@ function ArticlesAndInterviewsLowerSection({ dataSrcFun }) {
     let tempData = [];
 
     let rawData = (await dataSrcFun()).data;
-    console.log(rawData);
     if (!rawData) {
       return;
     }
@@ -50,10 +50,16 @@ function ArticlesAndInterviewsLowerSection({ dataSrcFun }) {
   }
 
   return (
-    <div className="articles-lower-section-primary-wrapper">
-      <SortingComp onSortChangeFun={handlSortChange} />
-      <ArticlesAndInterviewsGrid inputData={articlesData} />
-    </div>
+    <>
+      {articlesData[0] ? (
+        <div className="articles-lower-section-primary-wrapper">
+          <SortingComp onSortChangeFun={handlSortChange} />
+          <ArticlesAndInterviewsGrid inputData={articlesData} />
+        </div>
+      ) : (
+        <Preloader />
+      )}
+    </>
   );
 }
 

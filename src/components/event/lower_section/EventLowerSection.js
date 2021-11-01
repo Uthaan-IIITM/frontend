@@ -7,6 +7,7 @@ import SecondaryFooter from "../../_general/footer/SecondaryFooter";
 import EventsCardDataObj from "./helpers/events_card_obj_constructor";
 import { events } from "../../../services/events.service";
 import useMediaQuery from "./../../_general/helpers/useMediaQuery";
+import Preloader from "./../../preloader/Preloader";
 
 function EventLowerSection() {
   const [eventsData, setEventsData] = useState([]);
@@ -64,7 +65,8 @@ function EventLowerSection() {
           new EventsCardDataObj(
             rawEventsData[index].image,
             rawEventsData[index].name,
-            rawEventsData[index].description
+            rawEventsData[index].description,
+            rawEventsData[index].url
           )
         );
       }
@@ -76,23 +78,29 @@ function EventLowerSection() {
 
   return (
     <>
-      <div className="event-lower-section-wrapper">
-        {eventsData.map((event, index) => {
-          return parseInt(windowWidth) <= 800 ? (
-            <EventTimeline key={index} eventData={event} isRight={true} />
-          ) : (
-            <EventTimeline
-              key={index}
-              eventData={event}
-              isRight={index % 2 == 0}
-            />
-          );
-        })}
-        <div className="events-timeline-filled-line"></div>
-      </div>
-      <div>
-        <SecondaryFooter />
-      </div>
+      {eventsData[0] ? (
+        <>
+          <div className="event-lower-section-wrapper">
+            {eventsData.map((event, index) => {
+              return parseInt(windowWidth) <= 800 ? (
+                <EventTimeline key={index} eventData={event} isRight={true} />
+              ) : (
+                <EventTimeline
+                  key={index}
+                  eventData={event}
+                  isRight={index % 2 == 0}
+                />
+              );
+            })}
+            <div className="events-timeline-filled-line"></div>
+          </div>
+          <div>
+            <SecondaryFooter />
+          </div>
+        </>
+      ) : (
+        <Preloader />
+      )}
     </>
   );
 }

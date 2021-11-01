@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import easyScroll from "easy-scroll";
 
 import "../../styles/team/team_page.css";
 
@@ -17,7 +18,25 @@ function TeamPage() {
 
   useEffect(() => {
     fetchTeamData();
+    let interval = setInterval(() => {
+      let childNodes = teamPagePrimaryWrapperRef.current.childNodes;
+      for (let i = 0; i < childNodes.length; i++) {
+        easyScroll({
+          scrollableDomEle: childNodes[i],
+          direction: "right",
+          duration: 500,
+          easingPreset: "easeOutQuad",
+          scrollAmount: 300,
+        });
+      }
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
+
+  const teamPagePrimaryWrapperRef = useRef(123);
 
   async function fetchTeamData() {
     try {
@@ -26,8 +45,6 @@ function TeamPage() {
       let foundersTempData = foundersData;
       let alumniTempData = parseTeamData(receivedImagesData.data.alumni);
       let executivesTempData = parseTeamData(receivedImagesData.data.executive);
-      console.log(receivedImagesData.data);
-      console.log(receivedImagesData.data.alumni);
 
       setTeamData({
         Foundes: foundersTempData,
@@ -72,20 +89,20 @@ function TeamPage() {
   }
 
   return (
-    <div className="team-page-primary-wrapper">
-      <div className="team-page-founders-wrapper">
+    <div className="team-page-primary-wrapper" ref={teamPagePrimaryWrapperRef}>
+      <div className="team-page-founders-wrapper team-list-wrapper-for-horizontal-scroll">
         <h3 className="team-page-heading founders-heading">Founder’s word</h3>
         <div className="team-page-founders-list-wrapper">
           <TeamTimeline timelineData={teamData.Foundes} lineColor="#F5F5F5" />
         </div>
       </div>
-      <div className="team-page-alumni-wrapper">
+      <div className="team-page-alumni-wrapper team-list-wrapper-for-horizontal-scroll">
         <h3 className="team-page-heading">Alumni</h3>
         <div className="team-page-alumni-list-wrapper">
           <TeamTimeline timelineData={teamData.Alumni} lineColor="#FBC9FC" />
         </div>
       </div>
-      <div className="team-page-executives-wrapper">
+      <div className="team-page-executives-wrapper team-list-wrapper-for-horizontal-scroll">
         <h3 className="team-page-heading">Executives</h3>
         <div className="team-page-executives-list-wrapper">
           <TeamTimeline

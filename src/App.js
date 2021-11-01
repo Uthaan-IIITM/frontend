@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import { Suspense, lazy } from "react";
 import "./styles/App.css";
 
 import { useStateValue } from "./StateProvider";
@@ -7,16 +7,21 @@ import { useStateValue } from "./StateProvider";
 import Navbar from "./components/_general/Navbar";
 import ScrollToTop from "./components/_general/ScrollToTop";
 
-import HomePage from "./components/home/HomePage";
-import EventPage from "./components/event/EventPage";
-import ShowsPage from "./components/shows/ShowsPage";
-import ArticlesPage from "./components/articles/ArticlesPage";
-import InterviewsPage from "./components/interviews/InterviewsPage";
-import TeamPage from "./components/team/TeamPage";
-import GalleryPage from "./components/gallery/GalleryPage";
-import ContactUsPage from "./components/contact_us/ContactUsPage";
-import ErrorPage from "./components/error/ErrorPage";
-import AdminPage from './components/Admin/AdminPage';
+import PreloaderDisplay from "./components/_general/PreloaderDisplay";
+const HomePage = lazy(() => import("./components/home/HomePage"));
+const EventPage = lazy(() => import("./components/event/EventPage"));
+const ShowsPage = lazy(() => import("./components/shows/ShowsPage"));
+const ArticlesPage = lazy(() => import("./components/articles/ArticlesPage"));
+const InterviewsPage = lazy(() =>
+  import("./components/interviews/InterviewsPage")
+);
+const TeamPage = lazy(() => import("./components/team/TeamPage"));
+const GalleryPage = lazy(() => import("./components/gallery/GalleryPage"));
+const ContactUsPage = lazy(() =>
+  import("./components/contact_us/ContactUsPage")
+);
+const ErrorPage = lazy(() => import("./components/error/ErrorPage"));
+const AdminPage = lazy(() => import("./components/Admin/AdminPage"));
 
 function App() {
   const [state, dispatch] = useStateValue();
@@ -27,15 +32,31 @@ function App() {
         <ScrollToTop />
         <Navbar slidingIndex={state.navbar_state} />
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/events" component={EventPage} />
-          <Route exact path="/shows" component={ShowsPage} />
-          <Route exact path="/articles" component={ArticlesPage} />
-          <Route exact path="/interviews" component={InterviewsPage} />
-          <Route exact path="/team" component={TeamPage} />
-          <Route exact path="/gallery" component={GalleryPage} />
-          <Route exact path="/contactus" component={ContactUsPage} />
-          <Route exact path="/admin" component={AdminPage} />
+          <Route exact path="/">
+            <PreloaderDisplay Component={HomePage} />
+          </Route>
+          <Route exact path="/events">
+            <PreloaderDisplay Component={EventPage} />
+          </Route>
+          <Route exact path="/shows">
+            <PreloaderDisplay Component={ShowsPage} />
+          </Route>
+          <Route exact path="/articles">
+            <PreloaderDisplay Component={ArticlesPage} />
+          </Route>
+          <Route exact path="/interviews">
+            <PreloaderDisplay Component={InterviewsPage} />
+          </Route>
+          <Route exact path="/team">
+            <PreloaderDisplay Component={TeamPage} />
+          </Route>
+          <Route exact path="/gallery">
+            <PreloaderDisplay Component={GalleryPage} />
+          </Route>
+          <Route exact path="/contactus">
+            <PreloaderDisplay Component={ContactUsPage} />
+          </Route>
+
           <Route component={ErrorPage} />
         </Switch>
       </Router>

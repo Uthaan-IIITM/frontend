@@ -56,6 +56,7 @@ function Navbar({
     if (allRoutes.includes(pathname.split("/")[1]) != isNavbarVisible) {
       setIsNavbarVisible(allRoutes.includes(pathname.split("/")[1]));
     }
+    setIsHamburgerOpen(false);
   }, [pathname]);
 
   useEffect(() => {
