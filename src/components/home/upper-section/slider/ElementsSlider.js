@@ -146,7 +146,7 @@ function ElementsSlider({
     }
 
     beingDragged.current = true;
-    startMousePosition.current = e.clientX;
+    startMousePosition.current = getClientX(e);
   }
 
   function stopDragging(e) {
@@ -170,17 +170,17 @@ function ElementsSlider({
   }
 
   /** Function to drag carousel when user is dragging **/
-  function dragSlider (e) {
+  function dragSlider(e) {
     if (beingDragged.current) {
       let element = e.target;
       element.focus();
 
+      let xPos = getClientX(e);
+
       e.target.scrollTo({
         top: 0,
         left:
-          -e.clientX +
-          startMousePosition.current +
-          previousScrollPosition.current,
+          -xPos + startMousePosition.current + previousScrollPosition.current,
       });
     }
   }
@@ -267,6 +267,24 @@ function ElementsSlider({
     setCurrentScrollStateIndices(localeCurrentScrollStateIndices);
   }
 
+  function getClientX(e) {
+    let xPos;
+    if (
+      e.type == "touchstart" ||
+      e.type == "touchmove" ||
+      e.type == "touchend" ||
+      e.type == "touchcancel"
+    ) {
+      var evt = typeof e.originalEvent === "undefined" ? e : e.originalEvent;
+      var touch = evt.touches[0] || evt.changedTouches[0];
+      xPos = touch.pageX;
+    } else {
+      xPos = e.clientX;
+    }
+
+    return xPos;
+  }
+
   return (
     <div
       className="slider-elements-wrapper-wrapper-wrapper draggable"
@@ -276,6 +294,10 @@ function ElementsSlider({
       onMouseLeave={(e) => stopDragging(e)}
       onDragStart={(e) => startDragging(e)}
       onMouseMove={(e) => dragSlider(e)}
+      onTouchStart={(e) => startDragging(e)}
+      onTouchEnd={(e) => stopDragging(e)}
+      onTouchMove={(e) => dragSlider(e)}
+      onTouchCancel={(e) => stopDragging(e)}
       style={{
         width: carouselWidth,
         height: carouselOuterHeight,
