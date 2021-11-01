@@ -8,6 +8,7 @@ import Navbar from "./components/_general/Navbar";
 import ScrollToTop from "./components/_general/ScrollToTop";
 
 import PreloaderDisplay from "./components/_general/PreloaderDisplay";
+import ErrorPage from "./components/error/ErrorPage";
 const HomePage = lazy(() => import("./components/home/HomePage"));
 const EventPage = lazy(() => import("./components/event/EventPage"));
 const ShowsPage = lazy(() => import("./components/shows/ShowsPage"));
@@ -20,8 +21,6 @@ const GalleryPage = lazy(() => import("./components/gallery/GalleryPage"));
 const ContactUsPage = lazy(() =>
   import("./components/contact_us/ContactUsPage")
 );
-const ErrorPage = lazy(() => import("./components/error/ErrorPage"));
-const AdminPage = lazy(() => import("./components/Admin/AdminPage"));
 
 function App() {
   const [state, dispatch] = useStateValue();
@@ -56,7 +55,6 @@ function App() {
           <Route exact path="/contactus">
             <PreloaderDisplay Component={ContactUsPage} />
           </Route>
-
           <Route component={ErrorPage} />
         </Switch>
       </Router>
