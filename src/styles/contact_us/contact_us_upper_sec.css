@@ -53,11 +53,11 @@
 }
 
 .contact-us-upper-sec-links-icons {
-  width: 33px;
-  height: 33px;
+  width: 33px !important;
+  height: 33px !important;
   margin-right: 12px;
-  margin-bottom: 0px;
-  margin-left: 0px;
+  margin-bottom: 0px !important;
+  margin-left: 0px !important;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -75,8 +75,8 @@
     margin-top: 35px;
   }
   .contact-us-upper-sec-links-icons {
-    width: 28px;
-    height: 28px;
+    width: 28px !important;
+    height: 28px !important;
     margin-right: 12px;
   }
   .contact-us-upper-sec-left-sec-numbers-wrapper {
@@ -114,8 +114,8 @@
     margin-top: 35px;
   }
   .contact-us-upper-sec-links-icons {
-    width: 25px;
-    height: 25px;
+    width: 25px !important;
+    height: 25px !important;
     margin-right: 10px;
   }
   .contact-us-upper-sec-links-icons:last-of-type {
@@ -153,7 +153,7 @@
   .contact-us-upper-sec-links-icons {
     width: 6.5vw;
     height: 6.5vw;
-    margin-right: 3vw;
+    margin-right: 3vw !important;
   }
   .contact-us-upper-sec-left-sec-numbers-wrapper {
     margin-top: 3vw;
