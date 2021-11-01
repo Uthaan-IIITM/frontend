@@ -9,6 +9,7 @@ import { galleryImages } from "./../../../services/gallery.service";
 import useMediaQuery from "./../../_general/helpers/useMediaQuery";
 
 import SecondaryFooter from "../../_general/footer/SecondaryFooter";
+import Preloader from "./../../preloader/Preloader";
 
 function GalleryLowerSection() {
   const [imagesDataSet, setImagesDataSet] = useState([]);
@@ -59,22 +60,28 @@ function GalleryLowerSection() {
 
   return (
     <>
-      <div className="gallery-lower-sec-primary-wrapper">
-        <div className="gallery-lower-sec-secondary-wrapper">
-          <ImageList
-            variant="masonry"
-            cols={galleryGridDimens.cols}
-            gap={galleryGridDimens.gap}
-          >
-            {imagesDataSet?.map((item, index) => (
-              <ImageListItem key={index}>
-                <img src={item.url} loading="lazy" />
-              </ImageListItem>
-            ))}
-          </ImageList>
-        </div>
-      </div>
-      <SecondaryFooter />
+      {imagesDataSet[0] ? (
+        <>
+          <div className="gallery-lower-sec-primary-wrapper">
+            <div className="gallery-lower-sec-secondary-wrapper">
+              <ImageList
+                variant="masonry"
+                cols={galleryGridDimens.cols}
+                gap={galleryGridDimens.gap}
+              >
+                {imagesDataSet?.map((item, index) => (
+                  <ImageListItem key={index}>
+                    <img src={item.url} loading="lazy" />
+                  </ImageListItem>
+                ))}
+              </ImageList>
+            </div>
+          </div>
+          <SecondaryFooter />
+        </>
+      ) : (
+        <Preloader />
+      )}
     </>
   );
 }
