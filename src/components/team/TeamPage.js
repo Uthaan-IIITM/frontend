@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import easyScroll from "easy-scroll";
 
 import "../../styles/team/team_page.css";
 
@@ -17,6 +18,22 @@ function TeamPage() {
 
   useEffect(() => {
     fetchTeamData();
+    let interval = setInterval(() => {
+      let childNodes = teamPagePrimaryWrapperRef.current.childNodes;
+      for (let i = 0; i < childNodes.length; i++) {
+        easyScroll({
+          scrollableDomEle: childNodes[i],
+          direction: "right",
+          duration: 500,
+          easingPreset: "easeOutQuad",
+          scrollAmount: 300,
+        });
+      }
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   const teamPagePrimaryWrapperRef = useRef(123);
@@ -25,7 +42,7 @@ function TeamPage() {
     let childnodes = teamPagePrimaryWrapperRef.current.childNodes;
     for (let i = 0; i < childnodes?.length; i++) {
       childnodes[i].addEventListener("mousewheel", (e) => {
-        if (i == 0 && window.innerWidth > 850) {
+        if ((i == 0 && window.innerWidth > 850) || e.deltaX != 0) {
           return;
         }
         e.preventDefault();
@@ -118,9 +135,7 @@ function TeamPage() {
 
   return (
     <div className="team-page-primary-wrapper" ref={teamPagePrimaryWrapperRef}>
-      <div
-        className="team-page-founders-wrapper team-list-wrapper-for-horizontal-scroll"
-      >
+      <div className="team-page-founders-wrapper team-list-wrapper-for-horizontal-scroll">
         <h3 className="team-page-heading founders-heading">Founder’s word</h3>
         <div className="team-page-founders-list-wrapper">
           <TeamTimeline timelineData={teamData.Foundes} lineColor="#F5F5F5" />
