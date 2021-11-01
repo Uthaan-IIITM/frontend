@@ -4,7 +4,9 @@ import "./styles/index.css";
 import App from "./App";
 import { StateProvider } from "./StateProvider";
 // import reportWebVitals from './reportWebVitals';
-import reducer, { initialState } from './reducer';
+import reducer, { initialState } from "./reducer";
+
+require("dotenv").config();
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,4 +16,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
-
