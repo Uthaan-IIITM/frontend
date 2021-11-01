@@ -1,6 +1,5 @@
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react/cjs/react.development";
+import { useState, useEffect } from "react";
 import ArticlesAndInterviewsCard from "./ArticlesAndInterviewsCard";
 
 import "../../styles/_general/articles_and_interviews_grid.css";

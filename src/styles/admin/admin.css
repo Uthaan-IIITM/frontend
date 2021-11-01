@@ -1,0 +1,29 @@
+.admin-page-primary-wrapper {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  height: 100%;
+}
+.admin-page-header {
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.uthaan-logo-admin-page {
+  height: 25px;
+}
+
+.admin-page-body {
+  display: grid;
+  width: 100%;
+  height: calc(100vh - 75px);
+  padding: 0px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 45px;
+  grid-gap: 11px;
+  grid-template-columns: 1fr 1.4fr 1.16fr 3.1fr;
+}

@@ -16,6 +16,7 @@ import TeamPage from "./components/team/TeamPage";
 import GalleryPage from "./components/gallery/GalleryPage";
 import ContactUsPage from "./components/contact_us/ContactUsPage";
 import ErrorPage from "./components/error/ErrorPage";
+import AdminPage from './components/Admin/AdminPage';
 
 function App() {
   const [state, dispatch] = useStateValue();
@@ -34,6 +35,7 @@ function App() {
           <Route exact path="/team" component={TeamPage} />
           <Route exact path="/gallery" component={GalleryPage} />
           <Route exact path="/contactus" component={ContactUsPage} />
+          <Route exact path="/admin" component={AdminPage} />
           <Route component={ErrorPage} />
         </Switch>
       </Router>

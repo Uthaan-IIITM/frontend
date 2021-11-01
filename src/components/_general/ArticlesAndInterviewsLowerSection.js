@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ArticlesAndInterviewsGrid from "./ArticlesAndInterviewsGrid";
-import { useEffect } from "react/cjs/react.development";
 
 import "../../styles/_general/articles_and_interviews_lower_sec.css";
 

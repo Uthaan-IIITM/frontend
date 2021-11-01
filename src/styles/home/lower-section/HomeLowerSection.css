@@ -1,8 +1,9 @@
 .home-lower-section-main-text {
   width: 90%;
-  max-width: 75;
-  @apply mx-auto text-xl mt-32 mb-28;
+  max-width: 1200px;
+  @apply mx-auto text-xl mb-28;
   font-size: 20px;
+  margin-top: 3rem;
   text-align: center;
   color: #222222;
 }
@@ -31,6 +32,7 @@
   .home-lower-section-main-text {
     font-size: 16px;
   }
+
   .director-image-wrapper-wrapper {
     width: 12rem !important;
     height: 12rem !important;
@@ -44,6 +46,10 @@
 }
 
 @media only screen and (max-width: 800px) {
+  .home-lower-section-main-text {
+    margin-top: 3rem;
+  }
+
   .home-lower-section-director-section {
     flex-direction: column;
     align-items: center;
