@@ -19,7 +19,7 @@ function WhatIsUthaanStyledText({ currentState = 0 }) {
   const StyleTextContent = useRef([
     "Bridging The Gap Between Juniors And Seniors",
     "Pushing Boundaries On Our Ideas And Our Craft",
-    "Create Connect And Trancend",
+    "Create Connect And Transcend",
   ]);
 
   return (
