@@ -125,10 +125,11 @@ npm start
 ## Connect With Us
 
 <div>
-<a href="https://github.com/Uthaan-IIITM" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/github.svg" alt="uthaan" height="40" width="45" /></a>
-<a href="https://www.linkedin.com/company/uthaan-iiitm/" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/linkedin.svg" alt="uthaan" height="40" width="45" /></a>
-<a href="https://www.facebook.com/uthaaniiitmg/" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/fb.svg" alt="uthaan" height="40" width="45" /></a>
-<a href="https://medium.com/uthaan" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/medium.svg" alt="@uthaan" height="40" width="45" /></a>
-<a href="https://www.instagram.com/uthaaniiitm/" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/ig.svg" alt="uthaan" height="40" width="45" /></a>
-<a href="https://www.youtube.com/c/UthaanIIITM/" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/yt.svg" alt="uthaan" height="40" width="45" /></a>
+<a href="https://github.com/Uthaan-IIITM" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/github.svg" alt="uthaan" height="40" width="42" /></a>
+<a href="https://www.linkedin.com/company/uthaan-iiitm/" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/linkedin.svg" alt="uthaan" height="40" width="42" /></a>
+<a href="https://www.facebook.com/uthaaniiitmg/" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/fb.svg" alt="uthaan" height="40" width="42" /></a>
+<a href="https://medium.com/uthaan" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/medium.svg" alt="@uthaan" height="40" width="42" /></a>
+<a href="https://www.instagram.com/uthaaniiitm/" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/ig.svg" alt="uthaan" height="40" width="42" /></a>
+<a href="https://www.youtube.com/c/UthaanIIITM/" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/yt.svg" alt="uthaan" height="40" width="42" /></a>
 </div>
+
