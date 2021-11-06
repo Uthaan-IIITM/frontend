@@ -29,7 +29,7 @@
 - Gives a collection of the various events conducted throughout the year by the club, linked to the respective posts on the
   <a href="https://www.instagram.com/uthaaniiitm/">official Instagram handle.</a>
   
- <br/> 
+<br/> 
  
 ![Events](https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/ss/compressed/2.webp)
 
@@ -38,7 +38,7 @@
 - Lists all the shows organized, giving the title, thumbnail, date and description, linked to their respective videos on the
   <a href="https://www.youtube.com/c/UthaanIIITM/">official YouTube channel.</a>
   
-  <br/>
+<br/>
 
 ![Shows](https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/ss/compressed/3.webp)
 
@@ -48,7 +48,7 @@
   <a href="https://medium.com/the-iiitm-narrative"> The IIITM Narrative </a>
   publication are accessible here, sorting by either Newest First or Oldest First.
   
-  <br/>
+<br/>
 
 ![Articles](https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/ss/compressed/4.webp)
 
@@ -58,7 +58,7 @@
   <a href="https://medium.com/uthaan/tagged/education">PlaceKode</a>
   publication are accessible here, sorting by either Newest First or Oldest First.
   
-  <br/>
+<br/>
 
 ![Interviews](https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/ss/compressed/5.webp)
 
@@ -117,8 +117,7 @@ npm start
 ## Contributors
 
 <a href = "https://github.com/Uthaan-IIITM/Uthaan-Frontend/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=Uthaan-IIITM/
-Uthaan-Frontend"/>
+  <img src = "https://contrib.rocks/image?repo=Uthaan-IIITM/Uthaan-Frontend"/>
 </a>
 
 <!-- CONTACT US -->
@@ -126,10 +125,10 @@ Uthaan-Frontend"/>
 ## Connect With Us
 
 <div>
-<a href="https://github.com/Uthaan-IIITM" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/github.svg" alt="uthaan" height="40" width="50" /></a>
-<a href="https://www.linkedin.com/company/uthaan-iiitm/" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/linkedin.svg" alt="uthaan" height="40" width="50" /></a>
-<a href="https://www.facebook.com/uthaaniiitmg/" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/fb.svg" alt="uthaan" height="40" width="50" /></a>
-<a href="https://medium.com/uthaan" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/medium.svg" alt="@uthaan" height="40" width="50" /></a>
-<a href="https://www.instagram.com/uthaaniiitm/" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/ig.svg" alt="uthaan" height="40" width="50" /></a>
-<a href="https://www.youtube.com/c/UthaanIIITM/" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/yt.svg" alt="uthaan" height="40" width="50" /></a>
+<a href="https://github.com/Uthaan-IIITM" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/github.svg" alt="uthaan" height="40" width="45" /></a>
+<a href="https://www.linkedin.com/company/uthaan-iiitm/" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/linkedin.svg" alt="uthaan" height="40" width="45" /></a>
+<a href="https://www.facebook.com/uthaaniiitmg/" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/fb.svg" alt="uthaan" height="40" width="45" /></a>
+<a href="https://medium.com/uthaan" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/medium.svg" alt="@uthaan" height="40" width="45" /></a>
+<a href="https://www.instagram.com/uthaaniiitm/" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/ig.svg" alt="uthaan" height="40" width="45" /></a>
+<a href="https://www.youtube.com/c/UthaanIIITM/" target="blank"><img align="center" src="https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/yt.svg" alt="uthaan" height="40" width="45" /></a>
 </div>
