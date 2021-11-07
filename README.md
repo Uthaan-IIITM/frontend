@@ -112,14 +112,6 @@ npm install
 npm start
 ```
 
-<!--CONTRIBUTORS -->
-
-## Contributors
-
-<a href = "https://github.com/Uthaan-IIITM/Uthaan-Frontend/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=Uthaan-IIITM/Uthaan-Frontend"/>
-</a>
-
 <!-- CONTACT US -->
 
 ## Connect With Us
