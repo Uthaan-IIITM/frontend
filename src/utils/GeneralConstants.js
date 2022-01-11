@@ -55,7 +55,7 @@ export const foundersData = [
       instagramLink: "https://www.instagram.com/the.real.sardar/",
     },
     "https://res.cloudinary.com/uthaan/image/upload/v1635525774/teams/1622868914452_g9kofu.jpg",
-    "The main aim of Uthann is not just to conduct events but to eliminate the distance between junior & senior."
+    "The main aim of Uthaan is not just to conduct events but to eliminate the distance between junior & senior."
   ),
   new TeamIndividualDataObj(
     "Arpan Jain",
@@ -64,7 +64,7 @@ export const foundersData = [
       linkedinLink: "https://www.linkedin.com/in/arpan-jain-947640126/",
     },
     "https://res.cloudinary.com/uthaan/image/upload/v1635525808/teams/1543377952110_q8gomg.jpg",
-    "Uthaan is not just a club it's a platform wherein we help each other in extrs-curricular activities, academics new project etc."
+    "Uthaan is not just a club it's a platform wherein we help each other in extra-curricular activities, academics new project etc."
   ),
   new TeamIndividualDataObj(
     "Akshay Goel",
@@ -73,7 +73,7 @@ export const foundersData = [
       linkedinLink: "https://www.linkedin.com/in/akshayiiitm/",
     },
     "https://res.cloudinary.com/uthaan/image/upload/v1635525836/teams/1517547988167_cqrw6n.jpg",
-    "In Uthaan you learn skills that you can't learn through books like swimming"
+    "In Uthaan you learn skills that you can't learn through books like swimming."
   ),
 ];
 
