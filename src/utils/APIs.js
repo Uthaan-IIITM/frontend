@@ -1,6 +1,6 @@
 // export const BASE_URL = "https://uthaan.herokuapp.com/api/";
 // export const BASE_URL = "http://localhost:4000/api/";
-export const BASE_URL = process.env.REACT_APP_BASE_URL;
+export const BASE_URL = "https://uthaan-backend.centralindia.cloudapp.azure.com/api/";
 export const GOOGLE_API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
 export const EVENTS_DATA_URL = BASE_URL + "events";
