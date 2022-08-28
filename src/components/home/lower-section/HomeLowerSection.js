@@ -44,13 +44,14 @@ function HomeLowerSection() {
             />
           </div>
         </div>
-
+      </div>
+      <div className="home-lower-section-director-section">    
         <div>
           <DirectorImageComponent ImgSource={FacultyCoordinator} />
         </div>
         <div className="home-lower-section-director-section-content">
           <h2> Prof. Rajendra Sahu </h2>
-          <h2> Faculty Co-ordinator <br/> Uthaan IIITM </h2>
+          <h2> Faculty Co-ordinator <br/> Uthaan </h2>
           <div>
             <TextComponent
               innerContent={HomeLowerSectionDirectorContent2}

@@ -8,7 +8,7 @@
   color: #222222;
 }
 .home-lower-section-director-section {
-  width: 98%;
+  width: 60%;
   @apply mx-auto flex items-center justify-center mb-32;
 }
 .home-lower-section-director-section-content {
