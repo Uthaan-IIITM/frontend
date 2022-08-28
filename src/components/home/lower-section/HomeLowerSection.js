@@ -32,7 +32,7 @@ function HomeLowerSection() {
         </div>
         <div className="home-lower-section-director-section-content">
           <h2> Prof. Rajendra Sahu </h2>
-          <h2> Director ABV-IIITM / Faculty Co-ordinator </h2>
+          <h2> Faculty Co-ordinator </h2>
           <div>
             <TextComponent
               innerContent={HomeLowerSectionDirectorContent}
