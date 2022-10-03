@@ -93,7 +93,7 @@ Please read the following before contributing to the repository:
 
 - [Contribution Guide](./CONTRIBUTING.md)
 - [Code of Conduct](./CODE_OF_CONDUCT.md)
-- [Licence](./LICENCE.md)
+- [License](./LICENSE.md)
 
 
 
