@@ -87,30 +87,15 @@ UI : https://www.figma.com/file/4ib9cjt5RqNcD3OzMDNais/Uthaan's-Website
 ![Contact Us](https://github.com/Uthaan-IIITM/Uthaan-Frontend/blob/main/src/assets/readme/ss/compressed/8.webp)
 
 
-<!-- GETTING STARTED -->
+## 💙 For contributors
 
-## Getting Started
+Please read the following before contributing to the repository:
 
-1. Fork the repository
-2. Clone the repository
+- [Contribution Guide](./CONTRIBUTING.md)
+- [Code of Conduct](./CODE_OF_CONDUCT.md)
+- [Licence](./LICENCE.md)
 
-```sh
-git clone https://github.com/Uthaan-IIITM/Uthaan-Frontend.git
-```
 
-3. Open the folder containing the cloned repository
-4. Install the required packages, libraries and dependencies
-
-```sh
-npm install
-```
-
-5. Custom API keys can be set up in a .env file
-6. Run the project locally to access the frontend functionality of the website
-
-```sh
-npm start
-```
 
 <!-- CONTACT US -->
 
