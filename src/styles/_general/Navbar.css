@@ -10,7 +10,7 @@
   height: 5.56rem;
   pointer-events: none;
   transition: padding-left 1s ease-in-out, padding-right 1s ease-in-out;
-  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 10%) 100%);
+  background:linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.9) 60%, rgba(255, 255, 255, 0) 100%);
 }
 
 .navbar-secondary-wrapper {
