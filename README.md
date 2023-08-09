@@ -4,7 +4,7 @@
 
   <p>
     The frontend repository of the official
-    <a href="https://www.uthaan.org/">
+    <a href="https://uthaan.netlify.app/">
     Uthaan website.
   </a>
   </p>
